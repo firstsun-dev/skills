@@ -54,6 +54,12 @@
 | **owasp-security** | 遵循 OWASP Top 10 的安全編碼實踐。 | [SKILL.md](./external/develop/security/owasp-security/SKILL.md) |
 | **secret-scanning** | 管理 GitHub 密鑰掃描、推送保護與修復。 | [SKILL.md](./external/develop/security/secret-scanning/SKILL.md) |
 
+## ✍️ 內容創作 (Writing)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **chinese-blog-expert** | 中文部落格潤稿、語氣優化與 2026 GEO 標準補強。 | [SKILL.md](./custom/writing/chinese-blog-expert/SKILL.md) |
+| **blog-translator** | 部落格文章多國語言翻譯 (中翻英) 與路徑鏡像管理。 | [SKILL.md](./custom/writing/blog-translator/SKILL.md) |
+
 ## 💜 Obsidian 知識管理 (Obsidian Management)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |

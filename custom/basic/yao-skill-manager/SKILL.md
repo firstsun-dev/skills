@@ -18,7 +18,7 @@ To balance discoverability and organization:
 
 ### Taxonomy Alignment (目錄架構對齊)
 To prevent fragmentation (e.g., mixing `search/` and `fetch/` for similar tools), you **MUST** map external skills to our existing local domains/categories:
-- **Local Domains**: `basic/`, `develop/`, `obsidian/`, `video-design/`.
+- **Local Domains**: `basic/`, `develop/`, `obsidian/`, `video-design/`, `writing/`.
 - **Ignore Provider Names**: If an external repo uses `research/firecrawl`, but we use `basic/`, move it to `external/basic/firecrawl-search/`.
 - **Consistency over Originality**: Always prioritize our folder structure over the external repository's original layout.
 
