@@ -23,36 +23,23 @@ Every action handler must follow these standards:
 2. **Try/Catch wrapping**: Read operations return fallbacks; write operations may throw.
 3. **Input Validation**: Use `z` from `astro:schema` (not raw `zod`).
 
+### 4. Performance: D1 Batching (Crucial)
+Cloudflare D1 is HTTP-based. To minimize latency, **ALWAYS** use `db.batch()` when executing multiple independent queries in a single action.
 ```ts
-import { z } from "astro:schema";
-
-export const server = {
-  myAction: defineAction({
-    input: z.object({ slug: z.string() }),
-    handler: async (input, context) => {
-      // 1. Guard
-      if (!context.locals.runtime?.env?.DB) return { success: false };
-      
-      try {
-        // 2. Try/Catch + Drizzle
-        const result = await db.select()...get();
-        return result || { data: null };
-      } catch (error) {
-        console.error("D1 Error:", error);
-        throw new ActionError({ code: "INTERNAL_SERVER_ERROR" });
-      }
-    }
-  })
-};
+// ✅ CORRECT - Executed in a single round-trip
+const [user, posts] = await db.batch([
+  db.select().from(users).where(eq(users.id, id)),
+  db.select().from(posts).where(eq(posts.authorId, id))
+]);
 ```
 
-### 4. Auth Guards
+### 5. Auth Guards
 - All admin actions must call `verifyAuth` at the top:
 ```ts
 if (!(await verifyAuth(context))) throw new Error("Unauthorized");
 ```
 
-### 5. OpenAPI Documentation
+### 6. OpenAPI Documentation
 - Document actions in `src/pages/console/openapi.yml.ts`.
 - Update the spec in the same commit whenever an action's input/output shape changes.
 
@@ -60,7 +47,13 @@ if (!(await verifyAuth(context))) throw new Error("Unauthorized");
 
 ## Database (D1 & Drizzle ORM)
 
-### 1. Env Var Access Pattern
+### 1. Edge-First Development
+To avoid "works in Node, breaks in Workers" issues:
+- **Astro 6+**: Use the built-in `workerd` dev server.
+- **Legacy/Full Simulation**: Always test complex logic with `npx wrangler pages dev` or `wrangler dev --remote`.
+- **No Node.js Built-ins**: Avoid `fs`, `path`, or `crypto` (use `globalThis.crypto` instead).
+
+### 2. Env Var Access Pattern
 Always try runtime first, fall back to `import.meta.env`:
 ```ts
 const SECRET = (runtime?.env?.SECRET_KEY || import.meta.env.SECRET_KEY || "").toString().trim();
