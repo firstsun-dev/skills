@@ -2,7 +2,7 @@
   "version": 1,
   "skills": {
     "FirstPrinciples": {
-      "source": "/home/tianyao/yao-agent-skills/external/think/first-principles/firstprinciples",
+      "source": "/home/tianyao/yao-agent-skills/external/think",
       "sourceType": "local",
       "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550"
     },
@@ -32,7 +32,7 @@
       "computedHash": "8df9b47092524833138b58682d03f2e153a242e550d1693657afdbee0cc9cdb0"
     },
     "critical-thinking-logical-reasoning": {
-      "source": "/home/tianyao/yao-agent-skills/external/think/logic/critical-thinking-logical-reasoning",
+      "source": "/home/tianyao/yao-agent-skills/external/think",
       "sourceType": "local",
       "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04"
     },
@@ -96,8 +96,13 @@
       "sourceType": "local",
       "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a"
     },
+    "learning-coach": {
+      "source": "/home/tianyao/yao-agent-skills/external/think",
+      "sourceType": "local",
+      "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410"
+    },
     "m14-mental-model": {
-      "source": "/home/tianyao/yao-agent-skills/external/think/models/m14-mental-model",
+      "source": "/home/tianyao/yao-agent-skills/external/think",
       "sourceType": "local",
       "computedHash": "6c53f050376c04a4abb5edce769a7052d93f605cc06299e657d9fce5b01edbab"
     },
