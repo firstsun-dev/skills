@@ -43,7 +43,7 @@ jobs:
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
           # 上傳目標子資料夾
-          filename: "${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}/"
+          filename: "${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}/**"
           folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
           overwrite: "true"
           mirrorDirectoryStructure: "true"
