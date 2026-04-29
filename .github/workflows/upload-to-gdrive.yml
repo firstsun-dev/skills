@@ -3,10 +3,10 @@ name: Upload Skills to Google Drive
 on:
   push:
     branches:
-      - main # 當有程式碼推送到 main 分支時觸發
+      - main
     paths:
       - 'custom/**'
-      - 'external/**' # 只有當這兩個資料夾有變動時才觸發
+      - 'external/**'
   workflow_dispatch:
     inputs:
       remote_root_folder:
@@ -15,7 +15,6 @@ on:
         default: 'yao-ai-skills'
 
 env:
-  # 預設的子資料夾名稱 (Push 觸發時使用)
   DEFAULT_REMOTE_FOLDER: 'yao-ai-skills'
 
 jobs:
@@ -25,25 +24,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare Upload Directory
-        run: |
-          # 決定最終的資料夾名稱 (手動觸發優先，否則用預設值)
-          TARGET_FOLDER="${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}"
-          echo "Target folder: $TARGET_FOLDER"
-          
-          # 建立目標子目錄結構 (直接在根目錄下建立 TARGET_FOLDER)
-          mkdir -p "$TARGET_FOLDER"
-          
-          # 將 custom 與 external 複製進去
-          cp -r custom "$TARGET_FOLDER/"
-          cp -r external "$TARGET_FOLDER/"
+      - name: Set up rclone
+        uses: rclone/setup-rclone@v1
 
-      - name: Upload to Google Drive
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-          # 上傳目標子資料夾
-          filename: "./${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}/**"
-          folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
-          overwrite: "true"
-          mirrorDirectoryStructure: "true"
+      - name: Configure rclone with service account
+        run: |
+          mkdir -p ~/.config/rclone
+          echo '${{ secrets.GDRIVE_CREDENTIALS }}' | base64 -d > /tmp/gdrive-sa.json
+          cat > ~/.config/rclone/rclone.conf << 'EOF'
+          [gdrive]
+          type = drive
+          service_account_file = /tmp/gdrive-sa.json
+          root_folder_id = ${{ secrets.GDRIVE_FOLDER_ID }}
+          EOF
+
+      - name: Upload custom/ and external/ to Google Drive
+        run: |
+          TARGET_FOLDER="${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}"
+          echo "Uploading to: $TARGET_FOLDER"
+          rclone copy custom/   "gdrive:$TARGET_FOLDER/custom/"   --progress
+          rclone copy external/ "gdrive:$TARGET_FOLDER/external/" --progress
