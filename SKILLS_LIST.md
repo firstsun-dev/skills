@@ -88,6 +88,22 @@
 | **minerva-hcs** | 密涅瓦大學核心思維模型 (HCs)，用於跨領域的深度問題拆解與推導。 | [SKILL.md](./custom/think/minerva/SKILL.md) |
 | **learning-coach** | 基於腦科學的學習教練，提供主動回想、間隔重複等高效學習法。 | [SKILL.md](./external/think/learning/learning-coach/SKILL.md) |
 
+## 🏥 健康管理 (Health Management)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **nutritional-specialist** | 專業營養專家，提供飲食建議與飲食計畫。 | [SKILL.md](./external/health/nutritional-specialist/SKILL.md) |
+| **rp-diet** | 基於科學的飲食與運動管理工具。 | [SKILL.md](./external/health/rp-diet/SKILL.md) |
+| **fitness-coach** | 個人健身教練，提供運動指導與計畫。 | [SKILL.md](./external/health/fitness-coach/SKILL.md) |
+| **workout-program-designer** | 針對不同目標設計客製化運動訓練菜單。 | [SKILL.md](./external/health/workout-program-designer/SKILL.md) |
+| **rem-sleep** | 睡眠品質優化與恢復建議。 | [SKILL.md](./external/health/rem-sleep/SKILL.md) |
+| **mental-health-psychoeducation** | 心理健康教育與壓力管理建議。 | [SKILL.md](./external/health/mental-health-psychoeducation/SKILL.md) |
+
+## 🚀 生活效率 (Productivity & Habits)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **habit-tracker** | 建立與追蹤每日健康習慣。 | [SKILL.md](./external/basic/habit-tracker/SKILL.md) |
+| **personal-productivity** | 提升個人工作與生活效率的高級指南。 | [SKILL.md](./external/basic/personal-productivity/SKILL.md) |
+
 ## 📝 特定專案規範 (Project Specific)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |

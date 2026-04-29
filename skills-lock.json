@@ -2,9 +2,14 @@
   "version": 1,
   "skills": {
     "FirstPrinciples": {
-      "source": "/home/tianyao/yao-agent-skills/external/think",
+      "source": "/home/tianyao/yao-agent-skills/external/think/first-principles/firstprinciples",
       "sourceType": "local",
       "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550"
+    },
+    "Habit Tracker": {
+      "source": "/home/tianyao/yao-agent-skills/external/basic/habit-tracker",
+      "sourceType": "local",
+      "computedHash": "2bb241089c34af1af553c2a30e93d737236ff5408783cfc8c6f9702e77c4829a"
     },
     "astro-cloudflare-backend": {
       "source": "/home/tianyao/yao-agent-skills/custom/develop/astro-cloudflare-backend",
@@ -32,7 +37,7 @@
       "computedHash": "8df9b47092524833138b58682d03f2e153a242e550d1693657afdbee0cc9cdb0"
     },
     "critical-thinking-logical-reasoning": {
-      "source": "/home/tianyao/yao-agent-skills/external/think",
+      "source": "/home/tianyao/yao-agent-skills/external/think/logic/critical-thinking-logical-reasoning",
       "sourceType": "local",
       "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04"
     },
@@ -71,6 +76,11 @@
       "sourceType": "local",
       "computedHash": "563370b34bff9189f3180d1e4547a6758d26492760821ed85c5e67504fd8c5ca"
     },
+    "fitness-coach": {
+      "source": "/home/tianyao/yao-agent-skills/external/health/fitness-coach",
+      "sourceType": "local",
+      "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c"
+    },
     "frontend-design": {
       "source": "/home/tianyao/yao-agent-skills/external/develop/frontend/frontend-design",
       "sourceType": "local",
@@ -97,14 +107,19 @@
       "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a"
     },
     "learning-coach": {
-      "source": "/home/tianyao/yao-agent-skills/external/think",
+      "source": "/home/tianyao/yao-agent-skills/external/think/learning/learning-coach",
       "sourceType": "local",
       "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410"
     },
     "m14-mental-model": {
-      "source": "/home/tianyao/yao-agent-skills/external/think",
+      "source": "/home/tianyao/yao-agent-skills/external/think/models/m14-mental-model",
       "sourceType": "local",
       "computedHash": "6c53f050376c04a4abb5edce769a7052d93f605cc06299e657d9fce5b01edbab"
+    },
+    "mental-health-psychoeducation": {
+      "source": "/home/tianyao/yao-agent-skills/external/health/mental-health-psychoeducation",
+      "sourceType": "local",
+      "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26"
     },
     "minerva-hcs": {
       "source": "/home/tianyao/yao-agent-skills/custom/think/minerva",
@@ -115,6 +130,11 @@
       "source": "/home/tianyao/yao-agent-skills/custom/develop/monorepo-management",
       "sourceType": "local",
       "computedHash": "de38a7c123e2e5072a48206ecc5f7decb3cdb997f3ca5d3192cba171ce0fd646"
+    },
+    "nutritional-specialist": {
+      "source": "/home/tianyao/yao-agent-skills/external/health/nutritional-specialist",
+      "sourceType": "local",
+      "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb"
     },
     "obsidian-bases": {
       "source": "/home/tianyao/yao-agent-skills/custom/obsidian/obsidian-bases",
@@ -136,6 +156,11 @@
       "sourceType": "local",
       "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2"
     },
+    "personal-productivity": {
+      "source": "/home/tianyao/yao-agent-skills/external/basic/personal-productivity",
+      "sourceType": "local",
+      "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4"
+    },
     "playwright-best-practices": {
       "source": "/home/tianyao/yao-agent-skills/external/develop/devops/playwright-best-practices",
       "sourceType": "local",
@@ -151,6 +176,11 @@
       "sourceType": "local",
       "computedHash": "c73df933f4adb8d679a85b9814b85c56233e06a617c30c07001e47ee6522e8f2"
     },
+    "rem-sleep": {
+      "source": "/home/tianyao/yao-agent-skills/external/health/rem-sleep",
+      "sourceType": "local",
+      "computedHash": "c48104572deb339a1d90cedf38d37848095d4e55edce519a2a54d0745656a759"
+    },
     "remotion": {
       "source": "/home/tianyao/yao-agent-skills/external/video-design/remotion",
       "sourceType": "local",
@@ -160,6 +190,11 @@
       "source": "/home/tianyao/yao-agent-skills/external/video-design/remotion-best-practices",
       "sourceType": "local",
       "computedHash": "df654933e451556147e384078c3fbdbac997cb0fe4d2f2db7642000c239304c5"
+    },
+    "rp-diet": {
+      "source": "/home/tianyao/yao-agent-skills/external/health/rp-diet",
+      "sourceType": "local",
+      "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17"
     },
     "secret-scanning": {
       "source": "/home/tianyao/yao-agent-skills/external/develop/security/secret-scanning",
@@ -200,6 +235,11 @@
       "source": "/home/tianyao/yao-agent-skills/custom/develop/workers-best-practices",
       "sourceType": "local",
       "computedHash": "78811cb9de51727a10197e7e85c43503298965b92496347799e11bde499bcbde"
+    },
+    "workout-program-designer": {
+      "source": "/home/tianyao/yao-agent-skills/external/health/workout-program-designer",
+      "sourceType": "local",
+      "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
     },
     "yao-skill-manager": {
       "source": "/home/tianyao/yao-agent-skills/custom/basic/yao-skill-manager",
