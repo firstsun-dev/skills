@@ -8,14 +8,6 @@ on:
       - 'custom/**'
       - 'external/**'
   workflow_dispatch:
-    inputs:
-      remote_root_folder:
-        description: '在 Google Drive 中的目標子資料夾名稱 (Remote Root Folder)'
-        required: true
-        default: 'yao-ai-skills'
-
-env:
-  DEFAULT_REMOTE_FOLDER: 'yao-ai-skills'
 
 jobs:
   upload:
@@ -38,9 +30,7 @@ jobs:
           root_folder_id = ${{ secrets.GDRIVE_FOLDER_ID }}
           EOF
 
-      - name: Upload custom/ and external/ to Google Drive
+      - name: Sync custom/ and external/ to Google Drive
         run: |
-          TARGET_FOLDER="${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}"
-          echo "Uploading to: $TARGET_FOLDER"
-          rclone copy custom/   "gdrive:$TARGET_FOLDER/custom/"   --progress
-          rclone copy external/ "gdrive:$TARGET_FOLDER/external/" --progress
+          rclone sync custom/   "gdrive:custom/"   --progress
+          rclone sync external/ "gdrive:external/" --progress
