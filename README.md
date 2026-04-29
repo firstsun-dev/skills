@@ -28,9 +28,13 @@ cd <your-project>
 ~/yao-agent-skills/export.sh <domain>
 ```
 
-### 3. Manual Installation (Single Skill)
+### 3. Manual Installation (Single Skill or Directory)
 ```bash
-npx skills add ~/yao-agent-skills/custom/<path_to_skill> -g
+# Install a single skill
+npx skills add ~/yao-agent-skills/custom/obsidian/obsidian-bases -g
+
+# Recursive Installation (For domains with nested categories, e.g., develop)
+npx skills add ~/yao-agent-skills/external/develop -g --full-depth
 ```
 
 ## 📥 How to Add External Skills (SOP)
@@ -42,9 +46,9 @@ Follow these steps to add a community skill while keeping the code locally for r
    cd ~/yao-agent-skills
    npx skills add <owner/repo@skill> -y
    ```
-2. **Categorize**: Move the downloaded folder from `.agents/skills/` to your desired `external/` domain:
+2. **Categorize & Align**: Move the downloaded folder from `.agents/skills/` to your desired `external/` domain. **MUST** align with our local taxonomy:
    ```bash
-   # Example: moving a react skill
+   # Example: moving a react skill to our nested 'frontend' category
    mkdir -p external/develop/frontend/
    mv .agents/skills/<skill-name> external/develop/frontend/
    ```
@@ -56,7 +60,8 @@ Follow these steps to add a community skill while keeping the code locally for r
    ```bash
    ./setup.sh
    ```
-5. **Commit**: Save the changes to Git:
+5. **Update List**: Sync [SKILLS_LIST.md](./SKILLS_LIST.md) with the new path and description.
+6. **Commit**: Save the changes to Git:
    ```bash
    git add . && git commit -m "feat: add <skill-name> to external arsenal"
    ```
@@ -64,5 +69,7 @@ Follow these steps to add a community skill while keeping the code locally for r
 ## 📜 Guiding Principles
 
 - **English First**: All `SKILL.md` files must be in English for maximum LLM compatibility.
+- **Flattened by Default**: Keep skills as direct children of domain folders unless the domain has >10 skills (Conditional Nesting).
+- **Taxonomy Alignment**: Always prioritize our local folder structure over external repository layouts.
 - **Separation of Concerns**: Keep original work in `custom/` and community work in `external/`.
 - **Version Control**: Keep `skills-lock.json` in Git to track external sources and hashes.
