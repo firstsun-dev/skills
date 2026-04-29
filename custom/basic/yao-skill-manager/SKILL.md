@@ -16,6 +16,12 @@ To balance discoverability and organization:
   - *Note*: When nesting is used, users must use `npx skills add <path> --full-depth` to find all skills.
 - **Sync Requirement**: Whenever a skill's location changes, you **MUST** immediately update the corresponding link in `SKILLS_LIST.md`.
 
+### Taxonomy Alignment (目錄架構對齊)
+To prevent fragmentation (e.g., mixing `search/` and `fetch/` for similar tools), you **MUST** map external skills to our existing local domains/categories:
+- **Local Domains**: `basic/`, `develop/`, `obsidian/`, `video-design/`.
+- **Ignore Provider Names**: If an external repo uses `research/firecrawl`, but we use `basic/`, move it to `external/basic/firecrawl-search/`.
+- **Consistency over Originality**: Always prioritize our folder structure over the external repository's original layout.
+
 ## Core Commands
 - Bulk Setup: `./setup.sh <domain>` registers everything globally.
 - Bulk Export: `./export.sh <domain>` imports domain skills to a specific project.
