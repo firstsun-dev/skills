@@ -8,7 +8,7 @@ for TYPE in custom external; do
     find "$BASE_DIR/$TYPE" -name "SKILL.md" | while read -r skill_file; do
       skill_dir=$(dirname "$skill_file")
       echo "📦 Registering [$TYPE]: $(basename "$skill_dir")"
-      npx skills add "$skill_dir" -g -y < /dev/null
+      npx skills add "$skill_dir" -y < /dev/null
     done
   fi
 done
