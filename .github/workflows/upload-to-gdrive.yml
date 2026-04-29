@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up rclone
-        uses: rclone/setup-rclone@v1
+        run: sudo apt-get install -y rclone
 
       - name: Configure rclone with service account
         run: |
