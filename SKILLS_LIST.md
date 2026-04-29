@@ -6,7 +6,7 @@
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
 | **yao-skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南。 | [SKILL.md](./custom/basic/yao-skill-manager/SKILL.md) |
-| **skill-creator** | 創建有效技能的指南，包含工作流與工具整合。 | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
+| **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
 | **validate-skills** | 驗證技能是否符合 agentskills.io 規範與最佳實踐。 | [SKILL.md](./external/basic/validate-skills/SKILL.md) |
 | **find-skills** | 幫助使用者發現並安裝適合的 AI 技能。 | [SKILL.md](./external/basic/find-skills/SKILL.md) |
 | **documentation-writer** | Diátaxis 文檔專家，用於撰寫高品質技術文件。 | [SKILL.md](./external/basic/documentation-writer/SKILL.md) |
@@ -15,9 +15,10 @@
 
 ## 💻 開發開發 (Development)
 
-### 前端 (Frontend)
+### 前端與規約 (Frontend & Conventions)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
+| **astro-scss-best-practices** | Astro 專案中的 SCSS Modules 模組化開發與命名空間規範。 | [SKILL.md](./custom/develop/astro-scss-best-practices/SKILL.md) |
 | **frontend-design** | 創作具備高品質設計感的生產級前端介面。 | [SKILL.md](./external/develop/frontend-design/SKILL.md) |
 | **react** | 將 JSON 規格轉換為 React 組件的渲染器。 | [SKILL.md](./external/develop/react/SKILL.md) |
 | **react-best-practices** | 撰寫或閱讀 React 組件時的最佳實踐指南。 | [SKILL.md](./external/develop/react-best-practices/SKILL.md) |
@@ -43,6 +44,13 @@
 | **owasp-security** | 遵循 OWASP Top 10 的安全編碼實踐。 | [SKILL.md](./external/develop/owasp-security/SKILL.md) |
 | **secret-scanning** | 管理 GitHub 密鑰掃描、推送保護與修復。 | [SKILL.md](./external/develop/secret-scanning/SKILL.md) |
 
+## 💜 Obsidian 知識管理 (Obsidian Management)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **obsidian-bases** | 建立與編輯 Obsidian Bases 視圖、過濾器與資料庫公式。 | [SKILL.md](./custom/obsidian/obsidian-bases/SKILL.md) |
+| **obsidian-markdown** | 使用 Obsidian 專屬語法 (雙鏈、Callouts、Properties) 進行寫作。 | [SKILL.md](./custom/obsidian/obsidian-markdown/SKILL.md) |
+| **obsidian-development** | Obsidian 插件開發指南 (TDD, API 規範)。 | [SKILL.md](./custom/obsidian/obsidian-development/SKILL.md) |
+
 ## 🎬 影片設計 (Video Design)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
@@ -52,7 +60,6 @@
 ## 📝 特定專案規範 (Project Specific)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **obsidian-development** | Obsidian 插件開發指南 (TDD, API 規範)。 | [SKILL.md](./custom/develop/obsidian-development/SKILL.md) |
 | **dev-conventions** | firstsun-blog 專案的特定開發慣例與守護規則。 | [SKILL.md](./custom/develop/dev-conventions/SKILL.md) |
 
 ---
