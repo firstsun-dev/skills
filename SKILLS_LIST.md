@@ -19,30 +19,30 @@
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
 | **astro-scss-best-practices** | Astro 專案中的 SCSS Modules 模組化開發與命名空間規範。 | [SKILL.md](./custom/develop/astro-scss-best-practices/SKILL.md) |
-| **frontend-design** | 創作具備高品質設計感的生產級前端介面。 | [SKILL.md](./external/develop/frontend-design/SKILL.md) |
-| **react** | 將 JSON 規格轉換為 React 組件的渲染器。 | [SKILL.md](./external/develop/react/SKILL.md) |
-| **react-best-practices** | 撰寫或閱讀 React 組件時的最佳實踐指南。 | [SKILL.md](./external/develop/react-best-practices/SKILL.md) |
-| **vercel-react-best-practices** | Vercel 工程團隊提供的 React/Next.js 效能最佳化指南。 | [SKILL.md](./external/develop/vercel-react-best-practices/SKILL.md) |
-| **best-practices** | 現代網頁開發的安全性、相容性與程式碼品質標準。 | [SKILL.md](./external/develop/best-practices/SKILL.md) |
+| **frontend-design** | 創作具備高品質設計感的生產級前端介面。 | [SKILL.md](./external/develop/frontend/frontend-design/SKILL.md) |
+| **react** | 將 JSON 規格轉換為 React 組件的渲染器。 | [SKILL.md](./external/develop/frontend/react/SKILL.md) |
+| **react-best-practices** | 撰寫或閱讀 React 組件時的最佳實踐指南。 | [SKILL.md](./external/develop/frontend/react-best-practices/SKILL.md) |
+| **vercel-react-best-practices** | Vercel 工程團隊提供的 React/Next.js 效能最佳化指南。 | [SKILL.md](./external/develop/frontend/vercel-react-best-practices/SKILL.md) |
+| **best-practices** | 現代網頁開發的安全性、相容性與程式碼品質標準。 | [SKILL.md](./external/develop/frontend/best-practices/SKILL.md) |
 
 ### 運維與工具 (DevOps & Tools)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **devops-engineer** | Docker, CI/CD, Kubernetes, Terraform 等自動化配置。 | [SKILL.md](./external/develop/devops-engineer/SKILL.md) |
-| **gh-cli** | GitHub CLI (gh) 的完整操作參考手冊。 | [SKILL.md](./external/develop/gh-cli/SKILL.md) |
-| **using-git-worktrees** | 使用 Git Worktree 隔離不同功能的開發環境。 | [SKILL.md](./external/develop/using-git-worktrees/SKILL.md) |
+| **devops-engineer** | Docker, CI/CD, Kubernetes, Terraform 等自動化配置。 | [SKILL.md](./external/develop/devops/devops-engineer/SKILL.md) |
+| **gh-cli** | GitHub CLI (gh) 的完整操作參考手冊。 | [SKILL.md](./external/develop/devops/gh-cli/SKILL.md) |
+| **using-git-worktrees** | 使用 Git Worktree 隔離不同功能的開發環境。 | [SKILL.md](./external/develop/devops/using-git-worktrees/SKILL.md) |
 
 ### 國際化 (i18n)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **i18n** | 使用 react-i18next 進行多國語言翻譯與管理的指南。 | [SKILL.md](./external/develop/i18n/SKILL.md) |
+| **i18n** | 使用 react-i18next 進行多國語言翻譯與管理的指南。 | [SKILL.md](./external/develop/i18n/i18n/SKILL.md) |
 
 ### 🛡️ 安全 (Security)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **security-scan** | 掃描 AI Agent 配置中的安全性漏洞與風險。 | [SKILL.md](./external/develop/security-scan/SKILL.md) |
-| **owasp-security** | 遵循 OWASP Top 10 的安全編碼實踐。 | [SKILL.md](./external/develop/owasp-security/SKILL.md) |
-| **secret-scanning** | 管理 GitHub 密鑰掃描、推送保護與修復。 | [SKILL.md](./external/develop/secret-scanning/SKILL.md) |
+| **security-scan** | 掃描 AI Agent 配置中的安全性漏洞與風險。 | [SKILL.md](./external/develop/security/security-scan/SKILL.md) |
+| **owasp-security** | 遵循 OWASP Top 10 的安全編碼實踐。 | [SKILL.md](./external/develop/security/owasp-security/SKILL.md) |
+| **secret-scanning** | 管理 GitHub 密鑰掃描、推送保護與修復。 | [SKILL.md](./external/develop/security/secret-scanning/SKILL.md) |
 
 ## 💜 Obsidian 知識管理 (Obsidian Management)
 | 技能名稱 | 中文說明 | 檔案連結 |

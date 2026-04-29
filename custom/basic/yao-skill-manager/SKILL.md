@@ -9,10 +9,11 @@ description: "Guides AI agents on how to maintain the separated custom/ and exte
 - `custom/`: Your internal/original skills.
 - `external/`: Community skills downloaded for inspection and reference.
 
-### Flattened Convention
-To ensure `npx skills add <directory>` can detect all skills by default, **every skill folder MUST be a direct child** of its domain/category folder.
-- **DO NOT** create deeper sub-directories (e.g., `external/basic/search/firecrawl-search/` is forbidden).
-- **Correct**: `external/basic/firecrawl-search/`.
+### Flattened vs. Conditional Nesting (扁平化與條件式嵌套)
+To balance discoverability and organization:
+- **Default (Flattened)**: Every skill folder SHOULD be a direct child of its domain folder for default detection by `npx skills add <directory>`.
+- **Exception (Conditional Nesting)**: If a domain directory contains **more than 10 skills**, you MAY create one level of sub-directories (categories) to avoid clutter. 
+  - *Note*: When nesting is used, users must use `npx skills add <path> --full-depth` to find all skills.
 - **Sync Requirement**: Whenever a skill's location changes, you **MUST** immediately update the corresponding link in `SKILLS_LIST.md`.
 
 ## Core Commands
