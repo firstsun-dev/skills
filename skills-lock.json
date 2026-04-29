@@ -101,6 +101,11 @@
       "sourceType": "local",
       "computedHash": "6c53f050376c04a4abb5edce769a7052d93f605cc06299e657d9fce5b01edbab"
     },
+    "minerva-hcs": {
+      "source": "/home/tianyao/yao-agent-skills/custom/think/minerva",
+      "sourceType": "local",
+      "computedHash": "6dcfdb9353c4a8bafd10ad22163ab36b5dbf348d0de1c4750298d0f057a39636"
+    },
     "monorepo-management": {
       "source": "/home/tianyao/yao-agent-skills/custom/develop/monorepo-management",
       "sourceType": "local",
@@ -194,7 +199,7 @@
     "yao-skill-manager": {
       "source": "/home/tianyao/yao-agent-skills/custom/basic/yao-skill-manager",
       "sourceType": "local",
-      "computedHash": "1f486e7882956eb836a773c70f79030d7be7e0477dd18d404ba98d944dd1e95b"
+      "computedHash": "8fa802b480fce6c8b4abcd0a63dff3bf651346e745878f36b70f1304b4e04c36"
     }
   }
 }

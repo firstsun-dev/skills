@@ -1,0 +1,49 @@
+name: Upload Skills to Google Drive
+
+on:
+  push:
+    branches:
+      - main # 當有程式碼推送到 main 分支時觸發
+    paths:
+      - 'custom/**'
+      - 'external/**' # 只有當這兩個資料夾有變動時才觸發
+  workflow_dispatch:
+    inputs:
+      remote_root_folder:
+        description: '在 Google Drive 中的目標子資料夾名稱 (Remote Root Folder)'
+        required: true
+        default: 'yao-agent-skills'
+
+env:
+  # 預設的子資料夾名稱 (Push 觸發時使用)
+  DEFAULT_REMOTE_FOLDER: 'yao-agent-skills'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare Upload Directory
+        run: |
+          # 決定最終的資料夾名稱 (手動觸發優先，否則用預設值)
+          TARGET_FOLDER="${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}"
+          echo "Target folder: $TARGET_FOLDER"
+          
+          # 建立暫存目錄與目標子目錄
+          mkdir -p "upload_stage/$TARGET_FOLDER"
+          
+          # 將 custom 與 external 複製進去
+          cp -r custom "upload_stage/$TARGET_FOLDER/"
+          cp -r external "upload_stage/$TARGET_FOLDER/"
+
+      - name: Upload to Google Drive
+        uses: adityak74/google-drive-upload-git-action@main
+        with:
+          credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
+          # 上傳包含目標子資料夾的整個目錄
+          filename: "upload_stage/${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}/"
+          folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
+          overwrite: "true"
+          mirrorDirectoryStructure: "true"
