@@ -12,11 +12,11 @@ on:
       remote_root_folder:
         description: '在 Google Drive 中的目標子資料夾名稱 (Remote Root Folder)'
         required: true
-        default: 'yao-agent-skills'
+        default: 'yao-ai-skills'
 
 env:
   # 預設的子資料夾名稱 (Push 觸發時使用)
-  DEFAULT_REMOTE_FOLDER: 'yao-agent-skills'
+  DEFAULT_REMOTE_FOLDER: 'yao-ai-skills'
 
 jobs:
   upload:
@@ -31,19 +31,19 @@ jobs:
           TARGET_FOLDER="${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}"
           echo "Target folder: $TARGET_FOLDER"
           
-          # 建立暫存目錄與目標子目錄
-          mkdir -p "upload_stage/$TARGET_FOLDER"
+          # 建立目標子目錄結構 (直接在根目錄下建立 TARGET_FOLDER)
+          mkdir -p "$TARGET_FOLDER"
           
           # 將 custom 與 external 複製進去
-          cp -r custom "upload_stage/$TARGET_FOLDER/"
-          cp -r external "upload_stage/$TARGET_FOLDER/"
+          cp -r custom "$TARGET_FOLDER/"
+          cp -r external "$TARGET_FOLDER/"
 
       - name: Upload to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
           credentials: ${{ secrets.GDRIVE_CREDENTIALS }}
-          # 上傳包含目標子資料夾的整個目錄
-          filename: "upload_stage/${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}/"
+          # 上傳目標子資料夾
+          filename: "${{ github.event.inputs.remote_root_folder || env.DEFAULT_REMOTE_FOLDER }}/"
           folderId: ${{ secrets.GDRIVE_FOLDER_ID }}
           overwrite: "true"
           mirrorDirectoryStructure: "true"
