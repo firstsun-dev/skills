@@ -35,3 +35,8 @@ jobs:
         run: |
           rclone sync custom/   "gdrive:custom/"   --progress
           rclone sync external/ "gdrive:external/" --progress
+
+      - name: Verify sync
+        run: |
+          rclone check custom/   "gdrive:custom/"   --size-only
+          rclone check external/ "gdrive:external/" --size-only
