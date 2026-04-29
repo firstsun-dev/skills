@@ -22,6 +22,12 @@ To prevent fragmentation (e.g., mixing `search/` and `fetch/` for similar tools)
 - **Ignore Provider Names**: If an external repo uses `research/firecrawl`, but we use `basic/`, move it to `external/basic/firecrawl-search/`.
 - **Consistency over Originality**: Always prioritize our folder structure over the external repository's original layout.
 
+## Utility Skills
+Leverage these skills to maintain the repository:
+- `/find-skills`: Discover existing skills in the ecosystem to avoid duplication.
+- `/skills-validator`: Validate skills in `custom/` or `external/` against the agentskills.io spec.
+- `/skills-creator`: Follow guided workflows to create new skills with proper structure.
+
 ## Core Commands
 - Bulk Setup: `./setup.sh <domain>` registers everything globally.
 - Bulk Export: `./export.sh <domain>` imports domain skills to a specific project.

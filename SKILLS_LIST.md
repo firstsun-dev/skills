@@ -25,9 +25,19 @@
 | **vercel-react-best-practices** | Vercel 工程團隊提供的 React/Next.js 效能最佳化指南。 | [SKILL.md](./external/develop/frontend/vercel-react-best-practices/SKILL.md) |
 | **best-practices** | 現代網頁開發的安全性、相容性與程式碼品質標準。 | [SKILL.md](./external/develop/frontend/best-practices/SKILL.md) |
 
-### 運維與工具 (DevOps & Tools)
+### 後端與 Cloudflare (Backend & Cloudflare)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
+| **astro-cloudflare-backend** | Astro 與 Cloudflare D1/Drizzle 整合的後端開發與 API 規範。 | [SKILL.md](./custom/develop/astro-cloudflare-backend/SKILL.md) |
+| **workers-best-practices** | Cloudflare Workers 生產環境最佳實踐與程式碼審查。 | [SKILL.md](./custom/develop/workers-best-practices/SKILL.md) |
+| **drizzle-orm-best-practices** | Drizzle ORM 於 D1 上的欄位設計模式與遷移流程。 | [SKILL.md](./custom/develop/drizzle-orm-best-practices/SKILL.md) |
+
+### 運維、架構與工具 (DevOps, Architecture & Tools)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **monorepo-management** | 使用 Turborepo/Nx/pnpm 管理大規模 Monorepo 的架構指南。 | [SKILL.md](./custom/develop/monorepo-management/SKILL.md) |
+| **gitlab-ci-patterns** | 高效率 GitLab CI/CD 流水線配置與自動化部署模式。 | [SKILL.md](./custom/develop/gitlab-ci-patterns/SKILL.md) |
+| **playwright-best-practices** | Playwright E2E 測試架構、POM 模式與 CI 整合。 | [SKILL.md](./external/develop/devops/playwright-best-practices/SKILL.md) |
 | **devops-engineer** | Docker, CI/CD, Kubernetes, Terraform 等自動化配置。 | [SKILL.md](./external/develop/devops/devops-engineer/SKILL.md) |
 | **gh-cli** | GitHub CLI (gh) 的完整操作參考手冊。 | [SKILL.md](./external/develop/devops/gh-cli/SKILL.md) |
 | **using-git-worktrees** | 使用 Git Worktree 隔離不同功能的開發環境。 | [SKILL.md](./external/develop/devops/using-git-worktrees/SKILL.md) |
