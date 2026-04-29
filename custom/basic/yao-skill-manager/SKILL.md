@@ -28,6 +28,9 @@ Leverage these skills to maintain the repository:
 - `/skills-validator`: Validate skills in `custom/` or `external/` against the agentskills.io spec.
 - `/skills-creator`: Follow guided workflows to create new skills with proper structure.
 
+### Refactoring & Efficiency
+- **Progressive Disclosure**: Use the `/reference` pattern to keep skills efficient. Read [references/REFACTORING.md](references/REFACTORING.md) for the refactoring SOP.
+
 ## Core Commands
 - Bulk Setup: `./setup.sh <domain>` registers everything globally.
 - Bulk Export: `./export.sh <domain>` imports domain skills to a specific project.
