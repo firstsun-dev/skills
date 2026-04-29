@@ -72,6 +72,13 @@
 | **remotion** | 使用 React (Remotion) 生成具備平滑過渡效果的影片。 | [SKILL.md](./external/video-design/remotion/SKILL.md) |
 | **remotion-best-practices** | Remotion 影片創作的最佳實踐建議。 | [SKILL.md](./external/video-design/remotion-best-practices/SKILL.md) |
 
+## 💼 職涯與求職 (Career & Job Seeking)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **tailored-resume-generator** | 根據職位描述自動生成客製化履歷。 | [SKILL.md](./external/career/resume/tailored-resume-generator/SKILL.md) |
+| **discovery-interview** | 透過探索式訪談練習，提升挖掘需求與提問能力。 | [SKILL.md](./external/career/interview/discovery-interview/SKILL.md) |
+| **interview-prep** | 專業的面試準備工具，提供常見問題與應對策略。 | [SKILL.md](./external/career/interview/interview-prep/SKILL.md) |
+
 ## 📝 特定專案規範 (Project Specific)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
