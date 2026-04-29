@@ -57,8 +57,7 @@
 ## ✍️ 內容創作 (Writing)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **chinese-blog-expert** | 中文部落格潤稿、語氣優化與 2026 GEO 標準補強。 | [SKILL.md](./custom/writing/chinese-blog-expert/SKILL.md) |
-| **blog-translator** | 部落格文章多國語言翻譯 (中翻英) 與路徑鏡像管理。 | [SKILL.md](./custom/writing/blog-translator/SKILL.md) |
+| **blog-master** | 全方位部落格管理：包含中文潤稿優化 (GEO 標準) 與自動化中翻英翻譯。 | [SKILL.md](./custom/writing/blog-master/SKILL.md) |
 
 ## 💜 Obsidian 知識管理 (Obsidian Management)
 | 技能名稱 | 中文說明 | 檔案連結 |
