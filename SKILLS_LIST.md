@@ -30,7 +30,7 @@
 | :--- | :--- | :--- |
 | **astro-cloudflare-backend** | Astro 與 Cloudflare D1/Drizzle 整合的後端開發與 API 規範。 | [SKILL.md](./custom/develop/astro-cloudflare-backend/SKILL.md) |
 | **workers-best-practices** | Cloudflare Workers 生產環境最佳實踐與程式碼審查。 | [SKILL.md](./custom/develop/workers-best-practices/SKILL.md) |
-| **drizzle-orm-best-practices** | Drizzle ORM 於 D1 上的欄位設計模式與遷移流程。 | [SKILL.md](./custom/develop/drizzle-orm-best-practices/SKILL.md) |
+| **d1-drizzle-schema** | Drizzle ORM 於 D1 上的欄位設計模式與遷移流程。 | [SKILL.md](./custom/develop/d1-drizzle-schema/SKILL.md) |
 
 ### 運維、架構與工具 (DevOps, Architecture & Tools)
 | 技能名稱 | 中文說明 | 檔案連結 |
