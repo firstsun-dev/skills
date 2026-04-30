@@ -6,14 +6,36 @@
 #   days_back   Number of days to look back (default: 3)
 #   --native    Use native grep/jq instead of Repo Prompt
 
-DAYS_BACK=${1:-3}
+show_help() {
+  echo "Usage: ./gather-sessions.sh [days_back] [--native]"
+  echo ""
+  echo "Collect recent session data for memory consolidation."
+  echo ""
+  echo "Options:"
+  echo "  -h, --help     Show this help message"
+  echo "  days_back      Number of days to look back (default: 3)"
+  echo "  --native       Use native grep/jq instead of Repo Prompt"
+}
+
+DAYS_BACK=3
 USE_NATIVE=false
 
-# Check for --native flag
-for arg in "$@"; do
-    if [ "$arg" == "--native" ]; then
-        USE_NATIVE=true
-    fi
+# Parse arguments
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    -h|--help) show_help; exit 0 ;;
+    --native) USE_NATIVE=true ;;
+    *)
+      if [[ "$1" =~ ^[0-9]+$ ]]; then
+        DAYS_BACK=$1
+      else
+        echo "Unknown option: $1"
+        show_help
+        exit 1
+      fi
+      ;;
+  esac
+  shift
 done
 
 # OpenClaw session logs location (adjust if different)

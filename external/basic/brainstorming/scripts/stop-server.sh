@@ -6,10 +6,35 @@
 # under /tmp (ephemeral). Persistent directories (.superpowers/) are
 # kept so mockups can be reviewed later.
 
-SESSION_DIR="$1"
+SESSION_DIR=""
+
+show_help() {
+  echo "Usage: ./stop-server.sh <session_dir>"
+  echo "Usage: ./stop-server.sh -h | --help"
+  echo ""
+  echo "Stop the brainstorm server and clean up."
+  echo ""
+  echo "Arguments:"
+  echo "  session_dir    The directory created by start-server.sh"
+}
+
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    -h|--help) show_help; exit 0 ;;
+    *)
+      if [ -z "$SESSION_DIR" ]; then
+        SESSION_DIR=$1
+      else
+        echo '{"error": "Unknown argument"}'
+        exit 1
+      fi
+      ;;
+  esac
+  shift
+done
 
 if [[ -z "$SESSION_DIR" ]]; then
-  echo '{"error": "Usage: stop-server.sh <session_dir>"}'
+  show_help
   exit 1
 fi
 

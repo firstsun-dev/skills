@@ -34,9 +34,9 @@ jobs:
 
       - name: Sync custom/, external/, and gem/ to Google Drive
         run: |
-          rclone sync custom/   "gdrive:custom/"   --progress
-          rclone sync external/ "gdrive:external/" --progress
-          rclone sync gem/      "gdrive:gem/"      --progress
+          rclone sync custom/   "gdrive:custom/"   --progress --delete-after --delete-excluded
+          rclone sync external/ "gdrive:external/" --progress --delete-after --delete-excluded
+          rclone sync gem/      "gdrive:gem/"      --progress --delete-after --delete-excluded
 
       - name: Verify sync
         run: |

@@ -5,9 +5,22 @@
 
 set -e
 
-if [ $# -ne 2 ]; then
+show_help() {
   echo "Usage: $0 <download_url> <output_path>"
+  echo "Usage: $0 -h | --help"
+  echo ""
+  echo "Download Stitch screen asset with proper handling of Google Cloud Storage URLs."
+  echo ""
   echo "Example: $0 'https://storage.googleapis.com/stitch/screenshot.png' 'assets/screen.png'"
+}
+
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+  show_help
+  exit 0
+fi
+
+if [ $# -ne 2 ]; then
+  show_help
   exit 1
 fi
 

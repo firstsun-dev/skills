@@ -21,12 +21,29 @@ show_help() {
   echo "  ./export.sh all"
 }
 
-if [ -z "$1" ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+DOMAIN=""
+
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    -h|--help) show_help; exit 0 ;;
+    *)
+      if [ -z "$DOMAIN" ]; then
+        DOMAIN=$1
+      else
+        echo "Unknown option: $1"
+        show_help
+        exit 1
+      fi
+      ;;
+  esac
+  shift
+done
+
+if [ -z "$DOMAIN" ]; then
   show_help
   exit 0
 fi
 
-DOMAIN=$1
 SEARCH_PATH="$TARGET_ROOT/$DOMAIN"
 
 if [ "$DOMAIN" == "all" ]; then

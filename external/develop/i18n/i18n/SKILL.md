@@ -1,77 +1,115 @@
 ---
-name: i18n
-description: Internationalization guide using react-i18next. Use when adding translations, creating i18n keys, or working with localized text in React components (.tsx files). Triggers on translation tasks, locale management, or i18n implementation.
+name: internationalization-i18n
+description: >
+  Implement internationalization (i18n) and localization including message
+  extraction, translation catalogs, pluralization rules, date/time/number
+  formatting, RTL language support, and i18n libraries like i18next and gettext.
+  Use for multi-language, translation, or localization needs.
 ---
 
-# LobeHub Internationalization Guide
+# Internationalization (i18n) & Localization
 
-- Default language: English (en-US)
-- Framework: react-i18next
-- **Only edit files in `src/locales/default/`** - Never edit JSON files in `locales/`
-- Run `pnpm i18n` to generate translations (or manually translate zh-CN/en-US for dev preview)
+## Table of Contents
 
-## Key Naming Convention
+- [Overview](#overview)
+- [When to Use](#when-to-use)
+- [Quick Start](#quick-start)
+- [Reference Guides](#reference-guides)
+- [Best Practices](#best-practices)
 
-**Flat keys with dot notation** (not nested objects):
+## Overview
 
-```typescript
-// ✅ Correct
-export default {
-  'alert.cloud.action': '立即体验',
-  'sync.actions.sync': '立即同步',
-  'sync.status.ready': '已连接',
-};
+Comprehensive guide to implementing internationalization and localization in applications. Covers message translation, pluralization, date/time/number formatting, RTL languages, and integration with popular i18n libraries.
 
-// ❌ Avoid nested objects
-export default {
-  alert: { cloud: { action: '...' } },
-};
-```
+## When to Use
 
-**Patterns:** `{feature}.{context}.{action|status}`
+- Building multi-language applications
+- Supporting international users
+- Implementing language switching
+- Formatting dates, times, and numbers for different locales
+- Supporting RTL (right-to-left) languages
+- Extracting and managing translation strings
+- Implementing pluralization rules
+- Setting up translation workflows
 
-**Parameters:** Use `{{variableName}}` syntax
+## Quick Start
 
-```typescript
-'alert.cloud.desc': '我们提供 {{credit}} 额度积分',
-```
-
-**Avoid key conflicts:**
+Minimal working example:
 
 ```typescript
-// ❌ Conflict
-'clientDB.solve': '自助解决',
-'clientDB.solve.backup.title': '数据备份',
+// i18n.ts
+import i18next from "i18next";
+import Backend from "i18next-http-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-// ✅ Solution
-'clientDB.solve.action': '自助解决',
-'clientDB.solve.backup.title': '数据备份',
+await i18next
+  .use(Backend)
+  .use(LanguageDetector)
+  .init({
+    fallbackLng: "en",
+    debug: process.env.NODE_ENV === "development",
+
+    interpolation: {
+      escapeValue: false, // React already escapes
+    },
+
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
+    },
+
+    detection: {
+      order: ["querystring", "cookie", "localStorage", "navigator"],
+      caches: ["localStorage", "cookie"],
+    },
+  });
+// ... (see reference guides for full implementation)
 ```
 
-## Workflow
+## Reference Guides
 
-1. Add keys to `src/locales/default/{namespace}.ts`
-2. Export new namespace in `src/locales/default/index.ts`
-3. For dev preview: manually translate `locales/zh-CN/{namespace}.json` and `locales/en-US/{namespace}.json`
-4. Remind the user to run `pnpm i18n` before creating PR — do NOT run it yourself (very slow)
+Detailed implementations in the `references/` directory:
 
-## Usage
+| Guide | Contents |
+|---|---|
+| [i18next (JavaScript/TypeScript)](references/i18next-javascripttypescript.md) | i18next (JavaScript/TypeScript) |
+| [React-Intl (Format.js)](references/react-intl-formatjs.md) | React-Intl (Format.js) |
+| [Python i18n (gettext)](references/python-i18n-gettext.md) | Python i18n (gettext) |
+| [Date and Time Formatting](references/date-and-time-formatting.md) | Date and Time Formatting |
+| [Number and Currency Formatting](references/number-and-currency-formatting.md) | Number and Currency Formatting |
+| [Pluralization Rules](references/pluralization-rules.md) | Pluralization Rules |
+| [RTL (Right-to-Left) Language Support](references/rtl-right-to-left-language-support.md) | RTL (Right-to-Left) Language Support |
+| [Translation Management](references/translation-management.md) | Translation Management |
+| [Locale Detection](references/locale-detection.md) | Locale Detection |
+| [Server-Side i18n](references/server-side-i18n.md) | Server-Side i18n |
 
-```tsx
-import { useTranslation } from 'react-i18next';
+## Best Practices
 
-const { t } = useTranslation('common');
+### ✅ DO
 
-t('newFeature.title');
-t('alert.cloud.desc', { credit: '1000' });
+- Extract all user-facing strings to translation files
+- Use ICU message format for complex messages
+- Support pluralization correctly for each language
+- Use locale-aware date/time/number formatting
+- Implement RTL support for Arabic, Hebrew, etc.
+- Provide fallback language (usually English)
+- Use namespaces to organize translations
+- Test with pseudo-localization (ääçćëńţś)
+- Store locale preference (cookie, localStorage)
+- Use professional translators for production
+- Implement translation management workflow
+- Support dynamic locale switching
+- Use translation memory tools
 
-// Multiple namespaces
-const { t } = useTranslation(['common', 'chat']);
-t('common:save');
-```
+### ❌ DON'T
 
-## Common Namespaces
-
-**Most used:** `common` (shared UI), `chat` (chat features), `setting` (settings)
-
-Others: auth, changelog, components, discover, editor, electron, error, file, hotkey, knowledgeBase, memory, models, plugin, portal, providers, tool, topic
+- Hardcode user-facing strings in code
+- Concatenate translated strings
+- Assume English grammar rules apply to all languages
+- Use generic plural forms (one/many) for all languages
+- Forget about text expansion (German is ~30% longer)
+- Store dates/times in locale-specific formats
+- Use flags to represent languages (flag ≠ language)
+- Translate technical terms without context
+- Mix translation keys with UI strings
+- Forget to translate alt text, titles, placeholders
+- Assume left-to-right layout

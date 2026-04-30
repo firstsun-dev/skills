@@ -16,6 +16,22 @@
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+show_help() {
+  echo "Usage: ./start-server.sh [OPTIONS]"
+  echo ""
+  echo "Start the brainstorm server and output connection info."
+  echo ""
+  echo "Options:"
+  echo "  -h, --help            Show this help message"
+  echo "  --project-dir <path>  Store session files under <path>/.superpowers/brainstorm/"
+  echo "                        instead of /tmp. Files persist after server stops."
+  echo "  --host <bind-host>    Host/interface to bind (default: 127.0.0.1)."
+  echo "                        Use 0.0.0.0 in remote/containerized environments."
+  echo "  --url-host <host>     Hostname shown in returned URL JSON."
+  echo "  --foreground          Run server in the current terminal (no backgrounding)."
+  echo "  --background          Force background mode (overrides Codex auto-foreground)."
+}
+
 # Parse arguments
 PROJECT_DIR=""
 FOREGROUND="false"
@@ -24,6 +40,10 @@ BIND_HOST="127.0.0.1"
 URL_HOST=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
+    -h|--help)
+      show_help
+      exit 0
+      ;;
     --project-dir)
       PROJECT_DIR="$2"
       shift 2
