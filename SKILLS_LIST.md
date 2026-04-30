@@ -12,6 +12,7 @@
 | **documentation-writer** | Diátaxis 文檔專家，用於撰寫高品質技術文件。 | [SKILL.md](./external/basic/documentation-writer/SKILL.md) |
 | **brainstorming** | 在執行創意工作前的需求探索與設計思考工具。 | [SKILL.md](./external/basic/brainstorming/SKILL.md) |
 | **firecrawl-search** | 具備完整網頁內容提取功能的網路搜尋工具。 | [SKILL.md](./external/basic/firecrawl-search/SKILL.md) |
+| **book-distiller** | 萬用書籍萃取系統：將 PDF、EPUB、TXT 轉化為 AI 技能或 Gem 指令。 | [SKILL.md](./custom/basic/book-distiller/SKILL.md) |
 
 ## 💎 Gem 指令集 (Gem Instructions)
 這些是將多個相關技能整合後的 Google Gemini Gem 專用指令集，可直接複製到 Gemini 的「操作說明」中使用。

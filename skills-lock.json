@@ -2,192 +2,197 @@
   "version": 1,
   "skills": {
     "FirstPrinciples": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/think/first-principles/firstprinciples",
       "sourceType": "local",
       "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550"
     },
     "Habit Tracker": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/habit-tracker",
       "sourceType": "local",
       "computedHash": "2bb241089c34af1af553c2a30e93d737236ff5408783cfc8c6f9702e77c4829a"
     },
     "astro-cloudflare-backend": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/develop/astro-cloudflare-backend",
       "sourceType": "local",
       "computedHash": "bf22fa61a4d166ee15cbf15611db9d74fb039495eaaaa9ddf2a460f161b91f69"
     },
     "astro-scss-best-practices": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/develop/astro-scss-best-practices",
       "sourceType": "local",
       "computedHash": "5ceb81ae3f7ea31e84a8703499ed05db3e358cb4fba1593285ef7a1e083e6b0a"
     },
     "best-practices": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/frontend/best-practices",
       "sourceType": "local",
       "computedHash": "98dafea60ec1a7f5f70f6febcdd4b4fa3fe15723ad9c0b991c0818615bff7ba6"
     },
     "blog-master": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/writing/blog-master",
       "sourceType": "local",
       "computedHash": "50c7c26c6e995a1bc0a6300c7d06af72fb91b02bd93b3780dbfc5233cff6ae05"
     },
+    "book-distiller": {
+      "source": "/home/tianyao/yao-agent-skills/custom/basic/book-distiller",
+      "sourceType": "local",
+      "computedHash": "1c2123b42b812549635ba6ef6eec16a71c0276673be806582f077154d46563d9"
+    },
     "brainstorming": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/brainstorming",
       "sourceType": "local",
       "computedHash": "8df9b47092524833138b58682d03f2e153a242e550d1693657afdbee0cc9cdb0"
     },
     "critical-thinking-logical-reasoning": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/think/logic/critical-thinking-logical-reasoning",
       "sourceType": "local",
       "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04"
     },
     "d1-drizzle-schema": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/develop/drizzle-orm-best-practices",
       "sourceType": "local",
       "computedHash": "3b46543567dbd071f9f9b87ba2eceefe6b906b38f58a1ab67e91bc5810f3b4b5"
     },
     "dev-conventions": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/develop/dev-conventions",
       "sourceType": "local",
       "computedHash": "7d547dc0e8d1c4d755d06d88782b79eaa5f0a908f4adeade894c4807416795a6"
     },
     "devops-engineer": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/devops/devops-engineer",
       "sourceType": "local",
       "computedHash": "cb6724ac8bcb42206c3890bf6ba7b67846e33afe98b40ae93d6bd81cee8b8490"
     },
     "discovery-interview": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/career/interview/discovery-interview",
       "sourceType": "local",
       "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656"
     },
     "documentation-writer": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/documentation-writer",
       "sourceType": "local",
       "computedHash": "ee53d65b163cd7eb953a930c95841cfe398cc2c0bd24c06508bbaa07c432be35"
     },
     "find-skills": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/find-skills",
       "sourceType": "local",
       "computedHash": "d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461"
     },
     "firecrawl-search": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/firecrawl-search",
       "sourceType": "local",
       "computedHash": "563370b34bff9189f3180d1e4547a6758d26492760821ed85c5e67504fd8c5ca"
     },
     "fitness-coach": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/health/fitness-coach",
       "sourceType": "local",
       "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c"
     },
     "frontend-design": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/frontend/frontend-design",
       "sourceType": "local",
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
     },
     "gh-cli": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/devops/gh-cli",
       "sourceType": "local",
       "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56"
     },
     "gitlab-ci-patterns": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/develop/gitlab-ci-patterns",
       "sourceType": "local",
       "computedHash": "2b60d1804387dcdc1ed9eae9d9b52b63cd020b3afb1087675ad23a895c016cb1"
     },
     "i18n": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/i18n/i18n",
       "sourceType": "local",
       "computedHash": "a4352fd7c9d2b13076d0e4be724009f1b703bc12f4d8518eaca038ae13af7500"
     },
     "interview-prep": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/career/interview/interview-prep",
       "sourceType": "local",
       "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a"
     },
     "learning-coach": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/think/learning/learning-coach",
       "sourceType": "local",
       "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410"
     },
     "mental-health-psychoeducation": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/health/mental-health-psychoeducation",
       "sourceType": "local",
       "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26"
     },
     "minerva-hcs": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/think/minerva",
       "sourceType": "local",
       "computedHash": "6dcfdb9353c4a8bafd10ad22163ab36b5dbf348d0de1c4750298d0f057a39636"
     },
     "monorepo-management": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/develop/monorepo-management",
       "sourceType": "local",
       "computedHash": "de38a7c123e2e5072a48206ecc5f7decb3cdb997f3ca5d3192cba171ce0fd646"
     },
     "nutritional-specialist": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/health/nutritional-specialist",
       "sourceType": "local",
       "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb"
     },
     "obsidian-bases": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/obsidian/obsidian-bases",
       "sourceType": "local",
       "computedHash": "ed0a53502693e56c67575a9958daca9a3a1ac7ba483367f400b4cad9488bfb3c"
     },
     "obsidian-development": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/obsidian/obsidian-development",
       "sourceType": "local",
       "computedHash": "ffb67672b46a7ab297043f8bf7b53463c159532283a712c30c74e788a6261edc"
     },
     "obsidian-markdown": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/obsidian/obsidian-markdown",
       "sourceType": "local",
       "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f"
     },
     "owasp-security": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/security/owasp-security",
       "sourceType": "local",
       "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2"
     },
     "personal-productivity": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/personal-productivity",
       "sourceType": "local",
       "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4"
     },
     "playwright-best-practices": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/devops/playwright-best-practices",
       "sourceType": "local",
       "computedHash": "f1e96f09259e1174b0f2a48d2d81d4e9ce5214d6323fa7a5052b7b5d1619a1ab"
     },
     "react": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/frontend/react",
       "sourceType": "local",
       "computedHash": "22dde85d5a69aaee45eb56aeed8e7f8fb5d2ae2559b38f71621d0654385bed1d"
     },
     "react-best-practices": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/frontend/react-best-practices",
       "sourceType": "local",
       "computedHash": "c73df933f4adb8d679a85b9814b85c56233e06a617c30c07001e47ee6522e8f2"
     },
     "rem-sleep": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/health/rem-sleep",
       "sourceType": "local",
       "computedHash": "c48104572deb339a1d90cedf38d37848095d4e55edce519a2a54d0745656a759"
     },
     "remotion": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/video-design/remotion",
       "sourceType": "local",
       "computedHash": "73a794b428f2bb568859f0db83b66219c842a0a088db9818a45ac72c37b6aa66"
     },
     "remotion-best-practices": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/video-design/remotion-best-practices",
       "sourceType": "local",
       "computedHash": "df654933e451556147e384078c3fbdbac997cb0fe4d2f2db7642000c239304c5"
     },
     "rp-diet": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/health/rp-diet",
       "sourceType": "local",
       "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17"
     },
@@ -198,54 +203,54 @@
       "computedHash": "0a6c34c8eb20234083609ff02fbc91c81f4c2d3452a2f0ec9adcfd4978771b92"
     },
     "secret-scanning": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/security/secret-scanning",
       "sourceType": "local",
       "computedHash": "cc7de79bee80775578227a370637d0a83aa0f2cbec28374058899859261d2081"
     },
     "security-scan": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/security/security-scan",
       "sourceType": "local",
       "computedHash": "92cdcaddc554e318402f066ccc073c2e3dbcfda8c2730ec62ec373f805c41a57"
     },
     "skill-creator": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/skill-creator",
       "sourceType": "local",
       "computedHash": "bd1daac6853cdaf5786a6d64ef989d56e63b6ec6c689f95e1c15b070a465745d"
     },
     "tailored-resume-generator": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/career/resume/tailored-resume-generator",
       "sourceType": "local",
       "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92"
     },
     "using-git-worktrees": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/devops/using-git-worktrees",
       "sourceType": "local",
       "computedHash": "52bbb4b6e80918e83e92a1514f3b3757712154c2a8a42de24919e48a794c54fc"
     },
     "validate-skills": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/basic/validate-skills",
       "sourceType": "local",
       "computedHash": "aff52c5f1470ceedfa83c6bd7936b5bf70d347d72724585e3a2911d6d009caf4"
     },
     "vercel-react-best-practices": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/develop/frontend/vercel-react-best-practices",
       "sourceType": "local",
       "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357"
     },
     "workers-best-practices": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/develop/workers-best-practices",
       "sourceType": "local",
       "computedHash": "78811cb9de51727a10197e7e85c43503298965b92496347799e11bde499bcbde"
     },
     "workout-program-designer": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/external",
+      "source": "/home/tianyao/yao-agent-skills/external/health/workout-program-designer",
       "sourceType": "local",
       "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
     },
     "yao-skill-manager": {
-      "source": "/Users/claudia.fang/Code/yao-agent-skills/custom",
+      "source": "/home/tianyao/yao-agent-skills/custom/basic/yao-skill-manager",
       "sourceType": "local",
-      "computedHash": "8fa802b480fce6c8b4abcd0a63dff3bf651346e745878f36b70f1304b4e04c36"
+      "computedHash": "064e755fe3eb841fe1b9857ceb7ff216e53cee1c52432376c58d163728060789"
     }
   }
 }
