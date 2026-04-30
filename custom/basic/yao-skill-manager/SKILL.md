@@ -36,6 +36,21 @@ Leverage these skills to maintain the repository:
 - Bulk Export: `./export.sh <domain>` imports domain skills to a specific project.
 - Manual Add: `npx skills add <path_to_directory> -l` to list all detectable skills.
 
+## Gem Export Workflow (Gem 導出流程)
+Use this workflow to consolidate multiple skills into a single "Gem" instruction set for Google Gemini.
+
+1. **Identify Categories**: Group related skills (e.g., Lifestyle, Development, Writing).
+2. **Extract Essence**: For each skill, extract:
+   - Core Role/Persona.
+   - Mandates/Principles (Mandates prioritized).
+   - Primary Workflows (Step-by-step).
+3. **Synthesize**: Combine into a structured prompt:
+   - `# Role`: A unified persona (e.g., "The Lifestyle Architect").
+   - `# Principles`: Consolidated foundational concepts (e.g., Minerva HCs + Learning Principles).
+   - `# Capabilities`: Categorized toolsets (Health, Learning, etc.).
+   - `# Interaction Style`: Guidelines for tone and output.
+4. **Export**: Write the result to `gem/<category-name>.txt`.
+
 ## SOP for External Skills
 1. Run `npx skills add <repo_path>` in root (without -g).
 2. Move from `.agents/skills/` to `external/<domain>/` (Ensure it is a direct child).
