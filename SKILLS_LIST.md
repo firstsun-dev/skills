@@ -102,6 +102,7 @@
 ## 🏥 健康管理 (Health Management)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
+| **healthkit** | Apple HealthKit API 參考：查詢健康數據、鍛鍊紀錄與讀寫權限。 | [SKILL.md](./external/health/healthkit/SKILL.md) |
 | **nutritional-specialist** | 專業營養專家，提供飲食建議與飲食計畫。 | [SKILL.md](./external/health/nutritional-specialist/SKILL.md) |
 | **rp-diet** | 基於科學的飲食與運動管理工具。 | [SKILL.md](./external/health/rp-diet/SKILL.md) |
 | **fitness-coach** | 個人健身教練，提供運動指導與計畫。 | [SKILL.md](./external/health/fitness-coach/SKILL.md) |
