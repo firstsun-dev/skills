@@ -7,6 +7,7 @@ on:
     paths:
       - 'custom/**'
       - 'external/**'
+      - 'gem/**'
   workflow_dispatch:
 
 jobs:
@@ -31,12 +32,14 @@ jobs:
           root_folder_id = ${{ secrets.GDRIVE_FOLDER_ID }}
           EOF
 
-      - name: Sync custom/ and external/ to Google Drive
+      - name: Sync custom/, external/, and gem/ to Google Drive
         run: |
           rclone sync custom/   "gdrive:custom/"   --progress
           rclone sync external/ "gdrive:external/" --progress
+          rclone sync gem/      "gdrive:gem/"      --progress
 
       - name: Verify sync
         run: |
           rclone check custom/   "gdrive:custom/"   --size-only
           rclone check external/ "gdrive:external/" --size-only
+          rclone check gem/      "gdrive:gem/"      --size-only
