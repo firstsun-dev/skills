@@ -84,8 +84,8 @@
 | :--- | :--- | :--- |
 | **critical-thinking-logical-reasoning** | 深度批判性思考與邏輯推理，適用於分析複雜文章與報告。 | [SKILL.md](./external/think/logic/critical-thinking-logical-reasoning/SKILL.md) |
 | **firstprinciples** | 第一性原理分析：拆解至公理、挑戰假設、重建真相。 | [SKILL.md](./external/think/first-principles/firstprinciples/SKILL.md) |
-| **m14-mental-model** | 完整的思維模型格柵，幫助建立正確的系統認知（內含 Rust 學習心智圖）。 | [SKILL.md](./external/think/models/m14-mental-model/SKILL.md) |
 | **minerva-hcs** | 密涅瓦大學核心思維模型 (HCs)，用於跨領域的深度問題拆解與推導。 | [SKILL.md](./custom/think/minerva/SKILL.md) |
+| **running-decision-processes** | 運行高品質決策流程，產出包含選項矩陣、權責劃分與決策日誌的完整決策包。 | [SKILL.md](./external/think/decision-management/SKILL.md) |
 | **learning-coach** | 基於腦科學的學習教練，提供主動回想、間隔重複等高效學習法。 | [SKILL.md](./external/think/learning/learning-coach/SKILL.md) |
 
 ## 🏥 健康管理 (Health Management)
