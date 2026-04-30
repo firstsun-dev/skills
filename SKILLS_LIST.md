@@ -5,13 +5,23 @@
 ## 🛠️ 基礎工具 (Basic Tools)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **yao-skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南。 | [SKILL.md](./custom/basic/yao-skill-manager/SKILL.md) |
+| **yao-skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/yao-skill-manager/SKILL.md) |
 | **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
 | **validate-skills** | 驗證技能是否符合 agentskills.io 規範與最佳實踐。 | [SKILL.md](./external/basic/validate-skills/SKILL.md) |
 | **find-skills** | 幫助使用者發現並安裝適合的 AI 技能。 | [SKILL.md](./external/basic/find-skills/SKILL.md) |
 | **documentation-writer** | Diátaxis 文檔專家，用於撰寫高品質技術文件。 | [SKILL.md](./external/basic/documentation-writer/SKILL.md) |
 | **brainstorming** | 在執行創意工作前的需求探索與設計思考工具。 | [SKILL.md](./external/basic/brainstorming/SKILL.md) |
 | **firecrawl-search** | 具備完整網頁內容提取功能的網路搜尋工具。 | [SKILL.md](./external/basic/firecrawl-search/SKILL.md) |
+
+## 💎 Gem 指令集 (Gem Instructions)
+這些是將多個相關技能整合後的 Google Gemini Gem 專用指令集，可直接複製到 Gemini 的「操作說明」中使用。
+
+| 名稱 | 說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **lifestyle** | 綜合生活架構師：整合健康、學習與思考的萬用 Gem。 | [lifestyle.txt](./gem/lifestyle.txt) |
+| **health** | 健康戰略家：專注於生物優化、營養與體能管理。 | [health.txt](./gem/health.txt) |
+| **learning** | 學習教練：專注於加速學習、記憶與技能習得。 | [learning.txt](./gem/learning.txt) |
+| **thinking** | 思維戰略家：專注於第一性原理、邏輯批判與結構化思考。 | [thinking.txt](./gem/thinking.txt) |
 
 ## 💻 開發開發 (Development)
 
@@ -110,4 +120,4 @@
 | **dev-conventions** | firstsun-blog 專案的特定開發慣例與守護規則。 | [SKILL.md](./custom/develop/dev-conventions/SKILL.md) |
 
 ---
-*最後更新日期: 2026-04-29*
+*最後更新日期: 2026-04-30*
