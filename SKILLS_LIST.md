@@ -51,6 +51,7 @@
 | **playwright-best-practices** | Playwright E2E 測試架構、POM 模式與 CI 整合。 | [SKILL.md](./external/develop/devops/playwright-best-practices/SKILL.md) |
 | **devops-engineer** | Docker, CI/CD, Kubernetes, Terraform 等自動化配置。 | [SKILL.md](./external/develop/devops/devops-engineer/SKILL.md) |
 | **gh-cli** | GitHub CLI (gh) 的完整操作參考手冊。 | [SKILL.md](./external/develop/devops/gh-cli/SKILL.md) |
+| **github-actions** | GitHub Actions 雲端編譯模式，支援 iOS 與 Android 模擬器 Artifacts 下載。 | [SKILL.md](./external/develop/devops/github-actions/SKILL.md) |
 | **using-git-worktrees** | 使用 Git Worktree 隔離不同功能的開發環境。 | [SKILL.md](./external/develop/devops/using-git-worktrees/SKILL.md) |
 
 ### 國際化 (i18n)
