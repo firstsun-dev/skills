@@ -99,13 +99,13 @@
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
     },
     "gh-cli": {
-      "source": "/Users/tianyao/Codes/yao-agent-skills/external/develop/devops/gh-cli",
-      "sourceType": "local",
+      "source": "github/awesome-copilot@gh-cli",
+      "sourceType": "github",
       "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56"
     },
     "github-actions": {
-      "source": "/Users/tianyao/Codes/yao-agent-skills/external/develop/devops/github-actions",
-      "sourceType": "local",
+      "source": "callstackincubator/agent-skills@github-actions",
+      "sourceType": "github",
       "computedHash": "3632dc997b2d8810bdc753173e269dfc0fd40b6fe6be0dd27b8f2abc58e47ada"
     },
     "gitlab-ci-patterns": {
