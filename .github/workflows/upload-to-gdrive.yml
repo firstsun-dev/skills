@@ -18,19 +18,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up rclone
-        run: sudo apt-get install -y rclone
-
-      - name: Configure rclone with OAuth
-        run: |
-          mkdir -p ~/.config/rclone
-          cat > ~/.config/rclone/rclone.conf << EOF
-          [gdrive]
-          type = drive
-          client_id = ${{ secrets.GDRIVE_CLIENT_ID }}
-          client_secret = ${{ secrets.GDRIVE_CLIENT_SECRET }}
-          token = ${{ secrets.GDRIVE_TOKEN }}
-          root_folder_id = ${{ secrets.GDRIVE_FOLDER_ID }}
-          EOF
+        uses: firstsun-dev/.github/actions/setup-rclone@main
+        with:
+          gdrive_client_id: ${{ secrets.GDRIVE_CLIENT_ID }}
+          gdrive_client_secret: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          gdrive_token: ${{ secrets.GDRIVE_TOKEN }}
+          gdrive_folder_id: ${{ secrets.GDRIVE_FOLDER_ID }}
 
       - name: Sync custom/, external/, and gem/ to Google Drive
         run: |
