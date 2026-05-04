@@ -99,6 +99,8 @@
 | **minerva-hcs** | 密涅瓦大學核心思維模型 (HCs)，用於跨領域的深度問題拆解與推導。 | [SKILL.md](./custom/think/minerva/SKILL.md) |
 | **running-decision-processes** | 運行高品質決策流程，產出包含選項矩陣、權責劃分與決策日誌的完整決策包。 | [SKILL.md](./external/think/decision-management/SKILL.md) |
 | **learning-coach** | 基於腦科學的學習教練，提供主動回想、間隔重複等高效學習法。 | [SKILL.md](./external/think/learning/learning-coach/SKILL.md) |
+| **how-to-read-a-book** | 莫提默·艾德勒《如何閱讀一本書》萃取的系統化主動閱讀框架。 | [SKILL.md](./custom/books/how-to-read-a-book/SKILL.md) |
+
 
 ## 🏥 健康管理 (Health Management)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -110,12 +112,16 @@
 | **workout-program-designer** | 針對不同目標設計客製化運動訓練菜單。 | [SKILL.md](./external/health/workout-program-designer/SKILL.md) |
 | **rem-sleep** | 睡眠品質優化與恢復建議。 | [SKILL.md](./external/health/rem-sleep/SKILL.md) |
 | **mental-health-psychoeducation** | 心理健康教育與壓力管理建議。 | [SKILL.md](./external/health/mental-health-psychoeducation/SKILL.md) |
+| **dopamine-nation** | 安娜·蘭布克《多巴胺國度》萃取的成癮科學與身心平衡框架。 | [SKILL.md](./custom/books/dopamine-nation/SKILL.md) |
 
-## 🚀 生活效率 (Productivity & Habits)
+
+## 🏠 生活與職涯 (Lifestyle & Career)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **habit-tracker** | 建立與追蹤每日健康習慣。 | [SKILL.md](./external/basic/habit-tracker/SKILL.md) |
-| **personal-productivity** | 提升個人工作與生活效率的高級指南。 | [SKILL.md](./external/basic/personal-productivity/SKILL.md) |
+| **habit-tracker** | 建立與追蹤每日健康習慣。 | [SKILL.md](./external/lifestyle/habit-tracker/SKILL.md) |
+| **personal-productivity** | 提升個人工作與生活效率的高級指南。 | [SKILL.md](./external/lifestyle/personal-productivity/SKILL.md) |
+| **designing-your-work-life** | 史丹佛《設計你的工作和人生》萃取的職場設計與職業轉型框架。 | [SKILL.md](./custom/books/designing-your-work-life/SKILL.md) |
+
 
 ## 📝 特定專案規範 (Project Specific)
 | 技能名稱 | 中文說明 | 檔案連結 |

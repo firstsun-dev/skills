@@ -10,29 +10,37 @@ show_help() {
   echo "Registers skills from local folders into your AI agent environment."
   echo ""
   echo "Options:"
-  echo "  -h, --help     Show this help message"
-  echo "  -c, --custom   Register ONLY custom skills"
-  echo "  -e, --external Register ONLY external skills"
-  echo "  -a, --all      Register everything (default)"
+  echo "  -h, --help           Show this help message"
+  echo "  -c, --custom         Register ONLY custom skills"
+  echo "  -e, --external       Register ONLY external skills"
+  echo "  -A, --all            Register everything (default)"
+  echo "  -g, --global         Install globally (user-level) instead of project-local"
+  echo "  -a, --agent <names>  Specify agents to install to (e.g. \"claude-code gemini\")"
   echo ""
   echo "Example:"
-  echo "  ./setup.sh --custom"
+  echo "  ./setup.sh --custom --agent \"claude-code\""
 }
 
 MODE="all"
+SCOPE_FLAG=""
+AGENT_FLAG=""
 
 while [[ "$#" -gt 0 ]]; do
   case $1 in
     -h|--help) show_help; exit 0 ;;
     -c|--custom) MODE="custom" ;;
     -e|--external) MODE="external" ;;
-    -a|--all) MODE="all" ;;
+    -A|--all) MODE="all" ;;
+    -g|--global) SCOPE_FLAG="-g" ;;
+    -a|--agent) AGENT_FLAG="--agent $2"; shift ;;
     *) echo "Unknown option: $1"; show_help; exit 1 ;;
   esac
   shift
 done
 
 echo "🚀 Registering skills in mode: $MODE"
+echo "   Scope:  ${SCOPE_FLAG:-project-local}"
+[ -n "$AGENT_FLAG" ] && echo "   Agents: ${AGENT_FLAG#--agent }"
 
 register_skills() {
   local dir_type=$1
@@ -41,7 +49,7 @@ register_skills() {
     find "$BASE_DIR/$dir_type" -name "SKILL.md" | while read -r skill_file; do
       skill_dir=$(dirname "$skill_file")
       echo "📦 Registering [$dir_type]: $(basename "$skill_dir")"
-      npx skills add "$skill_dir" -y < /dev/null
+      npx skills add "$skill_dir" $SCOPE_FLAG $AGENT_FLAG -y < /dev/null
     done
   fi
 }
