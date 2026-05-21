@@ -23,6 +23,7 @@
 | **health** | 健康戰略家：專注於生物優化、營養與體能管理。 | [health.txt](./gem/health.txt) |
 | **learning** | 學習教練：專注於加速學習、記憶與技能習得。 | [learning.txt](./gem/learning.txt) |
 | **thinking** | 思維戰略家：專注於第一性原理、邏輯批判與結構化思考。 | [thinking.txt](./gem/thinking.txt) |
+| **video-design** | 影片設計與自動化：專注於 Remotion 程式化影片生成與宣傳圖影。 | [video-design.txt](./gem/video-design.txt) |
 
 ## 💻 開發開發 (Development)
 
