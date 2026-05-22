@@ -1,6 +1,8 @@
 ---
 name: firstsun-dev-conventions
 description: Comprehensive coding conventions and guardrails for Firstsun projects (Astro, React, Cloudflare). Integrates backend, styling, i18n, and testing standards.
+origin: firstsun-dev/skills
+priority: authoritative
 ---
 
 # Firstsun Dev Conventions
