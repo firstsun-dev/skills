@@ -9,11 +9,21 @@ packages:
   - "packages/*"
 ```
 
-## 2. Shared Configs (`.npmrc`)
+## 2. Shared Configs & Catalogs
+### pnpm Catalogs (v9+)
+Centralize versions in `pnpm-workspace.yaml`:
+```yaml
+catalogs:
+  default:
+    react: ^19.0.0
+    typescript: ^5.0.0
+```
+Then use in `package.json`: `"react": "catalog:"`.
+
+### .npmrc
 ```ini
 shamefully-hoist=true
 auto-install-peers=true
-strict-peer-dependencies=true
 ```
 
 ## 3. Core Commands

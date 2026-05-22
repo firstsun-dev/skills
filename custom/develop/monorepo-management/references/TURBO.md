@@ -14,11 +14,12 @@ npx create-turbo@latest my-monorepo
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**", ".wrangler/**"]
     },
-    "test": {
-      "cache": true
-    }
+    "lint": { "cache": true },
+    "test": { "cache": true },
+    "check": { "cache": true },
+    "dev": { "cache": false, "persistent": true }
   }
 }
 ```
