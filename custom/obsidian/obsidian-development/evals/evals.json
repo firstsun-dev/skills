@@ -3,15 +3,24 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Add a new command to the plugin that allows users to manually check for GitLab updates for the current file. Make sure it follows the project's testing and API conventions.",
-      "expected_output": "The model should first create a test case for the new logic, then implement the command in src/main.ts using this.addCommand(), and ensure any events are registered correctly.",
-      "files": ["src/main.ts", "src/logic/sync-manager.ts"]
+      "name": "project-setup",
+      "prompt": "I want to start a new Obsidian plugin that adds a button to the ribbon to insert a timestamp. How should I set up the project structure and testing?",
+      "expected_output": "The agent should propose a structure with src/ and tests/, recommend Vitest, and mention the obsidian mock setup.",
+      "files": []
     },
     {
       "id": 2,
-      "prompt": "I need a way to see the current sync status in the status bar. How should I implement this?",
-      "expected_output": "The model should recommend using this.addStatusBarItem() and registering any update events with this.registerEvent() to ensure cleanup.",
-      "files": ["src/main.ts"]
+      "name": "testing-logic",
+      "prompt": "I have a function that formats dates for my Obsidian plugin. How do I write a test for it using Vitest and mock the Obsidian API?",
+      "expected_output": "The agent should show a Vitest test file and explain how to alias 'obsidian' to a mock file.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "github-actions-release",
+      "prompt": "How do I configure GitHub Actions to automatically release my Obsidian plugin when I push a new tag?",
+      "expected_output": "The agent should provide a .github/workflows/release.yml example that uploads main.js, manifest.json, and styles.css.",
+      "files": []
     }
   ]
 }
