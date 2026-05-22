@@ -51,18 +51,45 @@ register_skills() {
   local dir_type=$1
   if [ -d "$BASE_DIR/$dir_type" ]; then
     echo "--- Scanning $dir_type ---"
+    
+    # Create backup of lock file to preserve original sources during registration
+    [ -f "$BASE_DIR/skills-lock.json" ] && cp "$BASE_DIR/skills-lock.json" "$BASE_DIR/skills-lock.json.bak"
+
     find "$BASE_DIR/$dir_type" -name "SKILL.md" | while read -r skill_file; do
       skill_dir=$(dirname "$skill_file")
       rel_path="${skill_dir#$BASE_DIR/}"
       
+      # Determine skill name/slug from frontmatter or directory
+      skill_name=$(grep -m 1 "^name:" "$skill_file" | sed 's/name: *//' | tr -d '"'\'': ')
+      [ -z "$skill_name" ] && skill_name=$(basename "$skill_dir")
+      
       if [ "$USE_REMOTE" = true ]; then
-        echo "📦 Registering (Remote): $REPO_NAME/$rel_path"
-        npx skills add "$REPO_NAME/$rel_path" $SCOPE_FLAG $AGENT_FLAG -y < /dev/null
+        if [ "$dir_type" == "custom" ]; then
+          echo "📦 Registering (Remote): $REPO_NAME/$rel_path"
+          npx skills add "$REPO_NAME/$rel_path" $SCOPE_FLAG $AGENT_FLAG -y < /dev/null
+        else
+          # For external skills, we register the local version (fast & curated)
+          # but we will revert the lock file entry to its original source below.
+          echo "📦 Registering (Local-Inspection): $rel_path"
+          npx skills add "$skill_dir" $SCOPE_FLAG $AGENT_FLAG -y < /dev/null
+          
+          # Hygiene: Restore original remote source for external skill if it existed
+          if [ -f "$BASE_DIR/skills-lock.json.bak" ] && command -v jq >/dev/null; then
+            orig_source=$(jq -r ".skills[\"$skill_name\"].source // empty" "$BASE_DIR/skills-lock.json.bak")
+            # Only restore if the original was a true external remote source
+            if [ -n "$orig_source" ] && [[ "$orig_source" != "$BASE_DIR"* ]] && [[ "$orig_source" != "./"* ]] && [[ "$orig_source" != "$REPO_NAME" ]]; then
+              echo "🛡️  Preserving original source for $skill_name: $orig_source"
+              orig_data=$(jq -c ".skills[\"$skill_name\"]" "$BASE_DIR/skills-lock.json.bak")
+              jq ".skills[\"$skill_name\"] = $orig_data" "$BASE_DIR/skills-lock.json" > "$BASE_DIR/skills-lock.json.tmp" && mv "$BASE_DIR/skills-lock.json.tmp" "$BASE_DIR/skills-lock.json"
+            fi
+          fi
+        fi
       else
         echo "📦 Registering (Local): $rel_path"
         npx skills add "$skill_dir" $SCOPE_FLAG $AGENT_FLAG -y < /dev/null
       fi
     done
+    rm -f "$BASE_DIR/skills-lock.json.bak"
   fi
 }
 

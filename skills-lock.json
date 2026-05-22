@@ -2,22 +2,16 @@
   "version": 1,
   "skills": {
     "FirstPrinciples": {
-      "source": "firstsun-dev/skills",
+      "source": "danielmiessler/personal_ai_infrastructure",
       "sourceType": "github",
       "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550",
-      "skillPath": "external/think/first-principles/firstprinciples/SKILL.md"
-    },
-    "Habit Tracker": {
-      "source": "jmsktm/claude-settings",
-      "sourceType": "github",
-      "skillPath": "skills/habit-tracker/SKILL.md",
-      "computedHash": "2bb241089c34af1af553c2a30e93d737236ff5408783cfc8c6f9702e77c4829a"
+      "skillPath": "Packs/FirstPrinciples/src/SKILL.md"
     },
     "best-practices": {
-      "source": "firstsun-dev/skills",
+      "source": "obra/superpowers",
       "sourceType": "github",
       "computedHash": "98dafea60ec1a7f5f70f6febcdd4b4fa3fe15723ad9c0b991c0818615bff7ba6",
-      "skillPath": "external/develop/frontend/best-practices/SKILL.md"
+      "skillPath": "skills/best-practices/SKILL.md"
     },
     "blog-master": {
       "source": "firstsun-dev/skills",
@@ -140,10 +134,10 @@
       "skillPath": "custom/develop/gitlab-ci-patterns/SKILL.md"
     },
     "habit-tracker": {
-      "source": "firstsun-dev/skills",
+      "source": "jmsktm/claude-settings",
       "sourceType": "github",
-      "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878",
-      "skillPath": "external/lifestyle/habit-tracker/SKILL.md"
+      "skillPath": "skills/habit-tracker/SKILL.md",
+      "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
     },
     "healthkit": {
       "source": "dpearson2699/swift-ios-skills",
