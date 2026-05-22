@@ -30,6 +30,7 @@
 ### 前端與規約 (Frontend & Conventions)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
+| **firstsun-dev-conventions** | Firstsun 專案的標準開發慣例與守護規則 (Astro, React, Cloudflare)。 | [SKILL.md](./custom/develop/firstsun-dev-conventions/SKILL.md) |
 | **astro-scss-best-practices** | Astro 專案中的 SCSS Modules 模組化開發與命名空間規範。 | [SKILL.md](./custom/develop/astro-scss-best-practices/SKILL.md) |
 | **frontend-design** | 創作具備高品質設計感的生產級前端介面。 | [SKILL.md](./external/develop/frontend/frontend-design/SKILL.md) |
 | **react** | 將 JSON 規格轉換為 React 組件的渲染器。 | [SKILL.md](./external/develop/frontend/react/SKILL.md) |
@@ -126,11 +127,6 @@
 | **designing-your-work-life** | 史丹佛《設計你的工作和人生》萃取的職場設計與職業轉型框架。 | [SKILL.md](./custom/books/designing-your-work-life/SKILL.md) |
 
 
-## 📝 特定專案規範 (Project Specific)
-| 技能名稱 | 中文說明 | 檔案連結 |
-| :--- | :--- | :--- |
-| **dev-conventions** | firstsun-blog 專案的特定開發慣例與守護規則。 | [SKILL.md](./custom/develop/dev-conventions/SKILL.md) |
-
 ---
-*最後更新日期: 2026-05-21*
+*最後更新日期: 2026-05-22*
 

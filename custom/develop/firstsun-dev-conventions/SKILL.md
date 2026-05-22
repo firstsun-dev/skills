@@ -1,11 +1,11 @@
 ---
-name: dev-conventions
-description: Project-specific coding conventions and guardrails for the firstsun-blog Astro/Cloudflare project. Consult this skill whenever writing new code, creating components, adding pages, editing RSS/sitemap, handling SEO/i18n, or planning tests — including requests like "新增一個頁面", "幫我寫這個元件", "add a component", "fix the SEO", "update RSS", "add to sitemap", "寫測試", or "add tests". These conventions must be followed for all code changes in this project.
+name: firstsun-dev-conventions
+description: Standard coding conventions and guardrails for Firstsun projects (Astro, React, Cloudflare). Consult this skill whenever writing new code, creating components, adding pages, or planning tests.
 ---
 
-# Dev Conventions — firstsun-blog
+# Firstsun Dev Conventions
 
-Core rules always in effect. For domain-specific detail, read the relevant reference file before writing code.
+Core rules always in effect for Firstsun projects. For domain-specific detail, read the relevant reference file before writing code.
 
 | Situation | Read |
 |---|---|
