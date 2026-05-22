@@ -1,11 +1,16 @@
 ---
-name: yao-skill-manager
-description: "Guides AI agents on how to maintain the separated custom/ and external/ domains in yao-agent-skills."
+name: skill-manager
+description: "Guides AI agents on how to maintain the separated custom/ and external/ domains in the Firstsun Skill Arsenal."
 ---
 
-# Yao Skill Manager (YSM)
+# Skill Manager (SM)
 
 ## Repository Structure & Flattened Design (扁平化設計)
+...
+# Skill Manager (SM)
+
+## Repository Structure & Flattened Design (扁平化設計)
+
 - `custom/`: Your internal/original skills.
 - `external/`: Community skills downloaded for inspection and reference.
 

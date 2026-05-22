@@ -25,16 +25,16 @@ To register ALL skills for all AI agents on your machine:
 To import skills locally into a project without polluting the global environment:
 ```bash
 cd <your-project>
-~/yao-agent-skills/export.sh <domain>
+~/skills/export.sh <domain>
 ```
 
 ### 3. Manual Installation (Single Skill or Directory)
 ```bash
 # Install a single skill
-npx skills add ~/yao-agent-skills/custom/obsidian/obsidian-bases -g
+npx skills add ~/skills/custom/obsidian/obsidian-bases -g
 
 # Recursive Installation (For domains with nested categories, e.g., develop)
-npx skills add ~/yao-agent-skills/external/develop -g --full-depth
+npx skills add ~/skills/external/develop -g --full-depth
 ```
 
 ## 📥 How to Add External Skills (SOP)
@@ -43,7 +43,7 @@ Follow these steps to add a community skill while keeping the code locally for r
 
 1. **Download to Root**: Go to the arsenal root and download the skill (do NOT use -g):
    ```bash
-   cd ~/yao-agent-skills
+   cd ~/skills
    npx skills add <owner/repo@skill> -y
    ```
 2. **Categorize & Align**: Move the downloaded folder from `.agents/skills/` to your desired `external/` domain. **MUST** align with our local taxonomy:

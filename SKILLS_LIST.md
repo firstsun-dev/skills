@@ -1,11 +1,11 @@
-# Yao Skill Arsenal - 技能清單 (Skill List)
+# Firstsun Skill Arsenal - 技能清單 (Skill List)
 
 本文件列出了當前在庫存（Arsenal）中的所有 AI Agent 技能，包含中文說明與檔案連結。
 
 ## 🛠️ 基礎工具 (Basic Tools)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **yao-skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/yao-skill-manager/SKILL.md) |
+| **skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/skill-manager/SKILL.md) |
 | **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
 | **validate-skills** | 驗證技能是否符合 agentskills.io 規範與最佳實踐。 | [SKILL.md](./external/basic/validate-skills/SKILL.md) |
 | **find-skills** | 幫助使用者發現並安裝適合的 AI 技能。 | [SKILL.md](./external/basic/find-skills/SKILL.md) |

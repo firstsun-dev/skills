@@ -324,7 +324,7 @@
       "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
     },
     "yao-skill-manager": {
-      "source": "firstsun-dev/yao-agent-skills",
+      "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/yao-skill-manager/SKILL.md",
       "computedHash": "21fc0b09b303c0f86ee5f8e99e6a341a7a85707a04fb6104f1e7158a5eaa08d3"
