@@ -13,18 +13,6 @@
       "skillPath": "skills/habit-tracker/SKILL.md",
       "computedHash": "2bb241089c34af1af553c2a30e93d737236ff5408783cfc8c6f9702e77c4829a"
     },
-    "astro-cloudflare-backend": {
-      "source": "firstsun-dev/skills",
-      "sourceType": "github",
-      "computedHash": "bf22fa61a4d166ee15cbf15611db9d74fb039495eaaaa9ddf2a460f161b91f69",
-      "skillPath": "custom/develop/astro-cloudflare-backend/SKILL.md"
-    },
-    "astro-scss-best-practices": {
-      "source": "firstsun-dev/skills",
-      "sourceType": "github",
-      "computedHash": "5ceb81ae3f7ea31e84a8703499ed05db3e358cb4fba1593285ef7a1e083e6b0a",
-      "skillPath": "custom/develop/astro-scss-best-practices/SKILL.md"
-    },
     "best-practices": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
@@ -44,16 +32,16 @@
       "skillPath": "custom/basic/book-distiller/SKILL.md"
     },
     "brainstorming": {
-      "source": "firstsun-dev/skills",
+      "source": "obra/superpowers",
       "sourceType": "github",
       "computedHash": "2032b2d9f5202bfdd6eaaa268fc3aef6fdd1edb806793eb858df51226bb62fcf",
-      "skillPath": "external/basic/brainstorming/SKILL.md"
+      "skillPath": "skills/brainstorming/SKILL.md"
     },
     "critical-thinking-logical-reasoning": {
-      "source": "firstsun-dev/skills",
+      "source": "sammcj/agentic-coding",
       "sourceType": "github",
       "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04",
-      "skillPath": "external/think/logic/critical-thinking-logical-reasoning/SKILL.md"
+      "skillPath": "Skills/critical-thinking-logical-reasoning/SKILL.md"
     },
     "d1-drizzle-schema": {
       "source": "firstsun-dev/skills",
@@ -74,22 +62,22 @@
       "skillPath": "custom/develop/dev-conventions/SKILL.md"
     },
     "devops-engineer": {
-      "source": "firstsun-dev/skills",
+      "source": "jeffallan/claude-skills",
       "sourceType": "github",
       "computedHash": "6de5e562151fe9c227234e81bdc1e647066d6b1822463eadf296a5344b47e35a",
-      "skillPath": "external/develop/devops/devops-engineer/SKILL.md"
+      "skillPath": "skills/devops-engineer/SKILL.md"
     },
     "discovery-interview": {
-      "source": "firstsun-dev/skills",
+      "source": "parcadei/continuous-claude-v3",
       "sourceType": "github",
       "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656",
-      "skillPath": "external/career/interview/discovery-interview/SKILL.md"
+      "skillPath": ".claude/skills/discovery-interview/SKILL.md"
     },
     "documentation-writer": {
-      "source": "firstsun-dev/skills",
+      "source": "github/awesome-copilot",
       "sourceType": "github",
       "computedHash": "ee53d65b163cd7eb953a930c95841cfe398cc2c0bd24c06508bbaa07c432be35",
-      "skillPath": "external/basic/documentation-writer/SKILL.md"
+      "skillPath": "skills/documentation-writer/SKILL.md"
     },
     "dopamine-nation": {
       "source": "firstsun-dev/skills",
@@ -98,16 +86,16 @@
       "skillPath": "custom/books/dopamine-nation/SKILL.md"
     },
     "find-skills": {
-      "source": "firstsun-dev/skills",
+      "source": "vercel-labs/skills",
       "sourceType": "github",
       "computedHash": "d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461",
-      "skillPath": "external/basic/find-skills/SKILL.md"
+      "skillPath": "skills/find-skills/SKILL.md"
     },
     "firecrawl-search": {
-      "source": "firstsun-dev/skills",
+      "source": "firecrawl/cli",
       "sourceType": "github",
       "computedHash": "563370b34bff9189f3180d1e4547a6758d26492760821ed85c5e67504fd8c5ca",
-      "skillPath": "external/basic/firecrawl-search/SKILL.md"
+      "skillPath": "skills/firecrawl-search/SKILL.md"
     },
     "first-principles": {
       "source": "guia-matthieu/clawfu-skills",
@@ -122,28 +110,28 @@
       "skillPath": "custom/develop/firstsun-dev-conventions/SKILL.md"
     },
     "fitness-coach": {
-      "source": "firstsun-dev/skills",
+      "source": "tatat/agents-playground",
       "sourceType": "github",
       "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c",
-      "skillPath": "external/health/fitness-coach/SKILL.md"
+      "skillPath": "skills/fitness-coach/SKILL.md"
     },
     "frontend-design": {
-      "source": "firstsun-dev/skills",
+      "source": "anthropics/skills",
       "sourceType": "github",
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67",
-      "skillPath": "external/develop/frontend/frontend-design/SKILL.md"
+      "skillPath": "skills/frontend-design/SKILL.md"
     },
     "gh-cli": {
-      "source": "firstsun-dev/skills",
+      "source": "github/awesome-copilot@gh-cli",
       "sourceType": "github",
       "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56",
-      "skillPath": "external/develop/devops/gh-cli/SKILL.md"
+      "skillPath": "skills/gh-cli/SKILL.md"
     },
     "github-actions": {
-      "source": "firstsun-dev/skills",
+      "source": "callstackincubator/agent-skills@github-actions",
       "sourceType": "github",
       "computedHash": "3632dc997b2d8810bdc753173e269dfc0fd40b6fe6be0dd27b8f2abc58e47ada",
-      "skillPath": "external/develop/devops/github-actions/SKILL.md"
+      "skillPath": "skills/github-actions/SKILL.md"
     },
     "gitlab-ci-patterns": {
       "source": "firstsun-dev/skills",
@@ -158,10 +146,10 @@
       "skillPath": "external/lifestyle/habit-tracker/SKILL.md"
     },
     "healthkit": {
-      "source": "firstsun-dev/skills",
+      "source": "dpearson2699/swift-ios-skills",
       "sourceType": "github",
       "computedHash": "500d38fc27fd4195bc8dcd0d0e3223b19a4f9f76bfaf132fb1702c7b1efa264b",
-      "skillPath": "external/health/healthkit/SKILL.md"
+      "skillPath": "skills/healthkit/SKILL.md"
     },
     "how-to-read-a-book": {
       "source": "firstsun-dev/skills",
@@ -170,28 +158,28 @@
       "skillPath": "custom/books/how-to-read-a-book/SKILL.md"
     },
     "internationalization-i18n": {
-      "source": "firstsun-dev/skills",
+      "source": "aj-geddes/useful-ai-prompts",
       "sourceType": "github",
       "computedHash": "9822ad7f8f07a7c53e83e384b81a0248fd8e30ee86f068ca6590f9e9b167b08e",
-      "skillPath": "external/develop/i18n/i18n/SKILL.md"
+      "skillPath": "skills/internationalization-i18n/SKILL.md"
     },
     "interview-prep": {
-      "source": "firstsun-dev/skills",
+      "source": "anthropics/knowledge-work-plugins",
       "sourceType": "github",
       "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a",
-      "skillPath": "external/career/interview/interview-prep/SKILL.md"
+      "skillPath": "human-resources/skills/interview-prep/SKILL.md"
     },
     "learning-coach": {
-      "source": "firstsun-dev/skills",
+      "source": "sunnypatneedi/claude-starter-kit",
       "sourceType": "github",
       "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410",
-      "skillPath": "external/think/learning/learning-coach/SKILL.md"
+      "skillPath": "skills/personal/learning-coach/SKILL.md"
     },
     "mental-health-psychoeducation": {
-      "source": "firstsun-dev/skills",
+      "source": "jk-0001/skills",
       "sourceType": "github",
       "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26",
-      "skillPath": "external/health/mental-health-psychoeducation/SKILL.md"
+      "skillPath": "mental-health-psychoeducation/SKILL.md"
     },
     "minerva-hcs": {
       "source": "firstsun-dev/skills",
@@ -206,10 +194,10 @@
       "skillPath": "custom/develop/monorepo-management/SKILL.md"
     },
     "nutritional-specialist": {
-      "source": "firstsun-dev/skills",
+      "source": "ailabs-393/ai-labs-claude-skills",
       "sourceType": "github",
       "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb",
-      "skillPath": "external/health/nutritional-specialist/SKILL.md"
+      "skillPath": "packages/skills/nutritional-specialist/SKILL.md"
     },
     "obsidian-bases": {
       "source": "firstsun-dev/skills",
@@ -230,52 +218,52 @@
       "skillPath": "custom/obsidian/obsidian-markdown/SKILL.md"
     },
     "owasp-security": {
-      "source": "firstsun-dev/skills",
+      "source": "hoodini/ai-agents-skills",
       "sourceType": "github",
       "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2",
-      "skillPath": "external/develop/security/owasp-security/SKILL.md"
+      "skillPath": "skills/owasp-security/SKILL.md"
     },
     "personal-productivity": {
-      "source": "firstsun-dev/skills",
+      "source": "refoundai/lenny-skills",
       "sourceType": "github",
       "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4",
-      "skillPath": "external/lifestyle/personal-productivity/SKILL.md"
+      "skillPath": "skills/personal-productivity/SKILL.md"
     },
     "playwright-best-practices": {
-      "source": "firstsun-dev/skills",
+      "source": "currents-dev/playwright-best-practices-skill",
       "sourceType": "github",
       "computedHash": "320eaf861e3a0a923bfaad0726cb311a3fe30093378f8d26c89b9c5ae5c42b35",
-      "skillPath": "external/develop/devops/playwright-best-practices/SKILL.md"
+      "skillPath": "SKILL.md"
     },
     "react": {
-      "source": "firstsun-dev/skills",
+      "source": "vercel-labs/json-render",
       "sourceType": "github",
       "computedHash": "22dde85d5a69aaee45eb56aeed8e7f8fb5d2ae2559b38f71621d0654385bed1d",
-      "skillPath": "external/develop/frontend/react/SKILL.md"
+      "skillPath": "skills/react/SKILL.md"
     },
     "react-best-practices": {
-      "source": "firstsun-dev/skills",
+      "source": "0xbigboss/claude-code",
       "sourceType": "github",
       "computedHash": "c73df933f4adb8d679a85b9814b85c56233e06a617c30c07001e47ee6522e8f2",
-      "skillPath": "external/develop/frontend/react-best-practices/SKILL.md"
+      "skillPath": ".claude/skills/react-best-practices/SKILL.md"
     },
     "rem-sleep": {
-      "source": "firstsun-dev/skills",
+      "source": "stewnight/rem-sleep-skill",
       "sourceType": "github",
       "computedHash": "313bba1a754db0d528c6558609141d123fdfc4db89223358cdf823c52d713c0e",
-      "skillPath": "external/health/rem-sleep/SKILL.md"
+      "skillPath": "SKILL.md"
     },
     "remotion": {
-      "source": "firstsun-dev/skills",
+      "source": "google-labs-code/stitch-skills",
       "sourceType": "github",
       "computedHash": "903fa72d770f795158ee5dc2c141c5bbb5a1754c4c22893bf2949a915498934a",
-      "skillPath": "external/video-design/remotion/SKILL.md"
+      "skillPath": "plugins/stitch-build/skills/remotion/SKILL.md"
     },
     "remotion-best-practices": {
-      "source": "firstsun-dev/skills",
+      "source": "remotion-dev/skills",
       "sourceType": "github",
       "computedHash": "df654933e451556147e384078c3fbdbac997cb0fe4d2f2db7642000c239304c5",
-      "skillPath": "external/video-design/remotion-best-practices/SKILL.md"
+      "skillPath": "skills/remotion/SKILL.md"
     },
     "remotion-marketing-automation": {
       "source": "firstsun-dev/skills",
@@ -284,40 +272,40 @@
       "skillPath": "custom/video-design/remotion-marketing-automation/SKILL.md"
     },
     "remotion-render": {
-      "source": "firstsun-dev/skills",
+      "source": "skills-shell/skills",
       "sourceType": "github",
       "computedHash": "5ad33a6307b48a8e756be722ea26e39467cd1713f87fc5a8eff5480ac873eeaf",
-      "skillPath": "external/video-design/remotion-render/SKILL.md"
+      "skillPath": "tools/video/remotion-render/SKILL.md"
     },
     "rp-diet": {
-      "source": "firstsun-dev/skills",
+      "source": "borisghidaglia/science-based-lifter",
       "sourceType": "github",
       "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17",
-      "skillPath": "external/health/rp-diet/SKILL.md"
+      "skillPath": "skills/rp-diet/SKILL.md"
     },
     "running-decision-processes": {
-      "source": "firstsun-dev/skills",
+      "source": "refoundai/lenny-skills",
       "sourceType": "github",
       "computedHash": "0a6c34c8eb20234083609ff02fbc91c81f4c2d3452a2f0ec9adcfd4978771b92",
-      "skillPath": "external/think/decision-management/SKILL.md"
+      "skillPath": "skills/running-decision-processes/SKILL.md"
     },
     "secret-scanning": {
-      "source": "firstsun-dev/skills",
+      "source": "github/awesome-copilot",
       "sourceType": "github",
       "computedHash": "cc7de79bee80775578227a370637d0a83aa0f2cbec28374058899859261d2081",
-      "skillPath": "external/develop/security/secret-scanning/SKILL.md"
+      "skillPath": "skills/secret-scanning/SKILL.md"
     },
     "security-scan": {
-      "source": "firstsun-dev/skills",
+      "source": "affaan-m/everything-claude-code",
       "sourceType": "github",
       "computedHash": "92cdcaddc554e318402f066ccc073c2e3dbcfda8c2730ec62ec373f805c41a57",
-      "skillPath": "external/develop/security/security-scan/SKILL.md"
+      "skillPath": "skills/security-scan/SKILL.md"
     },
     "skill-creator": {
-      "source": "firstsun-dev/skills",
+      "source": "anthropics/skills",
       "sourceType": "github",
       "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2",
-      "skillPath": "external/basic/skill-creator/SKILL.md"
+      "skillPath": "skills/skill-creator/SKILL.md"
     },
     "skill-manager": {
       "source": "firstsun-dev/skills",
@@ -326,28 +314,28 @@
       "skillPath": "custom/basic/skill-manager/SKILL.md"
     },
     "tailored-resume-generator": {
-      "source": "firstsun-dev/skills",
+      "source": "composiohq/awesome-claude-skills",
       "sourceType": "github",
       "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92",
-      "skillPath": "external/career/resume/tailored-resume-generator/SKILL.md"
+      "skillPath": "tailored-resume-generator/SKILL.md"
     },
     "using-git-worktrees": {
-      "source": "firstsun-dev/skills",
+      "source": "obra/superpowers",
       "sourceType": "github",
       "computedHash": "52bbb4b6e80918e83e92a1514f3b3757712154c2a8a42de24919e48a794c54fc",
-      "skillPath": "external/develop/devops/using-git-worktrees/SKILL.md"
+      "skillPath": "skills/using-git-worktrees/SKILL.md"
     },
     "validate-skills": {
-      "source": "firstsun-dev/skills",
+      "source": "callstackincubator/agent-skills",
       "sourceType": "github",
       "computedHash": "aff52c5f1470ceedfa83c6bd7936b5bf70d347d72724585e3a2911d6d009caf4",
-      "skillPath": "external/basic/validate-skills/SKILL.md"
+      "skillPath": ".claude/skills/validate-skills/SKILL.md"
     },
     "vercel-react-best-practices": {
-      "source": "firstsun-dev/skills",
+      "source": "vercel-labs/agent-skills",
       "sourceType": "github",
       "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357",
-      "skillPath": "external/develop/frontend/vercel-react-best-practices/SKILL.md"
+      "skillPath": "skills/react-best-practices/SKILL.md"
     },
     "workers-best-practices": {
       "source": "firstsun-dev/skills",
@@ -356,16 +344,10 @@
       "skillPath": "custom/develop/workers-best-practices/SKILL.md"
     },
     "workout-program-designer": {
-      "source": "firstsun-dev/skills",
+      "source": "onewave-ai/claude-skills",
       "sourceType": "github",
       "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc",
-      "skillPath": "external/health/workout-program-designer/SKILL.md"
-    },
-    "yao-skill-manager": {
-      "source": "firstsun-dev/skills",
-      "sourceType": "github",
-      "skillPath": "custom/basic/yao-skill-manager/SKILL.md",
-      "computedHash": "21fc0b09b303c0f86ee5f8e99e6a341a7a85707a04fb6104f1e7158a5eaa08d3"
+      "skillPath": "workout-program-designer/SKILL.md"
     }
   }
 }
