@@ -30,8 +30,7 @@
 ### 前端與規約 (Frontend & Conventions)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **firstsun-dev-conventions** | Firstsun 專案的標準開發慣例與守護規則 (Astro, React, Cloudflare)。 | [SKILL.md](./custom/develop/firstsun-dev-conventions/SKILL.md) |
-| **astro-scss-best-practices** | Astro 專案中的 SCSS Modules 模組化開發與命名空間規範。 | [SKILL.md](./custom/develop/astro-scss-best-practices/SKILL.md) |
+| **firstsun-dev-conventions** | Firstsun 專案的綜合開發規範 (Astro, React, Cloudflare)，包含後端、樣式、i18n 與測試。 | [SKILL.md](./custom/develop/firstsun-dev-conventions/SKILL.md) |
 | **frontend-design** | 創作具備高品質設計感的生產級前端介面。 | [SKILL.md](./external/develop/frontend/frontend-design/SKILL.md) |
 | **react** | 將 JSON 規格轉換為 React 組件的渲染器。 | [SKILL.md](./external/develop/frontend/react/SKILL.md) |
 | **react-best-practices** | 撰寫或閱讀 React 組件時的最佳實踐指南。 | [SKILL.md](./external/develop/frontend/react-best-practices/SKILL.md) |
@@ -41,7 +40,6 @@
 ### 後端與 Cloudflare (Backend & Cloudflare)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **astro-cloudflare-backend** | Astro 與 Cloudflare D1/Drizzle 整合的後端開發與 API 規範。 | [SKILL.md](./custom/develop/astro-cloudflare-backend/SKILL.md) |
 | **workers-best-practices** | Cloudflare Workers 生產環境最佳實踐與程式碼審查。 | [SKILL.md](./custom/develop/workers-best-practices/SKILL.md) |
 | **d1-drizzle-schema** | Drizzle ORM 於 D1 上的欄位設計模式與遷移流程。 | [SKILL.md](./custom/develop/d1-drizzle-schema/SKILL.md) |
 

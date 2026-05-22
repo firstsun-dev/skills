@@ -1,6 +1,6 @@
 ---
 name: firstsun-dev-conventions
-description: Standard coding conventions and guardrails for Firstsun projects (Astro, React, Cloudflare). Consult this skill whenever writing new code, creating components, adding pages, or planning tests.
+description: Comprehensive coding conventions and guardrails for Firstsun projects (Astro, React, Cloudflare). Integrates backend, styling, i18n, and testing standards.
 ---
 
 # Firstsun Dev Conventions
@@ -9,6 +9,7 @@ Core rules always in effect for Firstsun projects. For domain-specific detail, r
 
 | Situation | Read |
 |---|---|
+| Edge runtime (workerd), bindings, and env vars | `references/environment.md` |
 | Writing DB mutations / Astro Actions | `references/database.md` |
 | Adding or changing actions / updating OpenAPI spec | `references/api.md` |
 | Adding SEO tags, RSS, or sitemap changes | `references/seo-rss.md` |
@@ -28,9 +29,9 @@ Core rules always in effect for Firstsun projects. For domain-specific detail, r
 
 ## Component Architecture
 
-**Share components between ZH-TW and EN pages.** Both locales render the same React/Astro components — don't create parallel `PostCardZh`/`PostCardEn` variants. Handle locale-specific text via `useTranslations`.
+**Share components between ZH-TW and EN pages.** Both locales render the same React/Astro components — don't create parallel `PostCardZh`/`PostCardEn` variants. Handle locale-specific text via `useTranslations` (see i18n section).
 
-**Extract repeated UI.** Same visual pattern in more than one place → pull it into `src/components/<section>/ComponentName.tsx` or `.astro`.
+**Component Isolation.** Extract repeated UI patterns into reusable components in `src/components/`. A component used in more than one place → pull it out.
 
 ---
 

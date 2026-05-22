@@ -1,5 +1,16 @@
 # Database & Astro Actions
 
+## Performance: D1 Batching (Crucial)
+
+Cloudflare D1 is HTTP-based. To minimize latency, **ALWAYS** use `db.batch()` when executing multiple independent queries in a single action.
+```ts
+// ✅ CORRECT - Executed in a single round-trip
+const [user, posts] = await db.batch([
+  db.select().from(users).where(eq(users.id, id)),
+  db.select().from(posts).where(eq(posts.authorId, id))
+]);
+```
+
 ## Where mutations live
 
 All DB mutations go through Astro Actions in `src/actions/index.ts`. Never write directly to D1 from `.astro` components or one-off API routes.
