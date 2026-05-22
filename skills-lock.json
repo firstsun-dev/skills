@@ -2,9 +2,10 @@
   "version": 1,
   "skills": {
     "FirstPrinciples": {
-      "source": "/home/tianyao/skills/external/think/first-principles/firstprinciples",
-      "sourceType": "local",
-      "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550",
+      "skillPath": "external/think/first-principles/firstprinciples/SKILL.md"
     },
     "Habit Tracker": {
       "source": "jmsktm/claude-settings",
@@ -13,84 +14,100 @@
       "computedHash": "2bb241089c34af1af553c2a30e93d737236ff5408783cfc8c6f9702e77c4829a"
     },
     "astro-cloudflare-backend": {
-      "source": "./custom/develop/astro-cloudflare-backend",
-      "sourceType": "local",
-      "computedHash": "bf22fa61a4d166ee15cbf15611db9d74fb039495eaaaa9ddf2a460f161b91f69"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "bf22fa61a4d166ee15cbf15611db9d74fb039495eaaaa9ddf2a460f161b91f69",
+      "skillPath": "custom/develop/astro-cloudflare-backend/SKILL.md"
     },
     "astro-scss-best-practices": {
-      "source": "./custom/develop/astro-scss-best-practices",
-      "sourceType": "local",
-      "computedHash": "5ceb81ae3f7ea31e84a8703499ed05db3e358cb4fba1593285ef7a1e083e6b0a"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "5ceb81ae3f7ea31e84a8703499ed05db3e358cb4fba1593285ef7a1e083e6b0a",
+      "skillPath": "custom/develop/astro-scss-best-practices/SKILL.md"
     },
     "best-practices": {
-      "source": "/home/tianyao/skills/external/develop/frontend/best-practices",
-      "sourceType": "local",
-      "computedHash": "98dafea60ec1a7f5f70f6febcdd4b4fa3fe15723ad9c0b991c0818615bff7ba6"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "98dafea60ec1a7f5f70f6febcdd4b4fa3fe15723ad9c0b991c0818615bff7ba6",
+      "skillPath": "external/develop/frontend/best-practices/SKILL.md"
     },
     "blog-master": {
-      "source": "/home/tianyao/skills/custom/writing/blog-master",
-      "sourceType": "local",
-      "computedHash": "50c7c26c6e995a1bc0a6300c7d06af72fb91b02bd93b3780dbfc5233cff6ae05"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "50c7c26c6e995a1bc0a6300c7d06af72fb91b02bd93b3780dbfc5233cff6ae05",
+      "skillPath": "custom/writing/blog-master/SKILL.md"
     },
     "book-distiller": {
-      "source": "/home/tianyao/skills/custom/basic/book-distiller",
-      "sourceType": "local",
-      "computedHash": "66c5afbd880a4db75cc364cbf00f6d03eb6453eee0e96ccddda1d5051a218207"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "66c5afbd880a4db75cc364cbf00f6d03eb6453eee0e96ccddda1d5051a218207",
+      "skillPath": "custom/basic/book-distiller/SKILL.md"
     },
     "brainstorming": {
-      "source": "/home/tianyao/skills/external/basic/brainstorming",
-      "sourceType": "local",
-      "computedHash": "2032b2d9f5202bfdd6eaaa268fc3aef6fdd1edb806793eb858df51226bb62fcf"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "2032b2d9f5202bfdd6eaaa268fc3aef6fdd1edb806793eb858df51226bb62fcf",
+      "skillPath": "external/basic/brainstorming/SKILL.md"
     },
     "critical-thinking-logical-reasoning": {
-      "source": "/home/tianyao/skills/external/think/logic/critical-thinking-logical-reasoning",
-      "sourceType": "local",
-      "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04",
+      "skillPath": "external/think/logic/critical-thinking-logical-reasoning/SKILL.md"
     },
     "d1-drizzle-schema": {
-      "source": "/home/tianyao/skills/custom/develop/drizzle-orm-best-practices",
-      "sourceType": "local",
-      "computedHash": "3b46543567dbd071f9f9b87ba2eceefe6b906b38f58a1ab67e91bc5810f3b4b5"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "3b46543567dbd071f9f9b87ba2eceefe6b906b38f58a1ab67e91bc5810f3b4b5",
+      "skillPath": "custom/develop/drizzle-orm-best-practices/SKILL.md"
     },
     "designing-your-work-life": {
-      "source": "/home/tianyao/skills/custom/books/designing-your-work-life",
-      "sourceType": "local",
-      "computedHash": "2828ecd54130d9f33afc5084791697366ac1cc749d81f3025650b6b1f4c1b6dd"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "2828ecd54130d9f33afc5084791697366ac1cc749d81f3025650b6b1f4c1b6dd",
+      "skillPath": "custom/books/designing-your-work-life/SKILL.md"
     },
     "dev-conventions": {
-      "source": "./custom/develop/dev-conventions",
-      "sourceType": "local",
-      "computedHash": "7d547dc0e8d1c4d755d06d88782b79eaa5f0a908f4adeade894c4807416795a6"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "7d547dc0e8d1c4d755d06d88782b79eaa5f0a908f4adeade894c4807416795a6",
+      "skillPath": "custom/develop/dev-conventions/SKILL.md"
     },
     "devops-engineer": {
-      "source": "/home/tianyao/skills/external/develop/devops/devops-engineer",
-      "sourceType": "local",
-      "computedHash": "6de5e562151fe9c227234e81bdc1e647066d6b1822463eadf296a5344b47e35a"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "6de5e562151fe9c227234e81bdc1e647066d6b1822463eadf296a5344b47e35a",
+      "skillPath": "external/develop/devops/devops-engineer/SKILL.md"
     },
     "discovery-interview": {
-      "source": "/home/tianyao/skills/external/career/interview/discovery-interview",
-      "sourceType": "local",
-      "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656",
+      "skillPath": "external/career/interview/discovery-interview/SKILL.md"
     },
     "documentation-writer": {
-      "source": "/home/tianyao/skills/external/basic/documentation-writer",
-      "sourceType": "local",
-      "computedHash": "ee53d65b163cd7eb953a930c95841cfe398cc2c0bd24c06508bbaa07c432be35"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "ee53d65b163cd7eb953a930c95841cfe398cc2c0bd24c06508bbaa07c432be35",
+      "skillPath": "external/basic/documentation-writer/SKILL.md"
     },
     "dopamine-nation": {
-      "source": "/home/tianyao/skills/custom/books/dopamine-nation",
-      "sourceType": "local",
-      "computedHash": "e515492d0bf986af93188aa2f46f617a748ef3815fd5285478c8a4579aee360c"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "e515492d0bf986af93188aa2f46f617a748ef3815fd5285478c8a4579aee360c",
+      "skillPath": "custom/books/dopamine-nation/SKILL.md"
     },
     "find-skills": {
-      "source": "/home/tianyao/skills/external/basic/find-skills",
-      "sourceType": "local",
-      "computedHash": "d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461",
+      "skillPath": "external/basic/find-skills/SKILL.md"
     },
     "firecrawl-search": {
-      "source": "/home/tianyao/skills/external/basic/firecrawl-search",
-      "sourceType": "local",
-      "computedHash": "563370b34bff9189f3180d1e4547a6758d26492760821ed85c5e67504fd8c5ca"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "563370b34bff9189f3180d1e4547a6758d26492760821ed85c5e67504fd8c5ca",
+      "skillPath": "external/basic/firecrawl-search/SKILL.md"
     },
     "first-principles": {
       "source": "guia-matthieu/clawfu-skills",
@@ -99,209 +116,250 @@
       "computedHash": "2c502541c4fb385194c64a8e45d9d8d5f45b4fd080f0641958ebae19614f06ee"
     },
     "firstsun-dev-conventions": {
-      "source": "/home/tianyao/skills/custom/develop/firstsun-dev-conventions",
-      "sourceType": "local",
-      "computedHash": "5043dcbdf882f75ef200ebd6c782f9df41a6b8ef98f4ac6d9f2f7c38067f7dc6"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "5043dcbdf882f75ef200ebd6c782f9df41a6b8ef98f4ac6d9f2f7c38067f7dc6",
+      "skillPath": "custom/develop/firstsun-dev-conventions/SKILL.md"
     },
     "fitness-coach": {
-      "source": "/home/tianyao/skills/external/health/fitness-coach",
-      "sourceType": "local",
-      "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c",
+      "skillPath": "external/health/fitness-coach/SKILL.md"
     },
     "frontend-design": {
-      "source": "/home/tianyao/skills/external/develop/frontend/frontend-design",
-      "sourceType": "local",
-      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67",
+      "skillPath": "external/develop/frontend/frontend-design/SKILL.md"
     },
     "gh-cli": {
-      "source": "/home/tianyao/skills/external/develop/devops/gh-cli",
-      "sourceType": "local",
-      "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56",
+      "skillPath": "external/develop/devops/gh-cli/SKILL.md"
     },
     "github-actions": {
-      "source": "/home/tianyao/skills/external/develop/devops/github-actions",
-      "sourceType": "local",
-      "computedHash": "3632dc997b2d8810bdc753173e269dfc0fd40b6fe6be0dd27b8f2abc58e47ada"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "3632dc997b2d8810bdc753173e269dfc0fd40b6fe6be0dd27b8f2abc58e47ada",
+      "skillPath": "external/develop/devops/github-actions/SKILL.md"
     },
     "gitlab-ci-patterns": {
-      "source": "/home/tianyao/skills/custom/develop/gitlab-ci-patterns",
-      "sourceType": "local",
-      "computedHash": "2b60d1804387dcdc1ed9eae9d9b52b63cd020b3afb1087675ad23a895c016cb1"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "2b60d1804387dcdc1ed9eae9d9b52b63cd020b3afb1087675ad23a895c016cb1",
+      "skillPath": "custom/develop/gitlab-ci-patterns/SKILL.md"
     },
     "habit-tracker": {
-      "source": "/home/tianyao/skills/external/lifestyle/habit-tracker",
-      "sourceType": "local",
-      "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878",
+      "skillPath": "external/lifestyle/habit-tracker/SKILL.md"
     },
     "healthkit": {
-      "source": "/home/tianyao/skills/external/health/healthkit",
-      "sourceType": "local",
-      "computedHash": "500d38fc27fd4195bc8dcd0d0e3223b19a4f9f76bfaf132fb1702c7b1efa264b"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "500d38fc27fd4195bc8dcd0d0e3223b19a4f9f76bfaf132fb1702c7b1efa264b",
+      "skillPath": "external/health/healthkit/SKILL.md"
     },
     "how-to-read-a-book": {
-      "source": "/home/tianyao/skills/custom/books/how-to-read-a-book",
-      "sourceType": "local",
-      "computedHash": "2f13ee8b4aaac5fa9eb48a0f205cca94cffc58dbe512a58ecc62f9a9d7149cdf"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "2f13ee8b4aaac5fa9eb48a0f205cca94cffc58dbe512a58ecc62f9a9d7149cdf",
+      "skillPath": "custom/books/how-to-read-a-book/SKILL.md"
     },
     "internationalization-i18n": {
-      "source": "/home/tianyao/skills/external/develop/i18n/i18n",
-      "sourceType": "local",
-      "computedHash": "9822ad7f8f07a7c53e83e384b81a0248fd8e30ee86f068ca6590f9e9b167b08e"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "9822ad7f8f07a7c53e83e384b81a0248fd8e30ee86f068ca6590f9e9b167b08e",
+      "skillPath": "external/develop/i18n/i18n/SKILL.md"
     },
     "interview-prep": {
-      "source": "/home/tianyao/skills/external/career/interview/interview-prep",
-      "sourceType": "local",
-      "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a",
+      "skillPath": "external/career/interview/interview-prep/SKILL.md"
     },
     "learning-coach": {
-      "source": "/home/tianyao/skills/external/think/learning/learning-coach",
-      "sourceType": "local",
-      "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410",
+      "skillPath": "external/think/learning/learning-coach/SKILL.md"
     },
     "mental-health-psychoeducation": {
-      "source": "/home/tianyao/skills/external/health/mental-health-psychoeducation",
-      "sourceType": "local",
-      "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26",
+      "skillPath": "external/health/mental-health-psychoeducation/SKILL.md"
     },
     "minerva-hcs": {
-      "source": "/home/tianyao/skills/custom/think/minerva",
-      "sourceType": "local",
-      "computedHash": "6dcfdb9353c4a8bafd10ad22163ab36b5dbf348d0de1c4750298d0f057a39636"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "6dcfdb9353c4a8bafd10ad22163ab36b5dbf348d0de1c4750298d0f057a39636",
+      "skillPath": "custom/think/minerva/SKILL.md"
     },
     "monorepo-management": {
-      "source": "/home/tianyao/skills/custom/develop/monorepo-management",
-      "sourceType": "local",
-      "computedHash": "dbdd7a6cdc331dd5f16ff4f96c7281f59bc93f1daf8ac905a21df35b12c4ddee"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "dbdd7a6cdc331dd5f16ff4f96c7281f59bc93f1daf8ac905a21df35b12c4ddee",
+      "skillPath": "custom/develop/monorepo-management/SKILL.md"
     },
     "nutritional-specialist": {
-      "source": "/home/tianyao/skills/external/health/nutritional-specialist",
-      "sourceType": "local",
-      "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb",
+      "skillPath": "external/health/nutritional-specialist/SKILL.md"
     },
     "obsidian-bases": {
-      "source": "./custom/obsidian/obsidian-bases",
-      "sourceType": "local",
-      "computedHash": "ed0a53502693e56c67575a9958daca9a3a1ac7ba483367f400b4cad9488bfb3c"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "ed0a53502693e56c67575a9958daca9a3a1ac7ba483367f400b4cad9488bfb3c",
+      "skillPath": "custom/obsidian/obsidian-bases/SKILL.md"
     },
     "obsidian-development": {
-      "source": "/home/tianyao/skills/custom/obsidian/obsidian-development",
-      "sourceType": "local",
-      "computedHash": "087f548b82f8c150fcc2879488109bdda5d21c91fc4c9e379765150a4acbff82"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "087f548b82f8c150fcc2879488109bdda5d21c91fc4c9e379765150a4acbff82",
+      "skillPath": "custom/obsidian/obsidian-development/SKILL.md"
     },
     "obsidian-markdown": {
-      "source": "./custom/obsidian/obsidian-markdown",
-      "sourceType": "local",
-      "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f",
+      "skillPath": "custom/obsidian/obsidian-markdown/SKILL.md"
     },
     "owasp-security": {
-      "source": "/home/tianyao/skills/external/develop/security/owasp-security",
-      "sourceType": "local",
-      "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2",
+      "skillPath": "external/develop/security/owasp-security/SKILL.md"
     },
     "personal-productivity": {
-      "source": "/home/tianyao/skills/external/lifestyle/personal-productivity",
-      "sourceType": "local",
-      "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4",
+      "skillPath": "external/lifestyle/personal-productivity/SKILL.md"
     },
     "playwright-best-practices": {
-      "source": "/home/tianyao/skills/external/develop/devops/playwright-best-practices",
-      "sourceType": "local",
-      "computedHash": "320eaf861e3a0a923bfaad0726cb311a3fe30093378f8d26c89b9c5ae5c42b35"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "320eaf861e3a0a923bfaad0726cb311a3fe30093378f8d26c89b9c5ae5c42b35",
+      "skillPath": "external/develop/devops/playwright-best-practices/SKILL.md"
     },
     "react": {
-      "source": "/home/tianyao/skills/external/develop/frontend/react",
-      "sourceType": "local",
-      "computedHash": "22dde85d5a69aaee45eb56aeed8e7f8fb5d2ae2559b38f71621d0654385bed1d"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "22dde85d5a69aaee45eb56aeed8e7f8fb5d2ae2559b38f71621d0654385bed1d",
+      "skillPath": "external/develop/frontend/react/SKILL.md"
     },
     "react-best-practices": {
-      "source": "/home/tianyao/skills/external/develop/frontend/react-best-practices",
-      "sourceType": "local",
-      "computedHash": "c73df933f4adb8d679a85b9814b85c56233e06a617c30c07001e47ee6522e8f2"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "c73df933f4adb8d679a85b9814b85c56233e06a617c30c07001e47ee6522e8f2",
+      "skillPath": "external/develop/frontend/react-best-practices/SKILL.md"
     },
     "rem-sleep": {
-      "source": "/home/tianyao/skills/external/health/rem-sleep",
-      "sourceType": "local",
-      "computedHash": "313bba1a754db0d528c6558609141d123fdfc4db89223358cdf823c52d713c0e"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "313bba1a754db0d528c6558609141d123fdfc4db89223358cdf823c52d713c0e",
+      "skillPath": "external/health/rem-sleep/SKILL.md"
     },
     "remotion": {
-      "source": "/home/tianyao/skills/external/video-design/remotion",
-      "sourceType": "local",
-      "computedHash": "903fa72d770f795158ee5dc2c141c5bbb5a1754c4c22893bf2949a915498934a"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "903fa72d770f795158ee5dc2c141c5bbb5a1754c4c22893bf2949a915498934a",
+      "skillPath": "external/video-design/remotion/SKILL.md"
     },
     "remotion-best-practices": {
-      "source": "/home/tianyao/skills/external/video-design/remotion-best-practices",
-      "sourceType": "local",
-      "computedHash": "df654933e451556147e384078c3fbdbac997cb0fe4d2f2db7642000c239304c5"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "df654933e451556147e384078c3fbdbac997cb0fe4d2f2db7642000c239304c5",
+      "skillPath": "external/video-design/remotion-best-practices/SKILL.md"
     },
     "remotion-marketing-automation": {
-      "source": "/home/tianyao/skills/custom/video-design/remotion-marketing-automation",
-      "sourceType": "local",
-      "computedHash": "f4f3c73cf96fa051791ea671e274908227331341b30e5fe4f7ae1604b7f71871"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "f4f3c73cf96fa051791ea671e274908227331341b30e5fe4f7ae1604b7f71871",
+      "skillPath": "custom/video-design/remotion-marketing-automation/SKILL.md"
     },
     "remotion-render": {
-      "source": "/home/tianyao/skills/external/video-design/remotion-render",
-      "sourceType": "local",
-      "computedHash": "5ad33a6307b48a8e756be722ea26e39467cd1713f87fc5a8eff5480ac873eeaf"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "5ad33a6307b48a8e756be722ea26e39467cd1713f87fc5a8eff5480ac873eeaf",
+      "skillPath": "external/video-design/remotion-render/SKILL.md"
     },
     "rp-diet": {
-      "source": "/home/tianyao/skills/external/health/rp-diet",
-      "sourceType": "local",
-      "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17",
+      "skillPath": "external/health/rp-diet/SKILL.md"
     },
     "running-decision-processes": {
-      "source": "/home/tianyao/skills/external/think/decision-management",
-      "sourceType": "local",
-      "computedHash": "0a6c34c8eb20234083609ff02fbc91c81f4c2d3452a2f0ec9adcfd4978771b92"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "0a6c34c8eb20234083609ff02fbc91c81f4c2d3452a2f0ec9adcfd4978771b92",
+      "skillPath": "external/think/decision-management/SKILL.md"
     },
     "secret-scanning": {
-      "source": "/home/tianyao/skills/external/develop/security/secret-scanning",
-      "sourceType": "local",
-      "computedHash": "cc7de79bee80775578227a370637d0a83aa0f2cbec28374058899859261d2081"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "cc7de79bee80775578227a370637d0a83aa0f2cbec28374058899859261d2081",
+      "skillPath": "external/develop/security/secret-scanning/SKILL.md"
     },
     "security-scan": {
-      "source": "/home/tianyao/skills/external/develop/security/security-scan",
-      "sourceType": "local",
-      "computedHash": "92cdcaddc554e318402f066ccc073c2e3dbcfda8c2730ec62ec373f805c41a57"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "92cdcaddc554e318402f066ccc073c2e3dbcfda8c2730ec62ec373f805c41a57",
+      "skillPath": "external/develop/security/security-scan/SKILL.md"
     },
     "skill-creator": {
-      "source": "/home/tianyao/skills/external/basic/skill-creator",
-      "sourceType": "local",
-      "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2",
+      "skillPath": "external/basic/skill-creator/SKILL.md"
     },
     "skill-manager": {
-      "source": "/home/tianyao/skills/custom/basic/skill-manager",
-      "sourceType": "local",
-      "computedHash": "ada4dfcb0c4a97e71c8364ccab8a94d6100221eb46e10cbc069f9dda88850ab9"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "ada4dfcb0c4a97e71c8364ccab8a94d6100221eb46e10cbc069f9dda88850ab9",
+      "skillPath": "custom/basic/skill-manager/SKILL.md"
     },
     "tailored-resume-generator": {
-      "source": "/home/tianyao/skills/external/career/resume/tailored-resume-generator",
-      "sourceType": "local",
-      "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92",
+      "skillPath": "external/career/resume/tailored-resume-generator/SKILL.md"
     },
     "using-git-worktrees": {
-      "source": "/home/tianyao/skills/external/develop/devops/using-git-worktrees",
-      "sourceType": "local",
-      "computedHash": "52bbb4b6e80918e83e92a1514f3b3757712154c2a8a42de24919e48a794c54fc"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "52bbb4b6e80918e83e92a1514f3b3757712154c2a8a42de24919e48a794c54fc",
+      "skillPath": "external/develop/devops/using-git-worktrees/SKILL.md"
     },
     "validate-skills": {
-      "source": "/home/tianyao/skills/external/basic/validate-skills",
-      "sourceType": "local",
-      "computedHash": "aff52c5f1470ceedfa83c6bd7936b5bf70d347d72724585e3a2911d6d009caf4"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "aff52c5f1470ceedfa83c6bd7936b5bf70d347d72724585e3a2911d6d009caf4",
+      "skillPath": "external/basic/validate-skills/SKILL.md"
     },
     "vercel-react-best-practices": {
-      "source": "/home/tianyao/skills/external/develop/frontend/vercel-react-best-practices",
-      "sourceType": "local",
-      "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357",
+      "skillPath": "external/develop/frontend/vercel-react-best-practices/SKILL.md"
     },
     "workers-best-practices": {
-      "source": "/home/tianyao/skills/custom/develop/workers-best-practices",
-      "sourceType": "local",
-      "computedHash": "78811cb9de51727a10197e7e85c43503298965b92496347799e11bde499bcbde"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "78811cb9de51727a10197e7e85c43503298965b92496347799e11bde499bcbde",
+      "skillPath": "custom/develop/workers-best-practices/SKILL.md"
     },
     "workout-program-designer": {
-      "source": "/home/tianyao/skills/external/health/workout-program-designer",
-      "sourceType": "local",
-      "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc",
+      "skillPath": "external/health/workout-program-designer/SKILL.md"
     },
     "yao-skill-manager": {
       "source": "firstsun-dev/skills",
