@@ -2,7 +2,7 @@
   "version": 1,
   "skills": {
     "FirstPrinciples": {
-      "source": "/home/tianyao/skills/external/think/first-principles/firstprinciples",
+      "source": "./external/think/first-principles/firstprinciples",
       "sourceType": "local",
       "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550"
     },
@@ -13,47 +13,47 @@
       "computedHash": "2bb241089c34af1af553c2a30e93d737236ff5408783cfc8c6f9702e77c4829a"
     },
     "astro-cloudflare-backend": {
-      "source": "/home/tianyao/skills/custom/develop/astro-cloudflare-backend",
+      "source": "./custom/develop/astro-cloudflare-backend",
       "sourceType": "local",
       "computedHash": "bf22fa61a4d166ee15cbf15611db9d74fb039495eaaaa9ddf2a460f161b91f69"
     },
     "astro-scss-best-practices": {
-      "source": "/home/tianyao/skills/custom/develop/astro-scss-best-practices",
+      "source": "./custom/develop/astro-scss-best-practices",
       "sourceType": "local",
       "computedHash": "5ceb81ae3f7ea31e84a8703499ed05db3e358cb4fba1593285ef7a1e083e6b0a"
     },
     "best-practices": {
-      "source": "/home/tianyao/skills/external/develop/frontend/best-practices",
+      "source": "./external/develop/frontend/best-practices",
       "sourceType": "local",
       "computedHash": "98dafea60ec1a7f5f70f6febcdd4b4fa3fe15723ad9c0b991c0818615bff7ba6"
     },
     "blog-master": {
-      "source": "/home/tianyao/skills/custom/writing/blog-master",
+      "source": "./custom/writing/blog-master",
       "sourceType": "local",
       "computedHash": "50c7c26c6e995a1bc0a6300c7d06af72fb91b02bd93b3780dbfc5233cff6ae05"
     },
     "book-distiller": {
-      "source": "/home/tianyao/skills/custom/basic/book-distiller",
+      "source": "./custom/basic/book-distiller",
       "sourceType": "local",
       "computedHash": "66c5afbd880a4db75cc364cbf00f6d03eb6453eee0e96ccddda1d5051a218207"
     },
     "brainstorming": {
-      "source": "/home/tianyao/skills/external/basic/brainstorming",
+      "source": "./external/basic/brainstorming",
       "sourceType": "local",
       "computedHash": "2032b2d9f5202bfdd6eaaa268fc3aef6fdd1edb806793eb858df51226bb62fcf"
     },
     "critical-thinking-logical-reasoning": {
-      "source": "/home/tianyao/skills/external/think/logic/critical-thinking-logical-reasoning",
+      "source": "./external/think/logic/critical-thinking-logical-reasoning",
       "sourceType": "local",
       "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04"
     },
     "d1-drizzle-schema": {
-      "source": "/home/tianyao/skills/custom/develop/drizzle-orm-best-practices",
+      "source": "./custom/develop/drizzle-orm-best-practices",
       "sourceType": "local",
       "computedHash": "3b46543567dbd071f9f9b87ba2eceefe6b906b38f58a1ab67e91bc5810f3b4b5"
     },
     "designing-your-work-life": {
-      "source": "/home/tianyao/skills/custom/books/designing-your-work-life",
+      "source": "./custom/books/designing-your-work-life",
       "sourceType": "local",
       "computedHash": "2828ecd54130d9f33afc5084791697366ac1cc749d81f3025650b6b1f4c1b6dd"
     },
@@ -63,32 +63,32 @@
       "computedHash": "7d547dc0e8d1c4d755d06d88782b79eaa5f0a908f4adeade894c4807416795a6"
     },
     "devops-engineer": {
-      "source": "/home/tianyao/skills/external/develop/devops/devops-engineer",
+      "source": "./external/develop/devops/devops-engineer",
       "sourceType": "local",
       "computedHash": "6de5e562151fe9c227234e81bdc1e647066d6b1822463eadf296a5344b47e35a"
     },
     "discovery-interview": {
-      "source": "/home/tianyao/skills/external/career/interview/discovery-interview",
+      "source": "./external/career/interview/discovery-interview",
       "sourceType": "local",
       "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656"
     },
     "documentation-writer": {
-      "source": "/home/tianyao/skills/external/basic/documentation-writer",
+      "source": "./external/basic/documentation-writer",
       "sourceType": "local",
       "computedHash": "ee53d65b163cd7eb953a930c95841cfe398cc2c0bd24c06508bbaa07c432be35"
     },
     "dopamine-nation": {
-      "source": "/home/tianyao/skills/custom/books/dopamine-nation",
+      "source": "./custom/books/dopamine-nation",
       "sourceType": "local",
       "computedHash": "e515492d0bf986af93188aa2f46f617a748ef3815fd5285478c8a4579aee360c"
     },
     "find-skills": {
-      "source": "/home/tianyao/skills/external/basic/find-skills",
+      "source": "./external/basic/find-skills",
       "sourceType": "local",
       "computedHash": "d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461"
     },
     "firecrawl-search": {
-      "source": "/home/tianyao/skills/external/basic/firecrawl-search",
+      "source": "./external/basic/firecrawl-search",
       "sourceType": "local",
       "computedHash": "563370b34bff9189f3180d1e4547a6758d26492760821ed85c5e67504fd8c5ca"
     },
@@ -99,82 +99,82 @@
       "computedHash": "2c502541c4fb385194c64a8e45d9d8d5f45b4fd080f0641958ebae19614f06ee"
     },
     "firstsun-dev-conventions": {
-      "source": "/home/tianyao/skills/custom/develop/firstsun-dev-conventions",
+      "source": "./custom/develop/firstsun-dev-conventions",
       "sourceType": "local",
       "computedHash": "6f1a83d3d33abe58817eb33c4fbecd4a6c4771c306030098d4bbcd27071aad3b"
     },
     "fitness-coach": {
-      "source": "/home/tianyao/skills/external/health/fitness-coach",
+      "source": "./external/health/fitness-coach",
       "sourceType": "local",
       "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c"
     },
     "frontend-design": {
-      "source": "/home/tianyao/skills/external/develop/frontend/frontend-design",
+      "source": "./external/develop/frontend/frontend-design",
       "sourceType": "local",
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
     },
     "gh-cli": {
-      "source": "/home/tianyao/skills/external/develop/devops/gh-cli",
+      "source": "./external/develop/devops/gh-cli",
       "sourceType": "local",
       "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56"
     },
     "github-actions": {
-      "source": "/home/tianyao/skills/external/develop/devops/github-actions",
+      "source": "./external/develop/devops/github-actions",
       "sourceType": "local",
       "computedHash": "3632dc997b2d8810bdc753173e269dfc0fd40b6fe6be0dd27b8f2abc58e47ada"
     },
     "gitlab-ci-patterns": {
-      "source": "/home/tianyao/skills/custom/develop/gitlab-ci-patterns",
+      "source": "./custom/develop/gitlab-ci-patterns",
       "sourceType": "local",
       "computedHash": "2b60d1804387dcdc1ed9eae9d9b52b63cd020b3afb1087675ad23a895c016cb1"
     },
     "habit-tracker": {
-      "source": "/home/tianyao/skills/external/lifestyle/habit-tracker",
+      "source": "./external/lifestyle/habit-tracker",
       "sourceType": "local",
       "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
     },
     "healthkit": {
-      "source": "/home/tianyao/skills/external/health/healthkit",
+      "source": "./external/health/healthkit",
       "sourceType": "local",
       "computedHash": "500d38fc27fd4195bc8dcd0d0e3223b19a4f9f76bfaf132fb1702c7b1efa264b"
     },
     "how-to-read-a-book": {
-      "source": "/home/tianyao/skills/custom/books/how-to-read-a-book",
+      "source": "./custom/books/how-to-read-a-book",
       "sourceType": "local",
       "computedHash": "2f13ee8b4aaac5fa9eb48a0f205cca94cffc58dbe512a58ecc62f9a9d7149cdf"
     },
     "internationalization-i18n": {
-      "source": "/home/tianyao/skills/external/develop/i18n/i18n",
+      "source": "./external/develop/i18n/i18n",
       "sourceType": "local",
       "computedHash": "9822ad7f8f07a7c53e83e384b81a0248fd8e30ee86f068ca6590f9e9b167b08e"
     },
     "interview-prep": {
-      "source": "/home/tianyao/skills/external/career/interview/interview-prep",
+      "source": "./external/career/interview/interview-prep",
       "sourceType": "local",
       "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a"
     },
     "learning-coach": {
-      "source": "/home/tianyao/skills/external/think/learning/learning-coach",
+      "source": "./external/think/learning/learning-coach",
       "sourceType": "local",
       "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410"
     },
     "mental-health-psychoeducation": {
-      "source": "/home/tianyao/skills/external/health/mental-health-psychoeducation",
+      "source": "./external/health/mental-health-psychoeducation",
       "sourceType": "local",
       "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26"
     },
     "minerva-hcs": {
-      "source": "/home/tianyao/skills/custom/think/minerva",
+      "source": "./custom/think/minerva",
       "sourceType": "local",
       "computedHash": "6dcfdb9353c4a8bafd10ad22163ab36b5dbf348d0de1c4750298d0f057a39636"
     },
     "monorepo-management": {
-      "source": "/home/tianyao/skills/custom/develop/monorepo-management",
+      "source": "./custom/develop/monorepo-management",
       "sourceType": "local",
       "computedHash": "dbdd7a6cdc331dd5f16ff4f96c7281f59bc93f1daf8ac905a21df35b12c4ddee"
     },
     "nutritional-specialist": {
-      "source": "/home/tianyao/skills/external/health/nutritional-specialist",
+      "source": "./external/health/nutritional-specialist",
       "sourceType": "local",
       "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb"
     },
@@ -184,7 +184,7 @@
       "computedHash": "ed0a53502693e56c67575a9958daca9a3a1ac7ba483367f400b4cad9488bfb3c"
     },
     "obsidian-development": {
-      "source": "/home/tianyao/skills/custom/obsidian/obsidian-development",
+      "source": "./custom/obsidian/obsidian-development",
       "sourceType": "local",
       "computedHash": "087f548b82f8c150fcc2879488109bdda5d21c91fc4c9e379765150a4acbff82"
     },
@@ -194,112 +194,112 @@
       "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f"
     },
     "owasp-security": {
-      "source": "/home/tianyao/skills/external/develop/security/owasp-security",
+      "source": "./external/develop/security/owasp-security",
       "sourceType": "local",
       "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2"
     },
     "personal-productivity": {
-      "source": "/home/tianyao/skills/external/lifestyle/personal-productivity",
+      "source": "./external/lifestyle/personal-productivity",
       "sourceType": "local",
       "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4"
     },
     "playwright-best-practices": {
-      "source": "/home/tianyao/skills/external/develop/devops/playwright-best-practices",
+      "source": "./external/develop/devops/playwright-best-practices",
       "sourceType": "local",
       "computedHash": "320eaf861e3a0a923bfaad0726cb311a3fe30093378f8d26c89b9c5ae5c42b35"
     },
     "react": {
-      "source": "/home/tianyao/skills/external/develop/frontend/react",
+      "source": "./external/develop/frontend/react",
       "sourceType": "local",
       "computedHash": "22dde85d5a69aaee45eb56aeed8e7f8fb5d2ae2559b38f71621d0654385bed1d"
     },
     "react-best-practices": {
-      "source": "/home/tianyao/skills/external/develop/frontend/react-best-practices",
+      "source": "./external/develop/frontend/react-best-practices",
       "sourceType": "local",
       "computedHash": "c73df933f4adb8d679a85b9814b85c56233e06a617c30c07001e47ee6522e8f2"
     },
     "rem-sleep": {
-      "source": "/home/tianyao/skills/external/health/rem-sleep",
+      "source": "./external/health/rem-sleep",
       "sourceType": "local",
       "computedHash": "313bba1a754db0d528c6558609141d123fdfc4db89223358cdf823c52d713c0e"
     },
     "remotion": {
-      "source": "/home/tianyao/skills/external/video-design/remotion",
+      "source": "./external/video-design/remotion",
       "sourceType": "local",
       "computedHash": "903fa72d770f795158ee5dc2c141c5bbb5a1754c4c22893bf2949a915498934a"
     },
     "remotion-best-practices": {
-      "source": "/home/tianyao/skills/external/video-design/remotion-best-practices",
+      "source": "./external/video-design/remotion-best-practices",
       "sourceType": "local",
       "computedHash": "df654933e451556147e384078c3fbdbac997cb0fe4d2f2db7642000c239304c5"
     },
     "remotion-marketing-automation": {
-      "source": "/home/tianyao/skills/custom/video-design/remotion-marketing-automation",
+      "source": "./custom/video-design/remotion-marketing-automation",
       "sourceType": "local",
       "computedHash": "f4f3c73cf96fa051791ea671e274908227331341b30e5fe4f7ae1604b7f71871"
     },
     "remotion-render": {
-      "source": "/home/tianyao/skills/external/video-design/remotion-render",
+      "source": "./external/video-design/remotion-render",
       "sourceType": "local",
       "computedHash": "5ad33a6307b48a8e756be722ea26e39467cd1713f87fc5a8eff5480ac873eeaf"
     },
     "rp-diet": {
-      "source": "/home/tianyao/skills/external/health/rp-diet",
+      "source": "./external/health/rp-diet",
       "sourceType": "local",
       "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17"
     },
     "running-decision-processes": {
-      "source": "/home/tianyao/skills/external/think/decision-management",
+      "source": "./external/think/decision-management",
       "sourceType": "local",
       "computedHash": "0a6c34c8eb20234083609ff02fbc91c81f4c2d3452a2f0ec9adcfd4978771b92"
     },
     "secret-scanning": {
-      "source": "/home/tianyao/skills/external/develop/security/secret-scanning",
+      "source": "./external/develop/security/secret-scanning",
       "sourceType": "local",
       "computedHash": "cc7de79bee80775578227a370637d0a83aa0f2cbec28374058899859261d2081"
     },
     "security-scan": {
-      "source": "/home/tianyao/skills/external/develop/security/security-scan",
+      "source": "./external/develop/security/security-scan",
       "sourceType": "local",
       "computedHash": "92cdcaddc554e318402f066ccc073c2e3dbcfda8c2730ec62ec373f805c41a57"
     },
     "skill-creator": {
-      "source": "/home/tianyao/skills/external/basic/skill-creator",
+      "source": "./external/basic/skill-creator",
       "sourceType": "local",
       "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2"
     },
     "skill-manager": {
-      "source": "/home/tianyao/skills/custom/basic/skill-manager",
+      "source": "./custom/basic/skill-manager",
       "sourceType": "local",
       "computedHash": "ada4dfcb0c4a97e71c8364ccab8a94d6100221eb46e10cbc069f9dda88850ab9"
     },
     "tailored-resume-generator": {
-      "source": "/home/tianyao/skills/external/career/resume/tailored-resume-generator",
+      "source": "./external/career/resume/tailored-resume-generator",
       "sourceType": "local",
       "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92"
     },
     "using-git-worktrees": {
-      "source": "/home/tianyao/skills/external/develop/devops/using-git-worktrees",
+      "source": "./external/develop/devops/using-git-worktrees",
       "sourceType": "local",
       "computedHash": "52bbb4b6e80918e83e92a1514f3b3757712154c2a8a42de24919e48a794c54fc"
     },
     "validate-skills": {
-      "source": "/home/tianyao/skills/external/basic/validate-skills",
+      "source": "./external/basic/validate-skills",
       "sourceType": "local",
       "computedHash": "aff52c5f1470ceedfa83c6bd7936b5bf70d347d72724585e3a2911d6d009caf4"
     },
     "vercel-react-best-practices": {
-      "source": "/home/tianyao/skills/external/develop/frontend/vercel-react-best-practices",
+      "source": "./external/develop/frontend/vercel-react-best-practices",
       "sourceType": "local",
       "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357"
     },
     "workers-best-practices": {
-      "source": "/home/tianyao/skills/custom/develop/workers-best-practices",
+      "source": "./custom/develop/workers-best-practices",
       "sourceType": "local",
       "computedHash": "78811cb9de51727a10197e7e85c43503298965b92496347799e11bde499bcbde"
     },
     "workout-program-designer": {
-      "source": "/home/tianyao/skills/external/health/workout-program-designer",
+      "source": "./external/health/workout-program-designer",
       "sourceType": "local",
       "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
     },
