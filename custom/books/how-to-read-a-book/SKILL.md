@@ -1,6 +1,7 @@
 ---
 name: how-to-read-a-book
 description: 莫提默·艾德勒《如何閱讀一本書》萃取的系統化主動閱讀框架。
+origin: firstsun-dev/skills
 ---
 
 # 如何閱讀一本書 (How to Read a Book)

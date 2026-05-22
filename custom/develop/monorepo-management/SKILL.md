@@ -1,6 +1,7 @@
 ---
 name: monorepo-management
 description: "Master monorepo management. Use this to set up or optimize multi-package repositories using Turborepo, pnpm workspaces, or Nx."
+origin: firstsun-dev/skills
 ---
 
 # Monorepo Management

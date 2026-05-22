@@ -1,6 +1,7 @@
 ---
 name: remotion-marketing-automation
 description: Automates the creation of marketing visuals (videos, OG images, banners) for blogs and web apps using Remotion. Use this skill when the user wants to generate promotional content, automate social media visuals, create dynamic OG images, or build automated video pipelines from structured data (JSON/Markdown).
+origin: firstsun-dev/skills
 ---
 
 # Remotion Marketing Automation

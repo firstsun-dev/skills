@@ -1,6 +1,7 @@
 ---
 name: blog-master
 description: "Comprehensive blog management. Use this to: 1) Polish/Refine Chinese articles with GEO standards, OR 2) Translate finalized articles to English."
+origin: firstsun-dev/skills
 ---
 
 # Blog Master (部落格大師)

@@ -1,6 +1,7 @@
 ---
 name: d1-drizzle-schema
 description: "Generate Drizzle ORM schemas for Cloudflare D1 databases with correct D1-specific patterns."
+origin: firstsun-dev/skills
 ---
 
 # D1 Drizzle Schema

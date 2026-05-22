@@ -1,6 +1,7 @@
 ---
 name: book-distiller
 description: Distills books (PDF, EPUB, TXT) into structured AI Agent skills and Gemini Gems. Use when you need to transform a book's methodology into an actionable AI persona.
+origin: firstsun-dev/skills
 ---
 
 # Book Distiller

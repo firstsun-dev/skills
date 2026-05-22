@@ -1,6 +1,7 @@
 ---
 name: skill-manager
 description: "Guides AI agents on how to maintain the separated custom/ and external/ domains in the Firstsun Skill Arsenal."
+origin: firstsun-dev/skills
 ---
 
 # Skill Manager (SM)

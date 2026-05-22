@@ -1,6 +1,7 @@
 ---
 name: dopamine-nation
 description: 安娜·蘭布克《多巴胺國度》萃取的成癮科學與身心平衡框架。
+origin: firstsun-dev/skills
 ---
 
 # 多巴胺國度 (Dopamine Nation)

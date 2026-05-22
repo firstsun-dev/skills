@@ -1,6 +1,7 @@
 ---
 name: obsidian-development
 description: Expert guidance for the entire Obsidian plugin development lifecycle. Use this skill when building, testing, or releasing Obsidian plugins. It mandates TDD with Vitest, adherence to the Obsidian API, and automated CI/CD via GitHub Actions.
+origin: firstsun-dev/skills
 ---
 
 # Obsidian Development Expert

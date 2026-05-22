@@ -1,6 +1,7 @@
 ---
 name: designing-your-work-life
 description: 史丹佛人生設計課《設計你的工作和人生》萃取的職場設計與職業轉型框架。
+origin: firstsun-dev/skills
 ---
 
 # 設計你的工作和人生 (Designing Your Work Life)

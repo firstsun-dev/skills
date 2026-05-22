@@ -1,6 +1,7 @@
 ---
 name: workers-best-practices
 description: "Reviews and authors Cloudflare Workers code against production best practices. Use when writing, reviewing, or debugging Worker code, configuring wrangler.jsonc, or checking for anti-patterns."
+origin: firstsun-dev/skills
 ---
 
 # Cloudflare Workers Best Practices

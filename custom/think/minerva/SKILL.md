@@ -1,6 +1,7 @@
 ---
 name: minerva-hcs
 description: Apply Minerva University Habits of Mind and Foundational Concepts (HCs) for deep reasoning. Use when asked to apply Minerva mental models, HCs, far transfer, structural thinking, or when dealing with complex problem decomposition.
+origin: firstsun-dev/skills
 ---
 
 # Minerva Habits of Mind and Foundational Concepts (HCs)
