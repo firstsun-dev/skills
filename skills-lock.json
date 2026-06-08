@@ -22,8 +22,8 @@
     "book-distiller": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "66c5afbd880a4db75cc364cbf00f6d03eb6453eee0e96ccddda1d5051a218207",
-      "skillPath": "custom/basic/book-distiller/SKILL.md"
+      "skillPath": "custom/basic/book-distiller/SKILL.md",
+      "computedHash": "319fd6bc8d2980439b5b7ccf4870d564711da7b9cf3ac20fa42118b5bb7857f6"
     },
     "brainstorming": {
       "source": "obra/superpowers",
@@ -122,10 +122,9 @@
       "skillPath": "skills/gh-cli/SKILL.md"
     },
     "github-actions": {
-      "source": "callstackincubator/agent-skills@github-actions",
+      "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "3632dc997b2d8810bdc753173e269dfc0fd40b6fe6be0dd27b8f2abc58e47ada",
-      "skillPath": "skills/github-actions/SKILL.md"
+      "skillPath": "custom/develop/github-actions/SKILL.md"
     },
     "gitlab-ci-patterns": {
       "source": "firstsun-dev/skills",
@@ -304,14 +303,20 @@
     "skill-manager": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "ada4dfcb0c4a97e71c8364ccab8a94d6100221eb46e10cbc069f9dda88850ab9",
-      "skillPath": "custom/basic/skill-manager/SKILL.md"
+      "skillPath": "custom/basic/skill-manager/SKILL.md",
+      "computedHash": "b717340e428926494a9bb631c5fa3ad15593e7ef07728925b25f1d230f06876f"
     },
     "tailored-resume-generator": {
       "source": "composiohq/awesome-claude-skills",
       "sourceType": "github",
       "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92",
       "skillPath": "tailored-resume-generator/SKILL.md"
+    },
+    "terraform-engineer": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "skillPath": "skills/terraform-engineer/SKILL.md",
+      "computedHash": "04e717ca5d883a2839863f371f8ebba8b3f89cde3b2292cf90a3186c30b2d24a"
     },
     "using-git-worktrees": {
       "source": "obra/superpowers",
