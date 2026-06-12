@@ -31,6 +31,12 @@
       "computedHash": "2032b2d9f5202bfdd6eaaa268fc3aef6fdd1edb806793eb858df51226bb62fcf",
       "skillPath": "skills/brainstorming/SKILL.md"
     },
+    "cloudflare": {
+      "source": "cloudflare/skills",
+      "sourceType": "github",
+      "skillPath": "skills/cloudflare/SKILL.md",
+      "computedHash": "3db237b77d15da8ee3ee87b73f2d4b2bce1c43e4f066613fb3c7ea2ad626390c"
+    },
     "critical-thinking-logical-reasoning": {
       "source": "sammcj/agentic-coding",
       "sourceType": "github",
@@ -41,7 +47,17 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "computedHash": "3b46543567dbd071f9f9b87ba2eceefe6b906b38f58a1ab67e91bc5810f3b4b5",
-      "skillPath": "custom/develop/drizzle-orm-best-practices/SKILL.md"
+      "skillPath": "custom/develop/d1-drizzle-schema/SKILL.md"
+    },
+    "astro-cloudflare-backend": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/develop/astro-cloudflare-backend/SKILL.md"
+    },
+    "astro-scss-best-practices": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/develop/astro-scss-best-practices/SKILL.md"
     },
     "designing-your-work-life": {
       "source": "firstsun-dev/skills",
@@ -115,6 +131,12 @@
       "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67",
       "skillPath": "skills/frontend-design/SKILL.md"
     },
+    "gcloud": {
+      "source": "google/skills",
+      "sourceType": "github",
+      "skillPath": "skills/cloud/gcloud/SKILL.md",
+      "computedHash": "95e957603ab73e3a80c1ba5932d992c186ae06cb1b5e575e9206c2deb478c88d"
+    },
     "gh-cli": {
       "source": "github/awesome-copilot@gh-cli",
       "sourceType": "github",
@@ -178,7 +200,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "computedHash": "6dcfdb9353c4a8bafd10ad22163ab36b5dbf348d0de1c4750298d0f057a39636",
-      "skillPath": "custom/think/minerva/SKILL.md"
+      "skillPath": "custom/think/minerva-hcs/SKILL.md"
     },
     "monorepo-management": {
       "source": "firstsun-dev/skills",
@@ -209,6 +231,12 @@
       "sourceType": "github",
       "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f",
       "skillPath": "custom/obsidian/obsidian-markdown/SKILL.md"
+    },
+    "oracle-cloud": {
+      "source": "dauquangthanh/hanoi-rainbow",
+      "sourceType": "github",
+      "skillPath": "external/develop/devops/oracle-cloud/SKILL.md",
+      "computedHash": "a9e2631e3bfc2356fce79147791c644bd8a020eb781b74cd62f813a6bf78a8ae"
     },
     "owasp-security": {
       "source": "hoodini/ai-agents-skills",

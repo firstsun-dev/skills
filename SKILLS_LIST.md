@@ -31,6 +31,8 @@
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
 | **firstsun-dev-conventions** | Firstsun 專案的綜合開發規範 (Astro, React, Cloudflare)，包含後端、樣式、i18n 與測試。 | [SKILL.md](./custom/develop/firstsun-dev-conventions/SKILL.md) |
+| **astro-cloudflare-backend** | 使用 D1, Drizzle ORM 與 Astro Actions 構建 Astro/Cloudflare 後端的最佳實踐。 | [SKILL.md](./custom/develop/astro-cloudflare-backend/SKILL.md) |
+| **astro-scss-best-practices** | 在 Astro 專案中使用 SCSS Modules 與設計令牌的樣式最佳實踐。 | [SKILL.md](./custom/develop/astro-scss-best-practices/SKILL.md) |
 | **frontend-design** | 創作具備高品質設計感的生產級前端介面。 | [SKILL.md](./external/develop/frontend/frontend-design/SKILL.md) |
 | **react** | 將 JSON 規格轉換為 React 組件的渲染器。 | [SKILL.md](./external/develop/frontend/react/SKILL.md) |
 | **react-best-practices** | 撰寫或閱讀 React 組件時的最佳實踐指南。 | [SKILL.md](./external/develop/frontend/react-best-practices/SKILL.md) |
@@ -42,6 +44,7 @@
 | :--- | :--- | :--- |
 | **workers-best-practices** | Cloudflare Workers 生產環境最佳實踐與程式碼審查。 | [SKILL.md](./custom/develop/workers-best-practices/SKILL.md) |
 | **d1-drizzle-schema** | Drizzle ORM 於 D1 上的欄位設計模式與遷移流程。 | [SKILL.md](./custom/develop/d1-drizzle-schema/SKILL.md) |
+| **cloudflare** | Cloudflare 全方位服務管理，涵蓋 Workers, KV, R2, D1, AI 與安全性配置。 | [SKILL.md](./external/develop/devops/cloudflare/SKILL.md) |
 
 ### 運維、架構與工具 (DevOps, Architecture & Tools)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -50,6 +53,8 @@
 | **gitlab-ci-patterns** | 高效率 GitLab CI/CD 流水線配置與自動化部署模式。 | [SKILL.md](./custom/develop/gitlab-ci-patterns/SKILL.md) |
 | **playwright-best-practices** | Playwright E2E 測試架構、POM 模式與 CI 整合。 | [SKILL.md](./external/develop/devops/playwright-best-practices/SKILL.md) |
 | **devops-engineer** | Docker, CI/CD, Kubernetes, Terraform 等自動化配置。 | [SKILL.md](./external/develop/devops/devops-engineer/SKILL.md) |
+| **gcloud** | Google Cloud SDK 管理與雲端資源配置 CLI 操作。 | [SKILL.md](./external/develop/devops/gcloud/SKILL.md) |
+| **oracle-cloud** | Oracle Cloud Infrastructure (OCI) 雲端資源配置與架構指引。 | [SKILL.md](./external/develop/devops/oracle-cloud/SKILL.md) |
 | **gh-cli** | GitHub CLI (gh) 的完整操作參考手冊。 | [SKILL.md](./external/develop/devops/gh-cli/SKILL.md) |
 | **github-actions** | 現代化 Monorepo CI/CD 模式：路徑過濾、自動化發佈與 Cloudflare 部署。 | [SKILL.md](./custom/develop/github-actions/SKILL.md) |
 | **using-git-worktrees** | 使用 Git Worktree 隔離不同功能的開發環境。 | [SKILL.md](./external/develop/devops/using-git-worktrees/SKILL.md) |
@@ -127,5 +132,5 @@
 
 
 ---
-*最後更新日期: 2026-06-08*
+*最後更新日期: 2026-06-12*
 

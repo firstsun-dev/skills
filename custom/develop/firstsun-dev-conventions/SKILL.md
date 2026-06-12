@@ -18,6 +18,7 @@ Core rules always in effect for Firstsun projects. For domain-specific detail, r
 | Adding images, tools (mini-apps), or content queries | `references/tools-images.md` |
 | Writing or planning e2e tests | `references/testing.md` |
 | Creating or modifying tool pages under `src/apps/tools/` | `references/tool-pages.md` |
+| CI/CD, deployment, and GitHub Actions | `references/cicd.md` |
 
 ---
 
