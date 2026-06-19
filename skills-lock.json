@@ -16,12 +16,14 @@
     "astro-cloudflare-backend": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "skillPath": "custom/develop/astro-cloudflare-backend/SKILL.md"
+      "skillPath": "custom/develop/astro-cloudflare-backend/SKILL.md",
+      "computedHash": "85f2ea3414cee0607acd217e6da16f19689ea737e8ec1b3f5ed359cf135dbe05"
     },
     "astro-scss-best-practices": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "skillPath": "custom/develop/astro-scss-best-practices/SKILL.md"
+      "skillPath": "custom/develop/astro-scss-best-practices/SKILL.md",
+      "computedHash": "5ceb81ae3f7ea31e84a8703499ed05db3e358cb4fba1593285ef7a1e083e6b0a"
     },
     "best-practices": {
       "source": "obra/superpowers",
@@ -32,8 +34,8 @@
     "blog-master": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "50c7c26c6e995a1bc0a6300c7d06af72fb91b02bd93b3780dbfc5233cff6ae05",
-      "skillPath": "custom/writing/blog-master/SKILL.md"
+      "skillPath": "custom/writing/blog-master/SKILL.md",
+      "computedHash": "bfd7153b4b5b17415ec10ccd9485ba9f419326a106bb55a6a82943334aa3ae83"
     },
     "book-distiller": {
       "source": "firstsun-dev/skills",
@@ -60,9 +62,8 @@
       "computedHash": "537be883849c5357f74188b13cff05fbac46a084f74034f7821bd17dac31f7d5"
     },
     "ckm:banner-design": {
-      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "sourceType": "github",
-      "skillPath": ".claude/skills/banner-design/SKILL.md",
+      "source": "/home/tianyao/skills/external/video-design/ckm-banner-design",
+      "sourceType": "local",
       "computedHash": "7bbf0f48704f5c40436e3466d7ef9bcbafe35a84eb8c3e9d0ab76408a57bac5c"
     },
     "cloudflare": {
@@ -80,8 +81,8 @@
     "d1-drizzle-schema": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "3b46543567dbd071f9f9b87ba2eceefe6b906b38f58a1ab67e91bc5810f3b4b5",
-      "skillPath": "custom/develop/d1-drizzle-schema/SKILL.md"
+      "skillPath": "custom/develop/d1-drizzle-schema/SKILL.md",
+      "computedHash": "38e47a6558e43ed03afa62debfb6d141bf45d5cdab48d75840fecde140c7677c"
     },
     "design-taste-frontend": {
       "source": "leonxlnx/taste-skill",
@@ -98,8 +99,8 @@
     "designing-your-work-life": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "2828ecd54130d9f33afc5084791697366ac1cc749d81f3025650b6b1f4c1b6dd",
-      "skillPath": "custom/books/designing-your-work-life/SKILL.md"
+      "skillPath": "custom/books/designing-your-work-life/SKILL.md",
+      "computedHash": "311f832892cf25696edbfce9536034baac7d25b4d2616c3ed691cc40a0c2350c"
     },
     "dev-conventions": {
       "source": "firstsun-dev/skills",
@@ -126,8 +127,9 @@
       "skillPath": "skills/documentation-writer/SKILL.md"
     },
     "dopamine-nation": {
-      "source": "/home/tianyao/skills/custom/books/dopamine-nation",
-      "sourceType": "local",
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/books/dopamine-nation/SKILL.md",
       "computedHash": "83abac0eca5a4a2cd75490eb07063c9e986765681924ee5a080b6b2b55bdcc1f"
     },
     "find-skills": {
@@ -151,8 +153,8 @@
     "firstsun-dev-conventions": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "5043dcbdf882f75ef200ebd6c782f9df41a6b8ef98f4ac6d9f2f7c38067f7dc6",
-      "skillPath": "custom/develop/firstsun-dev-conventions/SKILL.md"
+      "skillPath": "custom/develop/firstsun-dev-conventions/SKILL.md",
+      "computedHash": "2b4d7212503ce6f24d62408229a326498f81a2de3aafa6d13234add72cb66e19"
     },
     "fitness-coach": {
       "source": "tatat/agents-playground",
@@ -187,13 +189,14 @@
     "github-actions": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "skillPath": "custom/develop/github-actions/SKILL.md"
+      "skillPath": "custom/develop/github-actions/SKILL.md",
+      "computedHash": "89902ccfb9565c8d23a70bfcefc2883b2bdb8f445b308c367ec894f38fd5bcbc"
     },
     "gitlab-ci-patterns": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "2b60d1804387dcdc1ed9eae9d9b52b63cd020b3afb1087675ad23a895c016cb1",
-      "skillPath": "custom/develop/gitlab-ci-patterns/SKILL.md"
+      "skillPath": "custom/develop/gitlab-ci-patterns/SKILL.md",
+      "computedHash": "df49908773b44485fc0243749338bc270647140426ebb000517eae7275a6d4a8"
     },
     "gpt-taste": {
       "source": "leonxlnx/taste-skill",
@@ -222,8 +225,8 @@
     "how-to-read-a-book": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "2f13ee8b4aaac5fa9eb48a0f205cca94cffc58dbe512a58ecc62f9a9d7149cdf",
-      "skillPath": "custom/books/how-to-read-a-book/SKILL.md"
+      "skillPath": "custom/books/how-to-read-a-book/SKILL.md",
+      "computedHash": "d0d8753403f1fc2df078acc0ea6b812013bc01e830aa71586c862e3c76e5d06a"
     },
     "hyperframes-animation": {
       "source": "heygen-com/hyperframes",
@@ -282,8 +285,8 @@
     "minerva-hcs": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "6dcfdb9353c4a8bafd10ad22163ab36b5dbf348d0de1c4750298d0f057a39636",
-      "skillPath": "custom/think/minerva-hcs/SKILL.md"
+      "skillPath": "custom/think/minerva-hcs/SKILL.md",
+      "computedHash": "496cf8a24638c4955abc5759744f31988e626500c8f3b1e8f8c9b498b7d77f52"
     },
     "minimalist-ui": {
       "source": "leonxlnx/taste-skill",
@@ -294,8 +297,8 @@
     "monorepo-management": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "dbdd7a6cdc331dd5f16ff4f96c7281f59bc93f1daf8ac905a21df35b12c4ddee",
-      "skillPath": "custom/develop/monorepo-management/SKILL.md"
+      "skillPath": "custom/develop/monorepo-management/SKILL.md",
+      "computedHash": "60cc5ba9e9b431bae771f37c76a653190b93bedf267f9de8c18631aa2e01d4c0"
     },
     "nutritional-specialist": {
       "source": "ailabs-393/ai-labs-claude-skills",
@@ -306,20 +309,20 @@
     "obsidian-bases": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "ed0a53502693e56c67575a9958daca9a3a1ac7ba483367f400b4cad9488bfb3c",
-      "skillPath": "custom/obsidian/obsidian-bases/SKILL.md"
+      "skillPath": "custom/obsidian/obsidian-bases/SKILL.md",
+      "computedHash": "ed0a53502693e56c67575a9958daca9a3a1ac7ba483367f400b4cad9488bfb3c"
     },
     "obsidian-development": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "087f548b82f8c150fcc2879488109bdda5d21c91fc4c9e379765150a4acbff82",
-      "skillPath": "custom/obsidian/obsidian-development/SKILL.md"
+      "skillPath": "custom/obsidian/obsidian-development/SKILL.md",
+      "computedHash": "15c473a581df25ef8e6215b9e38ab425ab4506549ef800227f40c34d991d90e2"
     },
     "obsidian-markdown": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f",
-      "skillPath": "custom/obsidian/obsidian-markdown/SKILL.md"
+      "skillPath": "custom/obsidian/obsidian-markdown/SKILL.md",
+      "computedHash": "cacc9058a35ad3fd4985b4c31121bff8202f1337c39808c1326ded6a19a7915f"
     },
     "oracle-cloud": {
       "source": "dauquangthanh/hanoi-rainbow",
@@ -344,6 +347,12 @@
       "sourceType": "github",
       "computedHash": "320eaf861e3a0a923bfaad0726cb311a3fe30093378f8d26c89b9c5ae5c42b35",
       "skillPath": "SKILL.md"
+    },
+    "polish-blog": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/writing/polish-blog/SKILL.md",
+      "computedHash": "e3f6b368ab35e860ec19acf861109b3d61564104f95f8a001c8e47028291d1c9"
     },
     "react": {
       "source": "vercel-labs/json-render",
@@ -384,8 +393,8 @@
     "remotion-marketing-automation": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "f4f3c73cf96fa051791ea671e274908227331341b30e5fe4f7ae1604b7f71871",
-      "skillPath": "custom/video-design/remotion-marketing-automation/SKILL.md"
+      "skillPath": "custom/video-design/remotion-marketing-automation/SKILL.md",
+      "computedHash": "0d772f82325888852fef3aa5f43a40798c5d47807775817af98857f51fee62a1"
     },
     "remotion-render": {
       "source": "skills-shell/skills",
@@ -498,8 +507,8 @@
     "workers-best-practices": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "computedHash": "78811cb9de51727a10197e7e85c43503298965b92496347799e11bde499bcbde",
-      "skillPath": "custom/develop/workers-best-practices/SKILL.md"
+      "skillPath": "custom/develop/workers-best-practices/SKILL.md",
+      "computedHash": "da9766f42ab9f5c7ada15a6737371c34c2777efb095c81beabff81ca56ed0dc1"
     },
     "workout-program-designer": {
       "source": "onewave-ai/claude-skills",

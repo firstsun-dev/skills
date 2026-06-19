@@ -89,7 +89,14 @@ register_skills() {
         npx skills add "$skill_dir" $SCOPE_FLAG $AGENT_FLAG -y < /dev/null
       fi
     done
-    rm -f "$BASE_DIR/skills-lock.json.bak"
+    
+    # Restore complete backup if in local mode to avoid dirtying skills-lock.json with local paths
+    if [ "$USE_REMOTE" = false ] && [ -f "$BASE_DIR/skills-lock.json.bak" ]; then
+      echo "🛡️  Restoring original skills-lock.json in local mode"
+      mv "$BASE_DIR/skills-lock.json.bak" "$BASE_DIR/skills-lock.json"
+    else
+      rm -f "$BASE_DIR/skills-lock.json.bak"
+    fi
   fi
 }
 

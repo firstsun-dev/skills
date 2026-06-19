@@ -27,7 +27,7 @@ Skills are categorized into the following domains:
    - Use `./setup.sh --local` for active development.
 4. **Syncing Index**: Whenever adding or moving a skill, update `SKILLS_LIST.md` immediately.
 5. **Branding**: Use "Firstsun Skill Arsenal" or "Firstsun Skill Manager" in all documentation.
-6. **Lock File Hygiene**: `skills-lock.json` MUST preserve the **original external sources** for all skills in the `external/` directory. Do not point them to `firstsun-dev/skills`. Only `custom/` skills should point to the internal repository.
+6. **Lock File Hygiene**: `skills-lock.json` MUST preserve the **original external sources** for all skills in the `external/` directory. Do not point them to `firstsun-dev/skills`. Only `custom/` skills should point to the internal repository. If `./setup.sh --local` is used, the script automatically preserves/restores the original `skills-lock.json` to prevent local file paths from dirtying version control.
 7. **Authoritative Source**: The directory `@custom/develop/firstsun-dev-conventions/**` is the authoritative source for Firstsun project standards. Agents MUST prioritize fetching/referencing the latest version from `firstsun-dev/skills` when working in any project that consumes this skill.
 
 ## Core Workflows

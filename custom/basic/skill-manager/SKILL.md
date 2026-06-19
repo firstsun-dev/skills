@@ -38,7 +38,7 @@ Leverage these skills to maintain the repository:
 - **Progressive Disclosure**: Use the `/reference` pattern to keep skills efficient. Read [references/REFACTORING.md](references/REFACTORING.md) for the refactoring SOP.
 
 ## Core Commands
-- Bulk Setup: `./setup.sh <domain>` registers everything globally.
+- Bulk Setup: `./setup.sh` registers all local skills (defaults to remote mode to preserve `skills-lock.json`). Use `./setup.sh --local` for active development; the script automatically safeguards `skills-lock.json` from local path changes.
 - Bulk Export: `./export.sh <domain>` imports domain skills to a specific project.
 - Manual Add: `npx skills add <path_to_directory> -l` to list all detectable skills.
 
