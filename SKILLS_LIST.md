@@ -76,6 +76,8 @@
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
 | **blog-master** | 全方位部落格管理：包含中文潤稿優化 (GEO 標準) 與自動化中翻英翻譯。 | [SKILL.md](./custom/writing/blog-master/SKILL.md) |
+| **polish-blog** | 潤飾與完善 Astro 部落格的中文文章，處理語言流暢度、參考連結與 SEO 屬性。 | [SKILL.md](./custom/writing/polish-blog/SKILL.md) |
+| **translate-blog** | 部落格文章中翻英：將中文文章翻譯為英文，自動轉換 frontmatter 欄位並鏡像儲存至對應目錄。 | [SKILL.md](./custom/writing/translate-blog/SKILL.md) |
 
 ## 💜 Obsidian 知識管理 (Obsidian Management)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -104,7 +106,7 @@
 | :--- | :--- | :--- |
 | **critical-thinking-logical-reasoning** | 深度批判性思考與邏輯推理，適用於分析複雜文章與報告。 | [SKILL.md](./external/think/logic/critical-thinking-logical-reasoning/SKILL.md) |
 | **firstprinciples** | 第一性原理分析：拆解至公理、挑戰假設、重建真相。 | [SKILL.md](./external/think/first-principles/firstprinciples/SKILL.md) |
-| **minerva-hcs** | 密涅瓦大學核心思維模型 (HCs)，用於跨領域的深度問題拆解與推導。 | [SKILL.md](./custom/think/minerva/SKILL.md) |
+| **minerva-hcs** | 密涅瓦大學核心思維模型 (HCs)，用於跨領域的深度問題拆解與推導。 | [SKILL.md](./custom/think/minerva-hcs/SKILL.md) |
 | **running-decision-processes** | 運行高品質決策流程，產出包含選項矩陣、權責劃分與決策日誌的完整決策包。 | [SKILL.md](./external/think/decision-management/SKILL.md) |
 | **learning-coach** | 基於腦科學的學習教練，提供主動回想、間隔重複等高效學習法。 | [SKILL.md](./external/think/learning/learning-coach/SKILL.md) |
 | **how-to-read-a-book** | 莫提默·艾德勒《如何閱讀一本書》萃取的系統化主動閱讀框架。 | [SKILL.md](./custom/books/how-to-read-a-book/SKILL.md) |
@@ -132,5 +134,5 @@
 
 
 ---
-*最後更新日期: 2026-06-12*
+*最後更新日期: 2026-06-19*
 

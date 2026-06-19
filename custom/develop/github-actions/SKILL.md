@@ -32,15 +32,11 @@ Use this skill when:
 | File | Description |
 |------|-------------|
 | [unified-workflow.md](./references/unified-workflow.md) | Template for a unified monorepo CI/CD pipeline |
-| [path-filtering.md](./references/path-filtering.md) | Detailed patterns for path-based job execution |
 | [cloudflare-deploy.md](./references/cloudflare-deploy.md) | Deployment patterns for Cloudflare Workers and D1 |
-| [semantic-release.md](./references/semantic-release.md) | Automated release and tagging configuration |
 
 ## Problem -> Skill Mapping
 
 | Problem | Start With |
 |---------|------------|
-| Reduce CI time by only testing changed apps | [path-filtering.md](./references/path-filtering.md) |
 | Setup a full CI/CD pipeline from scratch | [unified-workflow.md](./references/unified-workflow.md) |
 | Automate Cloudflare Workers deployment | [cloudflare-deploy.md](./references/cloudflare-deploy.md) |
-| Automate versioning and GitHub Releases | [semantic-release.md](./references/semantic-release.md) |

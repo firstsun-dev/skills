@@ -21,4 +21,4 @@ Choose the appropriate reference based on your task:
 ---
 ## Related Skills
 - `workers-best-practices`: Core Workers production rules.
-- `drizzle-orm-best-practices`: Advanced D1 schema patterns.
+- `d1-drizzle-schema`: Advanced D1 schema patterns.
