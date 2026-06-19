@@ -13,6 +13,7 @@
 | **brainstorming** | 在執行創意工作前的需求探索與設計思考工具。 | [SKILL.md](./external/basic/brainstorming/SKILL.md) |
 | **firecrawl-search** | 具備完整網頁內容提取功能的網路搜尋工具。 | [SKILL.md](./external/basic/firecrawl-search/SKILL.md) |
 | **book-distiller** | 萬用書籍萃取系統：將 PDF、EPUB、TXT 轉化為 AI 技能或 Gem 指令。 | [SKILL.md](./custom/basic/book-distiller/SKILL.md) |
+| **full-output-enforcement** | 強制完整代碼生成，禁用佔位符模式，並乾淨處理 Token 限制拆分。 | [SKILL.md](./external/basic/full-output-enforcement/SKILL.md) |
 
 ## 💎 Gem 指令集 (Gem Instructions)
 這些是將多個相關技能整合後的 Google Gemini Gem 專用指令集，可直接複製到 Gemini 的「操作說明」中使用。
@@ -38,6 +39,16 @@
 | **react-best-practices** | 撰寫或閱讀 React 組件時的最佳實踐指南。 | [SKILL.md](./external/develop/frontend/react-best-practices/SKILL.md) |
 | **vercel-react-best-practices** | Vercel 工程團隊提供的 React/Next.js 效能最佳化指南。 | [SKILL.md](./external/develop/frontend/vercel-react-best-practices/SKILL.md) |
 | **best-practices** | 現代網頁開發的安全性、相容性與程式碼品質標準。 | [SKILL.md](./external/develop/frontend/best-practices/SKILL.md) |
+| **design-taste-frontend** | 反「Slop（水代碼）」前端開發，針對登陸頁、作品集及重新設計提供優質無範本的介面與設計系統。 | [SKILL.md](./external/develop/frontend/design-taste-frontend/SKILL.md) |
+| **design-taste-frontend-v1** | 原始 v1 taste-skill，用於向後相容。 | [SKILL.md](./external/develop/frontend/design-taste-frontend-v1/SKILL.md) |
+| **gpt-taste** | 精英級 UX/UI 與高級 GSAP 動畫工程，強制執行佈局隨機化、ScrollTrigger 滾動觸發及寬鬆版式。 | [SKILL.md](./external/develop/frontend/gpt-taste/SKILL.md) |
+| **high-end-visual-design** | 頂尖機構級 UI/UX 設計與動畫，定義字體、間距、陰影等，避免廉價 AI 設計默認值。 | [SKILL.md](./external/develop/frontend/high-end-visual-design/SKILL.md) |
+| **image-to-code** | 視覺優先的網頁設計與代碼實現，先生成設計參考圖再轉化為精確前端代碼。 | [SKILL.md](./external/develop/frontend/image-to-code/SKILL.md) |
+| **industrial-brutalist-ui** | 工業粗獷主義與戰術遙測介面工程，融合瑞士排版、製造手冊與復古終端美學。 | [SKILL.md](./external/develop/frontend/industrial-brutalist-ui/SKILL.md) |
+| **minimalist-ui** | 極簡主義與社論風格介面，採用暖單色調調色板與扁平 Bento 格局。 | [SKILL.md](./external/develop/frontend/minimalist-ui/SKILL.md) |
+| **redesign-existing-projects** | 現有網頁與應用的重構設計與升級，識別並消除通用 AI 模式，提升介面質感。 | [SKILL.md](./external/develop/frontend/redesign-existing-projects/SKILL.md) |
+| **sleek-design-mobile-apps** | 行動應用設計與 UI 實現，支持與 Sleek 專案對接（建立畫面、互動與列出專案）。 | [SKILL.md](./external/develop/frontend/sleek-design-mobile-apps/SKILL.md) |
+| **stitch-design-taste** | Google Stitch 語意設計系統，生成適用於 Stitch 畫面生成的 DESIGN.md 設計規範。 | [SKILL.md](./external/develop/frontend/stitch-design-taste/SKILL.md) |
 
 ### 後端與 Cloudflare (Backend & Cloudflare)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -93,8 +104,11 @@
 | **remotion-best-practices** | Remotion 影片創作的最佳實踐建議。 | [SKILL.md](./external/video-design/remotion-best-practices/SKILL.md) |
 | **remotion-render** | 透過 inference.sh 渲染 React/Remotion 組件為影片。 | [SKILL.md](./external/video-design/remotion-render/SKILL.md) |
 | **remotion-marketing-automation** | 自動化產生 Blog 與 Web App 的宣傳圖影（OG Images, Feature Previews）。 | [SKILL.md](./custom/video-design/remotion-marketing-automation/SKILL.md) |
-| **ai-video-generation** | 透過 RunComfy CLI 生成與編輯 AI 影片，支持多種模型路由（HappyHorse, Wan, Kling, Seedance 等）。 | [SKILL.md](./external/video-design/ai-video-generation/SKILL.md) |
+| **ai-video-generation** | 透過 RunComfy CLI 生成與編輯 AI 影片，支援多種模型路由（HappyHorse, Wan, Kling, Seedance 等）。 | [SKILL.md](./external/video-design/ai-video-generation/SKILL.md) |
 | **ckm:banner-design** | 多格式創意橫幅 (Banner) 設計系統，支援社群媒體、廣告、網頁與印刷橫幅。 | [SKILL.md](./external/video-design/ckm-banner-design/SKILL.md) |
+| **brandkit** | 精英級品牌標識與視覺系統設計，適用於極簡、科技、豪華等風格的 Logo、 identity 系統及品牌指南。 | [SKILL.md](./external/video-design/brandkit/SKILL.md) |
+| **imagegen-frontend-mobile** | 用於創建高品質原生行動端畫面概念的圖像生成指南，注重層次、排版與一致性。 | [SKILL.md](./external/video-design/imagegen-frontend-mobile/SKILL.md) |
+| **imagegen-frontend-web** | 用於生成高品質網頁設計參考圖的圖像生成指南，支援單一色調及分段圖像生成。 | [SKILL.md](./external/video-design/imagegen-frontend-web/SKILL.md) |
 
 ## 💼 職涯與求職 (Career & Job Seeking)
 | 技能名稱 | 中文說明 | 檔案連結 |
