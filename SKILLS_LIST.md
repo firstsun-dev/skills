@@ -93,6 +93,8 @@
 | **remotion-best-practices** | Remotion 影片創作的最佳實踐建議。 | [SKILL.md](./external/video-design/remotion-best-practices/SKILL.md) |
 | **remotion-render** | 透過 inference.sh 渲染 React/Remotion 組件為影片。 | [SKILL.md](./external/video-design/remotion-render/SKILL.md) |
 | **remotion-marketing-automation** | 自動化產生 Blog 與 Web App 的宣傳圖影（OG Images, Feature Previews）。 | [SKILL.md](./custom/video-design/remotion-marketing-automation/SKILL.md) |
+| **ai-video-generation** | 透過 RunComfy CLI 生成與編輯 AI 影片，支持多種模型路由（HappyHorse, Wan, Kling, Seedance 等）。 | [SKILL.md](./external/video-design/ai-video-generation/SKILL.md) |
+| **ckm:banner-design** | 多格式創意橫幅 (Banner) 設計系統，支援社群媒體、廣告、網頁與印刷橫幅。 | [SKILL.md](./external/video-design/ckm-banner-design/SKILL.md) |
 
 ## 💼 職涯與求職 (Career & Job Seeking)
 | 技能名稱 | 中文說明 | 檔案連結 |

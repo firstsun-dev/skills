@@ -7,6 +7,22 @@
       "computedHash": "0a9fbdbac468617be1bca79dd7c22b90fa4b3f9a033aef1795cfd8fd62253550",
       "skillPath": "Packs/FirstPrinciples/src/SKILL.md"
     },
+    "ai-video-generation": {
+      "source": "agentspace-so/runcomfy-agent-skills",
+      "sourceType": "github",
+      "skillPath": "ai-video-generation/SKILL.md",
+      "computedHash": "e7a373961e0196280ecf1de3ddbfb10c5a74f3f5305cb2718284e6f06b1c7d65"
+    },
+    "astro-cloudflare-backend": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/develop/astro-cloudflare-backend/SKILL.md"
+    },
+    "astro-scss-best-practices": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/develop/astro-scss-best-practices/SKILL.md"
+    },
     "best-practices": {
       "source": "obra/superpowers",
       "sourceType": "github",
@@ -31,6 +47,12 @@
       "computedHash": "2032b2d9f5202bfdd6eaaa268fc3aef6fdd1edb806793eb858df51226bb62fcf",
       "skillPath": "skills/brainstorming/SKILL.md"
     },
+    "ckm:banner-design": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/banner-design/SKILL.md",
+      "computedHash": "7bbf0f48704f5c40436e3466d7ef9bcbafe35a84eb8c3e9d0ab76408a57bac5c"
+    },
     "cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
@@ -48,16 +70,6 @@
       "sourceType": "github",
       "computedHash": "3b46543567dbd071f9f9b87ba2eceefe6b906b38f58a1ab67e91bc5810f3b4b5",
       "skillPath": "custom/develop/d1-drizzle-schema/SKILL.md"
-    },
-    "astro-cloudflare-backend": {
-      "source": "firstsun-dev/skills",
-      "sourceType": "github",
-      "skillPath": "custom/develop/astro-cloudflare-backend/SKILL.md"
-    },
-    "astro-scss-best-practices": {
-      "source": "firstsun-dev/skills",
-      "sourceType": "github",
-      "skillPath": "custom/develop/astro-scss-best-practices/SKILL.md"
     },
     "designing-your-work-life": {
       "source": "firstsun-dev/skills",
@@ -90,10 +102,9 @@
       "skillPath": "skills/documentation-writer/SKILL.md"
     },
     "dopamine-nation": {
-      "source": "firstsun-dev/skills",
-      "sourceType": "github",
-      "computedHash": "e515492d0bf986af93188aa2f46f617a748ef3815fd5285478c8a4579aee360c",
-      "skillPath": "custom/books/dopamine-nation/SKILL.md"
+      "source": "/home/tianyao/skills/custom/books/dopamine-nation",
+      "sourceType": "local",
+      "computedHash": "83abac0eca5a4a2cd75490eb07063c9e986765681924ee5a080b6b2b55bdcc1f"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
