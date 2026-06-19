@@ -49,6 +49,10 @@
 | **redesign-existing-projects** | 現有網頁與應用的重構設計與升級，識別並消除通用 AI 模式，提升介面質感。 | [SKILL.md](./external/develop/frontend/redesign-existing-projects/SKILL.md) |
 | **sleek-design-mobile-apps** | 行動應用設計與 UI 實現，支持與 Sleek 專案對接（建立畫面、互動與列出專案）。 | [SKILL.md](./external/develop/frontend/sleek-design-mobile-apps/SKILL.md) |
 | **stitch-design-taste** | Google Stitch 語意設計系統，生成適用於 Stitch 畫面生成的 DESIGN.md 設計規範。 | [SKILL.md](./external/develop/frontend/stitch-design-taste/SKILL.md) |
+| **visual-design-foundations** | 提供對比、對齊、重複、親密性（C.R.A.P. 原則）、色彩學與排版布局等視覺設計的核心基礎規範。 | [SKILL.md](./external/develop/frontend/visual-design-foundations/SKILL.md) |
+| **tailwind-css-patterns** | 包含許多熱門的 Tailwind CSS 設計樣式與佈局，能快速套用現代化網頁的設計模式。 | [SKILL.md](./external/develop/frontend/tailwind-css-patterns/SKILL.md) |
+| **ui-animation** | 針對 UI 元件互動（如按鈕懸停、彈出視窗、列表加載等）設計自然流暢的微動效。 | [SKILL.md](./external/develop/frontend/ui-animation/SKILL.md) |
+| **threejs-animation** | 專門用於 WebGL/Three.js 的 3D 視覺場景建模與 3D 動畫設計。 | [SKILL.md](./external/develop/frontend/threejs-animation/SKILL.md) |
 
 ### 後端與 Cloudflare (Backend & Cloudflare)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -109,6 +113,8 @@
 | **brandkit** | 精英級品牌標識與視覺系統設計，適用於極簡、科技、豪華等風格的 Logo、 identity 系統及品牌指南。 | [SKILL.md](./external/video-design/brandkit/SKILL.md) |
 | **imagegen-frontend-mobile** | 用於創建高品質原生行動端畫面概念的圖像生成指南，注重層次、排版與一致性。 | [SKILL.md](./external/video-design/imagegen-frontend-mobile/SKILL.md) |
 | **imagegen-frontend-web** | 用於生成高品質網頁設計參考圖的圖像生成指南，支援單一色調及分段圖像生成。 | [SKILL.md](./external/video-design/imagegen-frontend-web/SKILL.md) |
+| **hyperframes-animation** | 專注於設計精美的網頁 CSS/GSAP 動效與轉場動畫，適合製作引人注目的動態元件。 | [SKILL.md](./external/video-design/hyperframes-animation/SKILL.md) |
+| **chart-visualization** | 基於 AntV 的數據視覺化最佳實踐，指導 AI 如何設計既好看又清晰的圖表。 | [SKILL.md](./external/video-design/chart-visualization/SKILL.md) |
 
 ## 💼 職涯與求職 (Career & Job Seeking)
 | 技能名稱 | 中文說明 | 檔案連結 |
