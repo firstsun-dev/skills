@@ -60,6 +60,7 @@
 | **workers-best-practices** | Cloudflare Workers 生產環境最佳實踐與程式碼審查。 | [SKILL.md](./custom/develop/workers-best-practices/SKILL.md) |
 | **d1-drizzle-schema** | Drizzle ORM 於 D1 上的欄位設計模式與遷移流程。 | [SKILL.md](./custom/develop/d1-drizzle-schema/SKILL.md) |
 | **cloudflare** | Cloudflare 全方位服務管理，涵蓋 Workers, KV, R2, D1, AI 與安全性配置。 | [SKILL.md](./external/develop/devops/cloudflare/SKILL.md) |
+| **windmill-rust-backend** | Windmill 後端 Rust 編碼規範，撰寫或修改 backend/ 目錄下的 Rust 程式碼時必用。 | [SKILL.md](./external/develop/windmill-rust-backend/SKILL.md) |
 
 ### 運維、架構與工具 (DevOps, Architecture & Tools)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -156,5 +157,5 @@
 
 
 ---
-*最後更新日期: 2026-06-19*
+*最後更新日期: 2026-06-27*
 
