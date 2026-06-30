@@ -60,6 +60,6 @@ const scale = spring({
 ```
 
 ### Reference Resources
-- Read `references/MOCKUPS.md` for device frame implementation.
-- Read `references/AUTOMATION_SCRIPTS.md` for CLI and Lambda integration scripts.
-- Read `references/COMPONENTS.md` for reusable marketing UI blocks.
+- Read [references/MOCKUPS.md](references/MOCKUPS.md) for device frame implementation.
+- Read [references/AUTOMATION_SCRIPTS.md](references/AUTOMATION_SCRIPTS.md) for CLI and Lambda integration scripts.
+- Read [references/COMPONENTS.md](references/COMPONENTS.md) for reusable marketing UI blocks.

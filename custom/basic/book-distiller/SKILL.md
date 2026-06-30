@@ -35,10 +35,10 @@ Read the extracted text and use the prompt templates in [references/PROMPT_TEMPL
 - **Constraint Extraction**: Identify "Mandates" and "Anti-patterns".
 
 ### 3. Synthesis & Export
-Follow the [yao-skill-manager](../../basic/yao-skill-manager/SKILL.md) SOP to save and register the results.
+Follow the [skill-manager](../../basic/skill-manager/SKILL.md) SOP to save and register the results.
 
 - **Taxonomy**: Ensure the new skill follows the "Flattened Design" and is placed in `custom/books/<book-slug>/`.
-- **Refactoring**: If the distilled content is large (>100 lines), apply the **Progressive Disclosure** pattern as defined in [REFACTORING.md](../../basic/yao-skill-manager/references/REFACTORING.md).
+- **Refactoring**: If the distilled content is large (>100 lines), apply the **Progressive Disclosure** pattern as defined in [REFACTORING.md](../../basic/skill-manager/references/REFACTORING.md).
 - **Registration**: Run `./setup.sh` and update `SKILLS_LIST.md`.
 - **Gem Export**: Follow the **Gem Export Workflow** in `yao-skill-manager` to generate `gem/<book-slug>.txt`.
 

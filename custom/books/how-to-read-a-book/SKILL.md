@@ -1,6 +1,6 @@
 ---
 name: how-to-read-a-book
-description: 莫提默·艾德勒《如何閱讀一本書》萃取的系統化主動閱讀框架。
+description: Distills Mortimer Adler's How to Read a Book into a systematic active-reading framework covering inspectional, analytical, and syntopical reading. Use when a user wants to read more deeply, extract the core argument of a book, compare ideas across multiple texts, or move from information-gathering to genuine understanding.
 origin: firstsun-dev/skills
 ---
 

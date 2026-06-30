@@ -1,6 +1,6 @@
 ---
 name: dopamine-nation
-description: 安娜·蘭布克《多巴胺國度》萃取的成癮科學與身心平衡框架。
+description: Distills Anna Lembke's Dopamine Nation into a neuroscience-backed framework for addiction prevention and pleasure-pain balance. Use when a user wants to break compulsive habits, reset dopamine tolerance, design self-binding strategies, or understand the neuroscience of craving and withdrawal.
 origin: firstsun-dev/skills
 ---
 

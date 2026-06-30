@@ -11,14 +11,14 @@ Core rules always in effect for Firstsun projects. For domain-specific detail, r
 
 | Situation | Read |
 |---|---|
-| Edge runtime (workerd), bindings, and env vars | `references/environment.md` |
-| Writing DB mutations / Astro Actions | `references/database.md` |
-| Adding or changing actions / updating OpenAPI spec | `references/api.md` |
-| Adding SEO tags, RSS, or sitemap changes | `references/seo-rss.md` |
-| Adding images, tools (mini-apps), or content queries | `references/tools-images.md` |
-| Writing or planning e2e tests | `references/testing.md` |
-| Creating or modifying tool pages under `src/apps/tools/` | `references/tool-pages.md` |
-| CI/CD, deployment, and GitHub Actions | `references/cicd.md` |
+| Edge runtime (workerd), bindings, and env vars | [references/environment.md](references/environment.md) |
+| Writing DB mutations / Astro Actions | [references/database.md](references/database.md) |
+| Adding or changing actions / updating OpenAPI spec | [references/api.md](references/api.md) |
+| Adding SEO tags, RSS, or sitemap changes | [references/seo-rss.md](references/seo-rss.md) |
+| Adding images, tools (mini-apps), or content queries | [references/tools-images.md](references/tools-images.md) |
+| Writing or planning e2e tests | [references/testing.md](references/testing.md) |
+| Creating or modifying tool pages under `src/apps/tools/` | [references/tool-pages.md](references/tool-pages.md) |
+| CI/CD, deployment, and GitHub Actions | [references/cicd.md](references/cicd.md) |
 
 ---
 

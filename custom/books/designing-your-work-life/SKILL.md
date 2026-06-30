@@ -1,6 +1,6 @@
 ---
 name: designing-your-work-life
-description: 史丹佛人生設計課《設計你的工作和人生》萃取的職場設計與職業轉型框架。
+description: Distills Stanford's Designing Your Work Life into a Design Thinking framework for career redesign and workplace transformation. Use when a user is dissatisfied at work, considering a career change, or needs structured frameworks for job reframing, workplace navigation, or professional reinvention.
 origin: firstsun-dev/skills
 ---
 

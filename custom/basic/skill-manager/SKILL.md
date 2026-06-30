@@ -7,10 +7,6 @@ origin: firstsun-dev/skills
 # Skill Manager (SM)
 
 ## Repository Structure & Flattened Design (扁平化設計)
-...
-# Skill Manager (SM)
-
-## Repository Structure & Flattened Design (扁平化設計)
 
 - `custom/`: Your internal/original skills.
 - `external/`: Community skills downloaded for inspection and reference.

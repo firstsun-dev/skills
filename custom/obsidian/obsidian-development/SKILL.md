@@ -77,14 +77,14 @@ Follow the [Official Release Guidelines](https://docs.obsidian.md/Plugins/Releas
 
 ## 📚 Key Reference Patterns (from watermark-s3-uploader)
 Detailed reference files are available in `references/`:
-- **Scaffolding**: See `references/package-example.json` and `references/esbuild.config.mjs`.
-- **Testing**: See `references/vitest.config.ts` and `references/obsidian-mock.ts`.
-- **CI/CD**: See `references/release-workflow.yml`.
+- **Scaffolding**: See [references/package-example.json](references/package-example.json) and [references/esbuild.config.mjs](references/esbuild.config.mjs).
+- **Testing**: See [references/vitest.config.ts](references/vitest.config.ts) and [references/obsidian-mock.ts](references/obsidian-mock.ts).
+- **CI/CD**: See [references/release-workflow.yml](references/release-workflow.yml).
 
 ### Development Practices:
 - **Settings Management**: Separate `settings.ts` for default settings and the setting tab.
 - **Logic Separation**: Move heavy logic (e.g., image processing, API calls) into dedicated service files (e.g., `uploader.ts`, `processor.ts`) to make them easily testable.
-- **Mocking Strategy**: Refer to `references/obsidian-mock.ts` for how to mock complex Obsidian interactions.
+- **Mocking Strategy**: Refer to [references/obsidian-mock.ts](references/obsidian-mock.ts) for how to mock complex Obsidian interactions.
 
 ## 🚀 Commands & Trigger Phrases
 - "Setup a new Obsidian plugin project"
