@@ -14,6 +14,7 @@
 | **firecrawl-search** | 具備完整網頁內容提取功能的網路搜尋工具。 | [SKILL.md](./external/basic/firecrawl-search/SKILL.md) |
 | **book-distiller** | 萬用書籍萃取系統：將 PDF、EPUB、TXT 轉化為 AI 技能或 Gem 指令。 | [SKILL.md](./custom/basic/book-distiller/SKILL.md) |
 | **full-output-enforcement** | 強制完整代碼生成，禁用佔位符模式，並乾淨處理 Token 限制拆分。 | [SKILL.md](./external/basic/full-output-enforcement/SKILL.md) |
+| **harness-creator** | 建立、稽核與改善 AI 編碼代理的 Harness：CLAUDE.md 指令檔、狀態追蹤、驗證關卡、作業階段交接與多代理協作。 | [SKILL.md](./external/basic/harness-creator/SKILL.md) |
 
 ## 💎 Gem 指令集 (Gem Instructions)
 這些是將多個相關技能整合後的 Google Gemini Gem 專用指令集，可直接複製到 Gemini 的「操作說明」中使用。
@@ -157,5 +158,5 @@
 
 
 ---
-*最後更新日期: 2026-06-27*
+*最後更新日期: 2026-06-30*
 
