@@ -48,6 +48,26 @@ Once the repo exists (Step 3) and the harness is scaffolded (Step 2), the two ca
 
 If the user wants this wired in concretely, add a `gh issue list` sync step near the top of `init.sh` and note the Issue-comment handoff convention in `CLAUDE.md`'s "End of Session" section — don't build a separate tracking system in parallel with Issues, since that reintroduces the same local/remote drift this is meant to fix.
 
+### Register new Issues on the org-wide project board
+
+`firstsun-dev` already runs a single org-wide GitHub Project (v2) at [`firstsun-dev/projects/6`](https://github.com/orgs/firstsun-dev/projects/6) — "FirstSun-Dev todo" — that tracks work across every repo, not just one project. When this skill creates a new repo, its Issues should land on that shared board rather than being tracked in an isolated per-repo project, otherwise the new project becomes invisible to whatever process (human or agent) triages work org-wide.
+
+The board's own README defines its conventions — read it before creating Issues, since it can change:
+```bash
+gh project view 6 --owner firstsun-dev --format json --jq .readme
+```
+As of the last check, the conventions are:
+- **Title format**: `[Category]: Task Description`, where Category is one of `Infra`, `DevOps`, `Feature`, `UI`, `Content`, `Bug`, `Refactor`.
+- **Fields to set on creation**: `Priority` (`P0` urgent fix, `P1` core-stability/this-week, `P2` general work) and `Estimate (Hours)`.
+- **Automation**: closing the repo Issue automatically moves its card to the `Done` column — don't hand-move cards to Done, just close the Issue.
+
+When creating Issues for a freshly-initialized project (e.g. seeding the first few tasks from `feature_list.json`), tag the title correctly and add each to the board:
+```bash
+gh issue create --repo firstsun-dev/<repo-name> --title "[Feature]: <task>" --body "<description>"
+gh project item-add 6 --owner firstsun-dev --url <issue-url>
+```
+Then set `Priority` and `Estimate` via `gh project item-edit` (look up the field/option IDs with `gh project field-list 6 --owner firstsun-dev` first, since the IDs are project-specific and not guessable). Confirm the Priority/Estimate values with the user rather than guessing — they reflect real scheduling decisions, not something inferable from the code alone.
+
 ## Step 3 — Create the GitHub repo (checkpoint)
 
 This is externally visible and not trivially reversible — confirm with the user before running anything.
