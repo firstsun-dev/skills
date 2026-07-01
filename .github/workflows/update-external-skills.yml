@@ -32,20 +32,39 @@ jobs:
             | select(.value.sourceType == "github" and .value.source != "firstsun-dev/skills")
             | .key
           ' skills-lock.json > /tmp/external-skill-names.txt
-          mapfile -t entries < <(jq -c '
+
+          # Group by source repo so each upstream is cloned once, not once per skill
+          # (e.g. leonxlnx/taste-skill backs 13 of our external skills).
+          jq -r '
             .skills
             | to_entries[]
             | select(.value.sourceType == "github" and .value.source != "firstsun-dev/skills")
-            | {name: .key, source: .value.source}
-          ' skills-lock.json)
-          echo "Found ${#entries[@]} external skills tracked in skills-lock.json"
-          for entry in "${entries[@]}"; do
-            name=$(jq -r .name <<<"$entry")
-            source=$(jq -r .source <<<"$entry")
-            echo "::group::Fetching $name from $source"
-            npx --yes skills add "$source" -s "$name" -y < /dev/null || echo "WARN: failed to fetch $name from $source (may have been renamed/removed upstream)"
-            echo "::endgroup::"
-          done
+            | [.value.source, .key] | @tsv
+          ' skills-lock.json | sort > /tmp/source-skill-pairs.tsv
+
+          total=$(wc -l < /tmp/source-skill-pairs.tsv)
+          repos=$(cut -f1 /tmp/source-skill-pairs.tsv | sort -u | wc -l)
+          echo "Found $total external skills across $repos upstream repos"
+
+          current_source=""
+          skill_args=()
+          flush() {
+            if [ -n "$current_source" ]; then
+              echo "::group::Fetching from $current_source: ${skill_args[*]}"
+              npx --yes skills add "$current_source" "${skill_args[@]}" -y < /dev/null \
+                || echo "WARN: failed to fetch (${skill_args[*]}) from $current_source (may have been renamed/removed upstream)"
+              echo "::endgroup::"
+            fi
+          }
+          while IFS=$'\t' read -r source name; do
+            if [ "$source" != "$current_source" ]; then
+              flush
+              current_source="$source"
+              skill_args=()
+            fi
+            skill_args+=("-s" "$name")
+          done < /tmp/source-skill-pairs.tsv
+          flush
 
       - name: Overwrite external/ with freshly fetched content where it changed
         run: |
