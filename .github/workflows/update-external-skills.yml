@@ -43,13 +43,18 @@ jobs:
         run: ./init.sh
 
       - name: Confirm external sources in skills-lock.json are untouched
+        if: steps.skills.outputs.names != ''
+        env:
+          UPDATED_NAMES: ${{ steps.skills.outputs.names }}
         run: |
           # GEMINI.md mandate: external/ entries must keep pointing at their original
-          # upstream sources, never at firstsun-dev/skills.
-          drifted=$(jq -r '
-            .skills
+          # upstream sources, never at firstsun-dev/skills. Only check the skills we
+          # actually updated above — custom/ skills legitimately have this source.
+          drifted=$(jq -r --arg names "$UPDATED_NAMES" '
+            ($names | rtrimstr(" ") | split(" ")) as $updated
+            | .skills
             | to_entries[]
-            | select(.value.sourceType == "github" and .value.source == "firstsun-dev/skills")
+            | select(.value.source == "firstsun-dev/skills" and (.key as $k | $updated | index($k) != null))
             | .key
           ' skills-lock.json)
           if [ -n "$drifted" ]; then
