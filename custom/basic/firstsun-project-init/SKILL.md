@@ -1,6 +1,6 @@
 ---
 name: firstsun-project-init
-description: "End-to-end bootstrap flow for a brand-new project under the firstsun-dev GitHub org: select and install relevant skills from firstsun-dev/skills into the local project, scaffold an agent harness via harness-creator, create and configure the GitHub repo (description, topics), and register the project in firstsun-dev/.github's profile README. Use this whenever the user says things like 'init 一個新專案', 'bootstrap a new project for firstsun-dev', 'create a repo under firstsun-dev org and set it up', or asks to set up a new Claude Code project end-to-end from scratch — even if they only mention one part of the flow (e.g. just 'install some skills for this project'), since the other stages are usually wanted too."
+description: "Bootstraps a new firstsun-dev project end-to-end: installs relevant skills, scaffolds an agent harness via harness-creator, creates the GitHub repo with description/topics, and lists it in the org profile README. Use whenever the user wants to init/bootstrap a new firstsun-dev project or repo — even if they only ask for one part of the flow, since the rest is usually wanted too."
 origin: firstsun-dev/skills
 ---
 
