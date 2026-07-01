@@ -1,0 +1,79 @@
+name: Update External Skills
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 3 * * 1' # Weekly, Monday 03:00 UTC
+
+concurrency:
+  group: update-external-skills
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Determine external/ skills tracked in skills-lock.json
+        id: skills
+        run: |
+          names=$(jq -r '
+            .skills
+            | to_entries[]
+            | select(.value.sourceType == "github" and .value.source != "firstsun-dev/skills")
+            | .key
+          ' skills-lock.json | tr '\n' ' ')
+          echo "names=$names" >> "$GITHUB_OUTPUT"
+          echo "External skills to update: $names"
+
+      - name: Sync external skills from their upstream sources
+        if: steps.skills.outputs.names != ''
+        run: npx --yes skills update ${{ steps.skills.outputs.names }} -p -y
+
+      - name: Verify repo structure (skill-manager flattened design)
+        run: ./init.sh
+
+      - name: Confirm external sources in skills-lock.json are untouched
+        run: |
+          # GEMINI.md mandate: external/ entries must keep pointing at their original
+          # upstream sources, never at firstsun-dev/skills.
+          drifted=$(jq -r '
+            .skills
+            | to_entries[]
+            | select(.value.sourceType == "github" and .value.source == "firstsun-dev/skills")
+            | .key
+          ' skills-lock.json)
+          if [ -n "$drifted" ]; then
+            echo "FAIL: these skills now point at firstsun-dev/skills unexpectedly: $drifted"
+            exit 1
+          fi
+          echo "OK: external sources unchanged"
+
+      - name: Open PR with updated skills
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.RELEASE_TOKEN }}
+          commit-message: "chore(external): weekly sync of external skills from upstream"
+          branch: automated/update-external-skills
+          delete-branch: true
+          title: "chore(external): weekly external skills update"
+          labels: automated,external-skills
+          body: |
+            Automated weekly sync of `external/` skills from their upstream sources, per `skills-lock.json`.
+
+            Only `external/` skill content and `skills-lock.json` hashes were touched by
+            `npx skills update <name...> -p -y`; `custom/` sources are untouched, and a CI
+            check confirmed no external entry got repointed at `firstsun-dev/skills`.
+
+            Before merging, per the [skill-manager SOP](custom/basic/skill-manager/SKILL.md):
+            - [ ] Run `/validate-skills` on the changed skills and resolve any FAIL items
+            - [ ] Update `SKILLS_LIST.md` if a skill's description or location changed

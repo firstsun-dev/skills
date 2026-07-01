@@ -3,7 +3,7 @@
 ## Current State
 
 **Last Updated:** 2026-07-01
-**Active Feature:** feat-005 - Fix remaining external/ skill validation failures
+**Active Feature:** feat-006 - Weekly external skills auto-update CI workflow (done, pending commit/push)
 
 ## Status
 
@@ -14,6 +14,7 @@
 - [x] feat-003: Flattened unjustified external/ category containers (commit 696d571)
 - [x] feat-004: Added /validate-skills gate to skill-manager SOPs (commit add333a)
 - [x] Ad-hoc: Updated `custom/develop/github-actions` template/SKILL.md to pin action versions matching `firstsun-dev/.github` (checkout@v6, setup-node@v6, pnpm/action-setup@v6, paths-filter@v4, upload-artifact@v7, download-artifact@v8) and Node 24 LTS default; `/validate-skills` passed clean
+- [x] feat-006: Added `.github/workflows/update-external-skills.yml` — `workflow_dispatch` + weekly cron (`0 3 * * 1`), scopes `npx skills update` to only the skill names in `skills-lock.json` whose `source != firstsun-dev/skills` (true external upstreams), re-runs `./init.sh` for structural sanity, then asserts no entry drifted to point at `firstsun-dev/skills`. Opens a PR via `peter-evans/create-pull-request`, authenticated with the org secret `RELEASE_TOKEN` (not `GITHUB_TOKEN`) because repo+org `can_approve_pull_request_reviews` is `false`, which blocks the default token from creating PRs.
 
 ### What's In Progress
 
