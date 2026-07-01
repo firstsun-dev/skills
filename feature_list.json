@@ -38,7 +38,7 @@
       "description": "Resolve remaining FAIL items: name/directory mismatches (windmill-rust-backend, decision-management), invalid name ckm:banner-design, oversized bodies (imagegen-frontend-mobile/web, brandkit, mental-health-psychoeducation), imperative-voice descriptions, backtick links, broken firecrawl-search cross-refs",
       "dependencies": ["feat-004"],
       "status": "not-started",
-      "evidence": ""
+      "evidence": "NOTE (2026-07-01, after feat-006 shipped): these FAIL items live inside external/, which is now auto-re-synced weekly from upstream by update-external-skills.yml. Any local edit to external/ content will be silently overwritten by the next sync since it always takes upstream as truth. Decision made with user: do NOT hand-edit external/ to fix these — leave them as known upstream debt. Ran /validate-skills on the 20 skills changed by the first sync PR (#3): confirmed decision-management (name field 'running-decision-processes' vs dir) and firstprinciples (name field 'FirstPrinciples', not lowercase) still FAIL, and found the backtick-link-instead-of-markdown-link best-practice issue is broader than originally scoped here — also present in brainstorming, validate-skills, react-best-practices, security-scan, rem-sleep, hyperframes-animation, remotion (in addition to healthkit, personal-productivity already listed). If these ever need real fixing, it must happen upstream (PR to the source repo), not in this repo's external/ copy."
     },
     {
       "id": "feat-006",
