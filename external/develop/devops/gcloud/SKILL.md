@@ -1,5 +1,7 @@
 ---
 name: gcloud
+metadata:
+  category: DevOps
 description: >-
   Interacts with Google Cloud services using the gcloud CLI safely and
   efficiently. Covers command validation, data reduction, safety guardrails with
@@ -22,7 +24,7 @@ argument syntax, prevent destructive actions, and minimize context window usage.
 ### 1. Installation
 
 If the `gcloud` executable is missing, refer to the official
-[Google Cloud CLI Installation Guide](https://docs.cloud.google.com/sdk/docs/install-sdk)
+[Google Cloud CLI Installation Guide](https://docs.cloud.google.com/sdk/docs/install-sdk.md.txt)
 to install it on your platform (Linux, macOS, Windows, etc.).
 
 ### 2. Authorization
@@ -59,7 +61,7 @@ under the agent's focused identity. *(Impersonation requires
 
 For more detailed strategies and authentication types (such as Workload Identity
 Federation), see
-[Authorizing the gcloud CLI](https://docs.cloud.google.com/sdk/docs/authorizing).
+[Authorizing the gcloud CLI](https://docs.cloud.google.com/sdk/docs/authorizing.md.txt).
 
 ## Core Principles
 
@@ -228,5 +230,5 @@ List Zones (GCE)   | `gcloud compute zones list --project=<PROJECT_ID>`
 List Locations     | `gcloud <GROUP> locations list --project=<PROJECT_ID>`
 
 Refer to the
-[gcloud CLI Scripting Guide](https://docs.cloud.google.com/sdk/docs/scripting-gcloud)
+[gcloud CLI Scripting Guide](https://docs.cloud.google.com/sdk/docs/scripting-gcloud.md.txt)
 for guidance on using the gcloud CLI in automation.
