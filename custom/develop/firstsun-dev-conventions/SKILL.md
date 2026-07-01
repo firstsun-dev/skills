@@ -19,6 +19,7 @@ Core rules always in effect for Firstsun projects. For domain-specific detail, r
 | Writing or planning e2e tests | [references/testing.md](references/testing.md) |
 | Creating or modifying tool pages under `src/apps/tools/` | [references/tool-pages.md](references/tool-pages.md) |
 | CI/CD, deployment, and GitHub Actions | [references/cicd.md](references/cicd.md) |
+| Branching, commit messages, or git hooks (husky) | [references/git-workflow.md](references/git-workflow.md) |
 
 ---
 

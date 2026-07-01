@@ -58,8 +58,8 @@ jobs:
     if: needs.prepare.outputs.should_run_app_a == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - name: Test App A
         run: pnpm --filter app-a run test
 
@@ -68,8 +68,8 @@ jobs:
     if: needs.prepare.outputs.should_run_app_b == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - name: Test App B
         run: pnpm --filter app-b run test
 

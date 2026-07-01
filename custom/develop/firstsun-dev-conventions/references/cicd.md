@@ -41,6 +41,7 @@ Firstsun projects use a **Unified Workflow** architecture in GitHub Actions. Thi
 
 ## Performance & Optimization
 
+- **Node Version**: Default to the latest LTS (currently Node 24); Node 22 is the minimum supported floor. Pin via `actions/setup-node` with `node-version: 24` and `cache: 'pnpm'`.
 - **Caching**: Always cache `pnpm` store and `node_modules`.
 - **Self-hosted Runners**: Use `runs-on: self-hosted` for internal infrastructure or to speed up builds by avoiding public runner queue times.
 - **Concurrency**: Use `concurrency` groups in workflows to cancel in-progress runs on the same branch.

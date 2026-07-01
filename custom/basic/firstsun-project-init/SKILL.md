@@ -102,7 +102,17 @@ This is externally visible and not trivially reversible — confirm with the use
    gh api orgs/firstsun-dev/actions/secrets/<SECRET_NAME> --jq '.visibility'
    ```
    If it's `selected` and this repo isn't on the list, either add it (with the user's approval — this changes shared org config, not just the new repo) or flag the gap so the user can decide whether the secret should be scoped to public repos at all.
-4. Push the initial commit if the user wants the scaffold from Steps 1-2 committed (ask first — don't assume; some users want to review the local state before it goes remote).
+4. **If the project builds/pushes container images**, wire it to `firstsun-dev`'s private registry at `registry.firstsun.org/firstsun-dev` — not Docker Hub or GHCR. Auth goes through the org secret `DOCKER_AUTH_CONFIG` (a full `~/.docker/config.json`, written out directly rather than via `docker/login-action` — this matches the existing pattern in `heaven-monorepo`'s GitLab pipelines for the same registry):
+   ```yaml
+   - name: Configure registry auth
+     run: |
+       mkdir -p ~/.docker
+       echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
+     env:
+       DOCKER_AUTH_CONFIG: ${{ secrets.DOCKER_AUTH_CONFIG }}
+   ```
+   `DOCKER_AUTH_CONFIG` is currently `PRIVATE` visibility (`MY_REGISTRY_USER`/`MY_REGISTRY_PASSWORD` also exist as a fallback pair, `SELECTED` visibility) — this is exactly the kind of secret Step 3's visibility check above should catch for a public repo.
+5. Push the initial commit if the user wants the scaffold from Steps 1-2 committed (ask first — don't assume; some users want to review the local state before it goes remote).
 
 ## Step 4 — Register in the org profile (checkpoint)
 
