@@ -22,10 +22,13 @@ Before starting, confirm with the user (or infer from context):
 
 Don't guess at skills from the project name alone. Ask the user what the project actually is (tech stack, domain — e.g. "Cloudflare Worker with D1", "Astro blog", "Python CLI") if it isn't already clear from the conversation or an existing codebase in the target directory.
 
+Only pick skills that live under `firstsun-dev/skills`'s `custom/` or `external/` directories — those are the org's vetted, taxonomy-aligned arsenal. Don't reach for skills from other GitHub repos or the general ecosystem for this step; if nothing in the arsenal fits, that's a gap to flag to the user (or a candidate for a new custom skill), not a reason to pull from elsewhere.
+
 1. Fetch the current catalog from `firstsun-dev/skills` — read `SKILLS_LIST.md` (raw GitHub content or a shallow clone) to see what's available and where each skill lives (`custom/<domain>/<name>` or `external/<domain>/<name>`).
-2. Match the project's tech stack and purpose against the catalog. Favor precision over coverage — installing 3 well-matched skills beats installing 10 loosely-related ones, since every installed skill's description competes for triggering attention later.
-3. Propose your shortlist to the user with a one-line reason for each ("workers-best-practices — you're deploying to Cloudflare Workers") and let them adjust before installing.
-4. Install each approved skill into the target project directory:
+2. Use the `find-skills` skill (via the Skill tool) to get discovery suggestions against that catalog — it's built for exactly this matching task and will surface candidates you might miss from a manual skim of `SKILLS_LIST.md`.
+3. Cross-check `find-skills`' suggestions against the project's actual tech stack and purpose. Favor precision over coverage — installing 3 well-matched skills beats installing 10 loosely-related ones, since every installed skill's description competes for triggering attention later.
+4. Propose your shortlist to the user with a one-line reason for each ("workers-best-practices — you're deploying to Cloudflare Workers") and let them adjust before installing.
+5. Install each approved skill into the target project directory:
    ```bash
    cd <project-dir>
    npx skills add firstsun-dev/skills/<domain>/<skill-name>
