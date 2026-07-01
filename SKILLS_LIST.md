@@ -80,7 +80,7 @@
 ### 國際化 (i18n)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **i18n** | 使用 react-i18next 進行多國語言翻譯與管理的指南。 | [SKILL.md](./external/develop/i18n/i18n/SKILL.md) |
+| **i18n** | 使用 react-i18next 進行多國語言翻譯與管理的指南。 | [SKILL.md](./external/develop/internationalization-i18n/SKILL.md) |
 
 ### 🛡️ 安全 (Security)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -88,6 +88,7 @@
 | **security-scan** | 掃描 AI Agent 配置中的安全性漏洞與風險。 | [SKILL.md](./external/develop/security/security-scan/SKILL.md) |
 | **owasp-security** | 遵循 OWASP Top 10 的安全編碼實踐。 | [SKILL.md](./external/develop/security/owasp-security/SKILL.md) |
 | **secret-scanning** | 管理 GitHub 密鑰掃描、推送保護與修復。 | [SKILL.md](./external/develop/security/secret-scanning/SKILL.md) |
+
 
 ## ✍️ 內容創作 (Writing)
 | 技能名稱 | 中文說明 | 檔案連結 |
@@ -121,18 +122,18 @@
 ## 💼 職涯與求職 (Career & Job Seeking)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **tailored-resume-generator** | 根據職位描述自動生成客製化履歷。 | [SKILL.md](./external/career/resume/tailored-resume-generator/SKILL.md) |
-| **discovery-interview** | 透過探索式訪談練習，提升挖掘需求與提問能力。 | [SKILL.md](./external/career/interview/discovery-interview/SKILL.md) |
-| **interview-prep** | 專業的面試準備工具，提供常見問題與應對策略。 | [SKILL.md](./external/career/interview/interview-prep/SKILL.md) |
+| **tailored-resume-generator** | 根據職位描述自動生成客製化履歷。 | [SKILL.md](./external/career/tailored-resume-generator/SKILL.md) |
+| **discovery-interview** | 透過探索式訪談練習，提升挖掘需求與提問能力。 | [SKILL.md](./external/career/discovery-interview/SKILL.md) |
+| **interview-prep** | 專業的面試準備工具，提供常見問題與應對策略。 | [SKILL.md](./external/career/interview-prep/SKILL.md) |
 
 ## 🧠 思維與邏輯 (Thinking & Logic)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
-| **critical-thinking-logical-reasoning** | 深度批判性思考與邏輯推理，適用於分析複雜文章與報告。 | [SKILL.md](./external/think/logic/critical-thinking-logical-reasoning/SKILL.md) |
-| **firstprinciples** | 第一性原理分析：拆解至公理、挑戰假設、重建真相。 | [SKILL.md](./external/think/first-principles/firstprinciples/SKILL.md) |
+| **critical-thinking-logical-reasoning** | 深度批判性思考與邏輯推理，適用於分析複雜文章與報告。 | [SKILL.md](./external/think/critical-thinking-logical-reasoning/SKILL.md) |
+| **firstprinciples** | 第一性原理分析：拆解至公理、挑戰假設、重建真相。 | [SKILL.md](./external/think/firstprinciples/SKILL.md) |
 | **minerva-hcs** | 密涅瓦大學核心思維模型 (HCs)，用於跨領域的深度問題拆解與推導。 | [SKILL.md](./custom/think/minerva-hcs/SKILL.md) |
 | **running-decision-processes** | 運行高品質決策流程，產出包含選項矩陣、權責劃分與決策日誌的完整決策包。 | [SKILL.md](./external/think/decision-management/SKILL.md) |
-| **learning-coach** | 基於腦科學的學習教練，提供主動回想、間隔重複等高效學習法。 | [SKILL.md](./external/think/learning/learning-coach/SKILL.md) |
+| **learning-coach** | 基於腦科學的學習教練，提供主動回想、間隔重複等高效學習法。 | [SKILL.md](./external/think/learning-coach/SKILL.md) |
 | **how-to-read-a-book** | 莫提默·艾德勒《如何閱讀一本書》萃取的系統化主動閱讀框架。 | [SKILL.md](./custom/books/how-to-read-a-book/SKILL.md) |
 
 
