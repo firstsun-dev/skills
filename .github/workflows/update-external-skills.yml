@@ -51,7 +51,12 @@ jobs:
           flush() {
             if [ -n "$current_source" ]; then
               echo "::group::Fetching from $current_source: ${skill_args[*]}"
-              npx --yes skills add "$current_source" "${skill_args[@]}" -y < /dev/null \
+              # --agent universal pins the install target to .agents/skills/ (gitignored).
+              # Without it, a non-interactive run with no TTY (true in CI, unlike a local
+              # Claude Code session where the agent is auto-detected) falls back to
+              # installing into every one of the 72 supported agent integrations —
+              # one of which uses the untracked-by-.gitignore path "agent/skills/<name>".
+              npx --yes skills add "$current_source" "${skill_args[@]}" --agent universal -y < /dev/null \
                 || echo "WARN: failed to fetch (${skill_args[*]}) from $current_source (may have been renamed/removed upstream)"
               echo "::endgroup::"
             fi
@@ -92,7 +97,7 @@ jobs:
           done
 
       - name: Refresh skills-lock.json hashes for external/ (preserves original upstream sources)
-        run: ./setup.sh --external
+        run: ./setup.sh --external --agent universal
 
       - name: Clean up local agent install artifacts (gitignored, not part of the PR)
         run: rm -rf .agents .claude/skills
@@ -125,6 +130,12 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.RELEASE_TOKEN }}
+          # Only ever stage these two — regardless of whatever else `npx skills add`
+          # or `setup.sh` may have written to the working tree (e.g. agent install
+          # artifacts that aren't covered by .gitignore).
+          add-paths: |
+            external/**
+            skills-lock.json
           commit-message: "chore(external): weekly sync of external skills from upstream"
           branch: automated/update-external-skills
           delete-branch: true
