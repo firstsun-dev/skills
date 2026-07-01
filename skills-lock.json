@@ -156,6 +156,12 @@
       "skillPath": "custom/develop/firstsun-dev-conventions/SKILL.md",
       "computedHash": "2b4d7212503ce6f24d62408229a326498f81a2de3aafa6d13234add72cb66e19"
     },
+    "firstsun-project-init": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/basic/firstsun-project-init/SKILL.md",
+      "computedHash": "57ab5bab2eeca3c02d56dfd861819a7f43af75a183075a64a8ba14dd19ae8383"
+    },
     "fitness-coach": {
       "source": "tatat/agents-playground",
       "sourceType": "github",
