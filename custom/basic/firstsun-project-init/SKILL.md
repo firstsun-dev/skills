@@ -36,6 +36,18 @@ Don't guess at skills from the project name alone. Ask the user what the project
 
 Invoke the `harness-creator` skill (via the Skill tool) against the target project directory to set up the reliability scaffolding: `CLAUDE.md`/`AGENTS.md`, `feature_list.json`, `progress.md`, `init.sh`, and `session-handoff.md` as appropriate for the project's size and shape. Let harness-creator's own judgment drive the specifics of what gets created — this step is local and reversible, so no extra confirmation is needed beyond the harness-creator skill's own flow.
 
+## Optional — Wire GitHub Issues into the harness
+
+Once the repo exists (Step 3) and the harness is scaffolded (Step 2), the two can reinforce each other: the harness gives an agent a reliable way to *work*, and Issues give it a reliable, shared *source of truth* that survives across sessions and machines — something a local `progress.md` alone can't do. Offer this to the user as an enhancement once the base harness is in place; it's optional and only worth doing if the project expects multi-session or multi-person work.
+
+- **Mirror `feature_list.json` from open Issues.** Instead of (or in addition to) hand-maintaining feature state locally, have `init.sh` run `gh issue list --state open` at startup and reconcile it against `feature_list.json`. Each Issue becomes a feature entry; closing an Issue is how a feature gets marked done. This keeps the state visible to anyone looking at the repo, not just whoever ran the last session.
+- **Post session handoff as an Issue comment, not just a file.** A `session-handoff.md` is invisible until someone opens that exact file. Appending the same handoff notes (progress, blockers, next step) as a `gh issue comment` on the relevant Issue makes it timestamped, attributable, and discoverable by anyone watching the Issue.
+- **Fold Issue state into Definition of Done.** Add "the corresponding Issue is updated or closed" as a checklist item alongside validation gates. This stops an agent from declaring a feature done in local files while the externally-visible state still shows it open.
+- **Use Issue scope as the agent's scope boundary.** Instead of relying only on prose in `CLAUDE.md` ("stay in scope"), point the agent at a specific Issue and treat its description as the literal boundary — changes outside what the Issue describes should prompt a pause and a question, not silent scope creep.
+- **Use labels/assignees for multi-agent coordination.** When more than one agent or session might touch the repo concurrently, use Issue labels (`in-progress`, `blocked`) and assignees as a lightweight lock so two agents don't converge on the same files at once.
+
+If the user wants this wired in concretely, add a `gh issue list` sync step near the top of `init.sh` and note the Issue-comment handoff convention in `CLAUDE.md`'s "End of Session" section — don't build a separate tracking system in parallel with Issues, since that reintroduces the same local/remote drift this is meant to fix.
+
 ## Step 3 — Create the GitHub repo (checkpoint)
 
 This is externally visible and not trivially reversible — confirm with the user before running anything.
