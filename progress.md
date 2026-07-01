@@ -13,6 +13,7 @@
 - [x] feat-002: Fixed all custom/ skill validation failures (commit e885190)
 - [x] feat-003: Flattened unjustified external/ category containers (commit 696d571)
 - [x] feat-004: Added /validate-skills gate to skill-manager SOPs (commit add333a)
+- [x] Ad-hoc: Updated `custom/develop/github-actions` template/SKILL.md to pin action versions matching `firstsun-dev/.github` (checkout@v6, setup-node@v6, pnpm/action-setup@v6, paths-filter@v4, upload-artifact@v7, download-artifact@v8) and Node 24 LTS default; `/validate-skills` passed clean
 
 ### What's In Progress
 

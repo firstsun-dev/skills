@@ -15,7 +15,7 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: 22
+  NODE_VERSION: 24 # use latest LTS, minimum Node 22
 
 jobs:
   # 1. Prepare and Lint
@@ -25,10 +25,10 @@ jobs:
       should_run_app_a: ${{ steps.changes.outputs.app_a }}
       should_run_app_b: ${{ steps.changes.outputs.app_b }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Check for changes
         id: changes
-        uses: dorny/paths-filter@v3
+        uses: dorny/paths-filter@v4
         with:
           filters: |
             app_a:
@@ -40,8 +40,8 @@ jobs:
               - 'packages/shared/**'
               - 'pnpm-lock.yaml'
 
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
