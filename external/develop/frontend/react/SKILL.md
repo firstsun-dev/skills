@@ -118,6 +118,7 @@ Any prop value can be a data-driven expression resolved by the renderer before c
 - **`{ "$state": "/state/key" }`** - reads from state model (one-way read)
 - **`{ "$bindState": "/path" }`** - two-way binding: reads from state and enables write-back. Use on the natural value prop (value, checked, pressed, etc.) of form components.
 - **`{ "$bindItem": "field" }`** - two-way binding to a repeat item field. Use inside repeat scopes.
+- **Filtered lists**: `repeat` plus an `$item` visible condition on the same container renders only matching items: `{ "repeat": { "statePath": "/tasks", "key": "id" }, "visible": { "$item": "status", "eq": "todo" }, "children": ["task-card"] }`. AND-composed `$state` conjuncts gate the container shell; `$item`/`$index` conjuncts filter items.
 - **`{ "$cond": <condition>, "$then": <value>, "$else": <value> }`** - conditional value
 - **`{ "$template": "Hello, ${/name}!" }`** - interpolates state values into strings
 - **`{ "$computed": "fn", "args": { ... } }`** - calls registered functions with resolved args
