@@ -39,6 +39,14 @@
       "dependencies": ["feat-004"],
       "status": "not-started",
       "evidence": ""
+    },
+    {
+      "id": "feat-006",
+      "name": "Weekly external skills auto-update CI workflow",
+      "description": "Add a workflow_dispatch + weekly-cron GitHub Action that runs `npx skills update <external-only> -p -y` (scoped via skills-lock.json source != firstsun-dev/skills), re-verifies repo structure with ./init.sh, confirms no external entry got repointed at firstsun-dev/skills, and opens a PR to review/merge.",
+      "dependencies": ["feat-001"],
+      "status": "done",
+      "evidence": "Added .github/workflows/update-external-skills.yml (not yet committed/pushed — awaiting user go-ahead). Confirmed org secret RELEASE_TOKEN (visibility ALL) exists and is used for checkout + peter-evans/create-pull-request, since repo/org 'Allow GitHub Actions to create and approve pull requests' is disabled and would otherwise block PR creation via GITHUB_TOKEN. ./init.sh passes; PR body reminds reviewer that /validate-skills (LLM-driven, can't run in CI) and SKILLS_LIST.md sync are still manual gates per the SOP."
     }
   ]
 }
