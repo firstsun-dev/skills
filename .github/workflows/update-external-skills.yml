@@ -14,51 +14,90 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.RELEASE_TOKEN }}
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
 
-      - name: Determine external/ skills tracked in skills-lock.json
-        id: skills
+      - name: Fetch latest content for each external skill from its upstream source
         run: |
-          names=$(jq -r '
+          set -e
+          jq -r '
             .skills
             | to_entries[]
             | select(.value.sourceType == "github" and .value.source != "firstsun-dev/skills")
             | .key
-          ' skills-lock.json | tr '\n' ' ')
-          echo "names=$names" >> "$GITHUB_OUTPUT"
-          echo "External skills to update: $names"
+          ' skills-lock.json > /tmp/external-skill-names.txt
+          mapfile -t entries < <(jq -c '
+            .skills
+            | to_entries[]
+            | select(.value.sourceType == "github" and .value.source != "firstsun-dev/skills")
+            | {name: .key, source: .value.source}
+          ' skills-lock.json)
+          echo "Found ${#entries[@]} external skills tracked in skills-lock.json"
+          for entry in "${entries[@]}"; do
+            name=$(jq -r .name <<<"$entry")
+            source=$(jq -r .source <<<"$entry")
+            echo "::group::Fetching $name from $source"
+            npx --yes skills add "$source" -s "$name" -y < /dev/null || echo "WARN: failed to fetch $name from $source (may have been renamed/removed upstream)"
+            echo "::endgroup::"
+          done
 
-      - name: Sync external skills from their upstream sources
-        if: steps.skills.outputs.names != ''
-        run: npx --yes skills update ${{ steps.skills.outputs.names }} -p -y
+      - name: Overwrite external/ with freshly fetched content where it changed
+        run: |
+          set -e
+          declare -A NAME_TO_DIR
+          while IFS= read -r -d '' f; do
+            n=$(grep -m1 '^name:' "$f" | sed -E "s/^name: *[\"']?//; s/[\"']? *\$//")
+            NAME_TO_DIR["$n"]="$(dirname "$f")"
+          done < <(find external -mindepth 2 -name SKILL.md -print0)
+
+          shopt -s nullglob
+          for fetched in .agents/skills/*/; do
+            fetched_skill_md="${fetched}SKILL.md"
+            [ -f "$fetched_skill_md" ] || continue
+            name=$(grep -m1 '^name:' "$fetched_skill_md" | sed -E "s/^name: *[\"']?//; s/[\"']? *\$//")
+            target_dir="${NAME_TO_DIR[$name]:-}"
+            if [ -z "$target_dir" ]; then
+              echo "WARN: no external/ directory maps to fetched skill '$name' ($fetched) — skipping (likely a stale lock entry)"
+              continue
+            fi
+            if ! diff -rq "$fetched" "$target_dir" >/dev/null 2>&1; then
+              echo "Updating $target_dir from upstream ($name)"
+              rsync -a --delete "$fetched" "$target_dir/"
+            fi
+          done
+
+      - name: Refresh skills-lock.json hashes for external/ (preserves original upstream sources)
+        run: ./setup.sh --external
+
+      - name: Clean up local agent install artifacts (gitignored, not part of the PR)
+        run: rm -rf .agents .claude/skills
 
       - name: Verify repo structure (skill-manager flattened design)
         run: ./init.sh
 
-      - name: Confirm external sources in skills-lock.json are untouched
-        if: steps.skills.outputs.names != ''
-        env:
-          UPDATED_NAMES: ${{ steps.skills.outputs.names }}
+      - name: Confirm external sources in skills-lock.json still point upstream
         run: |
           # GEMINI.md mandate: external/ entries must keep pointing at their original
-          # upstream sources, never at firstsun-dev/skills. Only check the skills we
-          # actually updated above — custom/ skills legitimately have this source.
-          drifted=$(jq -r --arg names "$UPDATED_NAMES" '
-            ($names | rtrimstr(" ") | split(" ")) as $updated
-            | .skills
-            | to_entries[]
-            | select(.value.source == "firstsun-dev/skills" and (.key as $k | $updated | index($k) != null))
-            | .key
-          ' skills-lock.json)
+          # upstream sources, never at firstsun-dev/skills or a local path. Only check
+          # the skills this run actually touched — custom/ legitimately uses that source.
+          drifted=""
+          while read -r name; do
+            [ -z "$name" ] && continue
+            entry=$(jq -c --arg n "$name" '.skills[$n]' skills-lock.json)
+            source_type=$(jq -r '.sourceType' <<<"$entry")
+            source=$(jq -r '.source' <<<"$entry")
+            if [ "$source_type" = "local" ] || [ "$source" = "firstsun-dev/skills" ]; then
+              drifted="$drifted $name"
+            fi
+          done < /tmp/external-skill-names.txt
           if [ -n "$drifted" ]; then
-            echo "FAIL: these skills now point at firstsun-dev/skills unexpectedly: $drifted"
+            echo "FAIL: these skills unexpectedly ended up local or pointed at firstsun-dev/skills:$drifted"
             exit 1
           fi
           echo "OK: external sources unchanged"
@@ -75,9 +114,11 @@ jobs:
           body: |
             Automated weekly sync of `external/` skills from their upstream sources, per `skills-lock.json`.
 
-            Only `external/` skill content and `skills-lock.json` hashes were touched by
-            `npx skills update <name...> -p -y`; `custom/` sources are untouched, and a CI
-            check confirmed no external entry got repointed at `firstsun-dev/skills`.
+            For each external skill, this fetched the latest content from its upstream
+            source, overwrote `external/<domain>/<skill>/` where it differed, then ran
+            `./setup.sh --external` to refresh `skills-lock.json` hashes while preserving
+            each skill's original upstream `source` (the same mechanism `setup.sh` already
+            uses for manual registration). `custom/` sources are untouched.
 
             Before merging, per the [skill-manager SOP](custom/basic/skill-manager/SKILL.md):
             - [ ] Run `/validate-skills` on the changed skills and resolve any FAIL items
