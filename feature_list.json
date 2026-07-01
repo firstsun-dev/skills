@@ -43,10 +43,10 @@
     {
       "id": "feat-006",
       "name": "Weekly external skills auto-update CI workflow",
-      "description": "Add a workflow_dispatch + weekly-cron GitHub Action that runs `npx skills update <external-only> -p -y` (scoped via skills-lock.json source != firstsun-dev/skills), re-verifies repo structure with ./init.sh, confirms no external entry got repointed at firstsun-dev/skills, and opens a PR to review/merge.",
+      "description": "Add a workflow_dispatch + weekly-cron GitHub Action that refreshes external/ skills from their upstream sources, refreshes skills-lock.json hashes while preserving original sources, verifies repo structure with ./init.sh, and opens a PR to review/merge.",
       "dependencies": ["feat-001"],
       "status": "done",
-      "evidence": "Commits 29f7f41, f060d01 — added .github/workflows/update-external-skills.yml, scoped to external-only skills via skills-lock.json source check. Uses org secret RELEASE_TOKEN (visibility ALL) for checkout + peter-evans/create-pull-request, since repo/org 'Allow GitHub Actions to create and approve pull requests' is disabled. ./init.sh passes; PR body notes /validate-skills and SKILLS_LIST.md sync remain manual gates."
+      "evidence": "Commits 3e573c5, fc752c0, 150f96c, f9556e5 in .github/workflows/update-external-skills.yml. Final design: per-source-repo `npx skills add <source> -s <name1> -s <name2>... --agent universal -y` (grouped to avoid re-cloning the same upstream per skill), rsync fetched content over external/<domain>/<skill> where changed, `./setup.sh --external --agent universal` to refresh skills-lock.json hashes while preserving true upstream sources, ./init.sh structural check, drift check that no external entry went local/firstsun-dev/skills, then peter-evans/create-pull-request (RELEASE_TOKEN, since repo/org disables GITHUB_TOKEN PR creation; checkout uses persist-credentials:false to avoid a duplicate-Authorization-header conflict) with add-paths restricted to external/**+skills-lock.json as a backstop. Two prior designs failed on real CI (skills update -p ignored external/ entirely; then npx skills add with no TTY defaulted to installing into all 72 agent integrations, polluting the PR with a bogus agent/skills/ tree) before --agent universal + add-paths produced a clean run: PR #3 (https://github.com/firstsun-dev/skills/pull/3), 205 files, verified zero agent/* paths."
     }
   ]
 }
