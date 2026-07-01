@@ -1,0 +1,44 @@
+{
+  "features": [
+    {
+      "id": "feat-001",
+      "name": "Harness Bootstrap",
+      "description": "Establish CLAUDE.md, feature_list.json, progress.md, init.sh, session-handoff.md tailored to the Firstsun Skill Arsenal repo",
+      "dependencies": [],
+      "status": "done",
+      "evidence": "CLAUDE.md, init.sh, feature_list.json, progress.md, session-handoff.md created 2026-07-01; ./init.sh passes"
+    },
+    {
+      "id": "feat-002",
+      "name": "Fix custom/ skill validation failures",
+      "description": "Resolve all FAIL items from /validate-skills for skills under custom/",
+      "dependencies": ["feat-001"],
+      "status": "done",
+      "evidence": "Commit e885190 — fixed skill-manager duplicate heading, book-distiller broken refs, 3 Chinese-only descriptions, 3 backtick-link skills"
+    },
+    {
+      "id": "feat-003",
+      "name": "Flatten unjustified external/ category containers",
+      "description": "Remove single-skill or sub-10-skill category containers under external/ that were causing missing-SKILL.md validation failures",
+      "dependencies": ["feat-001"],
+      "status": "done",
+      "evidence": "Commit 696d571 — flattened think/{first-principles,learning,logic}, career/{interview,resume}, develop/i18n/i18n; SKILLS_LIST.md updated"
+    },
+    {
+      "id": "feat-004",
+      "name": "Add validate-skills gate to skill-manager SOPs",
+      "description": "Require /validate-skills as an explicit step in both the External Skills and Custom Skills SOPs before documenting/pushing",
+      "dependencies": ["feat-002", "feat-003"],
+      "status": "done",
+      "evidence": "Commit add333a — added step 3 'Validate' to both SOPs in custom/basic/skill-manager/SKILL.md"
+    },
+    {
+      "id": "feat-005",
+      "name": "Fix remaining external/ skill validation failures",
+      "description": "Resolve remaining FAIL items: name/directory mismatches (windmill-rust-backend, decision-management), invalid name ckm:banner-design, oversized bodies (imagegen-frontend-mobile/web, brandkit, mental-health-psychoeducation), imperative-voice descriptions, backtick links, broken firecrawl-search cross-refs",
+      "dependencies": ["feat-004"],
+      "status": "not-started",
+      "evidence": ""
+    }
+  ]
+}
