@@ -56,13 +56,15 @@ Use this workflow to consolidate multiple skills into a single "Gem" instruction
 ## SOP for External Skills
 1. **Download**: Run `npx skills add <repo_path>` in root (without -g) to inspect the skill.
 2. **Archive**: Move from `.agents/skills/` to `external/<domain>/` (Ensure it is a direct child).
-3. **Document**: Update `SKILLS_LIST.md` with the new skill's name, Chinese description, and link.
-4. **Push**: Commit and push changes to GitHub.
-5. **Remote Install**: Run `npx skills add <user>/<repo>/external/<domain>/<skill-name>` to register the version-controlled version.
+3. **Validate**: Run `/validate-skills` on the archived skill. Fix any FAIL items (name mismatch, body too long, bad link format, missing "when to use") before proceeding.
+4. **Document**: Update `SKILLS_LIST.md` with the new skill's name, Chinese description, and link.
+5. **Push**: Commit and push changes to GitHub.
+6. **Remote Install**: Run `npx skills add <user>/<repo>/external/<domain>/<skill-name>` to register the version-controlled version.
 
 ## SOP for Custom Skills
 1. **Create**: Create skill directory in `custom/<domain>/`.
 2. **Implement**: Write `SKILL.md` following `skill-creator` guidelines.
-3. **Document**: Add the new skill to `SKILLS_LIST.md`.
-4. **Push**: Commit and push changes to GitHub.
-5. **Remote Install**: Run `npx skills add <user>/<repo>/custom/<domain>/<skill-name>` to register.
+3. **Validate**: Run `/validate-skills` on the new skill. Fix any FAIL items before proceeding.
+4. **Document**: Add the new skill to `SKILLS_LIST.md`.
+5. **Push**: Commit and push changes to GitHub.
+6. **Remote Install**: Run `npx skills add <user>/<repo>/custom/<domain>/<skill-name>` to register.
