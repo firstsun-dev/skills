@@ -84,11 +84,25 @@ This is externally visible and not trivially reversible — confirm with the use
    ```bash
    gh repo create firstsun-dev/<repo-name> --<public|private> --description "<description>" --source=. --remote=origin
    ```
+   `gh repo create` has no flag for branch-deletion behavior, so set it as an immediate follow-up (also enable it if the repo already existed without it):
+   ```bash
+   gh repo edit firstsun-dev/<repo-name> --delete-branch-on-merge
+   ```
    If the repo already exists or was created without topics/description, reconcile with:
    ```bash
    gh repo edit firstsun-dev/<repo-name> --description "<description>" --add-topic <topic1> --add-topic <topic2>
    ```
-3. Push the initial commit if the user wants the scaffold from Steps 1-2 committed (ask first — don't assume; some users want to review the local state before it goes remote).
+3. **If the repo is public**, check what org-level secrets and variables are already exposed to it before wiring up any CI/CD (workflows may assume they exist). Org secrets/variables have a per-secret visibility setting (`all`, `private`, or `selected` repos) — a secret visible to private repos isn't automatically visible to a new public one.
+   ```bash
+   gh secret list --org firstsun-dev
+   gh variable list --org firstsun-dev
+   ```
+   For any secret/variable the new workflows need, confirm its visibility covers this repo:
+   ```bash
+   gh api orgs/firstsun-dev/actions/secrets/<SECRET_NAME> --jq '.visibility'
+   ```
+   If it's `selected` and this repo isn't on the list, either add it (with the user's approval — this changes shared org config, not just the new repo) or flag the gap so the user can decide whether the secret should be scoped to public repos at all.
+4. Push the initial commit if the user wants the scaffold from Steps 1-2 committed (ask first — don't assume; some users want to review the local state before it goes remote).
 
 ## Step 4 — Register in the org profile (checkpoint)
 
@@ -110,5 +124,7 @@ This is externally visible and not trivially reversible — confirm with the use
 - [ ] Selected skills installed and present in the project's `skills-lock.json`
 - [ ] Harness scaffolding created via `harness-creator` and reviewed by the user
 - [ ] Repo exists under `firstsun-dev`, with correct visibility, description, and topics
+- [ ] `delete-branch-on-merge` is enabled on the new repo
+- [ ] If public, org-level secrets/variables needed by CI were checked for visibility to this repo
 - [ ] `firstsun-dev/.github/profile/README.md` updated and pushed, entry matches existing formatting
 - [ ] User has confirmed both checkpoint steps (repo creation, profile README edit) before they happened, not after
