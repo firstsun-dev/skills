@@ -47,6 +47,14 @@
       "dependencies": ["feat-001"],
       "status": "done",
       "evidence": "Commits 3e573c5, fc752c0, 150f96c, f9556e5 in .github/workflows/update-external-skills.yml. Final design: per-source-repo `npx skills add <source> -s <name1> -s <name2>... --agent universal -y` (grouped to avoid re-cloning the same upstream per skill), rsync fetched content over external/<domain>/<skill> where changed, `./setup.sh --external --agent universal` to refresh skills-lock.json hashes while preserving true upstream sources, ./init.sh structural check, drift check that no external entry went local/firstsun-dev/skills, then peter-evans/create-pull-request (RELEASE_TOKEN, since repo/org disables GITHUB_TOKEN PR creation; checkout uses persist-credentials:false to avoid a duplicate-Authorization-header conflict) with add-paths restricted to external/**+skills-lock.json as a backstop. Two prior designs failed on real CI (skills update -p ignored external/ entirely; then npx skills add with no TTY defaulted to installing into all 72 agent integrations, polluting the PR with a bogus agent/skills/ tree) before --agent universal + add-paths produced a clean run: PR #3 (https://github.com/firstsun-dev/skills/pull/3), 205 files, verified zero agent/* paths."
+    },
+    {
+      "id": "feat-007",
+      "name": "Add firstsun-pm custom skill",
+      "description": "Bring the user-authored firstsun-pm project-management skill (found at ~/.agents/skills/firstsun-pm, org-specific gh issue/Project-#6 workflow) into custom/basic/ per the Custom Skills SOP: create, document in SKILLS_LIST.md, validate, push, remote-install to refresh skills-lock.json",
+      "dependencies": ["feat-004"],
+      "status": "in-progress",
+      "evidence": "/validate-skills on ~/.agents/skills/firstsun-pm: all PASS (name/dir match, description 381 chars, body 49 lines, markdown links, no redundancy). Copied to custom/basic/firstsun-pm/SKILL.md, added SKILLS_LIST.md entry under Basic Tools. Remaining: commit+push, then ./setup.sh --custom to register and populate skills-lock.json with the correct source/hash."
     }
   ]
 }
