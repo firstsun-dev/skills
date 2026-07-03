@@ -66,6 +66,12 @@
       "sourceType": "local",
       "computedHash": "7bbf0f48704f5c40436e3466d7ef9bcbafe35a84eb8c3e9d0ab76408a57bac5c"
     },
+    "clean-code": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/clean-code/SKILL.md",
+      "computedHash": "74bf6ded4f61ddcb593e7a29beb96c284f888cbe0639ad6e23710447c36ff19a"
+    },
     "cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
@@ -532,6 +538,12 @@
       "sourceType": "github",
       "skillPath": "workout-program-designer/SKILL.md",
       "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
+    },
+    "write-coding-standards-from-file": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/write-coding-standards-from-file/SKILL.md",
+      "computedHash": "b87eddc73b6f759bafb4956bbe69838a961e0fd927145f612c4694d2cc65e07a"
     }
   }
 }

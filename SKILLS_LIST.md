@@ -56,6 +56,12 @@
 | **ui-animation** | 針對 UI 元件互動（如按鈕懸停、彈出視窗、列表加載等）設計自然流暢的微動效。 | [SKILL.md](./external/develop/frontend/ui-animation/SKILL.md) |
 | **threejs-animation** | 專門用於 WebGL/Three.js 的 3D 視覺場景建模與 3D 動畫設計。 | [SKILL.md](./external/develop/frontend/threejs-animation/SKILL.md) |
 
+### 程式碼品質與規範 (Code Quality & Standards)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **clean-code** | 依 Robert C. Martin《Clean Code》原則指導命名、函式、註解、格式與錯誤處理，適用於寫新程式碼、審查 PR 或重構。 | [SKILL.md](./external/develop/code-quality/clean-code/SKILL.md) |
+| **write-coding-standards-from-file** | 讀取現有程式碼檔案/資料夾的風格，自動產生專案的 coding standards 文件（如 STYLE.md）。 | [SKILL.md](./external/develop/code-quality/write-coding-standards-from-file/SKILL.md) |
+
 ### 後端與 Cloudflare (Backend & Cloudflare)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
