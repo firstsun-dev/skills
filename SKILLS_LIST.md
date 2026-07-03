@@ -18,6 +18,12 @@
 | **full-output-enforcement** | 強制完整代碼生成，禁用佔位符模式，並乾淨處理 Token 限制拆分。 | [SKILL.md](./external/basic/full-output-enforcement/SKILL.md) |
 | **harness-creator** | 建立、稽核與改善 AI 編碼代理的 Harness：CLAUDE.md 指令檔、狀態追蹤、驗證關卡、作業階段交接與多代理協作。 | [SKILL.md](./external/basic/harness-creator/SKILL.md) |
 
+## 🤖 AI Agent 開發 (AI Agent Development)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **subagent-creator** | 指導如何建立具備獨立上下文的 AI subagent（specialized agent、verifier、debugger、orchestrator）。 | [SKILL.md](./external/ai-agents/subagent-creator/SKILL.md) |
+| **subagent-driven-development** | 透過為每個任務派發全新 implementer subagent + spec/品質雙重審查來執行實作計畫。⚠️ 已知限制：純 upstream 鏡像，內文引用的 `../requesting-code-review/code-reviewer.md` 在本 repo 未安裝，會斷鏈；若需完整最終審查流程，另外安裝 `requesting-code-review` skill（`npx skills add obra/superpowers -s requesting-code-review`）。 | [SKILL.md](./external/ai-agents/subagent-driven-development/SKILL.md) |
+
 ## 💎 Gem 指令集 (Gem Instructions)
 這些是將多個相關技能整合後的 Google Gemini Gem 專用指令集，可直接複製到 Gemini 的「操作說明」中使用。
 
