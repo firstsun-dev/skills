@@ -102,7 +102,7 @@ This is externally visible and not trivially reversible — confirm with the use
    gh api orgs/firstsun-dev/actions/secrets/<SECRET_NAME> --jq '.visibility'
    ```
    If it's `selected` and this repo isn't on the list, either add it (with the user's approval — this changes shared org config, not just the new repo) or flag the gap so the user can decide whether the secret should be scoped to public repos at all.
-4. **If the project builds/pushes container images**, wire it to `firstsun-dev`'s private registry at `registry.firstsun.org/firstsun-dev` — not Docker Hub or GHCR. Auth goes through the org secret `DOCKER_AUTH_CONFIG` (a full `~/.docker/config.json`, written out directly rather than via `docker/login-action` — this matches the existing pattern in `heaven-monorepo`'s GitLab pipelines for the same registry):
+4. **If the project builds/pushes container images**, wire it to `firstsun-dev`'s private registry at `registry.firstsun.org/firstsun-dev` — not Docker Hub or GHCR. Auth goes through the org secret `DOCKER_AUTH_CONFIG` (a full `~/.docker/config.json`, written out directly rather than via `docker/login-action`):
    ```yaml
    - name: Configure registry auth
      run: |
