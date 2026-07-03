@@ -41,7 +41,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/book-distiller/SKILL.md",
-      "computedHash": "319fd6bc8d2980439b5b7ccf4870d564711da7b9cf3ac20fa42118b5bb7857f6"
+      "computedHash": "41e3acecc59f8942b8a74d45e59e799af8dc755fd6769bdfc29ac2d51f347c3d"
     },
     "brainstorming": {
       "source": "obra/superpowers",
@@ -106,7 +106,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/books/designing-your-work-life/SKILL.md",
-      "computedHash": "311f832892cf25696edbfce9536034baac7d25b4d2616c3ed691cc40a0c2350c"
+      "computedHash": "a8e3a8efb5b4526c6947c56f9de4cda026ed7c3d7293c22d8fca8d3290b848fe"
     },
     "dev-conventions": {
       "source": "firstsun-dev/skills",
@@ -136,7 +136,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/books/dopamine-nation/SKILL.md",
-      "computedHash": "83abac0eca5a4a2cd75490eb07063c9e986765681924ee5a080b6b2b55bdcc1f"
+      "computedHash": "17df9a916098aeacd22c081b003d8879dde033ada19a7d8e40e11a528a79bf58"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -160,13 +160,19 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/develop/firstsun-dev-conventions/SKILL.md",
-      "computedHash": "2b4d7212503ce6f24d62408229a326498f81a2de3aafa6d13234add72cb66e19"
+      "computedHash": "3c6cce10c25c550e87028645e469a409ee990ad98134896fa298a89b89eba077"
+    },
+    "firstsun-pm": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/basic/firstsun-pm/SKILL.md",
+      "computedHash": "240cc8d16abbd5fda52647bec9c50777267e92d331a63bedcc9084864b77345e"
     },
     "firstsun-project-init": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/firstsun-project-init/SKILL.md",
-      "computedHash": "57ab5bab2eeca3c02d56dfd861819a7f43af75a183075a64a8ba14dd19ae8383"
+      "computedHash": "6d62376f7c9750ce696ccc34d104adc8ab95613aa61a9fce842b47a58e86da6f"
     },
     "fitness-coach": {
       "source": "tatat/agents-playground",
@@ -202,7 +208,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/develop/github-actions/SKILL.md",
-      "computedHash": "89902ccfb9565c8d23a70bfcefc2883b2bdb8f445b308c367ec894f38fd5bcbc"
+      "computedHash": "6a3a3ffc314062e2a27f3535cb959d2469f1cf74964134acae157a593bccd9f5"
     },
     "gitlab-ci-patterns": {
       "source": "firstsun-dev/skills",
@@ -244,7 +250,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/books/how-to-read-a-book/SKILL.md",
-      "computedHash": "d0d8753403f1fc2df078acc0ea6b812013bc01e830aa71586c862e3c76e5d06a"
+      "computedHash": "0c53dcb194bc8996ddf42722b404d89038d4fbcb8ec0f952964ab233428b13fe"
     },
     "hyperframes-animation": {
       "source": "heygen-com/hyperframes",
@@ -334,7 +340,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/obsidian/obsidian-development/SKILL.md",
-      "computedHash": "15c473a581df25ef8e6215b9e38ab425ab4506549ef800227f40c34d991d90e2"
+      "computedHash": "36db9aa8f8bb2c069f38e879517a0dfd6502bd01897d1c55521f6e9e82f07d8c"
     },
     "obsidian-markdown": {
       "source": "firstsun-dev/skills",
@@ -412,7 +418,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/video-design/remotion-marketing-automation/SKILL.md",
-      "computedHash": "0d772f82325888852fef3aa5f43a40798c5d47807775817af98857f51fee62a1"
+      "computedHash": "dbc0c5da60a8920f7aa841e140acd8d3f660395e0255c328b7463690a70c049c"
     },
     "remotion-render": {
       "source": "skills-shell/skills",
@@ -459,7 +465,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/skill-manager/SKILL.md",
-      "computedHash": "b717340e428926494a9bb631c5fa3ad15593e7ef07728925b25f1d230f06876f"
+      "computedHash": "f594840ecf98e538b447594446348cb8335f0b6095b831fda873e466c1b73a36"
     },
     "sleek-design-mobile-apps": {
       "source": "sleekdotdesign/agent-skills",
