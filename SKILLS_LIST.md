@@ -7,7 +7,7 @@
 | :--- | :--- | :--- |
 | **skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/skill-manager/SKILL.md) |
 | **firstsun-project-init** | 新專案一站式初始化流程：挑選並安裝相關技能、透過 harness-creator 建立代理 harness、建立 firstsun-dev org 下的 GitHub repo 並設定描述/tags、更新組織 profile README。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
-| **firstsun-pm** | firstsun-dev 組織的專案管理技能：跨 repo 統一 issue 建立規範、自動連結到 Project Board (#6)、強制命名慣例，並協助設定 Estimate/Priority 欄位。 | [SKILL.md](./custom/basic/firstsun-pm/SKILL.md) |
+| **firstsun-pm** | firstsun-dev 組織的專案管理技能：跨 repo 統一 issue 建立規範，依 repo 路由至對應 Project Board（多數 repo → #6，heaven-monorepo/heaven-www → #8，兩者欄位/慣例一致）、強制命名慣例，並協助設定 Estimate/Priority 欄位。 | [SKILL.md](./custom/basic/firstsun-pm/SKILL.md) |
 | **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
 | **validate-skills** | 驗證技能是否符合 agentskills.io 規範與最佳實踐。 | [SKILL.md](./external/basic/validate-skills/SKILL.md) |
 | **find-skills** | 幫助使用者發現並安裝適合的 AI 技能。 | [SKILL.md](./external/basic/find-skills/SKILL.md) |
