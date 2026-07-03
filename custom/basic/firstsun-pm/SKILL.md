@@ -10,14 +10,14 @@ This skill ensures that all engineering and content tasks within the `firstsun-d
 ## 🎯 Central Project Hubs
 - **Organization**: `firstsun-dev`
 - **Project Board (default)**: [FirstSun-Dev 產品開發 (Project #6)](https://github.com/orgs/firstsun-dev/projects/6)
-- **Project Board (Heaven repos)**: [Heaven Monorepo & WWW (Project #8)](https://github.com/orgs/firstsun-dev/projects/8) — dedicated board for `heaven-monorepo` and `heaven-www` only, mirroring Project #6's fields and conventions exactly.
+- **Project Board (Heaven repos)**: [Heaven Monorepo & WWW (Project #9)](https://github.com/orgs/firstsun-dev/projects/9) — dedicated board for `heaven-monorepo` and `heaven-www` only. Created via `copyProjectV2` from Project #6, so its fields, views, and all six built-in workflows (auto-close issue, item-closed→Done, etc.) are enabled identically.
 
 ## 📋 Standard Workflow for New Tasks
 
 When a user asks to add a new task or "job":
 
 1.  **Identify Repository**: Determine which repo the task belongs to, then route to the matching project board:
-    - `heaven-monorepo`, `heaven-www` → **Project #8**.
+    - `heaven-monorepo`, `heaven-www` → **Project #9**.
     - `infra-config`: Ansible, Terraform, VPS, Backups. → Project #6.
     - `blog`: Article writing, UI changes for the blog. → Project #6.
     - `innovation-apps`: Diet-manager or other internal tools. → Project #6.
@@ -33,10 +33,10 @@ When a user asks to add a new task or "job":
     - `[Refactor]`: Code cleanup.
 3.  **Create Issue**: Use `gh issue create --repo firstsun-dev/<repo> --title "[Category]: Description" --body "..." --label "enhancement"`.
 4.  **Add to Project**: Immediately add the new issue to the repo's matching board:
-    - `gh project item-add <6|8> --owner firstsun-dev --url <ISSUE_URL>`.
+    - `gh project item-add <6|9> --owner firstsun-dev --url <ISSUE_URL>`.
 5.  **Set Fields**: Ask the user or propose **Estimate (Hours)** and **Priority (P0/P1/P2)**. Update using:
-    - `gh project item-edit <6|8> --id <ITEM_ID> --field-id <ESTIMATE_FIELD_ID> --number <HOURS>`
-    - `gh project item-edit <6|8> --id <ITEM_ID> --field-id <PRIORITY_FIELD_ID> --single-select-option-id <OPTION_ID>`
+    - `gh project item-edit <6|9> --id <ITEM_ID> --field-id <ESTIMATE_FIELD_ID> --number <HOURS>`
+    - `gh project item-edit <6|9> --id <ITEM_ID> --field-id <PRIORITY_FIELD_ID> --single-select-option-id <OPTION_ID>`
 
 ## 🛠️ Field Reference (Project #6 — infra-config, blog, innovation-apps, watermark-s3-uploader, git-files-sync)
 - **Status Field ID**: `PVTSSF_lADOEDVJmM4BVcvzzhQ4e0Y`
@@ -46,14 +46,14 @@ When a user asks to add a new task or "job":
   - P2: `da944a9c`
 - **Estimate Field ID**: `PVTF_lADOEDVJmM4BVcvzzhQ4e3U`
 
-## 🛠️ Field Reference (Project #8 — heaven-monorepo, heaven-www)
-- **Status Field ID**: `PVTSSF_lADOEDVJmM4BcZT0zhXCePc`
-- **Priority Field ID**: `PVTSSF_lADOEDVJmM4BcZT0zhXCeVA`
-  - P0: `66b6113d`
-  - P1: `1ab7d45f`
-  - P2: `d5d996fd`
-- **Estimate Field ID**: `PVTF_lADOEDVJmM4BcZT0zhXCeV8`
-- **Size Field ID**: `PVTSSF_lADOEDVJmM4BcZT0zhXCeVE` (XS/S/M/L/XL — same options as Project #6, not currently referenced by the workflow above but available if needed)
+## 🛠️ Field Reference (Project #9 — heaven-monorepo, heaven-www)
+- **Status Field ID**: `PVTSSF_lADOEDVJmM4BcZVhzhXCfwg`
+- **Priority Field ID**: `PVTSSF_lADOEDVJmM4BcZVhzhXCfxQ`
+  - P0: `79628723`
+  - P1: `0a877460`
+  - P2: `da944a9c`
+- **Estimate Field ID**: `PVTF_lADOEDVJmM4BcZVhzhXCfxY`
+- **Size Field ID**: `PVTSSF_lADOEDVJmM4BcZVhzhXCfxU` (XS/S/M/L/XL — same options as Project #6, not currently referenced by the workflow above but available if needed)
 
 ## 🛡️ Guiding Principles
 - **Respect Community Issues**: Never change the title of issues submitted by external users. Only apply naming conventions to internal/self-created tasks.
