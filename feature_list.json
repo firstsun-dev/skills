@@ -53,8 +53,8 @@
       "name": "Add firstsun-pm custom skill",
       "description": "Bring the user-authored firstsun-pm project-management skill (found at ~/.agents/skills/firstsun-pm, org-specific gh issue/Project-#6 workflow) into custom/basic/ per the Custom Skills SOP: create, document in SKILLS_LIST.md, validate, push, remote-install to refresh skills-lock.json",
       "dependencies": ["feat-004"],
-      "status": "in-progress",
-      "evidence": "/validate-skills on ~/.agents/skills/firstsun-pm: all PASS (name/dir match, description 381 chars, body 49 lines, markdown links, no redundancy). Copied to custom/basic/firstsun-pm/SKILL.md, added SKILLS_LIST.md entry under Basic Tools. Remaining: commit+push, then ./setup.sh --custom to register and populate skills-lock.json with the correct source/hash."
+      "status": "done",
+      "evidence": "Commits 49f437e (add custom/basic/firstsun-pm/SKILL.md + SKILLS_LIST.md entry) and 7dd65cb (skills-lock.json registration via ./setup.sh --custom, source=firstsun-dev/skills, hash=240cc8d1...). /validate-skills ran clean beforehand (all PASS). ./init.sh passes."
     }
   ]
 }
