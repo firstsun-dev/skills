@@ -2,6 +2,13 @@
 
 Completed work, moved out of `progress.md` to keep that file scannable. Newest first.
 
+## 2026-07-04
+
+- feat-007: Added firstsun-pm custom skill (commits 49f437e, 7dd65cb)
+- feat-008: Forked harness-creator external/->custom/ (commits 743123e, fef29e3)
+- Ad-hoc: resynced stale skills-lock.json hash for firstsun-pm (commit b173900)
+- Ad-hoc: ignored .claude/worktrees local runtime artifacts (commit b5c2ee1)
+
 ## 2026-07-01
 
 - feat-001: Harness bootstrap (CLAUDE.md, init.sh, feature_list.json, progress.md, session-handoff.md)

@@ -2,22 +2,21 @@
 
 ## Current State
 
-**Last Updated:** 2026-07-03
-**Active Feature:** feat-005 - Fix remaining external/ skill validation failures (not started)
+**Last Updated:** 2026-07-04
+**Active Feature:** feat-009 - Add cleanup-cadence mechanism to harness-creator (not started)
 
 Completed work is archived in [progress-archive.md](./progress-archive.md) — this file only tracks what's still open.
 
 ## What's In Progress
 
+- [ ] feat-009: harness-creator has no archive/staleness checks for progress.md or feature_list.json evidence — not started this session
 - [ ] feat-005: Remaining external/ validation failures — not started this session
 
 ## Since Last Update
 
-feat-007 (Add firstsun-pm custom skill) completed 2026-07-03: brought the user-authored
-firstsun-dev org PM skill from `~/.agents/skills/firstsun-pm` into `custom/basic/firstsun-pm/`
-per the Custom Skills SOP. Validated clean, documented in SKILLS_LIST.md, pushed
-(commit 49f437e), then registered via `./setup.sh --custom` to populate skills-lock.json
-(commit 7dd65cb). `./init.sh` passes.
+feat-008 (Fork harness-creator external->custom) completed 2026-07-04: moved
+custom/basic/harness-creator out of the weekly external-sync path so it can be
+modified locally (commits 743123e, fef29e3). This unblocks feat-009.
 
 ## What's Next
 

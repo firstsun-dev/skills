@@ -55,6 +55,22 @@
       "dependencies": ["feat-004"],
       "status": "done",
       "evidence": "Commits 49f437e (add custom/basic/firstsun-pm/SKILL.md + SKILLS_LIST.md entry) and 7dd65cb (skills-lock.json registration via ./setup.sh --custom, source=firstsun-dev/skills, hash=240cc8d1...). /validate-skills ran clean beforehand (all PASS). ./init.sh passes."
+    },
+    {
+      "id": "feat-008",
+      "name": "Fork harness-creator from external/ to custom/",
+      "description": "Move harness-creator (originally mirrored from walkinglabs/learn-harness-engineering) from external/basic/ to custom/basic/ so it stops being overwritten by the weekly update-external-skills.yml sync, enabling local additions such as a progress.md/feature_list.json cleanup-cadence mechanism.",
+      "dependencies": ["feat-004"],
+      "status": "done",
+      "evidence": "Commits 743123e (git mv external->custom, SKILL.md frontmatter origin+fork note, SKILLS_LIST.md link) and fef29e3 (skills-lock.json refreshed via remote install, source=firstsun-dev/skills, hash=89e13c41...). /validate-skills clean beforehand. ./init.sh passes."
+    },
+    {
+      "id": "feat-009",
+      "name": "Add cleanup-cadence mechanism to harness-creator",
+      "description": "harness-creator's templates/scoring currently have no archive/staleness checks for progress.md or feature_list.json evidence fields, letting them grow unbounded. Add: progress-archive.md scaffold + size-threshold comment in templates/progress.md, evidence-brevity example in templates/feature-list.json, and a hygiene check in validate-harness.mjs's state subsystem.",
+      "dependencies": ["feat-008"],
+      "status": "not-started",
+      "evidence": ""
     }
   ]
 }
