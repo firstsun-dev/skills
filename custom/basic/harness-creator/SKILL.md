@@ -9,7 +9,10 @@ description: >-
   or when creating or assessing AGENTS.md, CLAUDE.md, feature_list.json, init.sh, progress.md, or
   session-handoff files. Reach for it even if the user never says the word "harness."
 license: MIT
+origin: firstsun-dev/skills
 ---
+
+> Forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) on 2026-07-04 and now maintained independently in this repo. It no longer tracks upstream changes.
 
 # Harness Creator
 
