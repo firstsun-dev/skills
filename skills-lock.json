@@ -229,10 +229,10 @@
       "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
     },
     "harness-creator": {
-      "source": "walkinglabs/learn-harness-engineering",
+      "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "skillPath": "skills/harness-creator/SKILL.md",
-      "computedHash": "703331a042d7cbfc0f80409703c998e414b5a1da29fa67602e0d173c45abf573"
+      "skillPath": "custom/basic/harness-creator/SKILL.md",
+      "computedHash": "89e13c41bbd51e0e5de1a438c4e7f289f7437e23d0265a2daa99427aa6a48edd"
     },
     "healthkit": {
       "source": "dpearson2699/swift-ios-skills",
