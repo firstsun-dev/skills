@@ -21,17 +21,15 @@ When a user asks to add a new task or "job":
     - `infra-config`: Ansible, Terraform, VPS, Backups. → Project #6.
     - `blog`: Article writing, UI changes for the blog. → Project #6.
     - `innovation-apps`: Diet-manager or other internal tools. → Project #6.
-    - `watermark-s3-uploader`: Obsidian plugin releases. → Project #6.
-    - `git-files-sync`: Obsidian plugin development/marketing. → Project #6.
-2.  **Format Title**: Always use the prefix: `[Category]: Short Description`.
-    - `[Infra]`: Server/Network setup.
-    - `[DevOps]`: Automation, Backups, Gitea mirroring.
-    - `[Feature]`: New app functionality.
-    - `[UI]`: Design, Remotion, Layout.
-    - `[Content]`: Writing, Documentation.
-    - `[Bug]`: Error fixing.
-    - `[Refactor]`: Code cleanup.
-3.  **Create Issue**: Use `gh issue create --repo firstsun-dev/<repo> --title "[Category]: Description" --body "..." --label "enhancement"`.
+    - `watermark-s3-uploader` (Obsidian plugin) → Project #6.
+    - `git-files-sync` (Obsidian plugin) → Project #6.
+2.  **Format Title**: Across all repos, use **Conventional Commits** style: `type(scope): short description`, all lowercase, no `[Category]:` brackets.
+    - Types: `feat`, `fix`, `docs`, `refactor`, `perf`, `chore`, `test`.
+    - `scope` is optional — omit it if the change isn't tied to one area (e.g. use the repo/module name when it helps, like `feat(auth): ...` or `fix(gitea): ...`).
+    - Examples: `feat: add ignore sync setting`, `fix: symbolic link pull fails`, `docs: list supported git providers in readme`, `chore(infra): rotate vps ssh keys`.
+    - **Obsidian plugin repos** (`git-files-sync`, `watermark-s3-uploader`) are **public** — always write the title (and body) in **English** regardless of the language the user asked in.
+    - Other internal repos (`infra-config`, `blog`, `innovation-apps`, `heaven-monorepo`, `heaven-www`) may keep the issue body in the user's language if that's how the team works, but the title itself should still follow Conventional Commits.
+3.  **Create Issue**: Use `gh issue create --repo firstsun-dev/<repo> --title "<title>" --body "..." --label "enhancement"`, applying the Conventional Commits title format from step 2.
 4.  **Add to Project**: Immediately add the new issue to the repo's matching board:
     - `gh project item-add <6|9> --owner firstsun-dev --url <ISSUE_URL>`.
 5.  **Set Fields**: Ask the user or propose **Estimate (Hours)** and **Priority (P0/P1/P2)**. Update using:
@@ -57,4 +55,6 @@ When a user asks to add a new task or "job":
 
 ## 🛡️ Guiding Principles
 - **Respect Community Issues**: Never change the title of issues submitted by external users. Only apply naming conventions to internal/self-created tasks.
+- **English-only for Obsidian plugin repos**: `git-files-sync` and `watermark-s3-uploader` are public plugin repos with external contributors — write issue titles and bodies in English even if the user's request was in Chinese (or another language).
+- **Conventional Commits titles everywhere**: every repo's issue titles use `type(scope): description` (see step 2) — no more `[Category]:` brackets, including for issues created before this convention (rename opportunistically when touching an old issue).
 - **Link First**: Always ensure an issue exists in a repository before adding it to the board (avoid "Draft Items" if possible).
