@@ -67,10 +67,10 @@
     {
       "id": "feat-009",
       "name": "Add cleanup-cadence mechanism to harness-creator",
-      "description": "harness-creator's templates/scoring currently have no archive/staleness checks for progress.md or feature_list.json evidence fields, letting them grow unbounded. Add: progress-archive.md scaffold + size-threshold comment in templates/progress.md, evidence-brevity example in templates/feature-list.json, and a hygiene check in validate-harness.mjs's state subsystem.",
+      "description": "harness-creator's templates/scoring currently have no archive/staleness checks for progress.md, session-handoff.md, or feature_list.json evidence fields, letting them grow unbounded. Add: archive/YYYY-MM.md scaffold (time-based dir supersedes the originally planned progress-archive.md), size-threshold guidance in templates, evidence-brevity guidance in templates/feature-list.json, and a state-hygiene check in validate-harness.mjs.",
       "dependencies": ["feat-008"],
-      "status": "not-started",
-      "evidence": ""
+      "status": "done",
+      "evidence": "Commit 3b3a18a — archive/YYYY-MM.md scaffold + stateHygiene check (80-line/300-char thresholds); self-check 100/100, /validate-skills clean"
     }
   ]
 }
