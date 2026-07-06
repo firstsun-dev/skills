@@ -6,7 +6,7 @@
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
 | **skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/skill-manager/SKILL.md) |
-| **firstsun-project-init** | 新專案一站式初始化流程：挑選並安裝相關技能、透過 harness-creator 建立代理 harness、建立 firstsun-dev org 下的 GitHub repo 並設定描述/tags、更新組織 profile README。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
+| **firstsun-project-init** | 新專案一站式初始化流程：挑選並安裝相關技能、透過 firstsun-harness 建立代理 harness、建立 firstsun-dev org 下的 GitHub repo 並設定描述/tags、更新組織 profile README。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
 | **firstsun-pm** | firstsun-dev 組織的專案管理技能：跨 repo 統一 issue 建立規範，依 repo 路由至對應 Project Board（多數 repo → #6，heaven-monorepo/heaven-www → #9（copyProjectV2 複製自 #6，欄位與六個內建 workflow 皆一致））、強制命名慣例，並協助設定 Estimate/Priority 欄位。 | [SKILL.md](./custom/basic/firstsun-pm/SKILL.md) |
 | **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
 | **validate-skills** | 驗證技能是否符合 agentskills.io 規範與最佳實踐。 | [SKILL.md](./external/basic/validate-skills/SKILL.md) |
@@ -16,7 +16,7 @@
 | **firecrawl-search** | 具備完整網頁內容提取功能的網路搜尋工具。 | [SKILL.md](./external/basic/firecrawl-search/SKILL.md) |
 | **book-distiller** | 萬用書籍萃取系統：將 PDF、EPUB、TXT 轉化為 AI 技能或 Gem 指令。 | [SKILL.md](./custom/basic/book-distiller/SKILL.md) |
 | **full-output-enforcement** | 強制完整代碼生成，禁用佔位符模式，並乾淨處理 Token 限制拆分。 | [SKILL.md](./external/basic/full-output-enforcement/SKILL.md) |
-| **harness-creator** | 建立、稽核與改善 AI 編碼代理的 Harness：CLAUDE.md 指令檔、狀態追蹤、驗證關卡、作業階段交接與多代理協作。 | [SKILL.md](./custom/basic/harness-creator/SKILL.md) |
+| **firstsun-harness** | 建立、稽核與改善 AI 編碼代理的 Harness：CLAUDE.md 指令檔、狀態追蹤、驗證關卡、作業階段交接與多代理協作。 | [SKILL.md](./custom/basic/firstsun-harness/SKILL.md) |
 
 ## 🤖 AI Agent 開發 (AI Agent Development)
 | 技能名稱 | 中文說明 | 檔案連結 |

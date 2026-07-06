@@ -228,10 +228,10 @@
       "skillPath": "skills/habit-tracker/SKILL.md",
       "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
     },
-    "harness-creator": {
+    "firstsun-harness": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
-      "skillPath": "custom/basic/harness-creator/SKILL.md",
+      "skillPath": "custom/basic/firstsun-harness/SKILL.md",
       "computedHash": "89e13c41bbd51e0e5de1a438c4e7f289f7437e23d0265a2daa99427aa6a48edd"
     },
     "healthkit": {

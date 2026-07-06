@@ -1,5 +1,5 @@
 ---
-name: harness-creator
+name: firstsun-harness
 description: >-
   Побудова, аудит і вдосконалення легковагих harness для агентів AI-кодування: AGENTS.md/CLAUDE.md,
   стан фіч, робочі процеси верифікації, межі обсягу, передача життєвого циклу,
@@ -38,7 +38,7 @@ license: MIT
 Використовуйте вбудований скрипт при роботі з локальним репозиторієм:
 
 ```bash
-node skills/harness-creator/scripts/create-harness.mjs --target /path/to/project
+node scripts/scripts/create-harness.mjs --target /path/to/project
 ```
 
 Параметри:
@@ -55,7 +55,7 @@ node skills/harness-creator/scripts/create-harness.mjs --target /path/to/project
 Запустіть:
 
 ```bash
-node skills/harness-creator/scripts/validate-harness.mjs --target /path/to/project
+node scripts/scripts/validate-harness.mjs --target /path/to/project
 ```
 
 Надайте звіт з оцінками п'яти підсистем, найнижчою оцінкою та першими 2-3 змінами, які підвищать надійність. Розглядайте найнижчу оцінку як потенційне вузьке місце; підтверджуйте це через збої, логи або результати завдань, перш ніж стверджувати про причинно-наслідковий зв'язок.
@@ -65,8 +65,8 @@ node skills/harness-creator/scripts/validate-harness.mjs --target /path/to/proje
 Використовуйте, коли користувач хоче отримати звіт для поширення:
 
 ```bash
-node skills/harness-creator/scripts/render-assessment-html.mjs --target /path/to/project
-node skills/harness-creator/scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
+node scripts/scripts/render-assessment-html.mjs --target /path/to/project
+node scripts/scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
 ```
 
 Чітко зазначайте, що це структурний benchmark. Реальна ефективність потребує сесій агента до і після на репрезентативних завданнях.

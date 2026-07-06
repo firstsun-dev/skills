@@ -1,6 +1,6 @@
 ---
 name: firstsun-project-init
-description: "Bootstraps a new firstsun-dev project end-to-end: installs relevant skills, scaffolds an agent harness via harness-creator, creates the GitHub repo with description/topics, and lists it in the org profile README. Use whenever the user wants to init/bootstrap a new firstsun-dev project or repo — even if they only ask for one part of the flow, since the rest is usually wanted too."
+description: "Bootstraps a new firstsun-dev project end-to-end: installs relevant skills, scaffolds an agent harness via firstsun-harness, creates the GitHub repo with description/topics, and lists it in the org profile README. Use whenever the user wants to init/bootstrap a new firstsun-dev project or repo — even if they only ask for one part of the flow, since the rest is usually wanted too."
 origin: firstsun-dev/skills
 ---
 
@@ -37,7 +37,7 @@ Only pick skills that live under `firstsun-dev/skills`'s `custom/` or `external/
 
 ## Step 2 — Scaffold the agent harness
 
-Invoke the `harness-creator` skill (via the Skill tool) against the target project directory to set up the reliability scaffolding: `CLAUDE.md`/`AGENTS.md`, `feature_list.json`, `progress.md`, `init.sh`, and `session-handoff.md` as appropriate for the project's size and shape. Let harness-creator's own judgment drive the specifics of what gets created — this step is local and reversible, so no extra confirmation is needed beyond the harness-creator skill's own flow.
+Invoke the `firstsun-harness` skill (via the Skill tool) against the target project directory to set up the reliability scaffolding: `CLAUDE.md`/`AGENTS.md`, `feature_list.json`, `progress.md`, `init.sh`, and `session-handoff.md` as appropriate for the project's size and shape. Let firstsun-harness's own judgment drive the specifics of what gets created — this step is local and reversible, so no extra confirmation is needed beyond the firstsun-harness skill's own flow.
 
 ## Optional — Wire GitHub Issues into the harness
 
@@ -132,7 +132,7 @@ This is externally visible and not trivially reversible — confirm with the use
 ## Definition of done
 
 - [ ] Selected skills installed and present in the project's `skills-lock.json`
-- [ ] Harness scaffolding created via `harness-creator` and reviewed by the user
+- [ ] Harness scaffolding created via `firstsun-harness` and reviewed by the user
 - [ ] Repo exists under `firstsun-dev`, with correct visibility, description, and topics
 - [ ] `delete-branch-on-merge` is enabled on the new repo
 - [ ] If public, org-level secrets/variables needed by CI were checked for visibility to this repo

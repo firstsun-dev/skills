@@ -1,18 +1,18 @@
-# harness-creator
+# firstsun-harness
 
 A compact skill for building and auditing harnesses around AI coding agents.
 
 It helps a repository provide five things agents need: instructions, state, verification, scope boundaries, and lifecycle handoff.
 
-> Forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) on 2026-07-04 and maintained independently in this repo (`custom/basic/harness-creator/`). It no longer tracks upstream.
+> Forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) on 2026-07-04 and maintained independently in this repo (`custom/basic/firstsun-harness/`). It no longer tracks upstream.
 
 ## Install
 
 ```bash
-npx skills add firstsun-dev/skills --skill harness-creator
+npx skills add firstsun-dev/skills --skill firstsun-harness
 ```
 
-Or copy `custom/basic/harness-creator/` into your skill path.
+Or copy `custom/basic/firstsun-harness/` into your skill path.
 
 ## Use
 
@@ -62,7 +62,7 @@ The score is structural. It tells you whether the harness is present and coheren
 ## Files
 
 ```text
-harness-creator/
+firstsun-harness/
 ├── SKILL.md
 ├── agents/openai.yaml
 ├── scripts/

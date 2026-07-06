@@ -1,4 +1,4 @@
-# harness-creator
+# firstsun-harness
 
 Компактний скіл для побудови та аудиту harness навколо агентів AI-кодування.
 
@@ -7,17 +7,17 @@
 ## Встановлення
 
 ```bash
-npx skills add walkinglabs/learn-harness-engineering --skill harness-creator
+npx skills add walkinglabs/learn-harness-engineering --skill firstsun-harness
 ```
 
-Або скопіюйте `skills/harness-creator/` до вашого шляху скілів.
+Або скопіюйте `skills/firstsun-harness/` до вашого шляху скілів.
 
 ## Використання
 
 ```bash
-node skills/harness-creator/scripts/create-harness.mjs --target /path/to/project
-node skills/harness-creator/scripts/validate-harness.mjs --target /path/to/project
-node skills/harness-creator/scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
+node skills/firstsun-harness/scripts/create-harness.mjs --target /path/to/project
+node skills/firstsun-harness/scripts/validate-harness.mjs --target /path/to/project
+node skills/firstsun-harness/scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
 ```
 
 Скрипти використовують лише вбудовані модулі Node.js. Їх можна запускати після копіювання директорії скіла до іншого репозиторію.
@@ -57,7 +57,7 @@ node skills/harness-creator/scripts/run-benchmark.mjs --target /path/to/project 
 ## Файли
 
 ```text
-harness-creator/
+firstsun-harness/
 ├── SKILL.md
 ├── metadata.json
 ├── agents/openai.yaml

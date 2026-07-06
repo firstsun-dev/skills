@@ -1,5 +1,5 @@
 {
-  "skill_name": "harness-creator",
+  "skill_name": "firstsun-harness",
   "evals": [
     {
       "id": 1,
@@ -122,7 +122,7 @@
     {
       "id": 10,
       "name": "Scripted Harness Validation",
-      "prompt": "Use the harness-creator scripts to scaffold a harness, validate it, and produce an HTML assessment report for a repository.",
+      "prompt": "Use the firstsun-harness scripts to scaffold a harness, validate it, and produce an HTML assessment report for a repository.",
       "expected_output": "Commands using create-harness.mjs, validate-harness.mjs, and render-assessment-html.mjs plus interpretation of score",
       "files": [],
       "expectations": [

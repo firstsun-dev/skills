@@ -1,5 +1,5 @@
 ---
-name: harness-creator
+name: firstsun-harness
 description: >-
   Build, audit, and improve harnesses that make AI coding agents reliable: AGENTS.md/CLAUDE.md
   instruction files, feature/state tracking, verification gates, scope boundaries, session
@@ -43,7 +43,7 @@ Every useful coding-agent harness has five subsystems:
 
 ### Create a harness
 
-Use the bundled script when working on a local repository (paths are relative to this skill's directory — in this repo, `custom/basic/harness-creator/`):
+Use the bundled script when working on a local repository (paths are relative to this skill's directory — in this repo, `custom/basic/firstsun-harness/`):
 
 ```bash
 node scripts/create-harness.mjs --target /path/to/project
