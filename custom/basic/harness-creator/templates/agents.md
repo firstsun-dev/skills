@@ -20,13 +20,15 @@ If baseline verification is failing, repair that first before adding new scope.
 - **One feature at a time**: Pick exactly one unfinished feature from `feature_list.json`
 - **Verification required**: Don't claim done without running verification commands
 - **Update artifacts**: Before ending session, update `progress.md` and `feature_list.json`
+- **Keep state files short**: `progress.md` tracks only open work (~80 lines max). When a feature finishes, move it to `archive/YYYY-MM.md` (current month) as one line: name + commit hash. Keep `feature_list.json` evidence to one line — commit hash + short pointer; narrative belongs in the commit message. Rewrite `session-handoff.md` each session — overwrite, never append.
 - **Stay in scope**: Don't modify files unrelated to the current feature
 - **Leave clean state**: Next session must be able to run `./init.sh` immediately
 
 ## Required Artifacts
 
 - `feature_list.json` — Feature state tracker (source of truth)
-- `progress.md` — Session continuity log
+- `progress.md` — Session continuity log (open work only)
+- `archive/YYYY-MM.md` — Completed work, one file per calendar month
 - `init.sh` — Standard startup and verification path
 - `session-handoff.md` — Optional, for larger sessions
 
@@ -45,9 +47,10 @@ Before ending a session:
 
 1. Update `progress.md` with current state
 2. Update `feature_list.json` with new feature status
-3. Record any unresolved risks or blockers
-4. Commit with descriptive message once work is in safe state
-5. Leave repo clean enough for next session to run `./init.sh` immediately
+3. Move finished items from `progress.md` to `archive/YYYY-MM.md` (one line each: name + commit hash)
+4. Record any unresolved risks or blockers
+5. Commit with descriptive message once work is in safe state
+6. Leave repo clean enough for next session to run `./init.sh` immediately
 
 ## Verification Commands
 

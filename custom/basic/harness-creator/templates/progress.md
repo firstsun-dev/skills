@@ -1,5 +1,15 @@
 # Session Progress Log
 
+<!--
+  CLEANUP CADENCE: this file tracks only what's still open. When a feature
+  finishes, move its narrative to archive/YYYY-MM.md (current month) as a
+  one-line entry (name + commit hash) and remove it from here. Archive once
+  this file passes ~80 lines — "What's Done" is a snapshot, not a permanent
+  changelog.
+-->
+
+Completed work is archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
+
 ## Current State
 
 **Last Updated:** YYYY-MM-DD HH:MM
@@ -10,6 +20,7 @@
 
 ### What's Done
 
+<!-- Move each item to archive/YYYY-MM.md once verified; don't let this list grow session over session. -->
 - [x] [Completed item 1]
 - [x] [Completed item 2]
 

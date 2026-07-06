@@ -36,7 +36,7 @@
           },
           "evidence": {
             "type": "string",
-            "description": "Verification evidence when status is 'done'"
+            "description": "Verification evidence when status is 'done'. Keep to one line: a commit hash plus a short pointer (e.g. 'Commit abc1234 - added X, tests pass'). Debugging narrative, rejected alternatives, and design discussion belong in the commit message, not here — this field is an index into git history, not a changelog."
           }
         },
         "required": ["id", "name", "description", "status"]

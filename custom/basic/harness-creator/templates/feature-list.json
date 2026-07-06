@@ -40,5 +40,6 @@
       "status": "not-started",
       "evidence": ""
     }
-  ]
+  ],
+  "_evidenceStyle": "Keep evidence to one line: commit hash + short pointer (e.g. 'Commit abc1234 - added X, tests pass'). Debugging narrative and design discussion belong in the commit message, not this file. See feature-list.schema.json."
 }

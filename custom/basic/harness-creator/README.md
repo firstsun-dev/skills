@@ -4,20 +4,24 @@ A compact skill for building and auditing harnesses around AI coding agents.
 
 It helps a repository provide five things agents need: instructions, state, verification, scope boundaries, and lifecycle handoff.
 
+> Forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) on 2026-07-04 and maintained independently in this repo (`custom/basic/harness-creator/`). It no longer tracks upstream.
+
 ## Install
 
 ```bash
-npx skills add walkinglabs/learn-harness-engineering --skill harness-creator
+npx skills add firstsun-dev/skills --skill harness-creator
 ```
 
-Or copy `skills/harness-creator/` into your skill path.
+Or copy `custom/basic/harness-creator/` into your skill path.
 
 ## Use
 
+Paths are relative to this skill's directory:
+
 ```bash
-node skills/harness-creator/scripts/create-harness.mjs --target /path/to/project
-node skills/harness-creator/scripts/validate-harness.mjs --target /path/to/project
-node skills/harness-creator/scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
+node scripts/create-harness.mjs --target /path/to/project
+node scripts/validate-harness.mjs --target /path/to/project
+node scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
 ```
 
 The scripts use only Node.js built-in modules. They can be run after copying the skill directory into another repository.
@@ -26,7 +30,8 @@ The scripts use only Node.js built-in modules. They can be run after copying the
 
 - `AGENTS.md` or `CLAUDE.md`
 - `feature_list.json`
-- `progress.md`
+- `progress.md` (open work only)
+- `archive/YYYY-MM.md` (completed work, one file per calendar month)
 - `init.sh`
 - `session-handoff.md`
 
@@ -59,7 +64,6 @@ The score is structural. It tells you whether the harness is present and coheren
 ```text
 harness-creator/
 ├── SKILL.md
-├── metadata.json
 ├── agents/openai.yaml
 ├── scripts/
 │   ├── create-harness.mjs
@@ -69,6 +73,7 @@ harness-creator/
 │   └── lib/harness-utils.mjs
 ├── templates/
 │   ├── agents.md
+│   ├── archive/YYYY-MM.md
 │   ├── feature-list.json
 │   ├── feature-list.schema.json
 │   ├── init.sh

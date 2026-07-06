@@ -9,7 +9,8 @@ description: >-
   or when creating or assessing AGENTS.md, CLAUDE.md, feature_list.json, init.sh, progress.md, or
   session-handoff files. Reach for it even if the user never says the word "harness."
 license: MIT
-origin: firstsun-dev/skills
+metadata:
+  origin: firstsun-dev/skills
 ---
 
 > Forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) on 2026-07-04 and now maintained independently in this repo. It no longer tracks upstream changes.
@@ -27,7 +28,7 @@ Every useful coding-agent harness has five subsystems:
 | Subsystem | Minimal artifact | Purpose |
 |---|---|---|
 | Instructions | `AGENTS.md` or `CLAUDE.md` | Startup path, working rules, definition of done |
-| State | `feature_list.json`, `progress.md` | Current feature, status, evidence, next step |
+| State | `feature_list.json`, `progress.md`, `archive/YYYY-MM.md` | Current feature, status, evidence, next step; finished work archived monthly |
 | Verification | `init.sh` or documented commands | Tests/checks the agent must run before claiming done |
 | Scope | Feature dependencies and done criteria | Prevents overreach and half-finished work |
 | Lifecycle | `session-handoff.md`, end-of-session routine | Makes the next session restartable |
@@ -42,10 +43,10 @@ Every useful coding-agent harness has five subsystems:
 
 ### Create a harness
 
-Use the bundled script when working on a local repository:
+Use the bundled script when working on a local repository (paths are relative to this skill's directory — in this repo, `custom/basic/harness-creator/`):
 
 ```bash
-node skills/harness-creator/scripts/create-harness.mjs --target /path/to/project
+node scripts/create-harness.mjs --target /path/to/project
 ```
 
 Options:
@@ -62,7 +63,7 @@ Then explain what was created and how the user should replace placeholder featur
 Run:
 
 ```bash
-node skills/harness-creator/scripts/validate-harness.mjs --target /path/to/project
+node scripts/validate-harness.mjs --target /path/to/project
 ```
 
 Report the five subsystem scores, the lowest-scoring area, and the first 2-3 changes that would improve reliability. Treat the lowest score as a candidate bottleneck; confirm with failures, logs, or task outcomes before claiming causality.
@@ -72,8 +73,8 @@ Report the five subsystem scores, the lowest-scoring area, and the first 2-3 cha
 Use when the user wants a shareable assessment:
 
 ```bash
-node skills/harness-creator/scripts/render-assessment-html.mjs --target /path/to/project
-node skills/harness-creator/scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
+node scripts/render-assessment-html.mjs --target /path/to/project
+node scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
 ```
 
 Be clear that this is a structural benchmark. The benchmark first runs a self-check — it scaffolds a throwaway harness and validates it, proving the bundled scripts work end-to-end — then scores the target and eval coverage. Real effectiveness still needs before/after agent sessions on representative tasks.
@@ -106,7 +107,8 @@ For a usable minimal harness, leave the target project with:
 
 - [ ] `AGENTS.md` or `CLAUDE.md`
 - [ ] `feature_list.json`
-- [ ] `progress.md`
+- [ ] `progress.md` (open work only, finished items archived)
+- [ ] `archive/YYYY-MM.md` for the current month
 - [ ] `init.sh`
 - [ ] Optional `session-handoff.md` for multi-session work
 - [ ] Documented verification evidence or next action

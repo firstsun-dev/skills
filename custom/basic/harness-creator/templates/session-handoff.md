@@ -1,5 +1,12 @@
 # Session Handoff
 
+<!--
+  OVERWRITE, don't append: this file describes only the most recent session.
+  Rewrite it at end of session; older handoffs live in git history, and completed
+  work belongs in archive/YYYY-MM.md. If this file grows past ~80 lines, it is
+  accumulating history instead of handing off.
+-->
+
 ## Current Objective
 
 - Goal:

@@ -239,7 +239,8 @@ export function scoreHarness(files) {
       jsonFeatureList(featureList, 'Feature tracker is valid and has feature fields'),
       hasFile(byPath, ['progress.md'], 'Progress log exists'),
       structuredHas(progress, ['Current State', 'What', 'Next'], 'Progress log supports restart'),
-      structuredHas(handoff || progress, ['Blockers', 'Files', 'Next Session'], 'Handoff captures blockers/files/next step')
+      structuredHas(handoff || progress, ['Blockers', 'Files', 'Next Session'], 'Handoff captures blockers/files/next step'),
+      stateHygiene(progress, handoff, featureList, 'State files stay archived and concise (no unbounded growth)')
     ],
     verification: [
       hasFile(byPath, ['init.sh'], 'Verification entrypoint exists'),
@@ -318,6 +319,40 @@ function structuredHas(markdown, needles, message) {
   return textHas(structuredText(markdown), needles, message);
 }
 
+// State files are meant to be indexes into git history, not changelogs. Left
+// unchecked, agents append rather than archive/summarize, and every state file grows
+// without bound across sessions. This is a proxy, not an exact rule:
+// - progress.md or session-handoff.md over the line threshold fails outright —
+//   completed narrative belongs in archive/YYYY-MM.md (one file per month) and the
+//   handoff is rewritten each session, not appended to; an archive existing does not
+//   excuse an oversized file, since archiving is precisely how they stay short
+// - a 'done' feature's evidence should read as a pointer (commit hash + short note),
+//   not a narrative, so it's flagged past the character threshold
+const STATE_FILE_LINE_THRESHOLD = 80;
+const EVIDENCE_CHAR_THRESHOLD = 300;
+
+function stateHygiene(progressText, handoffText, featureListText, message) {
+  const lineCount = (text) => text ? text.split(/\r?\n/).length : 0;
+  const progressOk = lineCount(progressText) <= STATE_FILE_LINE_THRESHOLD;
+  const handoffOk = lineCount(handoffText) <= STATE_FILE_LINE_THRESHOLD;
+
+  // Missing/invalid feature_list.json is already penalized by its own checks;
+  // hygiene only judges evidence length when there is a parseable list.
+  let evidenceOk = true;
+  try {
+    const parsed = JSON.parse(featureListText);
+    if (Array.isArray(parsed.features)) {
+      evidenceOk = parsed.features.every((feature) =>
+        feature.status !== 'done' || !feature.evidence || feature.evidence.length <= EVIDENCE_CHAR_THRESHOLD
+      );
+    }
+  } catch {
+    // fall through — jsonFeatureList already fails for this
+  }
+
+  return { pass: progressOk && handoffOk && evidenceOk, message };
+}
+
 function jsonFeatureList(text, message) {
   try {
     const parsed = JSON.parse(text);
@@ -350,6 +385,15 @@ export async function loadHarnessFiles(root) {
       files.push({ path: candidate, content: await readText(fullPath) });
     }
   }
+
+  const archiveDir = path.join(root, 'archive');
+  if (await exists(archiveDir)) {
+    const entries = await readdir(archiveDir);
+    for (const entry of entries.filter((name) => name.endsWith('.md'))) {
+      files.push({ path: `archive/${entry}`, content: await readText(path.join(archiveDir, entry)) });
+    }
+  }
+
   return files;
 }
 

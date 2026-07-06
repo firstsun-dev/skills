@@ -21,6 +21,7 @@ Creates a minimal production harness:
   AGENTS.md or CLAUDE.md
   feature_list.json
   progress.md
+  archive/YYYY-MM.md (current month)
   session-handoff.md
   init.sh
 
@@ -52,6 +53,17 @@ const results = [];
 results.push(await copyTemplate('agents.md', path.join(target, agentFile), replacements, { force }));
 results.push(await copyTemplate('feature-list.json', path.join(target, 'feature_list.json'), {}, { force }));
 results.push(await copyTemplate('progress.md', path.join(target, 'progress.md'), {}, { force }));
+
+// Local time, not UTC — the archive month should match the user's calendar.
+const now = new Date();
+const yearMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+results.push(await copyTemplate(
+  'archive/YYYY-MM.md',
+  path.join(target, 'archive', `${yearMonth}.md`),
+  { 'YYYY-MM': yearMonth },
+  { force }
+));
+
 results.push(await copyTemplate('session-handoff.md', path.join(target, 'session-handoff.md'), {}, { force }));
 
 const initPath = path.join(target, 'init.sh');
