@@ -91,7 +91,7 @@ const t = useTranslations(lang);
 // t('nav.home'), t('blog.readMore')
 ```
 
-Add missing keys to both locales in `src/i18n/ui.ts` before use (delegate to `i18n-manager` agent). Structural/routing logic may use `lang` directly — that's not a UI string.
+Add missing keys to both locales in `src/i18n/ui.ts` before use — edit `src/i18n/ui.ts` directly and add the key under both `zh-tw` and `en`. Structural/routing logic may use `lang` directly — that's not a UI string.
 
 ---
 
