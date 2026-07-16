@@ -15,7 +15,7 @@ metadata:
 
 > Forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) on 2026-07-04 and now maintained independently in this repo. It no longer tracks upstream changes.
 
-# Harness Creator
+# firstsun-harness
 
 Use this skill to make a repository easier for coding agents to start, stay in scope, verify work, and resume across sessions. Keep the harness small enough that agents actually follow it.
 
