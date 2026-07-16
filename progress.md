@@ -13,6 +13,14 @@ Completed work is archived in [archive/](./archive/), one file per calendar mont
 
 ## Since Last Update
 
+feat-010 (add plugin-settings external skill) completed 2026-07-16. Archived the official
+`anthropics/claude-code` "Plugin Settings" skill into `external/develop/devops/plugin-settings/`.
+Fixed only the `name:` field (was `Plugin Settings`, spec violation) — left all body content
+untouched per user instruction not to hand-edit external skill content. Body is 544 lines
+(over the 500-line guideline); user decided to keep as-is and record as a known exception,
+consistent with feat-005's existing precedent that external/ upstream content isn't hand-edited.
+skills-lock.json registered with source=anthropics/claude-code (not firstsun-dev/skills).
+
 feat-009 (cleanup-cadence for harness-creator) completed 2026-07-06 (commit 3b3a18a).
 Convention decided with user: archive is a time-based directory `archive/YYYY-MM.md`;
 `progress-archive.md` is obsolete (this repo's own copy migrated to `archive/2026-07.md`).

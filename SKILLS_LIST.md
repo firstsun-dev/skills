@@ -90,6 +90,7 @@
 | **github-actions** | 現代化 Monorepo CI/CD 模式：路徑過濾、自動化發佈與 Cloudflare 部署。 | [SKILL.md](./custom/develop/github-actions/SKILL.md) |
 | **using-git-worktrees** | 使用 Git Worktree 隔離不同功能的開發環境。 | [SKILL.md](./external/develop/devops/using-git-worktrees/SKILL.md) |
 | **terraform-engineer** | 專門為 Terraform 工程師設計的技能，涵蓋資源配置與架構建議。 | [SKILL.md](./external/develop/devops/terraform-engineer/SKILL.md) |
+| **plugin-settings** | Claude Code 外掛的 `.claude/plugin-name.local.md` 使用者設定檔模式：YAML frontmatter 解析、hooks/commands/agents 讀取範例。（官方 anthropics/claude-code repo，本文 545 行超過建議上限，已知例外保留原樣） | [SKILL.md](./external/develop/devops/plugin-settings/SKILL.md) |
 
 ### 國際化 (i18n)
 | 技能名稱 | 中文說明 | 檔案連結 |

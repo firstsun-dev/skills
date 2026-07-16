@@ -7,6 +7,12 @@
       "skillPath": "Packs/FirstPrinciples/src/SKILL.md",
       "computedHash": "434544c675318a41b27d97cad058c6244cc4a4e3e5751099b27c95b366c9983a"
     },
+    "plugin-settings": {
+      "source": "anthropics/claude-code",
+      "sourceType": "github",
+      "skillPath": "plugins/plugin-dev/skills/plugin-settings/SKILL.md",
+      "computedHash": "b4be0bf62782da83e962aa759e7d5efb1d5934b81554f1d15801fdf5e01b18a4"
+    },
     "ai-video-generation": {
       "source": "agentspace-so/runcomfy-agent-skills",
       "sourceType": "github",
@@ -162,6 +168,12 @@
       "skillPath": "custom/develop/firstsun-dev-conventions/SKILL.md",
       "computedHash": "3c6cce10c25c550e87028645e469a409ee990ad98134896fa298a89b89eba077"
     },
+    "firstsun-harness": {
+      "source": "firstsun-dev/skills",
+      "sourceType": "github",
+      "skillPath": "custom/basic/firstsun-harness/SKILL.md",
+      "computedHash": "89e13c41bbd51e0e5de1a438c4e7f289f7437e23d0265a2daa99427aa6a48edd"
+    },
     "firstsun-pm": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
@@ -227,12 +239,6 @@
       "sourceType": "github",
       "skillPath": "skills/habit-tracker/SKILL.md",
       "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
-    },
-    "firstsun-harness": {
-      "source": "firstsun-dev/skills",
-      "sourceType": "github",
-      "skillPath": "custom/basic/firstsun-harness/SKILL.md",
-      "computedHash": "89e13c41bbd51e0e5de1a438c4e7f289f7437e23d0265a2daa99427aa6a48edd"
     },
     "healthkit": {
       "source": "dpearson2699/swift-ios-skills",

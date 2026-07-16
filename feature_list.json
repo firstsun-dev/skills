@@ -71,6 +71,14 @@
       "dependencies": ["feat-008"],
       "status": "done",
       "evidence": "Commit 3b3a18a — archive/YYYY-MM.md scaffold + stateHygiene check (80-line/300-char thresholds); self-check 100/100, /validate-skills clean"
+    },
+    {
+      "id": "feat-010",
+      "name": "Add plugin-settings external skill (Claude Code .local.md config pattern)",
+      "description": "Archive the official anthropics/claude-code 'Plugin Settings' skill (plugins/plugin-dev/skills/plugin-settings/SKILL.md) into external/develop/devops/ per the External Skills SOP: download, archive, validate, document, register in skills-lock.json with original upstream source.",
+      "dependencies": ["feat-004"],
+      "status": "done",
+      "evidence": "external/develop/devops/plugin-settings/SKILL.md added, name field fixed to 'plugin-settings' (was 'Plugin Settings', spec violation) — no other content changed per user instruction not to alter external skill content. /validate-skills: PASS on name/directory match and description length; FAIL on body length (544 lines > 500-line guideline) accepted as known exception per user decision, consistent with feat-005's precedent that external/ upstream content is not hand-edited. SKILLS_LIST.md updated with entry + exception note. skills-lock.json registered via `npx skills add anthropics/claude-code --skill \"Plugin Settings\"`, key renamed 'Plugin Settings' -> 'plugin-settings' for naming consistency, source=anthropics/claude-code preserved (not firstsun-dev/skills)."
     }
   ]
 }
