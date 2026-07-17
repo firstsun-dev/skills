@@ -6,6 +6,7 @@
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
 | **skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/skill-manager/SKILL.md) |
+| **permission-cleanup** | 稽核並清理 Claude Code 權限規則（`.claude/settings.json` / `settings.local.json` 的 `permissions.allow`）：找出規則字串中洩漏的憑證、綁定已過期 job ID/PID/日期的一次性規則、以及已被更廣泛萬用字元涵蓋的多餘規則。 | [SKILL.md](./custom/basic/permission-cleanup/SKILL.md) |
 | **firstsun-project-init** | 新專案一站式初始化流程：挑選並安裝相關技能、透過 firstsun-harness 建立代理 harness、建立 firstsun-dev org 下的 GitHub repo 並設定描述/tags、更新組織 profile README。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
 | **firstsun-pm** | firstsun-dev 組織的專案管理技能：跨 repo 統一 issue 建立規範，依 repo 路由至對應 Project Board（多數 repo → #6，heaven-monorepo/heaven-www → #9（copyProjectV2 複製自 #6，欄位與六個內建 workflow 皆一致））、強制命名慣例，並協助設定 Estimate/Priority 欄位。也涵蓋 issue → PR 的出貨流程：lint/build/test 過關才 commit、PR 內容自動帶 `Closes #<issue>`（跨 repo 用 `Closes org/repo#<issue>`）讓 GitHub 自動連結並在合併時關閉 issue，並同步更新 board 狀態。 | [SKILL.md](./custom/basic/firstsun-pm/SKILL.md) |
 | **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
@@ -180,7 +181,7 @@
 | Marketplace / Plugin | 說明 | 內含技能 | 檔案連結 |
 | :--- | :--- | :--- | :--- |
 | **tianyao-skills** (marketplace) | 個人 marketplace，登記 `/plugin marketplace add ~/skills`。 | — | [marketplace.json](./.claude-plugin/marketplace.json) |
-| **most-used-skills** | 依全專案 session 使用頻率統計出的最常用技能包（`firstsun-pm`、`validate-skills`、`firstsun-harness`、`skill-manager`、`find-skills`、`skill-creator`、`frontend-design`、`cloudflare`、`tailored-resume-generator`）。 | 9 個 | [plugin.json](./plugin-most-used/.claude-plugin/plugin.json) |
+| **most-used-skills** | 依全專案 session 使用頻率統計出的最常用技能包（`firstsun-pm`、`validate-skills`、`firstsun-harness`、`skill-manager`、`find-skills`、`skill-creator`、`frontend-design`、`cloudflare`、`tailored-resume-generator`），另加新建的 `permission-cleanup`（尚無使用紀錄，非依頻率入選）。 | 10 個 | [plugin.json](./plugin-most-used/.claude-plugin/plugin.json) |
 
 ---
 *最後更新日期: 2026-07-17*
