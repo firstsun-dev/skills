@@ -1,0 +1,8 @@
+{
+  "name": "most-used-skills",
+  "description": "Personal plugin bundling tianyao's most-used Claude Code skills, ranked by usage across all project session history.",
+  "version": "1.0.0",
+  "author": {
+    "name": "tianyao"
+  }
+}

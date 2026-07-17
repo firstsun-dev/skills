@@ -173,6 +173,15 @@
 | **designing-your-work-life** | 史丹佛《設計你的工作和人生》萃取的職場設計與職業轉型框架。 | [SKILL.md](./custom/books/designing-your-work-life/SKILL.md) |
 
 
+## 🔌 Plugins
+
+透過 `.claude-plugin/` 打包成可用 `/plugin install` 安裝的 Claude Code plugin，內容以 symlink 指回 `custom/`／`external/` 中的原始技能，僅限本機使用。
+
+| Marketplace / Plugin | 說明 | 內含技能 | 檔案連結 |
+| :--- | :--- | :--- | :--- |
+| **tianyao-skills** (marketplace) | 個人 marketplace，登記 `/plugin marketplace add ~/skills`。 | — | [marketplace.json](./.claude-plugin/marketplace.json) |
+| **most-used-skills** | 依全專案 session 使用頻率統計出的最常用技能包（`firstsun-pm`、`validate-skills`、`firstsun-harness`、`skill-manager`、`find-skills`、`skill-creator`、`frontend-design`、`cloudflare`、`tailored-resume-generator`）。 | 9 個 | [plugin.json](./plugin-most-used/.claude-plugin/plugin.json) |
+
 ---
-*最後更新日期: 2026-06-30*
+*最後更新日期: 2026-07-17*
 

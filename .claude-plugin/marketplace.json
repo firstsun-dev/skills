@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "tianyao-skills",
+  "description": "Personal marketplace for tianyao's Firstsun Skill Arsenal plugins.",
+  "owner": {
+    "name": "tianyao"
+  },
+  "plugins": [
+    {
+      "name": "most-used-skills",
+      "description": "Bundle of tianyao's most-used Claude Code skills, ranked by usage across all project session history.",
+      "author": {
+        "name": "tianyao"
+      },
+      "category": "productivity",
+      "source": "./plugin-most-used"
+    }
+  ]
+}
