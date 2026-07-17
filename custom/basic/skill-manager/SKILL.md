@@ -54,6 +54,18 @@ Use this workflow to consolidate multiple skills into a single "Gem" instruction
    - `# Interaction Style`: Guidelines for tone and output.
 4. **Export**: Write the result to `gem/<category-name>.txt`.
 
+## Plugin Export Workflow (Plugin 導出流程)
+Use this workflow to bundle a set of existing skills (e.g. the user's most-used skills) into an installable Claude Code plugin, registered via a local marketplace.
+
+1. **Select Skills**: Decide which skills to bundle. If ranking by usage, scan `~/.claude/projects/*/*.jsonl` for `Skill` tool_use invocations (`input.skill`) and `<command-name>` slash-command tags — merge both, since some skills are only auto-triggered (no matching slash command) and some are only typed.
+2. **Verify Source Location**: Confirm each selected skill actually resolves to a real directory under `custom/<domain>/` or `external/<domain>/`. Do not bundle names that turn out to be built-in CLI commands, marketplace-plugin commands, or orphaned skills still sitting in `.agents/skills/` (categorize those into `custom/`/`external/` first, per the SOPs below, before including them).
+3. **Scaffold the Plugin**: Create `<plugin-dir>/.claude-plugin/plugin.json` (name, description, version, author) and `<plugin-dir>/skills/`. Inside `skills/`, symlink each bundled skill back to its real location (`ln -s ../../custom/<domain>/<skill> <plugin-dir>/skills/<skill>`) — never copy, so the plugin always tracks the canonical skill content. This makes the plugin local-only (not portable to a fresh clone without the rest of the repo); note that if the plugin is ever meant to be published externally.
+4. **Register a Marketplace**: Create or update `.claude-plugin/marketplace.json` at the repo root (`$schema`, `name`, `owner`, `plugins[]` with each plugin's `source` as a relative path, e.g. `"./<plugin-dir>"`).
+5. **Validate**: Run `/validate-skills` against every symlinked skill (validation follows symlinks to the real `SKILL.md`, so this re-checks the canonical copy) and sanity-check both `plugin.json` and `marketplace.json` parse as valid JSON.
+6. **Document**: Add a `## 🔌 Plugins` entry to `SKILLS_LIST.md` listing the marketplace and each plugin, with the bundled skill names and links to their manifests.
+7. **Push**: Commit the new plugin/marketplace files and the `SKILLS_LIST.md` update.
+8. **Install**: `/plugin marketplace add <repo-path>` then `/plugin install <plugin-name>@<marketplace-name>`.
+
 ## SOP for External Skills
 1. **Download**: Run `npx skills add <repo_path>` in root (without -g) to inspect the skill.
 2. **Archive**: Move from `.agents/skills/` to `external/<domain>/` (Ensure it is a direct child).
