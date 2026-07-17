@@ -34,7 +34,8 @@ Leverage these skills to maintain the repository:
 - **Progressive Disclosure**: Use the `/reference` pattern to keep skills efficient. Read [references/REFACTORING.md](references/REFACTORING.md) for the refactoring SOP.
 
 ## Core Commands
-- Bulk Setup: `./setup.sh` registers all local skills (defaults to remote mode to preserve `skills-lock.json`). Use `./setup.sh --local` for active development; the script automatically safeguards `skills-lock.json` from local path changes.
+- **Single-Skill Update (default for the "Remote Install" SOP step)**: When only one skill changed, run `npx skills add <user>/<repo>/<custom|external>/<domain>/<skill-name>` for that skill alone. Do NOT run `./setup.sh` for a single-skill change — it re-registers every skill in the repo, which is out of scope and can touch unrelated installs.
+- Bulk Setup: `./setup.sh` registers **all** local skills (defaults to remote mode to preserve `skills-lock.json`). Reserve this for full onboarding/re-sync (e.g. setting up a new machine), not routine single-skill edits. Use `./setup.sh --local` for active development; the script automatically safeguards `skills-lock.json` from local path changes.
 - Bulk Export: `./export.sh <domain>` imports domain skills to a specific project.
 - Manual Add: `npx skills add <path_to_directory> -l` to list all detectable skills.
 
@@ -59,7 +60,7 @@ Use this workflow to consolidate multiple skills into a single "Gem" instruction
 3. **Validate**: Run `/validate-skills` on the archived skill. Fix any FAIL items (name mismatch, body too long, bad link format, missing "when to use") before proceeding.
 4. **Document**: Update `SKILLS_LIST.md` with the new skill's name, Chinese description, and link.
 5. **Push**: Commit and push changes to GitHub.
-6. **Remote Install**: Run `npx skills add <user>/<repo>/external/<domain>/<skill-name>` to register the version-controlled version.
+6. **Remote Install**: Run `npx skills add <user>/<repo>/external/<domain>/<skill-name>` for that one skill — never `./setup.sh` for a single-skill change.
 
 ## SOP for Custom Skills
 1. **Create**: Create skill directory in `custom/<domain>/`.
@@ -67,4 +68,4 @@ Use this workflow to consolidate multiple skills into a single "Gem" instruction
 3. **Validate**: Run `/validate-skills` on the new skill. Fix any FAIL items before proceeding.
 4. **Document**: Add the new skill to `SKILLS_LIST.md`.
 5. **Push**: Commit and push changes to GitHub.
-6. **Remote Install**: Run `npx skills add <user>/<repo>/custom/<domain>/<skill-name>` to register.
+6. **Remote Install**: Run `npx skills add <user>/<repo>/custom/<domain>/<skill-name>` for that one skill — never `./setup.sh` for a single-skill change.

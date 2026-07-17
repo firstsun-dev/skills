@@ -7,12 +7,6 @@
       "skillPath": "Packs/FirstPrinciples/src/SKILL.md",
       "computedHash": "434544c675318a41b27d97cad058c6244cc4a4e3e5751099b27c95b366c9983a"
     },
-    "plugin-settings": {
-      "source": "anthropics/claude-code",
-      "sourceType": "github",
-      "skillPath": "plugins/plugin-dev/skills/plugin-settings/SKILL.md",
-      "computedHash": "b4be0bf62782da83e962aa759e7d5efb1d5934b81554f1d15801fdf5e01b18a4"
-    },
     "ai-video-generation": {
       "source": "agentspace-so/runcomfy-agent-skills",
       "sourceType": "github",
@@ -178,7 +172,7 @@
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/firstsun-pm/SKILL.md",
-      "computedHash": "fb11a44719a65e612499054836a8629b46e11b5f0877290619a6a37961b0cc29"
+      "computedHash": "d80e543cad20b915072490bb2bc41ff3cee84137a5f55419eef86eb76f5ae7f1"
     },
     "firstsun-project-init": {
       "source": "firstsun-dev/skills",
@@ -377,6 +371,12 @@
       "sourceType": "github",
       "skillPath": "SKILL.md",
       "computedHash": "63ce3ddf87fb796c7855f4d6b34f892b3f83b288cf11c1ea1e4503a0c1b6cc6b"
+    },
+    "plugin-settings": {
+      "source": "anthropics/claude-code",
+      "sourceType": "github",
+      "skillPath": "plugins/plugin-dev/skills/plugin-settings/SKILL.md",
+      "computedHash": "b4be0bf62782da83e962aa759e7d5efb1d5934b81554f1d15801fdf5e01b18a4"
     },
     "polish-blog": {
       "source": "firstsun-dev/skills",
