@@ -53,6 +53,20 @@ When a user asks to add a new task or "job":
 - **Estimate Field ID**: `PVTF_lADOEDVJmM4BcZVhzhXCfxY`
 - **Size Field ID**: `PVTSSF_lADOEDVJmM4BcZVhzhXCfxU` (XS/S/M/L/XL — same options as Project #6, not currently referenced by the workflow above but available if needed)
 
+## 🚀 Shipping Workflow (Issue → PR)
+
+When a user asks to implement/ship/close out an issue (not just create one), drive it end-to-end and make sure the resulting PR auto-links to its issue:
+
+1.  **Verify gates first**: Run the repo's lint, build, and test commands. Do not commit until all pass — never dismiss a failure as "pre-existing" without confirming with the user.
+2.  **Commit**: Conventional Commits message, same title style as step 2 above.
+3.  **Push**: To a feature branch (never straight to the repo's default branch).
+4.  **Open the PR with an auto-link keyword in the body** — this is what makes GitHub auto-link the PR to the issue and auto-close the issue on merge:
+    - Same-repo issue: include `Closes #<issue-number>` (or `Fixes` / `Resolves`) anywhere in the PR body.
+    - Cross-repo issue (PR repo ≠ issue repo, e.g. PR in `heaven-monorepo` closing an issue filed in `heaven-www`): use the fully qualified form `Closes firstsun-dev/<issue-repo>#<issue-number>`.
+    - Command: `gh pr create --repo firstsun-dev/<repo> --title "<same-style-as-issue-title>" --body "Closes #<issue-number>\n\n<description>"`.
+    - Auto-close only fires if the PR merges into the repo's default branch — flag it to the user if the PR targets a non-default base.
+5.  **Update the board**: Move the linked project item to "In Review" (or the repo's equivalent status) via `gh project item-edit --id <ITEM_ID> --field-id <STATUS_FIELD_ID> --single-select-option-id <OPTION_ID>`. Look up the option ID with `gh project field-list <6|9> --owner firstsun-dev` if not already known — don't guess it.
+
 ## 🛡️ Guiding Principles
 - **Respect Community Issues**: Never change the title of issues submitted by external users. Only apply naming conventions to internal/self-created tasks.
 - **English-only for Obsidian plugin repos**: `git-files-sync` and `watermark-s3-uploader` are public plugin repos with external contributors — write issue titles and bodies in English even if the user's request was in Chinese (or another language).
