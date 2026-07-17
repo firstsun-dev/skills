@@ -6,3 +6,8 @@ message, not here. Start a new `archive/YYYY-MM.md` file when the month rolls
 over — don't let a single archive file grow without bound either.
 
 - feat-XXX: [One-line summary] (commit abc1234)
+
+## Decisions
+
+<!-- Settled decisions moved out of progress.md once no longer active context. One line: decision + why. -->
+- **[Decision]**: [why it was made]
