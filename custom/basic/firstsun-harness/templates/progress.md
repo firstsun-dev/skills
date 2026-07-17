@@ -3,12 +3,16 @@
 <!--
   CLEANUP CADENCE: this file tracks only what's still open. When a feature
   finishes, move its narrative to archive/YYYY-MM.md (current month) as a
-  one-line entry (name + commit hash) and remove it from here. Archive once
-  this file passes ~80 lines — "What's Done" is a snapshot, not a permanent
-  changelog.
+  one-line entry (name + commit hash) and remove it from here. Once a
+  decision under "Decisions Made" is no longer active context for open work
+  (the feature it applied to is done, or it's been superseded), move it to
+  the same archive file under a "## Decisions" heading — one line: the
+  decision + why, no alternatives-considered narrative. Archive once this
+  file passes ~80 lines — "What's Done" and "Decisions Made" are snapshots,
+  not a permanent changelog.
 -->
 
-Completed work is archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
+Completed work and settled decisions are archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
 
 ## Current State
 
@@ -42,6 +46,7 @@ Completed work is archived in [archive/](./archive/), one file per calendar mont
 
 ## Decisions Made
 
+<!-- Once a decision is settled and no longer needed as active context, move it to archive/YYYY-MM.md under "## Decisions" as one line: decision + why. -->
 - **[Decision 1]**: [description]
   - Context: [why this decision was made]
   - Alternatives considered: [what else was discussed]
