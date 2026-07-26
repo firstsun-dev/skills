@@ -31,7 +31,7 @@ Every useful coding-agent harness has five subsystems:
 | State | `feature_list.json`, `progress.md`, `archive/YYYY-MM.md` | Current feature, status, evidence, next step; finished work archived monthly |
 | Verification | `init.sh` or documented commands | Tests/checks the agent must run before claiming done |
 | Scope | Feature dependencies and done criteria | Prevents overreach and half-finished work |
-| Lifecycle | `session-handoff.md`, end-of-session routine | Makes the next session restartable |
+| Lifecycle | end-of-session routine, `session-handoff.md` (gitignored per-checkout scratch) | Makes the next session restartable without merge conflicts across worktrees |
 
 ## First Move
 
@@ -110,7 +110,7 @@ For a usable minimal harness, leave the target project with:
 - [ ] `progress.md` (open work only, finished items archived)
 - [ ] `archive/YYYY-MM.md` for the current month
 - [ ] `init.sh`
-- [ ] Optional `session-handoff.md` for multi-session work
+- [ ] Optional `session-handoff.md` (gitignored per-checkout scratch, never merged)
 - [ ] Documented verification evidence or next action
 
 If you cannot create files, provide exact file contents and commands instead.

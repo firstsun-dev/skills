@@ -20,7 +20,10 @@ If baseline verification is failing, repair that first before adding new scope.
 - **One feature at a time**: Pick exactly one unfinished feature from `feature_list.json`
 - **Verification required**: Don't claim done without running verification commands
 - **Update artifacts**: Before ending session, update `progress.md` and `feature_list.json`
-- **Keep state files short**: `progress.md` tracks only open work (~80 lines max). When a feature finishes, move it to `archive/YYYY-MM.md` (current month) as one line: name + commit hash. Keep `feature_list.json` evidence to one line — commit hash + short pointer; narrative belongs in the commit message. Rewrite `session-handoff.md` each session — overwrite, never append.
+- **Keep state files short (two-tier model)**:
+  - **Shared (merged carefully across worktrees):** `progress.md` (open work only, ~80 lines max) + `feature_list.json` (one-line evidence — commit hash + short pointer; narrative belongs in the commit message). When a feature finishes, move it to `archive/YYYY-MM.md` as one line: name + commit hash, and remove from `progress.md`.
+  - **Per-checkout scratch:** `session-handoff.md` is **gitignored** — overwrite freely each session, never merge it across worktrees. It's this checkout's local "where I stopped" note, not a shared source of truth. Parallel worktrees each keep their own.
+  - **Do-not-touch split:** permanent invariants (always-true) live in this file's Environment/Working rules; transient do-not-touch (tied to an in-progress feature) lives in `progress.md` and gets archived with its feature when done.
 - **Stay in scope**: Don't modify files unrelated to the current feature
 - **Leave clean state**: Next session must be able to run `./init.sh` immediately
 
@@ -30,7 +33,7 @@ If baseline verification is failing, repair that first before adding new scope.
 - `progress.md` — Session continuity log (open work only)
 - `archive/YYYY-MM.md` — Completed work, one file per calendar month
 - `init.sh` — Standard startup and verification path
-- `session-handoff.md` — Optional, for larger sessions
+- `session-handoff.md` — Optional, per-checkout scratch (gitignored, never merged)
 
 ## Definition of Done
 
@@ -45,12 +48,13 @@ A feature is done only when ALL of the following are true:
 
 Before ending a session:
 
-1. Update `progress.md` with current state
-2. Update `feature_list.json` with new feature status
+1. Update `progress.md` with current state (open work + transient do-not-touch only; ≤80 lines)
+2. Update `feature_list.json` with new feature status (one-line evidence + commit hash)
 3. Move finished items from `progress.md` to `archive/YYYY-MM.md` (one line each: name + commit hash)
-4. Record any unresolved risks or blockers
-5. Commit with descriptive message once work is in safe state
-6. Leave repo clean enough for next session to run `./init.sh` immediately
+4. Record permanent invariants in this file's Environment/Working rules; transient do-not-touch in `progress.md`
+5. Overwrite `session-handoff.md` with this checkout's "where I stopped" (gitignored — do not commit or merge it)
+6. Commit shared state with descriptive message once work is in safe state
+7. Leave repo clean enough for next session to run `./init.sh` immediately
 
 ## Verification Commands
 

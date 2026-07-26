@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { chmod, mkdir } from 'node:fs/promises';
+import { appendFile, chmod, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
   copyTemplate,
@@ -65,6 +65,23 @@ results.push(await copyTemplate(
 ));
 
 results.push(await copyTemplate('session-handoff.md', path.join(target, 'session-handoff.md'), {}, { force }));
+
+// session-handoff.md is per-checkout scratch: gitignore it so parallel worktrees
+// don't conflict on merge. Append to an existing .gitignore without duplicating.
+const gitignorePath = path.join(target, '.gitignore');
+const gitignoreEntry = 'session-handoff.md\n';
+let hadGitignore = false;
+try {
+  const existing = await readFile(gitignorePath, 'utf8');
+  hadGitignore = true;
+  if (!/^session-handoff\.md$/m.test(existing)) {
+    const prefix = existing && !existing.endsWith('\n') ? '\n' : '';
+    await appendFile(gitignorePath, `${prefix}${gitignoreEntry}`);
+  }
+} catch {
+  await writeFile(gitignorePath, gitignoreEntry);
+}
+results.push({ path: gitignorePath, status: hadGitignore ? 'updated' : 'written' });
 
 const initPath = path.join(target, 'init.sh');
 if (force || !await exists(initPath)) {

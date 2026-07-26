@@ -1,10 +1,20 @@
 # Session Handoff
 
 <!--
-  OVERWRITE, don't append: this file describes only the most recent session.
-  Rewrite it at end of session; older handoffs live in git history, and completed
-  work belongs in archive/YYYY-MM.md. If this file grows past ~80 lines, it is
-  accumulating history instead of handing off.
+  PER-CHECKOUT SCRATCH — gitignored, never merged across worktrees.
+  This file is local to one checkout/worktree. Overwrite it freely each session;
+  it is NOT a shared source of truth and must not be committed or merged.
+  Shared cross-session state lives in progress.md + feature_list.json + AGENTS.md.
+  Parallel worktrees each keep their own copy of this file.
+
+  Do NOT duplicate here:
+  - permanent do-not-touch invariants → AGENTS.md (Environment / Working rules)
+  - transient do-not-touch tied to an open feature → progress.md
+  - completed work → archive/YYYY-MM.md (one line)
+  - design decisions → docs/decisions/ + commit messages
+
+  Keep only: where this checkout stopped, what it verified, what's next for THIS
+  worktree. If it grows past ~80 lines you're recording history instead of handing off.
 -->
 
 ## Current Objective

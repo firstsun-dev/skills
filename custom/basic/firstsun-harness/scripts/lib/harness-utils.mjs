@@ -216,7 +216,7 @@ fi
 if [ -f session-handoff.md ]; then
   sh_lines=$(wc -l < session-handoff.md)
   if [ "$sh_lines" -gt 150 ]; then
-    echo "warning: session-handoff.md is \${sh_lines} lines (>150) — trim completed do-not-touch entries and stale sections; overwrite rather than append across sessions"
+    echo "warning: session-handoff.md is \${sh_lines} lines (>150) — trim to per-checkout scratch only (where this worktree stopped); it is gitignored, overwrite freely, never merge"
   fi
 fi
 if [ "$hygiene_fail" -ne 0 ]; then
@@ -285,6 +285,7 @@ export function scoreHarness(files) {
       hasFile(byPath, ['init.sh'], 'Startup script exists'),
       structuredHas(agents, ['End of Session', 'Before ending'], 'End-of-session procedure exists'),
       hasFile(byPath, ['session-handoff.md'], 'Session handoff template exists'),
+      { pass: /^session-handoff\.md$/m.test((byPath.get('.gitignore') || '')), message: 'session-handoff.md is gitignored (per-checkout scratch, not merged)' },
       structuredHas(progress + '\n' + handoff, ['Last Updated', 'Current Objective', 'Recommended Next Step'], 'Session restart markers exist'),
       textHas(agents + init, ['restartable', 'clean', 'Next steps'], 'Clean restart path documented')
     ]
@@ -401,7 +402,8 @@ export async function loadHarnessFiles(root) {
     'feature-list.json',
     'progress.md',
     'session-handoff.md',
-    'init.sh'
+    'init.sh',
+    '.gitignore'
   ];
   const files = [];
   for (const candidate of candidates) {
