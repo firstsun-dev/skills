@@ -356,11 +356,17 @@ function structuredHas(markdown, needles, message) {
 //   not a narrative, so it's flagged past the character threshold
 const STATE_FILE_LINE_THRESHOLD = 80;
 const EVIDENCE_CHAR_THRESHOLD = 300;
+const LINE_LENGTH_THRESHOLD = 200;
 
 function stateHygiene(progressText, handoffText, featureListText, message) {
   const lineCount = (text) => text ? text.split(/\r?\n/).length : 0;
   const progressOk = lineCount(progressText) <= STATE_FILE_LINE_THRESHOLD;
   const handoffOk = lineCount(handoffText) <= STATE_FILE_LINE_THRESHOLD;
+
+  // Check for overly long lines in progress.md and session-handoff.md
+  const longLinesProgress = progressText ? progressText.split(/\r?\n/).filter(line => line.length > LINE_LENGTH_THRESHOLD).length : 0;
+  const longLinesHandoff = handoffText ? handoffText.split(/\r?\n/).filter(line => line.length > LINE_LENGTH_THRESHOLD).length : 0;
+  const longLinesOk = longLinesProgress === 0 && longLinesHandoff === 0;
 
   // Missing/invalid feature_list.json is already penalized by its own checks;
   // hygiene only judges evidence length when there is a parseable list.
@@ -376,7 +382,7 @@ function stateHygiene(progressText, handoffText, featureListText, message) {
     // fall through — jsonFeatureList already fails for this
   }
 
-  return { pass: progressOk && handoffOk && evidenceOk, message };
+  return { pass: progressOk && handoffOk && longLinesOk && evidenceOk, message, longLinesProgress, longLinesHandoff };
 }
 
 function jsonFeatureList(text, message) {
