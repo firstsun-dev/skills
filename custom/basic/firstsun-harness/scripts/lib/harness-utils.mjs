@@ -199,6 +199,31 @@ echo "=== Harness Initialization ==="
 
 ${body}
 
+# --- Harness hygiene: state files stay slim (archive, don't accumulate) ---
+# Enforces the "~80 lines" rule from AGENTS.md / progress.md template. Without
+# this gate the archive discipline is documented but never enforced, so done
+# features accumulate as full narrative in progress.md and burn context tokens
+# every session. Soft-warn on session-handoff.md size; hard-fail on progress.md.
+echo "=== harness hygiene ==="
+hygiene_fail=0
+if [ -f progress.md ]; then
+  plines=$(wc -l < progress.md)
+  if [ "$plines" -gt 80 ]; then
+    echo "progress.md is \${plines} lines (>80) — archive done features to archive/\$(date +%Y-%m).md as one-line entries (name + commit hash) and remove them from progress.md"
+    hygiene_fail=1
+  fi
+fi
+if [ -f session-handoff.md ]; then
+  sh_lines=$(wc -l < session-handoff.md)
+  if [ "$sh_lines" -gt 150 ]; then
+    echo "warning: session-handoff.md is \${sh_lines} lines (>150) — trim completed do-not-touch entries and stale sections; overwrite rather than append across sessions"
+  fi
+fi
+if [ "$hygiene_fail" -ne 0 ]; then
+  echo "Hygiene gate FAILED — fix above before claiming done."
+  exit 1
+fi
+
 echo "=== Verification Complete ==="
 echo ""
 echo "Next steps:"
