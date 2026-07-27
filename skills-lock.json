@@ -1,17 +1,87 @@
 {
   "version": 1,
   "skills": {
+    "FirstPrinciples": {
+      "source": "/home/runner/work/skills/skills/external/think/firstprinciples",
+      "sourceType": "local",
+      "computedHash": "434544c675318a41b27d97cad058c6244cc4a4e3e5751099b27c95b366c9983a"
+    },
+    "ai-video-generation": {
+      "source": "/home/runner/work/skills/skills/external/video-design/ai-video-generation",
+      "sourceType": "local",
+      "computedHash": "e7a373961e0196280ecf1de3ddbfb10c5a74f3f5305cb2718284e6f06b1c7d65"
+    },
+    "best-practices": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/best-practices",
+      "sourceType": "local",
+      "computedHash": "98dafea60ec1a7f5f70f6febcdd4b4fa3fe15723ad9c0b991c0818615bff7ba6"
+    },
+    "brainstorming": {
+      "source": "/home/runner/work/skills/skills/external/basic/brainstorming",
+      "sourceType": "local",
+      "computedHash": "253570c46990ea018dd4520dba80cd77c35f9e5a8654057da1812face7be30cd"
+    },
+    "brandkit": {
+      "source": "/home/runner/work/skills/skills/external/video-design/brandkit",
+      "sourceType": "local",
+      "computedHash": "b63012f3c3d21197e0185d3e9cc7ec40c589fb10e0b5a32a561739de31aa3f20"
+    },
+    "chart-visualization": {
+      "source": "/home/runner/work/skills/skills/external/video-design/chart-visualization",
+      "sourceType": "local",
+      "computedHash": "537be883849c5357f74188b13cff05fbac46a084f74034f7821bd17dac31f7d5"
+    },
+    "ckm:banner-design": {
+      "source": "/home/runner/work/skills/skills/external/video-design/ckm-banner-design",
+      "sourceType": "local",
+      "computedHash": "7bbf0f48704f5c40436e3466d7ef9bcbafe35a84eb8c3e9d0ab76408a57bac5c"
+    },
+    "clean-code": {
+      "source": "/home/runner/work/skills/skills/external/develop/code-quality/clean-code",
+      "sourceType": "local",
+      "computedHash": "3f3c09033d11ce887e64d99c3639faf011355cb73c5d6891da05efe8004956f2"
+    },
     "cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
       "skillPath": "skills/cloudflare/SKILL.md",
       "computedHash": "a1646a6a2fb7cc683de5bf8357e5d6ae02db6fd0bf771d633c1890318e25bff2"
     },
+    "critical-thinking-logical-reasoning": {
+      "source": "/home/runner/work/skills/skills/external/think/critical-thinking-logical-reasoning",
+      "sourceType": "local",
+      "computedHash": "6e5b193215ac5ddcc0fe6e0088f4a67374b57cb02463a3c0a64757724981dc04"
+    },
+    "design-taste-frontend": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/design-taste-frontend",
+      "sourceType": "local",
+      "computedHash": "6d838b246d0e35d0b53f4f23f98ba7a1dd561937e64f7d0c7553b0928e376c3e"
+    },
+    "design-taste-frontend-v1": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/design-taste-frontend-v1",
+      "sourceType": "local",
+      "computedHash": "d704ab912c4d0ca954ffa858983da755ae4cd5cad9ba22554db5557382f5bd34"
+    },
+    "devops-engineer": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/devops-engineer",
+      "sourceType": "local",
+      "computedHash": "6de5e562151fe9c227234e81bdc1e647066d6b1822463eadf296a5344b47e35a"
+    },
+    "discovery-interview": {
+      "source": "/home/runner/work/skills/skills/external/career/discovery-interview",
+      "sourceType": "local",
+      "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656"
+    },
+    "documentation-writer": {
+      "source": "/home/runner/work/skills/skills/external/basic/documentation-writer",
+      "sourceType": "local",
+      "computedHash": "ee53d65b163cd7eb953a930c95841cfe398cc2c0bd24c06508bbaa07c432be35"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
       "skillPath": "skills/find-skills/SKILL.md",
-      "computedHash": "781bd6d3f9b19f8c9af6b53d8d0e4876d0183841b565db34ca7092ffa412d111"
+      "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
     },
     "firecrawl-search": {
       "source": "firecrawl/cli",
@@ -37,11 +107,246 @@
       "skillPath": "custom/basic/firstsun-project-init/SKILL.md",
       "computedHash": "6d62376f7c9750ce696ccc34d104adc8ab95613aa61a9fce842b47a58e86da6f"
     },
+    "fitness-coach": {
+      "source": "/home/runner/work/skills/skills/external/health/fitness-coach",
+      "sourceType": "local",
+      "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c"
+    },
+    "frontend-design": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/frontend-design",
+      "sourceType": "local",
+      "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
+    },
+    "full-output-enforcement": {
+      "source": "/home/runner/work/skills/skills/external/basic/full-output-enforcement",
+      "sourceType": "local",
+      "computedHash": "26bd29ce4c5e02c7666b2d503609bf466bd32290822e91f0e984147048dbb924"
+    },
+    "gcloud": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/gcloud",
+      "sourceType": "local",
+      "computedHash": "23294abb27c0569af44578e1a9547dff021d51620f27c4f37a8acff29b400350"
+    },
+    "gh-cli": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/gh-cli",
+      "sourceType": "local",
+      "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56"
+    },
+    "gpt-taste": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/gpt-taste",
+      "sourceType": "local",
+      "computedHash": "cc8f0c601d8240a124e1d11634351a2be7b8a72fd807c75e5b6bf7afcd5ddee0"
+    },
+    "habit-tracker": {
+      "source": "/home/runner/work/skills/skills/external/lifestyle/habit-tracker",
+      "sourceType": "local",
+      "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
+    },
+    "healthkit": {
+      "source": "/home/runner/work/skills/skills/external/health/healthkit",
+      "sourceType": "local",
+      "computedHash": "4a16a82e7a82bab25545da88bc2a9356c3cbe758bee9fe893460596afabb655b"
+    },
+    "high-end-visual-design": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/high-end-visual-design",
+      "sourceType": "local",
+      "computedHash": "7db385e4c5370e5a7fca9704a1361b056e4504ea6a03924bb86f33a4f00b5c73"
+    },
+    "hyperframes-animation": {
+      "source": "/home/runner/work/skills/skills/external/video-design/hyperframes-animation",
+      "sourceType": "local",
+      "computedHash": "e13acd92b6b051204c3674d8c022e5d914f49b0dd45212d7bac5befa5d66b987"
+    },
+    "image-to-code": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/image-to-code",
+      "sourceType": "local",
+      "computedHash": "58517b03b2a01f4c9ba65861559d03df931400871bbc200978c975b24bb92c73"
+    },
+    "imagegen-frontend-mobile": {
+      "source": "/home/runner/work/skills/skills/external/video-design/imagegen-frontend-mobile",
+      "sourceType": "local",
+      "computedHash": "9ab7f4f6ce66a3cff02bbf5894e5bd5af50bf5d6ef0adffdc88e8fab772fe44f"
+    },
+    "imagegen-frontend-web": {
+      "source": "/home/runner/work/skills/skills/external/video-design/imagegen-frontend-web",
+      "sourceType": "local",
+      "computedHash": "65f5ae59fa317567809438310b1c54f78cd133426deb43e4d3d4ca4c8f541628"
+    },
+    "industrial-brutalist-ui": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/industrial-brutalist-ui",
+      "sourceType": "local",
+      "computedHash": "8fc355c4aadb7d29c53ca28bc41be3cd6eea765d121e3737c4dc2d0f90a8effa"
+    },
+    "internationalization-i18n": {
+      "source": "/home/runner/work/skills/skills/external/develop/internationalization-i18n",
+      "sourceType": "local",
+      "computedHash": "9822ad7f8f07a7c53e83e384b81a0248fd8e30ee86f068ca6590f9e9b167b08e"
+    },
+    "interview-prep": {
+      "source": "/home/runner/work/skills/skills/external/career/interview-prep",
+      "sourceType": "local",
+      "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a"
+    },
+    "learning-coach": {
+      "source": "/home/runner/work/skills/skills/external/think/learning-coach",
+      "sourceType": "local",
+      "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410"
+    },
+    "mental-health-psychoeducation": {
+      "source": "/home/runner/work/skills/skills/external/health/mental-health-psychoeducation",
+      "sourceType": "local",
+      "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26"
+    },
+    "minimalist-ui": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/minimalist-ui",
+      "sourceType": "local",
+      "computedHash": "08873a3131d3be27bef9bf3304b310b16b44ca6e3561aebe532797be3443f6bd"
+    },
+    "nutritional-specialist": {
+      "source": "/home/runner/work/skills/skills/external/health/nutritional-specialist",
+      "sourceType": "local",
+      "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb"
+    },
+    "oracle-cloud": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/oracle-cloud",
+      "sourceType": "local",
+      "computedHash": "a9e2631e3bfc2356fce79147791c644bd8a020eb781b74cd62f813a6bf78a8ae"
+    },
+    "owasp-security": {
+      "source": "/home/runner/work/skills/skills/external/develop/security/owasp-security",
+      "sourceType": "local",
+      "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2"
+    },
+    "personal-productivity": {
+      "source": "/home/runner/work/skills/skills/external/lifestyle/personal-productivity",
+      "sourceType": "local",
+      "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4"
+    },
+    "playwright-best-practices": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/playwright-best-practices",
+      "sourceType": "local",
+      "computedHash": "63ce3ddf87fb796c7855f4d6b34f892b3f83b288cf11c1ea1e4503a0c1b6cc6b"
+    },
+    "plugin-settings": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/plugin-settings",
+      "sourceType": "local",
+      "computedHash": "7ec97e385b58cdbb331c1c19e20a4c4ca852f4c47676374123120fef8cdd90c6"
+    },
+    "react": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/react",
+      "sourceType": "local",
+      "computedHash": "82032420872395434807e56c11a22336c7519f8f5153376178961a351e63898b"
+    },
+    "react-best-practices": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/react-best-practices",
+      "sourceType": "local",
+      "computedHash": "aee15f49f1782b4602ece026533564db85d7c20a1efb1f79b028aa21da3f177a"
+    },
+    "redesign-existing-projects": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/redesign-existing-projects",
+      "sourceType": "local",
+      "computedHash": "b405eee0e0e80fc243f731d9aa368bca307e356db7e6157d27101d369dac6726"
+    },
+    "rem-sleep": {
+      "source": "/home/runner/work/skills/skills/external/health/rem-sleep",
+      "sourceType": "local",
+      "computedHash": "97e5cd66276b108f480a1720b8ef2bf60efc8b58127888c310810f6756e7cf46"
+    },
+    "remotion": {
+      "source": "/home/runner/work/skills/skills/external/video-design/remotion",
+      "sourceType": "local",
+      "computedHash": "a6e000964fe70050b911fd2e2b028733353248571edbfe8da0973bd39cae8185"
+    },
+    "remotion-best-practices": {
+      "source": "/home/runner/work/skills/skills/external/video-design/remotion-best-practices",
+      "sourceType": "local",
+      "computedHash": "14e4caa85e5c91d629e53397f94c9e8bb81460e93cafa31b278d14f5e9f640b7"
+    },
+    "remotion-render": {
+      "source": "/home/runner/work/skills/skills/external/video-design/remotion-render",
+      "sourceType": "local",
+      "computedHash": "5ad33a6307b48a8e756be722ea26e39467cd1713f87fc5a8eff5480ac873eeaf"
+    },
+    "rp-diet": {
+      "source": "/home/runner/work/skills/skills/external/health/rp-diet",
+      "sourceType": "local",
+      "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17"
+    },
+    "running-decision-processes": {
+      "source": "/home/runner/work/skills/skills/external/think/decision-management",
+      "sourceType": "local",
+      "computedHash": "51f3470b01755c970bd2661a4aff8414262f10e5f84a235316c6c0b23e66f13c"
+    },
+    "rust-backend": {
+      "source": "/home/runner/work/skills/skills/external/develop/windmill-rust-backend",
+      "sourceType": "local",
+      "computedHash": "7dc1c8fd3dd739f73244227e841ff2b4eec247bbbc6f972b0378fcdd62d210dc"
+    },
+    "secret-scanning": {
+      "source": "/home/runner/work/skills/skills/external/develop/security/secret-scanning",
+      "sourceType": "local",
+      "computedHash": "cc7de79bee80775578227a370637d0a83aa0f2cbec28374058899859261d2081"
+    },
+    "security-scan": {
+      "source": "/home/runner/work/skills/skills/external/develop/security/security-scan",
+      "sourceType": "local",
+      "computedHash": "0fa51b591843bf1308f413fad9fd2d3477126c262af5d529ae3d3f9bc8181264"
+    },
     "skill-creator": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "skillPath": "skills/skill-creator/SKILL.md",
       "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2"
+    },
+    "sleek-design-mobile-apps": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/sleek-design-mobile-apps",
+      "sourceType": "local",
+      "computedHash": "aafa60cd2532f5f4c917db4880769d8bf0132af5b35eb5d31e72d753e2121c04"
+    },
+    "stitch-design-taste": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/stitch-design-taste",
+      "sourceType": "local",
+      "computedHash": "13322f38406cd3abf16ba45e35bdc9b18002d0153a79b4612b97aefc65d5a335"
+    },
+    "subagent-creator": {
+      "source": "/home/runner/work/skills/skills/external/ai-agents/subagent-creator",
+      "sourceType": "local",
+      "computedHash": "bef6b5a9f23b3186af259c1041c2561e9af15fa94810009d72d775bb217aa3ca"
+    },
+    "subagent-driven-development": {
+      "source": "/home/runner/work/skills/skills/external/ai-agents/subagent-driven-development",
+      "sourceType": "local",
+      "computedHash": "aaeb6686111c76b3c38e09156fe18af44d73b324ee055e5cb0ab63dc776f216f"
+    },
+    "tailored-resume-generator": {
+      "source": "/home/runner/work/skills/skills/external/career/tailored-resume-generator",
+      "sourceType": "local",
+      "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92"
+    },
+    "tailwind-css-patterns": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/tailwind-css-patterns",
+      "sourceType": "local",
+      "computedHash": "6092620c3af955a46ea2b94ca8a40197ac8392e6bbdc8c7515659328b186c770"
+    },
+    "terraform-engineer": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/terraform-engineer",
+      "sourceType": "local",
+      "computedHash": "04e717ca5d883a2839863f371f8ebba8b3f89cde3b2292cf90a3186c30b2d24a"
+    },
+    "threejs-animation": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/threejs-animation",
+      "sourceType": "local",
+      "computedHash": "8c50b1493812bd88f3ed0637c0c3c5d846afdb322157b67b2ffba4ce8e552835"
+    },
+    "ui-animation": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/ui-animation",
+      "sourceType": "local",
+      "computedHash": "5169fb706d0129b9f9dc979ef656eeeebe45e9dab60b3f587c937deedfa67f48"
+    },
+    "using-git-worktrees": {
+      "source": "/home/runner/work/skills/skills/external/develop/devops/using-git-worktrees",
+      "sourceType": "local",
+      "computedHash": "212ad917e5543e84ea3adf4e3fab537675db976fdab05d4de432870e38b49e80"
     },
     "validate-skills": {
       "source": "callstackincubator/agent-skills",
@@ -49,11 +354,31 @@
       "skillPath": ".claude/skills/validate-skills/SKILL.md",
       "computedHash": "330cb59114b97e7b4727ff838b637682fff8820f752a950de3e7bd703608b56f"
     },
+    "vercel-react-best-practices": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/vercel-react-best-practices",
+      "sourceType": "local",
+      "computedHash": "3219a1944e404ffc14d1d9d6aef6dd2e3855b81387ee0a044ccbfe14d34c2357"
+    },
+    "visual-design-foundations": {
+      "source": "/home/runner/work/skills/skills/external/develop/frontend/visual-design-foundations",
+      "sourceType": "local",
+      "computedHash": "9f0f44bd206036f17f69cf78f3f3b5f9c0e0118672574ffd35c4c34c3d574d16"
+    },
     "workers-best-practices": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/develop/workers-best-practices/SKILL.md",
       "computedHash": "da9766f42ab9f5c7ada15a6737371c34c2777efb095c81beabff81ca56ed0dc1"
+    },
+    "workout-program-designer": {
+      "source": "/home/runner/work/skills/skills/external/health/workout-program-designer",
+      "sourceType": "local",
+      "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
+    },
+    "write-coding-standards-from-file": {
+      "source": "/home/runner/work/skills/skills/external/develop/code-quality/write-coding-standards-from-file",
+      "sourceType": "local",
+      "computedHash": "b87eddc73b6f759bafb4956bbe69838a961e0fd927145f612c4694d2cc65e07a"
     }
   }
 }
