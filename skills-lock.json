@@ -87,7 +87,7 @@
       "source": "firecrawl/cli",
       "sourceType": "github",
       "skillPath": "skills/firecrawl-search/SKILL.md",
-      "computedHash": "57c6d1777f0574de182e7569f36f6fb60eb1912a3db3942dd03092f6e2e5054b"
+      "computedHash": "4c512eb1a73efbf1f961929ee1da490c9d424c7ee1a1dfea8c195a3b860717c0"
     },
     "firstsun-harness": {
       "source": "firstsun-dev/skills",
