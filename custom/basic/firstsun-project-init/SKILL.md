@@ -1,140 +1,240 @@
 ---
 name: firstsun-project-init
-description: "Bootstraps a new firstsun-dev project end-to-end: installs relevant skills, scaffolds an agent harness via firstsun-harness, creates the GitHub repo with description/topics, and lists it in the org profile README. Use whenever the user wants to init/bootstrap a new firstsun-dev project or repo — even if they only ask for one part of the flow, since the rest is usually wanted too."
+description: "Bootstraps a firstsun-dev project end-to-end: selects relevant skills, scaffolds the agent harness, creates or reconciles the GitHub repository, applies repository metadata and README standards, and classifies the project under Firstsun Dev governance. New projects default to Workshop and are not automatically promoted into the organization profile, pinned repositories, or case studies."
 origin: firstsun-dev/skills
 ---
 
 # Firstsun Project Init
 
-A single project usually needs four things before it's actually ready to work in: the right skills installed locally, an agent harness so Claude Code stays reliable across sessions, a real GitHub repo under the `firstsun-dev` org with an accurate description and topics, and a listing in the org's public profile so the project is discoverable. Doing these one at a time, in separate conversations, is how repos end up half-configured. This skill runs all four in one pass, in order, so nothing gets forgotten.
+Bootstrap the project, not the publicity.
 
-Two of the four steps are hard to undo (creating a repo, editing the org-wide profile README). Treat those as checkpoints, not formalities — show the user exactly what you're about to do and wait for a yes before doing it.
+This skill prepares a new or existing `firstsun-dev` project so it is technically ready to work on and consistent with Firstsun Dev's repository standards. It installs the right skills, scaffolds the agent harness, creates or reconciles the GitHub repository, establishes public-facing metadata and README expectations, and records the project's current brand tier.
+
+A newly created repository does **not** automatically deserve organization-profile placement, a pinned slot, or a case study. New projects default to **Workshop**. Promotion is earned later through observable engineering evidence.
+
+## Firstsun Dev repository model
+
+Firstsun Dev is the engineering arm of Firstsun / 首陽問路.
+
+> Build useful things. Operate them well. Share what we learn.
+
+Repository governance uses three tiers:
+
+- **Workshop** — the default for new, experimental, early, or narrowly internal-facing projects. Public is allowed when appropriate, but Workshop repos are not automatically promoted or featured.
+- **Supporting** — a project with a clear problem, usable or reproducible workflow, baseline verification, and enough maturity to represent part of the Firstsun engineering ecosystem.
+- **Flagship** — a deliberately curated project with real external use or meaningful production dogfooding, sustained maintenance, operational evidence, and a distinct role in the Firstsun Dev brand story.
+
+Promotion is a curation decision, not a side effect of repository creation.
 
 ## Prerequisites
 
-Before starting, confirm with the user (or infer from context):
-- **Project name** and a one-sentence purpose ("what does this project do")
-- **Local project directory** — an existing folder, or one to create
-- **Visibility** — public or private repo
-- Whether this is a fresh repo or the user already has one (skip repo creation if so)
+Before starting, infer from the conversation or existing codebase when possible. Only ask when a required fact cannot be resolved safely.
+
+Resolve:
+
+- project name and one-sentence purpose
+- local project directory
+- visibility — public or private
+- whether this is a new repository or an existing one
+- main tech stack and deployment/runtime shape
+- whether the project already has users, production usage, or other evidence relevant to later classification
 
 ## Step 1 — Select and install skills
 
-Don't guess at skills from the project name alone. Ask the user what the project actually is (tech stack, domain — e.g. "Cloudflare Worker with D1", "Astro blog", "Python CLI") if it isn't already clear from the conversation or an existing codebase in the target directory.
+Do not infer skills from the repository name alone. Match them to the actual stack, domain, and workflow.
 
-Only pick skills that live under `firstsun-dev/skills`'s `custom/` or `external/` directories — those are the org's vetted, taxonomy-aligned arsenal. Don't reach for skills from other GitHub repos or the general ecosystem for this step; if nothing in the arsenal fits, that's a gap to flag to the user (or a candidate for a new custom skill), not a reason to pull from elsewhere.
+Only select skills that already live under `firstsun-dev/skills` in `custom/` or `external/`. If the catalog has a gap, flag the gap instead of silently pulling an unrelated skill from elsewhere.
 
-1. Fetch the current catalog from `firstsun-dev/skills` — read `SKILLS_LIST.md` (raw GitHub content or a shallow clone) to see what's available and where each skill lives (`custom/<domain>/<name>` or `external/<domain>/<name>`).
-2. Use the `find-skills` skill (via the Skill tool) to get discovery suggestions against that catalog — it's built for exactly this matching task and will surface candidates you might miss from a manual skim of `SKILLS_LIST.md`.
-3. Cross-check `find-skills`' suggestions against the project's actual tech stack and purpose. Favor precision over coverage — installing 3 well-matched skills beats installing 10 loosely-related ones, since every installed skill's description competes for triggering attention later.
-4. Propose your shortlist to the user with a one-line reason for each ("workers-best-practices — you're deploying to Cloudflare Workers") and let them adjust before installing.
-5. Install each approved skill into the target project directory:
-   ```bash
-   cd <project-dir>
-   npx skills add firstsun-dev/skills/<domain>/<skill-name>
-   ```
-   This registers the skill in the project's `skills-lock.json` pointing at the versioned source in `firstsun-dev/skills` — do not hand-copy the skill files.
+1. Read the current `SKILLS_LIST.md`.
+2. Use `find-skills` when available to surface likely candidates.
+3. Cross-check suggestions against the actual project.
+4. Favor precision over quantity.
+5. Install approved skills through `npx skills add` so `skills-lock.json` records the source and version.
+
+```bash
+cd <project-dir>
+npx skills add firstsun-dev/skills/<domain>/<skill-name>
+```
+
+Do not hand-copy skill directories into the project.
 
 ## Step 2 — Scaffold the agent harness
 
-Invoke the `firstsun-harness` skill (via the Skill tool) against the target project directory to set up the reliability scaffolding: `CLAUDE.md`/`AGENTS.md`, `feature_list.json`, `progress.md`, `init.sh`, and `session-handoff.md` as appropriate for the project's size and shape. Let firstsun-harness's own judgment drive the specifics of what gets created — this step is local and reversible, so no extra confirmation is needed beyond the firstsun-harness skill's own flow.
+Invoke `firstsun-harness` for the target project.
 
-## Optional — Wire GitHub Issues into the harness
+Let that skill decide which reliability artifacts are appropriate, such as `CLAUDE.md`, `AGENTS.md`, `feature_list.json`, `progress.md`, `init.sh`, and `session-handoff.md`.
 
-Once the repo exists (Step 3) and the harness is scaffolded (Step 2), the two can reinforce each other: the harness gives an agent a reliable way to *work*, and Issues give it a reliable, shared *source of truth* that survives across sessions and machines — something a local `progress.md` alone can't do. Offer this to the user as an enhancement once the base harness is in place; it's optional and only worth doing if the project expects multi-session or multi-person work.
+The harness is an engineering baseline, not a branding artifact. Keep it proportional to project complexity.
 
-- **Mirror `feature_list.json` from open Issues.** Instead of (or in addition to) hand-maintaining feature state locally, have `init.sh` run `gh issue list --state open` at startup and reconcile it against `feature_list.json`. Each Issue becomes a feature entry; closing an Issue is how a feature gets marked done. This keeps the state visible to anyone looking at the repo, not just whoever ran the last session.
-- **Post session handoff as an Issue comment, not just a file.** A `session-handoff.md` is invisible until someone opens that exact file. Appending the same handoff notes (progress, blockers, next step) as a `gh issue comment` on the relevant Issue makes it timestamped, attributable, and discoverable by anyone watching the Issue.
-- **Fold Issue state into Definition of Done.** Add "the corresponding Issue is updated or closed" as a checklist item alongside validation gates. This stops an agent from declaring a feature done in local files while the externally-visible state still shows it open.
-- **Use Issue scope as the agent's scope boundary.** Instead of relying only on prose in `CLAUDE.md` ("stay in scope"), point the agent at a specific Issue and treat its description as the literal boundary — changes outside what the Issue describes should prompt a pause and a question, not silent scope creep.
-- **Use labels/assignees for multi-agent coordination.** When more than one agent or session might touch the repo concurrently, use Issue labels (`in-progress`, `blocked`) and assignees as a lightweight lock so two agents don't converge on the same files at once.
+## Optional — GitHub Issues and project-board integration
 
-If the user wants this wired in concretely, add a `gh issue list` sync step near the top of `init.sh` and note the Issue-comment handoff convention in `CLAUDE.md`'s "End of Session" section — don't build a separate tracking system in parallel with Issues, since that reintroduces the same local/remote drift this is meant to fix.
+Use GitHub Issues when the project benefits from durable, cross-session work tracking. The harness and Issues should reinforce one another rather than become independent sources of truth.
 
-### Register new Issues on the org-wide project board
+Useful patterns include:
 
-`firstsun-dev` already runs a single org-wide GitHub Project (v2) at [`firstsun-dev/projects/6`](https://github.com/orgs/firstsun-dev/projects/6) — "FirstSun-Dev todo" — that tracks work across every repo, not just one project. When this skill creates a new repo, its Issues should land on that shared board rather than being tracked in an isolated per-repo project, otherwise the new project becomes invisible to whatever process (human or agent) triages work org-wide.
+- derive or reconcile local feature state from open Issues
+- use the Issue body as the implementation scope boundary
+- post meaningful session handoffs to the related Issue
+- include Issue state in Definition of Done
+- use labels and assignees to reduce multi-agent collisions
 
-The board's own README defines its conventions — read it before creating Issues, since it can change:
-```bash
-gh project view 6 --owner firstsun-dev --format json --jq .readme
+Before adding work to the shared organization project, read the current board conventions instead of relying on stale field IDs or copied assumptions.
+
+## Step 3 — Create or reconcile the GitHub repository
+
+Repository creation is externally visible and not trivially reversible. Show the intended repository name, visibility, description, and topics before creating it.
+
+### Metadata contract
+
+Keep GitHub metadata focused and non-promotional.
+
+**Description** should answer what the project is or what problem it solves.
+
+Good:
+
+> Obsidian plugin for selective file sync with GitHub, GitLab, and Gitea.
+
+Avoid self-awarded adjectives and technology dumps such as:
+
+> Powerful production-grade Firstsun AI platform built with TypeScript, Docker, and Cloudflare.
+
+**Topics** are for discovery taxonomy only: domain, ecosystem, and primary technology when useful. Do not add `firstsun`, `portfolio`, `side-project`, or similar branding topics merely for ownership signaling.
+
+**Homepage URL** should point to a real product page, documentation site, live app, or distribution page when one exists. Leave it empty rather than linking somewhere irrelevant just to fill the field.
+
+For an existing repository, reconcile metadata instead of recreating it.
+
+### Public README contract
+
+For public Supporting or Flagship candidates, and for Workshop repos intended for outside users, the canonical `README.md` should be **English-first**.
+
+Traditional Chinese is a first-class localization when useful, but prefer a separate localized document such as `README.zh-TW.md` or `USAGE_zh.md` rather than paragraph-by-paragraph bilingual duplication.
+
+The first viewport should answer, as quickly as practical:
+
+1. **What is this?**
+2. **Who is it for / what problem does it solve?**
+3. **Why does it matter or what is the primary value?**
+4. **Can I use or verify it now?** — release, demo, screenshot, CI, install path, or equivalent when relevant
+
+Recommended order:
+
+```text
+Project name
+One-line value / problem statement
+Useful status evidence
+Screenshot or demo when relevant
+How it works / usage
+Architecture / development details
+Attribution / Firstsun relationship
 ```
-As of the last check, the conventions are:
-- **Title format**: `[Category]: Task Description`, where Category is one of `Infra`, `DevOps`, `Feature`, `UI`, `Content`, `Bug`, `Refactor`.
-- **Fields to set on creation**: `Priority` (`P0` urgent fix, `P1` core-stability/this-week, `P2` general work) and `Estimate (Hours)`.
-- **Automation**: closing the repo Issue automatically moves its card to the `Done` column — don't hand-move cards to Done, just close the Issue.
 
-When creating Issues for a freshly-initialized project (e.g. seeding the first few tasks from `feature_list.json`), tag the title correctly and add each to the board:
-```bash
-gh issue create --repo firstsun-dev/<repo-name> --title "[Feature]: <task>" --body "<description>"
-gh project item-add 6 --owner firstsun-dev --url <issue-url>
+Do not force a common Firstsun banner, logo, or decorative badge set across repositories. Product identity comes first. Firstsun ownership or maintenance belongs in secondary attribution:
+
+- `A Firstsun Dev project.` for owned projects
+- `Maintained by Firstsun Dev.` for maintained forks
+
+For forks, preserve upstream attribution clearly and distinguish inherited functionality from Firstsun-authored changes.
+
+### Evidence-first presentation
+
+Prefer verifiable evidence over self-description:
+
+- CI status
+- release state
+- live downloads when meaningful
+- compatibility tests
+- public service health
+- architecture documentation
+- reproducible test or deployment paths
+
+Avoid turning a temporary snapshot metric into the central brand claim.
+
+### Existing organization conventions
+
+Project initialization should respect current organization-wide engineering conventions, but it should not hard-code assumptions that conflict with existing projects. When a distribution, workflow, registry, deployment, or project-board policy already exists elsewhere in Firstsun Dev, inspect the current source of truth and reuse the appropriate convention for this project.
+
+## Step 4 — Classify the project
+
+Every initialized project receives a brand tier, but initialization itself never grants promotion.
+
+### Default: Workshop
+
+New projects default to **Workshop** even when public.
+
+A Workshop repository may be fully usable, have CI and releases, and be public. It is **not** automatically listed in the organization profile, pinned, or given a case study.
+
+### Workshop → Supporting
+
+Consider promotion only when evidence shows most of the following:
+
+- clear, concrete problem or use case
+- README explains the project without requiring insider context
+- reproducible installation, execution, or demo path
+- baseline verification such as tests, lint, build, or equivalent
+- reasonable maintenance state
+- public metadata follows the Firstsun repository contract
+
+Promotion should still be an explicit curation decision.
+
+### Supporting → Flagship
+
+Flagship status has a substantially higher bar. A candidate should demonstrate most of the following:
+
+- real external usage or meaningful production dogfooding
+- sustained maintenance rather than one-time implementation
+- operational evidence such as compatibility testing, releases, monitoring, service status, or reliability practices
+- clear technical or product decisions with meaningful trade-offs
+- a distinct role that adds something not already represented by existing flagships
+- mature public presentation and attribution
+
+A project is not Flagship merely because it is technically complex or personally exciting.
+
+## Step 5 — Evaluate public brand placement
+
+This step is an evaluation, **not an automatic write to `.github/profile/README.md`**.
+
+### Organization profile
+
+Only add a repository to the organization profile when it materially improves the curated Firstsun Dev story. The profile should favor selected flagship stories, the shared engineering and operational backbone, and a deliberately small set of supporting projects.
+
+Do not treat the organization profile as a complete repository index.
+
+### Pinned repositories
+
+Pinned repositories are a storefront, not an inventory list. Do not pin a repository simply because it is new, public, or recently active.
+
+### Case studies
+
+Do not create a case study as part of initialization.
+
+A public engineering case study is justified when there is a real story with evidence:
+
+```text
+Context
+→ Constraint
+→ Decision
+→ Trade-offs
+→ Operational evidence
+→ What changed / what we learned
 ```
-Then set `Priority` and `Estimate` via `gh project item-edit` (look up the field/option IDs with `gh project field-list 6 --owner firstsun-dev` first, since the IDs are project-specific and not guessable). Confirm the Priority/Estimate values with the user rather than guessing — they reflect real scheduling decisions, not something inferable from the code alone.
 
-## Step 3 — Create the GitHub repo (checkpoint)
+A case study should not be a longer README, a technology list, or a portfolio-style feature recap.
 
-This is externally visible and not trivially reversible — confirm with the user before running anything.
+### Private implementations
 
-1. Draft and show the user:
-   - Repo name (default: the project directory name, adjust if it collides or the user wants something else)
-   - Visibility (public/private)
-   - One-sentence description
-   - 3-6 topics/tags (derive from the tech stack and the skills installed in Step 1 — e.g. `cloudflare-workers`, `astro`, `typescript`)
-2. Once approved, create it:
-   ```bash
-   gh repo create firstsun-dev/<repo-name> --<public|private> --description "<description>" --source=. --remote=origin
-   ```
-   `gh repo create` has no flag for branch-deletion behavior, so set it as an immediate follow-up (also enable it if the repo already existed without it):
-   ```bash
-   gh repo edit firstsun-dev/<repo-name> --delete-branch-on-merge
-   ```
-   If the repo already exists or was created without topics/description, reconcile with:
-   ```bash
-   gh repo edit firstsun-dev/<repo-name> --description "<description>" --add-topic <topic1> --add-topic <topic2>
-   ```
-3. **If the repo is public**, check what org-level secrets and variables are already exposed to it before wiring up any CI/CD (workflows may assume they exist). Org secrets/variables have a per-secret visibility setting (`all`, `private`, or `selected` repos) — a secret visible to private repos isn't automatically visible to a new public one.
-   ```bash
-   gh secret list --org firstsun-dev
-   gh variable list --org firstsun-dev
-   ```
-   For any secret/variable the new workflows need, confirm its visibility covers this repo:
-   ```bash
-   gh api orgs/firstsun-dev/actions/secrets/<SECRET_NAME> --jq '.visibility'
-   ```
-   If it's `selected` and this repo isn't on the list, either add it (with the user's approval — this changes shared org config, not just the new repo) or flag the gap so the user can decide whether the secret should be scoped to public repos at all.
-4. **If the project builds/pushes container images**, wire it to `firstsun-dev`'s private registry at `registry.firstsun.org/firstsun-dev` — not Docker Hub or GHCR. Auth goes through the org secret `DOCKER_AUTH_CONFIG` (a full `~/.docker/config.json`, written out directly rather than via `docker/login-action`):
-   ```yaml
-   - name: Configure registry auth
-     run: |
-       mkdir -p ~/.docker
-       echo "$DOCKER_AUTH_CONFIG" > ~/.docker/config.json
-     env:
-       DOCKER_AUTH_CONFIG: ${{ secrets.DOCKER_AUTH_CONFIG }}
-   ```
-   `DOCKER_AUTH_CONFIG` is currently `PRIVATE` visibility (`MY_REGISTRY_USER`/`MY_REGISTRY_PASSWORD` also exist as a fallback pair, `SELECTED` visibility) — this is exactly the kind of secret Step 3's visibility check above should catch for a public repo.
-5. Push the initial commit if the user wants the scaffold from Steps 1-2 committed (ask first — don't assume; some users want to review the local state before it goes remote).
-
-## Step 4 — Register in the org profile (checkpoint)
-
-`firstsun-dev/.github`'s `profile/README.md` is the org's public landing page — every edit here is visible to anyone who views the org. Confirm the exact wording before pushing.
-
-1. Clone or pull the latest `firstsun-dev/.github` repo.
-2. Open `profile/README.md` and find the section that best fits the new project (by type — tool, library, app — matching the existing section structure; don't invent a new section unless none fits).
-3. Draft a one-line entry (name + short description + repo link) matching the existing entries' format exactly — same table/list style, same tone.
-4. Show the user the exact diff before committing. Once approved:
-   ```bash
-   git add profile/README.md
-   git commit -m "docs: add <repo-name> to org profile"
-   git push
-   ```
-   Do not force-push or rewrite history on this repo — it's shared, low-traffic, and any conflict should be resolved by re-pulling, not overwriting.
+Private repositories are not portfolio objects by themselves. When a private system becomes brand-relevant, expose an appropriate public evidence surface instead: architecture overview, design decisions, operating model, service status, deployment or monitoring evidence, or lessons learned.
 
 ## Definition of done
 
-- [ ] Selected skills installed and present in the project's `skills-lock.json`
-- [ ] Harness scaffolding created via `firstsun-harness` and reviewed by the user
-- [ ] Repo exists under `firstsun-dev`, with correct visibility, description, and topics
-- [ ] `delete-branch-on-merge` is enabled on the new repo
-- [ ] If public, org-level secrets/variables needed by CI were checked for visibility to this repo
-- [ ] `firstsun-dev/.github/profile/README.md` updated and pushed, entry matches existing formatting
-- [ ] User has confirmed both checkpoint steps (repo creation, profile README edit) before they happened, not after
+- [ ] Relevant skills selected from `firstsun-dev/skills` and installed through the supported skill workflow
+- [ ] Agent harness created or reconciled through `firstsun-harness`
+- [ ] Repository exists under `firstsun-dev` or the existing repository was reconciled
+- [ ] Repository visibility is intentional
+- [ ] Description expresses project value rather than branding or self-evaluation
+- [ ] Topics are discovery-oriented
+- [ ] Public README follows the English-first / first-viewport contract when intended for outside users
+- [ ] Project follows the current applicable organization engineering conventions
+- [ ] Project is classified; **new projects default to Workshop**
+- [ ] No organization-profile, pinning, or case-study promotion happened merely because initialization completed
+- [ ] Any promotion beyond Workshop was based on explicit evidence and an intentional curation decision
