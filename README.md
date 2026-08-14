@@ -1,75 +1,83 @@
-# Yao Skill Arsenal
+# Firstsun Skills
 
-> A cross-domain, modular AI Agent skill repository managed by npx skills.
+**Reusable AI agent skills for engineering workflows.**
 
-## 🚀 Overview
+Firstsun Skills is the shared skill repository used across Firstsun Dev projects. It keeps Firstsun-maintained skills and reviewed third-party skills in one place so coding agents can reuse the same engineering practices without copying prompt fragments between repositories.
 
-This repository serves as a centralized "Skill Arsenal" for various AI Agents (Gemini CLI, Claude Code, etc.). It organizes skills into **Custom** (internal) and **External** (community) domains to ensure clear ownership and maintainability.
+The repository is intentionally provider-neutral. Skills may be used from Claude Code, Gemini CLI, Codex, or other compatible agent environments when the underlying skill format is supported.
 
-## 📂 Directory Structure
+## What lives here
 
-- `custom/`: Your original or heavily modified skills.
-- `external/`: Community skills downloaded for reference and inspection.
-- `setup.sh`: Global registration script (links skills to `~/.agents/skills/`).
-- `export.sh`: Project-level import script (links skills to current directory).
+### Firstsun-maintained skills
 
-## 🛠 Core Commands
+`custom/` contains skills created or substantially adapted for Firstsun engineering workflows.
 
-### 1. Global Registration (For all projects)
-To register ALL skills for all AI agents on your machine:
+Examples include project initialization, agent harness design, project management, Cloudflare development conventions, reliability practices, and repository automation.
+
+### External skills
+
+`external/` contains third-party community skills retained with their source and version information for review, reuse, and controlled updates.
+
+External skills remain attributable to their original authors. Their presence in this repository does not imply Firstsun authorship.
+
+### Gem instruction sets
+
+`gem/` contains composed instruction sets for workflows that benefit from a larger bundled context instead of individual agent skills.
+
+## Catalog
+
+See [SKILLS_LIST.md](./SKILLS_LIST.md) for the current catalog and repository taxonomy.
+
+## Installation
+
+### Install a single skill
+
+Use `npx skills add` so the project records the source in its skill lockfile rather than copying files manually.
+
 ```bash
+npx skills add firstsun-dev/skills --skill=<skill-name>
+```
+
+For a checked-out local repository, the existing scripts can also register or export groups of skills:
+
+```bash
+# Register repository skills globally for supported agents
 ./setup.sh
+
+# Export a domain into the current project
+./export.sh <domain>
 ```
 
-### 2. Project Import (For a specific project)
-To import skills locally into a project without polluting the global environment:
-```bash
-cd <your-project>
-~/skills/export.sh <domain>
-```
+## Adding external skills
 
-### 3. Manual Installation (Single Skill or Directory)
-```bash
-# Install a single skill
-npx skills add ~/skills/custom/obsidian/obsidian-bases -g
+When adding a community skill, preserve provenance and keep the local taxonomy stable:
 
-# Recursive Installation (For domains with nested categories, e.g., develop)
-npx skills add ~/skills/external/develop -g --full-depth
-```
+1. Add the upstream skill with `npx skills add` into a temporary local agent directory.
+2. Review the skill before moving it into `external/`.
+3. Place it in the appropriate local domain rather than mirroring an arbitrary upstream directory layout.
+4. Keep the source/version information in `skills-lock.json` where applicable.
+5. Update [SKILLS_LIST.md](./SKILLS_LIST.md).
+6. Commit the skill and attribution changes together.
 
-## 📥 How to Add External Skills (SOP)
+A third-party skill should not be silently rewritten into a Firstsun-maintained skill. If Firstsun substantially changes its behavior or policy, move the maintained variant into `custom/` and keep the lineage clear.
 
-Follow these steps to add a community skill while keeping the code locally for review:
+## Repository principles
 
-1. **Download to Root**: Go to the arsenal root and download the skill (do NOT use -g):
-   ```bash
-   cd ~/skills
-   npx skills add <owner/repo@skill> -y
-   ```
-2. **Categorize & Align**: Move the downloaded folder from `.agents/skills/` to your desired `external/` domain. **MUST** align with our local taxonomy:
-   ```bash
-   # Example: moving a react skill to our nested 'frontend' category
-   mkdir -p external/develop/frontend/
-   mv .agents/skills/<skill-name> external/develop/frontend/
-   ```
-3. **Clean Cache**: Remove the temporary `.agents/` folder:
-   ```bash
-   rm -rf .agents/
-   ```
-4. **Register**: Run the setup script to link it to your agents:
-   ```bash
-   ./setup.sh
-   ```
-5. **Update List**: Sync [SKILLS_LIST.md](./SKILLS_LIST.md) with the new path and description.
-6. **Commit**: Save the changes to Git:
-   ```bash
-   git add . && git commit -m "feat: add <skill-name> to external arsenal"
-   ```
+- **English-first skills** — canonical `SKILL.md` instructions are written in English for agent interoperability.
+- **Provider-neutral by default** — do not couple a reusable skill to one agent unless the task itself is provider-specific.
+- **Precision over volume** — a small set of relevant installed skills is better than loading every available skill into every project.
+- **Clear provenance** — distinguish Firstsun-maintained work from third-party community work.
+- **Taxonomy alignment** — organize skills around how they are used in Firstsun engineering workflows.
+- **Versioned sources** — retain lock/source information so external updates can be reviewed instead of drifting silently.
 
-## 📜 Guiding Principles
+## Project initialization
 
-- **English First**: All `SKILL.md` files must be in English for maximum LLM compatibility.
-- **Flattened by Default**: Keep skills as direct children of domain folders unless the domain has >10 skills (Conditional Nesting).
-- **Taxonomy Alignment**: Always prioritize our local folder structure over external repository layouts.
-- **Separation of Concerns**: Keep original work in `custom/` and community work in `external/`.
-- **Version Control**: Keep `skills-lock.json` in Git to track external sources and hashes.
+[`firstsun-project-init`](./custom/basic/firstsun-project-init/SKILL.md) applies the Firstsun Dev repository baseline to new projects.
+
+New repositories default to **Workshop** status. Initialization prepares the engineering baseline; it does not automatically grant organization-profile placement, a pinned slot, or a case study. Promotion to Supporting or Flagship status is based on evidence and deliberate curation.
+
+## Firstsun Dev
+
+Firstsun Skills is maintained as part of [Firstsun Dev](https://github.com/firstsun-dev), the engineering arm of Firstsun / 首陽問路.
+
+> Build useful things. Operate them well. Share what we learn.
