@@ -43,8 +43,17 @@ Initialize projects using a structure inspired by `watermark-s3-uploader`:
 - `src/`: TypeScript source files (`main.ts`, `settings.ts`, etc.).
 - `tests/`: Vitest test suites.
 - `tests/__mocks__/obsidian.ts`: Mocked Obsidian API for headless testing.
+- `e2e-tests/`: Playwright / Node-only E2E tests.
 - `esbuild.config.mjs`: Bundling configuration.
 - `manifest.json`: Plugin metadata.
+
+#### Community scanner paths
+Obsidian's Community Directory scanner uses fixed ignore patterns. For test-only Node APIs, keep code under officially excluded paths instead of weakening production lint rules.
+
+- Prefer `tests/` for unit/integration tests.
+- Prefer **`e2e-tests/`** for Playwright and Node-only black-box tests.
+- Do **not** assume `e2e/` is excluded; it is not in the documented ignore list.
+- Official reference: [Community Directory FAQ](https://docs.obsidian.md/community-directory/faq).
 
 ### 2. TDD with Vitest
 Set up Vitest to handle the `obsidian` dependency efficiently:
