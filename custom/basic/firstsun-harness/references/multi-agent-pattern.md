@@ -137,7 +137,7 @@ await swarm.dispatch({
 
 ## State Ownership under Worktrees
 
-Worktrees isolate code edits, but they do not solve harness state. `feature_list.json`, `progress.md`, and `session-handoff.md` are single files rewritten each session — two agents in parallel worktrees overwriting them guarantees merge conflicts. Whole-file-overwrite markdown plus a single JSON tracker is only compatible with a single writer; choose one of three models before parallelizing:
+Worktrees isolate code edits, but they do not solve harness state. `feature_list.json` and `progress.md` are single files rewritten each session — two agents in parallel worktrees overwriting them guarantees merge conflicts. Whole-file-overwrite markdown plus a single JSON tracker is only compatible with a single writer; choose one of three models before parallelizing:
 
 | Model | Who writes state | Conflict handling | Best for |
 |---|---|---|---|
@@ -148,7 +148,7 @@ Worktrees isolate code edits, but they do not solve harness state. `feature_list
 ### Rules for the single-writer model (default)
 
 1. **`feature_list.json` — coordinator only.** Workers never flip `status` or write `evidence`. A worker's deliverable is its branch plus a report (diff, test output, done/blocked); the coordinator merges the branch, then records state.
-2. **`session-handoff.md` — per-workstream, never merged.** A handoff addresses the next session on the *same* workstream, not other agents. Keep it worktree-local (gitignored) or at `handoffs/<branch>.md`; do not resolve handoff conflicts — they mean two agents shared a workstream that should have been split.
+2. **No shared handoff file.** "Where I stopped" addresses the next session on the *same* workstream, so it belongs to the branch, not the repo: put it in the branch's commit messages and PR description, which travel with the work and cannot conflict across worktrees. Anything durable you learned on the way — a boundary, a trap, why a layer exists — goes to the architecture doc instead, where it stays true after the branch merges. A repo-level handoff file only ever creates conflicts between workstreams that should have been split.
 3. **`progress.md` — updated only in the main worktree**, by the coordinator, after merging worker branches.
 4. **`archive/*.md` — append-only**, so conflicts are trivial. Add `archive/*.md merge=union` to `.gitattributes` and let git take both sides.
 5. **Prefer no repo file at all for live coordination.** A harness-level shared task list (e.g. Claude Code agent teams) lives outside git and cannot conflict; repo state files then record only the merged outcome.
@@ -166,7 +166,7 @@ Worktrees isolate code edits, but they do not solve harness state. `feature_list
 3. **Swarm teammates cannot spawn other teammates** — Roster is flat to prevent uncontrolled growth.
 4. **Write self-contained prompts** — "Based on your findings" is an anti-pattern. Coordinator must digest first.
 5. **Filter each worker's tool set** — Researcher doesn't need write; implementer doesn't need broad search.
-6. **Workers must not write shared harness state** — see [State Ownership under Worktrees](#state-ownership-under-worktrees). Parallel overwrites of `progress.md`/`session-handoff.md` are the most common worktree merge-conflict source.
+6. **Workers must not write shared harness state** — see [State Ownership under Worktrees](#state-ownership-under-worktrees). Parallel overwrites of `progress.md` are the most common worktree merge-conflict source.
 
 ## Related Patterns
 

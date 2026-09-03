@@ -190,20 +190,11 @@ export function verificationCommands(project, explicitPackageManager) {
   return [install, ...dedupe(candidates)];
 }
 
-export function initScriptFromCommands(commands) {
-  const body = commands.map((command) => `echo "=== ${escapeForEcho(command)} ==="\n${command}`).join('\n\n');
-  return `#!/bin/bash
-set -e
-
-echo "=== Harness Initialization ==="
-
-${body}
-
-# --- Harness hygiene: state files stay slim (archive, don't accumulate) ---
+export const HYGIENE_GATE_BLOCK = `# --- Harness hygiene: state files stay slim (archive, don't accumulate) ---
 # Enforces the "~80 lines" rule from AGENTS.md / progress.md template. Without
 # this gate the archive discipline is documented but never enforced, so done
 # features accumulate as full narrative in progress.md and burn context tokens
-# every session. Soft-warn on session-handoff.md size; hard-fail on progress.md.
+# every session. Hard-fail on progress.md.
 echo "=== harness hygiene ==="
 hygiene_fail=0
 if [ -f progress.md ]; then
@@ -213,17 +204,36 @@ if [ -f progress.md ]; then
     hygiene_fail=1
   fi
 fi
-if [ -f session-handoff.md ]; then
-  sh_lines=$(wc -l < session-handoff.md)
-  if [ "$sh_lines" -gt 150 ]; then
-    echo "warning: session-handoff.md is \${sh_lines} lines (>150) — trim to per-checkout scratch only (where this worktree stopped); it is gitignored, overwrite freely, never merge"
-  fi
-fi
 if [ "$hygiene_fail" -ne 0 ]; then
   echo "Hygiene gate FAILED — fix above before claiming done."
   exit 1
 fi
+`;
 
+// Injects the gate into an init.sh that predates it, without rewriting the
+// script's own verification commands. Idempotent: returns the input unchanged
+// when a gate is already present, so `--upgrade` can be re-run safely.
+export function insertHygieneGate(initText) {
+  if (hasHygieneGate(initText)) return initText;
+  const marker = 'echo "=== Verification Complete ==="';
+  const block = `${HYGIENE_GATE_BLOCK}\n`;
+  if (initText.includes(marker)) {
+    return initText.replace(marker, `${block}${marker}`);
+  }
+  const separator = initText.endsWith('\n') ? '\n' : '\n\n';
+  return `${initText}${separator}${block}`;
+}
+
+export function initScriptFromCommands(commands) {
+  const body = commands.map((command) => `echo "=== ${escapeForEcho(command)} ==="\n${command}`).join('\n\n');
+  return `#!/bin/bash
+set -e
+
+echo "=== Harness Initialization ==="
+
+${body}
+
+${HYGIENE_GATE_BLOCK}
 echo "=== Verification Complete ==="
 echo ""
 echo "Next steps:"
@@ -249,7 +259,6 @@ export function scoreHarness(files) {
   const featureList = byPath.get('feature_list.json') || byPath.get('feature-list.json') || '';
   const progress = byPath.get('progress.md') || '';
   const init = byPath.get('init.sh') || '';
-  const handoff = byPath.get('session-handoff.md') || '';
 
   const checks = {
     instructions: [
@@ -264,15 +273,16 @@ export function scoreHarness(files) {
       jsonFeatureList(featureList, 'Feature tracker is valid and has feature fields'),
       hasFile(byPath, ['progress.md'], 'Progress log exists'),
       structuredHas(progress, ['Current State', 'What', 'Next'], 'Progress log supports restart'),
-      structuredHas(handoff || progress, ['Blockers', 'Files', 'Next Session'], 'Handoff captures blockers/files/next step'),
-      stateHygiene(progress, handoff, featureList, 'State files stay archived and concise (no unbounded growth)')
+      structuredHas(progress, ['Blockers', 'Risks', 'Next'], 'Progress log captures blockers and next step'),
+      stateHygiene(progress, featureList, 'State files stay archived and concise (no unbounded growth)')
     ],
     verification: [
       hasFile(byPath, ['init.sh'], 'Verification entrypoint exists'),
       textHas(init, ['set -e'], 'Verification fails fast'),
       textHas(init + agents, ['test', 'pytest', 'vitest', 'cargo test', 'go test', 'dotnet test'], 'Test command documented'),
       textHas(init + agents, ['build', 'type', 'lint', 'compile'], 'Static/build check documented'),
-      textHas(allText, ['Evidence', 'Verification Evidence', 'command and output'], 'Verification evidence is recorded')
+      textHas(allText, ['Evidence', 'Verification Evidence', 'command and output'], 'Verification evidence is recorded'),
+      hygieneGateInstalled(init, 'State hygiene is enforced by the verification entrypoint')
     ],
     scope: [
       structuredHas(agents, ['One feature at a time', 'one-feature-at-a-time'], 'One-feature-at-a-time rule exists'),
@@ -284,9 +294,7 @@ export function scoreHarness(files) {
     lifecycle: [
       hasFile(byPath, ['init.sh'], 'Startup script exists'),
       structuredHas(agents, ['End of Session', 'Before ending'], 'End-of-session procedure exists'),
-      hasFile(byPath, ['session-handoff.md'], 'Session handoff template exists'),
-      { pass: /^session-handoff\.md$/m.test((byPath.get('.gitignore') || '')), message: 'session-handoff.md is gitignored (per-checkout scratch, not merged)' },
-      structuredHas(progress + '\n' + handoff, ['Last Updated', 'Current Objective', 'Recommended Next Step'], 'Session restart markers exist'),
+      structuredHas(progress, ['Last Updated', 'Active Feature', 'Next'], 'Session restart markers exist'),
       textHas(agents + init, ['restartable', 'clean', 'Next steps'], 'Clean restart path documented')
     ]
   };
@@ -348,25 +356,22 @@ function structuredHas(markdown, needles, message) {
 // State files are meant to be indexes into git history, not changelogs. Left
 // unchecked, agents append rather than archive/summarize, and every state file grows
 // without bound across sessions. This is a proxy, not an exact rule:
-// - progress.md or session-handoff.md over the line threshold fails outright —
-//   completed narrative belongs in archive/YYYY-MM.md (one file per month) and the
-//   handoff is rewritten each session, not appended to; an archive existing does not
-//   excuse an oversized file, since archiving is precisely how they stay short
+// - progress.md over the line threshold fails outright — completed narrative belongs
+//   in archive/YYYY-MM.md (one file per month); an archive existing does not excuse
+//   an oversized file, since archiving is precisely how it stays short
 // - a 'done' feature's evidence should read as a pointer (commit hash + short note),
 //   not a narrative, so it's flagged past the character threshold
 const STATE_FILE_LINE_THRESHOLD = 80;
 const EVIDENCE_CHAR_THRESHOLD = 300;
 const LINE_LENGTH_THRESHOLD = 200;
 
-function stateHygiene(progressText, handoffText, featureListText, message) {
+function stateHygiene(progressText, featureListText, message) {
   const lineCount = (text) => text ? text.split(/\r?\n/).length : 0;
   const progressOk = lineCount(progressText) <= STATE_FILE_LINE_THRESHOLD;
-  const handoffOk = lineCount(handoffText) <= STATE_FILE_LINE_THRESHOLD;
 
-  // Check for overly long lines in progress.md and session-handoff.md
+  // Long lines defeat the line-count rule: one 2000-character paragraph is the same
+  // unmaintainable narrative as twenty lines of it.
   const longLinesProgress = progressText ? progressText.split(/\r?\n/).filter(line => line.length > LINE_LENGTH_THRESHOLD).length : 0;
-  const longLinesHandoff = handoffText ? handoffText.split(/\r?\n/).filter(line => line.length > LINE_LENGTH_THRESHOLD).length : 0;
-  const longLinesOk = longLinesProgress === 0 && longLinesHandoff === 0;
 
   // Missing/invalid feature_list.json is already penalized by its own checks;
   // hygiene only judges evidence length when there is a parseable list.
@@ -382,7 +387,25 @@ function stateHygiene(progressText, handoffText, featureListText, message) {
     // fall through — jsonFeatureList already fails for this
   }
 
-  return { pass: progressOk && handoffOk && longLinesOk && evidenceOk, message, longLinesProgress, longLinesHandoff };
+  return { pass: progressOk && longLinesProgress === 0 && evidenceOk, message, longLinesProgress };
+}
+
+// stateHygiene() above is a lagging indicator: it fails only once progress.md has
+// already grown past the threshold. A harness can sit at full marks for months and
+// still be guaranteed to rot, because nothing runs the size rule at startup — the
+// rule lives only in the instruction file, where an agent can always argue every
+// entry is still "open work". This checks the leading indicator instead: does the
+// verification entrypoint actually enforce the rule? Matches on the mechanism
+// (progress.md + a line count + a non-zero exit), not on the template's wording,
+// so a hand-written equivalent gate passes.
+export function hasHygieneGate(initText) {
+  return /progress\.md/.test(initText)
+    && /wc\s+-l/.test(initText)
+    && /\bexit\s+1\b/.test(initText);
+}
+
+function hygieneGateInstalled(initText, message) {
+  return { pass: hasHygieneGate(initText), message };
 }
 
 function jsonFeatureList(text, message) {
@@ -407,7 +430,6 @@ export async function loadHarnessFiles(root) {
     'feature_list.json',
     'feature-list.json',
     'progress.md',
-    'session-handoff.md',
     'init.sh',
     '.gitignore'
   ];

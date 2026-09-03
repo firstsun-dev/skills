@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { appendFile, chmod, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { chmod, mkdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
   copyTemplate,
@@ -7,6 +7,7 @@ import {
   detectProject,
   exists,
   initScriptFromCommands,
+  insertHygieneGate,
   parseArgs,
   verificationCommands,
   writeText
@@ -15,23 +16,35 @@ import {
 const args = parseArgs(process.argv.slice(2));
 
 if (args.help) {
-  console.log(`Usage: node scripts/create-harness.mjs [--target DIR] [--agent-file AGENTS.md|CLAUDE.md] [--package-manager npm|pnpm|yarn|bun] [--force]
+  console.log(`Usage: node scripts/create-harness.mjs [--target DIR] [--agent-file AGENTS.md|CLAUDE.md] [--package-manager npm|pnpm|yarn|bun] [--force|--upgrade]
 
 Creates a minimal production harness:
   AGENTS.md or CLAUDE.md
   feature_list.json
   progress.md
   archive/YYYY-MM.md (current month)
-  session-handoff.md
   init.sh
 
-Existing files are skipped unless --force is set.`);
+Existing files are skipped unless --force is set.
+
+--upgrade brings a harness scaffolded by an older version of this skill up to the
+current templates. It creates whatever artifacts are missing and patches an
+existing init.sh with the state-hygiene gate if it predates it. It never rewrites
+content you have edited — progress.md, feature_list.json and the agent instruction
+file are left exactly as they are. Idempotent: safe to re-run. Cannot be combined
+with --force.`);
   process.exit(0);
 }
 
 const target = path.resolve(args.target || args._[0] || process.cwd());
 const agentFile = args.agentFile || 'AGENTS.md';
 const force = Boolean(args.force);
+const upgrade = Boolean(args.upgrade);
+
+if (force && upgrade) {
+  console.error('--force and --upgrade are mutually exclusive: --force overwrites edited state files, --upgrade exists precisely to avoid that.');
+  process.exit(1);
+}
 const project = await detectProject(target);
 project.packageManager = detectPackageManager(target, args.packageManager);
 const commands = args.commands
@@ -64,35 +77,28 @@ results.push(await copyTemplate(
   { force }
 ));
 
-results.push(await copyTemplate('session-handoff.md', path.join(target, 'session-handoff.md'), {}, { force }));
-
-// session-handoff.md is per-checkout scratch: gitignore it so parallel worktrees
-// don't conflict on merge. Append to an existing .gitignore without duplicating.
-const gitignorePath = path.join(target, '.gitignore');
-const gitignoreEntry = 'session-handoff.md\n';
-let hadGitignore = false;
-try {
-  const existing = await readFile(gitignorePath, 'utf8');
-  hadGitignore = true;
-  if (!/^session-handoff\.md$/m.test(existing)) {
-    const prefix = existing && !existing.endsWith('\n') ? '\n' : '';
-    await appendFile(gitignorePath, `${prefix}${gitignoreEntry}`);
-  }
-} catch {
-  await writeFile(gitignorePath, gitignoreEntry);
-}
-results.push({ path: gitignorePath, status: hadGitignore ? 'updated' : 'written' });
-
 const initPath = path.join(target, 'init.sh');
 if (force || !await exists(initPath)) {
   await writeText(initPath, initScriptFromCommands(commands));
   await chmod(initPath, 0o755);
   results.push({ path: initPath, status: 'written' });
+} else if (upgrade) {
+  // Patch, don't regenerate: the existing script's verification commands are the
+  // project's own and are usually more accurate than anything detection produces.
+  const existingInit = await readFile(initPath, 'utf8');
+  const patched = insertHygieneGate(existingInit);
+  if (patched === existingInit) {
+    results.push({ path: initPath, status: 'skipped', reason: 'hygiene gate already present' });
+  } else {
+    await writeText(initPath, patched);
+    await chmod(initPath, 0o755);
+    results.push({ path: initPath, status: 'updated', reason: 'added state-hygiene gate' });
+  }
 } else {
   results.push({ path: initPath, status: 'skipped', reason: 'exists' });
 }
 
-console.log(`Created harness for ${target}`);
+console.log(`${upgrade ? 'Upgraded' : 'Created'} harness for ${target}`);
 console.log(`Detected stack: ${project.stack}`);
 console.log(`Verification commands:`);
 for (const command of commands) {

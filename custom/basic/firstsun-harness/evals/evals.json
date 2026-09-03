@@ -18,12 +18,12 @@
     {
       "id": 2,
       "name": "Session Continuity Setup",
-      "prompt": "My agent forgets everything between sessions. I need persistent memory and session handoff so it can work on multi-day features.",
-      "expected_output": "progress.md template, session-handoff.md structure, memory directory setup instructions",
+      "prompt": "My agent forgets everything between sessions. I need persistent state so it can work on multi-day features.",
+      "expected_output": "progress.md template, archive cadence, memory directory setup instructions",
       "files": [],
       "expectations": [
         "progress.md includes sections: current state, what's done, what's in progress, blockers, next session should",
-        "session-handoff.md includes: what was accomplished, what remains, blockers/decisions, files modified",
+        "progress.md includes: what remains, blockers/decisions, next step; finished work archived, not accumulated",
         "Instructions for memory directory creation (.claude/memory/ or similar)",
         "Two-step save invariant explained (topic file then index)"
       ]
@@ -110,11 +110,11 @@
       "id": 9,
       "name": "Lifecycle Bootstrap",
       "prompt": "Every new session starts inconsistently. Design startup, hook, and handoff lifecycle rules so a new agent can resume safely.",
-      "expected_output": "Lifecycle bootstrap design with init.sh, clean-state checks, handoff reads, and hook trust boundaries",
+      "expected_output": "Lifecycle bootstrap design with init.sh, clean-state checks, state reads, and hook trust boundaries",
       "files": [],
       "expectations": [
         "init.sh is the standard startup and verification entrypoint",
-        "Startup reads AGENTS.md, feature_list.json, progress.md, and handoff when present",
+        "Startup reads AGENTS.md, feature_list.json, and progress.md",
         "End-of-session procedure records evidence, blockers, and next step",
         "Hooks are gated by trust and failure behavior is explicit"
       ]
