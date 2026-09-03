@@ -3,11 +3,11 @@ name: firstsun-harness
 description: >-
   Build, audit, and improve harnesses that make AI coding agents reliable: AGENTS.md/CLAUDE.md
   instruction files, feature/state tracking, verification gates, scope boundaries, session
-  handoff, memory persistence, context budgets, tool-permission safety, and multi-agent
+  lifecycle, memory persistence, context budgets, tool-permission safety, and multi-agent
   coordination. Use this whenever a coding agent is unreliable across sessions — forgets context,
   drifts out of scope, claims "done" before tests pass, or starts each session inconsistently —
   or when creating or assessing AGENTS.md, CLAUDE.md, feature_list.json, init.sh, progress.md, or
-  session-handoff files. Reach for it even if the user never says the word "harness."
+  or session state files. Reach for it even if the user never says the word "harness."
 license: MIT
 metadata:
   origin: firstsun-dev/skills
@@ -31,7 +31,7 @@ Every useful coding-agent harness has five subsystems:
 | State | `feature_list.json`, `progress.md`, `archive/YYYY-MM.md` | Current feature, status, evidence, next step; finished work archived monthly |
 | Verification | `init.sh` or documented commands | Tests/checks the agent must run before claiming done |
 | Scope | Feature dependencies and done criteria | Prevents overreach and half-finished work |
-| Lifecycle | end-of-session routine, `session-handoff.md` (gitignored per-checkout scratch) | Makes the next session restartable without merge conflicts across worktrees |
+| Lifecycle | end-of-session routine; "where I stopped" in commits/PR, durable findings in the architecture doc | Makes the next session restartable without a shared scratch file that conflicts across worktrees |
 
 ## First Move
 
@@ -58,6 +58,23 @@ Options:
 
 Then explain what was created and how the user should replace placeholder feature entries.
 
+### Upgrade an existing harness
+
+A harness scaffolded by an earlier version of this skill does not receive later
+template improvements on its own, and an audit only reports the symptom once the
+harness has already degraded. Bring it up to the current templates with:
+
+```bash
+node scripts/create-harness.mjs --target /path/to/project --upgrade
+```
+
+It creates whatever artifacts are missing, patches an existing `init.sh` with the
+state-hygiene gate if it predates it, and leaves every file the project has edited
+(`progress.md`, `feature_list.json`, the agent instruction file) untouched. It is
+idempotent, and rejects `--force`, which would overwrite exactly those files.
+
+Re-run the audit afterwards to confirm the gate registers.
+
 ### Audit an existing harness
 
 Run:
@@ -66,7 +83,7 @@ Run:
 node scripts/validate-harness.mjs --target /path/to/project
 ```
 
-Report the five subsystem scores, the lowest-scoring area, and the first 2-3 changes that would improve reliability. Treat the lowest score as a candidate bottleneck; confirm with failures, logs, or task outcomes before claiming causality.
+Report the five subsystem scores, the lowest-scoring area, and the first 2-3 changes that would improve reliability. Distinguish the two hygiene checks: "State files stay archived and concise" fails once a state file has already grown, while "State hygiene is enforced by the verification entrypoint" fails whenever nothing runs the size rule at startup — the second predicts the first, so fix it even while the files still look fine. Treat the lowest score as a candidate bottleneck; confirm with failures, logs, or task outcomes before claiming causality.
 
 ### Produce a report
 
@@ -100,6 +117,7 @@ Load only the reference needed for the user's problem:
 - Use one active feature unless the harness has explicit multi-agent ownership boundaries.
 - Prefer append/update state files over relying on chat history.
 - Never hide destructive behavior in scripts; overwrites require explicit user approval.
+- A rule that no gate enforces will rot. When you add one to an instruction file, add the check that fails on it.
 
 ## Deliverable Checklist
 
@@ -110,7 +128,6 @@ For a usable minimal harness, leave the target project with:
 - [ ] `progress.md` (open work only, finished items archived)
 - [ ] `archive/YYYY-MM.md` for the current month
 - [ ] `init.sh`
-- [ ] Optional `session-handoff.md` (gitignored per-checkout scratch, never merged)
 - [ ] Documented verification evidence or next action
 
 If you cannot create files, provide exact file contents and commands instead.

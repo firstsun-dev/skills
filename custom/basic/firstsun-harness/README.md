@@ -33,7 +33,6 @@ The scripts use only Node.js built-in modules. They can be run after copying the
 - `progress.md` (open work only)
 - `archive/YYYY-MM.md` (completed work, one file per calendar month)
 - `init.sh`
-- `session-handoff.md`
 
 `create-harness.mjs` detects common project types and package managers. It supports Node/npm/pnpm/yarn/bun, Python, Go, Rust, Maven, Gradle, and .NET at a basic verification-command level.
 
@@ -77,8 +76,7 @@ firstsun-harness/
 │   ├── feature-list.json
 │   ├── feature-list.schema.json
 │   ├── init.sh
-│   ├── progress.md
-│   └── session-handoff.md
+│   └── progress.md
 ├── references/
 └── evals/evals.json
 ```

@@ -12,7 +12,9 @@
       "id": "feat-002",
       "name": "Fix custom/ skill validation failures",
       "description": "Resolve all FAIL items from /validate-skills for skills under custom/",
-      "dependencies": ["feat-001"],
+      "dependencies": [
+        "feat-001"
+      ],
       "status": "done",
       "evidence": "Commit e885190 — fixed skill-manager duplicate heading, book-distiller broken refs, 3 Chinese-only descriptions, 3 backtick-link skills"
     },
@@ -20,7 +22,9 @@
       "id": "feat-003",
       "name": "Flatten unjustified external/ category containers",
       "description": "Remove single-skill or sub-10-skill category containers under external/ that were causing missing-SKILL.md validation failures",
-      "dependencies": ["feat-001"],
+      "dependencies": [
+        "feat-001"
+      ],
       "status": "done",
       "evidence": "Commit 696d571 — flattened think/{first-principles,learning,logic}, career/{interview,resume}, develop/i18n/i18n; SKILLS_LIST.md updated"
     },
@@ -28,7 +32,10 @@
       "id": "feat-004",
       "name": "Add validate-skills gate to skill-manager SOPs",
       "description": "Require /validate-skills as an explicit step in both the External Skills and Custom Skills SOPs before documenting/pushing",
-      "dependencies": ["feat-002", "feat-003"],
+      "dependencies": [
+        "feat-002",
+        "feat-003"
+      ],
       "status": "done",
       "evidence": "Commit add333a — added step 3 'Validate' to both SOPs in custom/basic/skill-manager/SKILL.md"
     },
@@ -36,7 +43,9 @@
       "id": "feat-005",
       "name": "Fix remaining external/ skill validation failures",
       "description": "Resolve remaining FAIL items: name/directory mismatches (windmill-rust-backend, decision-management), invalid name ckm:banner-design, oversized bodies (imagegen-frontend-mobile/web, brandkit, mental-health-psychoeducation), imperative-voice descriptions, backtick links, broken firecrawl-search cross-refs",
-      "dependencies": ["feat-004"],
+      "dependencies": [
+        "feat-004"
+      ],
       "status": "not-started",
       "evidence": "NOTE (2026-07-01, after feat-006 shipped): these FAIL items live inside external/, which is now auto-re-synced weekly from upstream by update-external-skills.yml. Any local edit to external/ content will be silently overwritten by the next sync since it always takes upstream as truth. Decision made with user: do NOT hand-edit external/ to fix these — leave them as known upstream debt. Ran /validate-skills on the 20 skills changed by the first sync PR (#3): confirmed decision-management (name field 'running-decision-processes' vs dir) and firstprinciples (name field 'FirstPrinciples', not lowercase) still FAIL, and found the backtick-link-instead-of-markdown-link best-practice issue is broader than originally scoped here — also present in brainstorming, validate-skills, react-best-practices, security-scan, rem-sleep, hyperframes-animation, remotion (in addition to healthkit, personal-productivity already listed). If these ever need real fixing, it must happen upstream (PR to the source repo), not in this repo's external/ copy."
     },
@@ -44,15 +53,19 @@
       "id": "feat-006",
       "name": "Weekly external skills auto-update CI workflow",
       "description": "Add a workflow_dispatch + weekly-cron GitHub Action that refreshes external/ skills from their upstream sources, refreshes skills-lock.json hashes while preserving original sources, verifies repo structure with ./init.sh, and opens a PR to review/merge.",
-      "dependencies": ["feat-001"],
+      "dependencies": [
+        "feat-001"
+      ],
       "status": "done",
-      "evidence": "Commits 3e573c5, fc752c0, 150f96c, f9556e5 in .github/workflows/update-external-skills.yml. Final design: per-source-repo `npx skills add <source> -s <name1> -s <name2>... --agent universal -y` (grouped to avoid re-cloning the same upstream per skill), rsync fetched content over external/<domain>/<skill> where changed, `./setup.sh --external --agent universal` to refresh skills-lock.json hashes while preserving true upstream sources, ./init.sh structural check, drift check that no external entry went local/firstsun-dev/skills, then peter-evans/create-pull-request (RELEASE_TOKEN, since repo/org disables GITHUB_TOKEN PR creation; checkout uses persist-credentials:false to avoid a duplicate-Authorization-header conflict) with add-paths restricted to external/**+skills-lock.json as a backstop. Two prior designs failed on real CI (skills update -p ignored external/ entirely; then npx skills add with no TTY defaulted to installing into all 72 agent integrations, polluting the PR with a bogus agent/skills/ tree) before --agent universal + add-paths produced a clean run: PR #3 (https://github.com/firstsun-dev/skills/pull/3), 205 files, verified zero agent/* paths."
+      "evidence": "Commits 3e573c5/fc752c0/150f96c/f9556e5 — external-skills auto-update workflow; PR #3 verified clean (205 files, zero agent/* paths). Design rationale and the two failed approaches are in those commit messages."
     },
     {
       "id": "feat-007",
       "name": "Add firstsun-pm custom skill",
       "description": "Bring the user-authored firstsun-pm project-management skill (found at ~/.agents/skills/firstsun-pm, org-specific gh issue/Project-#6 workflow) into custom/basic/ per the Custom Skills SOP: create, document in SKILLS_LIST.md, validate, push, remote-install to refresh skills-lock.json",
-      "dependencies": ["feat-004"],
+      "dependencies": [
+        "feat-004"
+      ],
       "status": "done",
       "evidence": "Commits 49f437e (add custom/basic/firstsun-pm/SKILL.md + SKILLS_LIST.md entry) and 7dd65cb (skills-lock.json registration via ./setup.sh --custom, source=firstsun-dev/skills, hash=240cc8d1...). /validate-skills ran clean beforehand (all PASS). ./init.sh passes."
     },
@@ -60,7 +73,9 @@
       "id": "feat-008",
       "name": "Fork harness-creator from external/ to custom/",
       "description": "Move harness-creator (originally mirrored from walkinglabs/learn-harness-engineering) from external/basic/ to custom/basic/ so it stops being overwritten by the weekly update-external-skills.yml sync, enabling local additions such as a progress.md/feature_list.json cleanup-cadence mechanism.",
-      "dependencies": ["feat-004"],
+      "dependencies": [
+        "feat-004"
+      ],
       "status": "done",
       "evidence": "Commits 743123e (git mv external->custom, SKILL.md frontmatter origin+fork note, SKILLS_LIST.md link) and fef29e3 (skills-lock.json refreshed via remote install, source=firstsun-dev/skills, hash=89e13c41...). /validate-skills clean beforehand. ./init.sh passes."
     },
@@ -68,7 +83,9 @@
       "id": "feat-009",
       "name": "Add cleanup-cadence mechanism to harness-creator",
       "description": "harness-creator's templates/scoring currently have no archive/staleness checks for progress.md, session-handoff.md, or feature_list.json evidence fields, letting them grow unbounded. Add: archive/YYYY-MM.md scaffold (time-based dir supersedes the originally planned progress-archive.md), size-threshold guidance in templates, evidence-brevity guidance in templates/feature-list.json, and a state-hygiene check in validate-harness.mjs.",
-      "dependencies": ["feat-008"],
+      "dependencies": [
+        "feat-008"
+      ],
       "status": "done",
       "evidence": "Commit 3b3a18a — archive/YYYY-MM.md scaffold + stateHygiene check (80-line/300-char thresholds); self-check 100/100, /validate-skills clean"
     },
@@ -76,9 +93,31 @@
       "id": "feat-010",
       "name": "Add plugin-settings external skill (Claude Code .local.md config pattern)",
       "description": "Archive the official anthropics/claude-code 'Plugin Settings' skill (plugins/plugin-dev/skills/plugin-settings/SKILL.md) into external/develop/devops/ per the External Skills SOP: download, archive, validate, document, register in skills-lock.json with original upstream source.",
-      "dependencies": ["feat-004"],
+      "dependencies": [
+        "feat-004"
+      ],
       "status": "done",
-      "evidence": "external/develop/devops/plugin-settings/SKILL.md added, name field fixed to 'plugin-settings' (was 'Plugin Settings', spec violation) — no other content changed per user instruction not to alter external skill content. /validate-skills: PASS on name/directory match and description length; FAIL on body length (544 lines > 500-line guideline) accepted as known exception per user decision, consistent with feat-005's precedent that external/ upstream content is not hand-edited. SKILLS_LIST.md updated with entry + exception note. skills-lock.json registered via `npx skills add anthropics/claude-code --skill \"Plugin Settings\"`, key renamed 'Plugin Settings' -> 'plugin-settings' for naming consistency, source=anthropics/claude-code preserved (not firstsun-dev/skills)."
+      "evidence": "external/develop/devops/plugin-settings added, name field fixed to 'plugin-settings'; /validate-skills clean except the 544-line body, accepted per the external/ no-hand-edit precedent. SKILLS_LIST.md + skills-lock.json updated (source=anthropics/claude-code)."
+    },
+    {
+      "id": "feat-011",
+      "name": "Close the firstsun-harness enforcement + upgrade gaps",
+      "description": "Validator scored state hygiene only as a lagging indicator (fails after progress.md already grew) and there was no way to bring an existing harness up to newer templates. Add a leading-indicator check for the gate in init.sh, and a non-destructive --upgrade mode.",
+      "dependencies": [
+        "feat-009"
+      ],
+      "status": "done",
+      "evidence": "validate-harness gained 'State hygiene is enforced by the verification entrypoint'; create-harness gained --upgrade (idempotent, never rewrites edited state files). Benchmark self-check PASS (scaffold scores 100/100); --upgrade applied to this repo, ./init.sh exit 0."
+    },
+    {
+      "id": "feat-012",
+      "name": "Drop session-handoff.md as a harness artifact",
+      "description": "Retire the per-checkout handoff file from firstsun-harness and this repo. Durable findings belong in the project's architecture doc; transient 'where I stopped' belongs to the branch (commit messages + PR description), which travels with the work and cannot conflict across worktrees. Also resolves the validator contradiction where a file had to both exist and be gitignored.",
+      "dependencies": [
+        "feat-011"
+      ],
+      "status": "done",
+      "evidence": "Removed from templates, create-harness, validator, gate, SKILL.md, README, agents template, multi-agent reference, evals, and this repo. Fresh-clone simulation now 100/100 (was 96); benchmark self-check PASS; ./init.sh exit 0."
     }
   ]
 }

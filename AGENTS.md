@@ -33,7 +33,6 @@ If baseline verification is failing, repair that first before adding new scope.
 - `feature_list.json` — Feature state tracker (source of truth)
 - `progress.md` — Session continuity log
 - `init.sh` — Standard startup and verification path
-- `session-handoff.md` — Optional, for larger sessions
 
 ## Definition of Done
 
@@ -52,7 +51,7 @@ Before ending a session:
 
 1. Update `progress.md` with current state
 2. Update `feature_list.json` with new feature status
-3. Record any unresolved risks or blockers
+3. Record any unresolved risks or blockers; put "where I stopped" in the branch's commit messages / PR description, not in a repo state file
 4. Commit with descriptive message once work is in safe state
 5. Leave repo clean enough for next session to run `./init.sh` immediately
 

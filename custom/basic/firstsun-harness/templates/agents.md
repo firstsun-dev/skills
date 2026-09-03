@@ -22,7 +22,7 @@ If baseline verification is failing, repair that first before adding new scope.
 - **Update artifacts**: Before ending session, update `progress.md` and `feature_list.json`
 - **Keep state files short (two-tier model)**:
   - **Shared (merged carefully across worktrees):** `progress.md` (open work only, ~80 lines max) + `feature_list.json` (one-line evidence — commit hash + short pointer; narrative belongs in the commit message). When a feature finishes, move it to `archive/YYYY-MM.md` as one line: name + commit hash, and remove from `progress.md`.
-  - **Per-checkout scratch:** `session-handoff.md` is **gitignored** — overwrite freely each session, never merge it across worktrees. It's this checkout's local "where I stopped" note, not a shared source of truth. Parallel worktrees each keep their own.
+  - **Per-branch, not a file:** "where I stopped" belongs in the branch's commit messages and PR description, which travel with the work and cannot conflict across worktrees. Durable knowledge discovered along the way — boundaries, traps, why a layer exists — belongs in the project's architecture doc, not in a state file that gets rewritten.
   - **Do-not-touch split:** permanent invariants (always-true) live in this file's Environment/Working rules; transient do-not-touch (tied to an in-progress feature) lives in `progress.md` and gets archived with its feature when done.
 - **Stay in scope**: Don't modify files unrelated to the current feature
 - **Leave clean state**: Next session must be able to run `./init.sh` immediately
@@ -33,7 +33,6 @@ If baseline verification is failing, repair that first before adding new scope.
 - `progress.md` — Session continuity log (open work only)
 - `archive/YYYY-MM.md` — Completed work, one file per calendar month
 - `init.sh` — Standard startup and verification path
-- `session-handoff.md` — Optional, per-checkout scratch (gitignored, never merged)
 
 ## Definition of Done
 
@@ -52,7 +51,7 @@ Before ending a session:
 2. Update `feature_list.json` with new feature status (one-line evidence + commit hash)
 3. Move finished items from `progress.md` to `archive/YYYY-MM.md` (one line each: name + commit hash)
 4. Record permanent invariants in this file's Environment/Working rules; transient do-not-touch in `progress.md`
-5. Overwrite `session-handoff.md` with this checkout's "where I stopped" (gitignored — do not commit or merge it)
+5. Put "where I stopped" in the branch's commit messages / PR description, and any durable boundary or trap you discovered into the architecture doc
 6. Commit shared state with descriptive message once work is in safe state
 7. Leave repo clean enough for next session to run `./init.sh` immediately
 
