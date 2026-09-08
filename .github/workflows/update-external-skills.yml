@@ -102,6 +102,9 @@ jobs:
       - name: Refresh skills-lock.json hashes for external/ (preserves original upstream sources)
         run: ./setup.sh --external --agent universal
 
+      - name: Refresh portable external marketplace plugins
+        run: node scripts/sync-external-marketplace.mjs
+
       - name: Force-restore upstream source/sourceType/skillPath from the pre-run snapshot
         run: |
           set -e
@@ -167,7 +170,9 @@ jobs:
           # or `setup.sh` may have written to the working tree (e.g. agent install
           # artifacts that aren't covered by .gitignore).
           add-paths: |
+            .agents/plugins/marketplace.json
             external/**
+            plugins/external-*/**
             skills-lock.json
           commit-message: "chore(external): weekly sync of external skills from upstream"
           branch: automated/update-external-skills

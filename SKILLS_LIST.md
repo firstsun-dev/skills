@@ -182,7 +182,12 @@
 | :--- | :--- | :--- | :--- |
 | **tianyao-skills** (marketplace) | 個人 marketplace，登記 `/plugin marketplace add ~/skills`。 | — | [marketplace.json](./.claude-plugin/marketplace.json) |
 | **most-used-skills** | 依全專案 session 使用頻率統計出的最常用技能包（`firstsun-pm`、`validate-skills`、`firstsun-harness`、`skill-manager`、`find-skills`、`skill-creator`、`frontend-design`、`cloudflare`、`tailored-resume-generator`），另加新建的 `permission-cleanup`（尚無使用紀錄，非依頻率入選）。 | 10 個 | [plugin.json](./plugin-most-used/.claude-plugin/plugin.json) |
+| **firstsun-external** | 供 ChatGPT 與 Codex Workspace 從 GitHub 匯入的第三方 skills marketplace；各 bundle 為可攜副本，由 `external/` 自動同步產生。 | 70 個 | [marketplace.json](./.agents/plugins/marketplace.json) |
+| **external-agent-workflows** | Agent 編排、搜尋、文件與思考工作流。 | 13 個 | [plugin.json](./plugins/external-agent-workflows/.codex-plugin/plugin.json) |
+| **external-developer-workflows** | 程式品質、DevOps、安全、Rust 與 i18n 工作流。 | 16 個 | [plugin.json](./plugins/external-developer-workflows/.codex-plugin/plugin.json) |
+| **external-frontend-design** | 前端實作、視覺系統、UI 與動畫技能。 | 19 個 | [plugin.json](./plugins/external-frontend-design/.codex-plugin/plugin.json) |
+| **external-video-design** | 影片、Remotion、品牌與資料視覺化技能。 | 10 個 | [plugin.json](./plugins/external-video-design/.codex-plugin/plugin.json) |
+| **external-career-health** | 職涯、生產力與健康教育技能；非醫療照護。 | 12 個 | [plugin.json](./plugins/external-career-health/.codex-plugin/plugin.json) |
 
 ---
 *最後更新日期: 2026-07-17*
-

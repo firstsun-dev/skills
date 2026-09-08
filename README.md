@@ -48,6 +48,20 @@ For a checked-out local repository, the existing scripts can also register or ex
 ./export.sh <domain>
 ```
 
+## ChatGPT and Codex marketplace
+
+The portable third-party catalog is published as the `firstsun-external` marketplace in
+[`/.agents/plugins/marketplace.json`](./.agents/plugins/marketplace.json). It separates the
+external catalog into small, optional workflow bundles instead of installing every skill at once.
+
+An eligible ChatGPT workspace administrator can import this GitHub repository from **Workspace
+settings → Plugins → Add → Import marketplace**. The marketplace is at the repository root, so
+leave the Path field empty. GitHub-backed marketplaces sync daily after import.
+
+The plugin copies under `plugins/external-*/skills/` are generated from `external/` by
+`scripts/sync-external-marketplace.mjs`; do not edit them directly. The weekly external update
+workflow refreshes both the canonical mirrors and these portable plugin packages.
+
 ## Adding external skills
 
 When adding a community skill, preserve provenance and keep the local taxonomy stable:

@@ -1,0 +1,18 @@
+{
+  "name": "external-frontend-design",
+  "version": "0.1.0",
+  "description": "Curated third-party frontend implementation, visual design, and interaction skills.",
+  "author": {
+    "name": "Firstsun Dev"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "External Frontend Design",
+    "shortDescription": "Third-party frontend and visual-design skills.",
+    "longDescription": "A portable bundle of reviewed third-party skills for frontend construction, UI design systems, responsive design, and motion.",
+    "developerName": "Firstsun Dev",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use the relevant frontend design skill for this task."
+  }
+}
