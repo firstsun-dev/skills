@@ -118,6 +118,16 @@
       ],
       "status": "done",
       "evidence": "Removed from templates, create-harness, validator, gate, SKILL.md, README, agents template, multi-agent reference, evals, and this repo. Fresh-clone simulation now 100/100 (was 96); benchmark self-check PASS; ./init.sh exit 0."
+    },
+    {
+      "id": "feat-013",
+      "name": "Rebuild external skill provenance and update gate",
+      "description": "Rebuild every external skills-lock entry from its live upstream, then make the weekly updater reject local external sources so ChatGPT marketplace publication has traceable supply-chain metadata.",
+      "dependencies": [
+        "feat-006"
+      ],
+      "status": "done",
+      "evidence": "Root cause found: setup.sh's per-skill restore heuristic in `register_skills()` string-matches the *new* value `npx skills add <local-dir>` just wrote, but `npx` always resolves to the latest published `skills` package at run time — a version drift silently changed how it serializes a local path (e.g. no './' prefix), and the very next weekly run then clobbered every external skill's source/sourceType to local in one shot (confirmed via git history: PR #4 on 2026-07-28 introduced 65 local entries; every subsequent weekly sync perpetuated it since the drift-check step recomputes its 'expected github' baseline from the same already-corrupted file, so it always found nothing to flag). Fixed skills-lock.json by rebuilding all 65 corrupted entries from live upstream via `npx skills` (verified against last-known-good commit 7a35f06's parent — 0 mismatches). Fixed update-external-skills.yml: added a pre-run snapshot step and a new 'Force-restore upstream source/sourceType/skillPath' step that unconditionally overwrites those three fields from the pre-run snapshot for every skill that was sourceType==github before the run, keyed by exact JSON key — independent of whatever setup.sh/npx produced, so this class of bug can no longer slip through regardless of npx version behavior. Verified the jq merge logic against both a synthetic clean case and the real historical corrupted state. ./init.sh passes."
     }
   ]
 }

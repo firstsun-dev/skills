@@ -2,8 +2,8 @@
 
 ## Current State
 
-**Last Updated:** 2026-09-03
-**Active Feature:** feat-012 - drop session-handoff.md artifact (done); feat-005 next up
+**Last Updated:** 2026-09-08
+**Active Feature:** feat-013 done; feat-005 next up
 
 Completed work is archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
 
@@ -12,6 +12,20 @@ Completed work is archived in [archive/](./archive/), one file per calendar mont
 - [ ] feat-005: Remaining external/ validation failures — not started this session
 
 ## Since Last Update
+
+feat-013 (rebuild external skill provenance and update gate) completed 2026-09-08. All 65
+external `skills-lock.json` entries had drifted to `sourceType: local` (regressed twice via
+the weekly `update-external-skills.yml` PR, first on 2026-07-28, never self-healing since the
+drift-check recomputed its own baseline from the already-corrupted file). Root cause: the
+per-skill restore heuristic in `setup.sh`'s `register_skills()` string-matches the value
+`npx skills add <local-dir>` just wrote, and `npx` always resolves to the latest published
+`skills` package at run time — a serialization change there (e.g. dropping the `./` prefix)
+silently defeats that heuristic. Rebuilt all 65 entries from live upstream and added a new
+CI step that unconditionally force-restores `source`/`sourceType`/`skillPath` from a pre-run
+snapshot for any skill that was `sourceType: github` beforehand, independent of what
+setup.sh/npx produced — closing the recurrence path regardless of npx version drift.
+`setup.sh` itself is unchanged (out of scope — user asked to fix the CI path only); a manual
+local `./setup.sh --external` run is still exposed to the same heuristic bug.
 
 feat-011 (harness enforcement + upgrade gaps) completed 2026-09-03. Two gaps found by
 auditing three real harnesses (skills, firstsun-blog, git-files-sync): the validator only

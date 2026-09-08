@@ -96,8 +96,41 @@ jobs:
             fi
           done
 
+      - name: Snapshot pre-run skills-lock.json (trusted source of truth for provenance)
+        run: cp skills-lock.json /tmp/skills-lock.before.json
+
       - name: Refresh skills-lock.json hashes for external/ (preserves original upstream sources)
         run: ./setup.sh --external --agent universal
+
+      - name: Force-restore upstream source/sourceType/skillPath from the pre-run snapshot
+        run: |
+          set -e
+          # setup.sh's own restore heuristic (string-matching on the *new* value it just
+          # wrote via `npx skills add <local-dir>`) has repeatedly failed to hold across
+          # `npx skills` version drift — since `npx` always resolves to whatever is
+          # latest at run time, a version that serializes a local path differently
+          # (e.g. without a "./" prefix) silently slips past that heuristic and every
+          # external skill's source/sourceType gets clobbered to local in one shot
+          # (this happened twice: PRs #4 and #9). Don't trust setup.sh's in-place
+          # restore for this at all — unconditionally overwrite source/sourceType/
+          # skillPath for every skill that was sourceType=="github" before this run
+          # ran, from the pre-run snapshot, keyed by exact JSON key (not fuzzy name
+          # parsing). Only computedHash (and a brand-new skill's own entry) survives
+          # from setup.sh's output.
+          jq -s '
+            .[0] as $orig | .[1] as $new |
+            $new
+            | .skills |= with_entries(
+                ($orig.skills[.key] // null) as $o
+                | if ($o != null and $o.sourceType == "github" and $o.source != "firstsun-dev/skills")
+                  then .value.source = $o.source
+                     | .value.sourceType = $o.sourceType
+                     | (if $o.skillPath then .value.skillPath = $o.skillPath else .value end)
+                  else .
+                  end
+              )
+          ' /tmp/skills-lock.before.json skills-lock.json > /tmp/skills-lock.after.json
+          mv /tmp/skills-lock.after.json skills-lock.json
 
       - name: Clean up local agent install artifacts (gitignored, not part of the PR)
         run: rm -rf .agents .claude/skills
