@@ -1,13 +1,13 @@
-# Firstsun Skill Arsenal - 技能清單 (Skill List)
+# Firstsun Skills - 技能清單 (Skill List)
 
-本文件列出了當前在庫存（Arsenal）中的所有 AI Agent 技能，包含中文說明與檔案連結。
+本文件列出 Firstsun Skills 目前收錄的 AI Agent 技能，包含中文說明與檔案連結。
 
 ## 🛠️ 基礎工具 (Basic Tools)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
 | **skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/skill-manager/SKILL.md) |
 | **permission-cleanup** | 稽核並清理 Claude Code 權限規則（`.claude/settings.json` / `settings.local.json` 的 `permissions.allow`）：找出規則字串中洩漏的憑證、綁定已過期 job ID/PID/日期的一次性規則、以及已被更廣泛萬用字元涵蓋的多餘規則。 | [SKILL.md](./custom/basic/permission-cleanup/SKILL.md) |
-| **firstsun-project-init** | 新專案一站式初始化流程：挑選並安裝相關技能、透過 firstsun-harness 建立代理 harness、建立 firstsun-dev org 下的 GitHub repo 並設定描述/tags、更新組織 profile README。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
+| **firstsun-project-init** | Firstsun Dev 專案初始化流程：挑選並安裝相關技能、透過 firstsun-harness 建立 agent harness、建立或對齊 GitHub repo metadata/README，並套用 `Workshop → Supporting → Flagship` governance；新專案預設為 Workshop，不因初始化自動加入 org profile、pins 或 case study。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
 | **firstsun-pm** | firstsun-dev 組織的專案管理技能：跨 repo 統一 issue 建立規範，依 repo 路由至對應 Project Board（多數 repo → #6，heaven-monorepo/heaven-www → #9（copyProjectV2 複製自 #6，欄位與六個內建 workflow 皆一致））、強制命名慣例，並協助設定 Estimate/Priority 欄位。也涵蓋 issue → PR 的出貨流程：lint/build/test 過關才 commit、PR 內容自動帶 `Closes #<issue>`（跨 repo 用 `Closes org/repo#<issue>`）讓 GitHub 自動連結並在合併時關閉 issue，並同步更新 board 狀態。 | [SKILL.md](./custom/basic/firstsun-pm/SKILL.md) |
 | **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
 | **validate-skills** | 驗證技能是否符合 agentskills.io 規範與最佳實踐。 | [SKILL.md](./external/basic/validate-skills/SKILL.md) |
