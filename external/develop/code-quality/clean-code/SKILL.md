@@ -1,9 +1,14 @@
 ---
 name: clean-code
-description: Apply Robert C. Martin's Clean Code principles (naming, functions, comments, formatting, error handling, tests, classes, code smells). Use when writing new code, reviewing pull requests, refactoring legacy code, or aligning on team coding standards.
+description: "This skill embodies the principles of \"Clean Code\" by Robert C. Martin (Uncle Bob). Use it to transform \"code that works\" into \"code that is clean.\""
+risk: safe
+source: "ClawForge (https://github.com/jackjin1997/ClawForge)"
+date_added: "2026-02-27"
 ---
 
 # Clean Code Skill
+
+This skill embodies the principles of "Clean Code" by Robert C. Martin (Uncle Bob). Use it to transform "code that works" into "code that is clean."
 
 ## 🧠 Core Philosophy
 > "Code is clean if it can be read, and enhanced by a developer other than its original author." — Grady Booch
@@ -33,7 +38,7 @@ Use this skill when:
 
 ## 3. Comments
 - **Don't Comment Bad Code—Rewrite It**: Most comments are a sign of failure to express ourselves in code.
-- **Explain Yourself in Code**:
+- **Explain Yourself in Code**: 
   ```python
   # Check if employee is eligible for full benefits
   if employee.flags & HOURLY and employee.age > 65:
@@ -87,6 +92,12 @@ Use this skill when:
 - [ ] Have I avoided comments by making the code clearer?
 - [ ] Am I passing too many arguments?
 - [ ] Is there a failing test for this change?
+
+## Example
+
+**User request:**
+
+> Refactor this working code for clearer names, smaller units, explicit errors, and preserved behavior; verify it with focused tests.
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.
