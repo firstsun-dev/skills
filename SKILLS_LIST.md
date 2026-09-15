@@ -196,18 +196,33 @@
 
 ## 🔌 Plugins
 
-透過 `.claude-plugin/` 打包成可用 `/plugin install` 安裝的 Claude Code plugin，內容以 symlink 指回 `custom/`／`external/` 中的原始技能，僅限本機使用。
+第三方 `external/` 技能以單一 `firstsun-external` marketplace 對外發佈，同時支援 ChatGPT/Codex 與 Claude Code 兩種客戶端。每個 plugin 目錄（`plugins/<plugin-id>/`）都同時提供 `.codex-plugin/plugin.json` 與 `.claude-plugin/plugin.json` 兩份内容相同的清單，由 `scripts/sync-external-marketplace.mjs` 從 `marketplace/external/catalog.json` 與 `external/` 自動產生，請勿手動編輯。技能數量以 `catalog.json` 的 `expectedSkillCount` 為準，並由 `scripts/test-external-marketplace.mjs` 驗證。
 
 | Marketplace / Plugin | 說明 | 內含技能 | 檔案連結 |
 | :--- | :--- | :--- | :--- |
-| **tianyao-skills** (marketplace) | 個人 marketplace，登記 `/plugin marketplace add ~/skills`。 | — | [marketplace.json](./.claude-plugin/marketplace.json) |
-| **most-used-skills** | 依全專案 session 使用頻率統計出的最常用技能包（`firstsun-pm`、`validate-skills`、`firstsun-harness`、`skill-manager`、`find-skills`、`skill-creator`、`frontend-design`、`cloudflare`、`tailored-resume-generator`），另加新建的 `permission-cleanup`（尚無使用紀錄，非依頻率入選）。 | 10 個 | [plugin.json](./plugin-most-used/.claude-plugin/plugin.json) |
-| **firstsun-external** | 供 ChatGPT 與 Codex Workspace 從 GitHub 匯入的第三方 skills marketplace；各 bundle 為可攜副本，由 `external/` 自動同步產生。 | 70 個 | [marketplace.json](./.agents/plugins/marketplace.json) |
-| **external-agent-workflows** | Agent 編排、搜尋、文件與思考工作流。 | 13 個 | [plugin.json](./plugins/external-agent-workflows/.codex-plugin/plugin.json) |
-| **external-developer-workflows** | 程式品質、DevOps、安全、Rust 與 i18n 工作流。 | 16 個 | [plugin.json](./plugins/external-developer-workflows/.codex-plugin/plugin.json) |
-| **external-frontend-design** | 前端實作、視覺系統、UI 與動畫技能。 | 19 個 | [plugin.json](./plugins/external-frontend-design/.codex-plugin/plugin.json) |
-| **external-video-design** | 影片、Remotion、品牌與資料視覺化技能。 | 10 個 | [plugin.json](./plugins/external-video-design/.codex-plugin/plugin.json) |
-| **external-career-health** | 職涯、生產力與健康教育技能；非醫療照護。 | 12 個 | [plugin.json](./plugins/external-career-health/.codex-plugin/plugin.json) |
+| **firstsun-external** (marketplace) | 供 ChatGPT/Codex 與 Claude Code 共用匯入的第三方 skills marketplace。 | 86 個 | [.agents/plugins/marketplace.json](./.agents/plugins/marketplace.json) ・ [.claude-plugin/marketplace.json](./.claude-plugin/marketplace.json) |
+
+### 🛠️ Build
+
+| Plugin | 說明 | 內含技能 | 檔案連結 |
+| :--- | :--- | :--- | :--- |
+| **agent-toolkit** | Agent 框架、提示技巧與結構化推理等第三方技能。 | 13 個 | [plugin.json](./plugins/agent-toolkit/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/agent-toolkit/.claude-plugin/plugin.json)） |
+| **software-delivery** | 程式品質、DevOps、安全、i18n 與後端工程等第三方技能。 | 16 個 | [plugin.json](./plugins/software-delivery/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/software-delivery/.claude-plugin/plugin.json)） |
+| **spec-driven-development** | OpenSpec 規格驅動工作流相關第三方技能。 | 16 個 | [plugin.json](./plugins/spec-driven-development/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/spec-driven-development/.claude-plugin/plugin.json)） |
+
+### 🎨 Design
+
+| Plugin | 說明 | 內含技能 | 檔案連結 |
+| :--- | :--- | :--- | :--- |
+| **frontend-product-design** | 前端工程、UI 系統、視覺美感與產品設計等第三方技能。 | 19 個 | [plugin.json](./plugins/frontend-product-design/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/frontend-product-design/.claude-plugin/plugin.json)） |
+| **visual-content** | 影片、圖像等視覺內容製作第三方技能。 | 10 個 | [plugin.json](./plugins/visual-content/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/visual-content/.claude-plugin/plugin.json)） |
+
+### 🌱 Grow
+
+| Plugin | 說明 | 內含技能 | 檔案連結 |
+| :--- | :--- | :--- | :--- |
+| **career-productivity** | 職涯發展、求職與生活生產力等第三方技能。 | 5 個 | [plugin.json](./plugins/career-productivity/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/career-productivity/.claude-plugin/plugin.json)） |
+| **health-wellness** | 健身、營養與健康教育等第三方技能；非醫療照護。 | 7 個 | [plugin.json](./plugins/health-wellness/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/health-wellness/.claude-plugin/plugin.json)） |
 
 ---
 *最後更新日期: 2026-07-17*

@@ -48,17 +48,50 @@ For a checked-out local repository, the existing scripts can also register or ex
 ./export.sh <domain>
 ```
 
-## ChatGPT and Codex marketplace
+## Firstsun External marketplace
 
-The portable third-party catalog is published as the `firstsun-external` marketplace in
-[`/.agents/plugins/marketplace.json`](./.agents/plugins/marketplace.json). It separates the
-external catalog into small, optional workflow bundles instead of installing every skill at once.
+**Firstsun External** is one curated marketplace — "Curated skills for practical AI development"
+— published for both ChatGPT/Codex and Claude Code from the same canonical catalog
+([`marketplace/external/catalog.json`](./marketplace/external/catalog.json)). It groups the
+external skill collection into seven focused plugins instead of installing everything at once:
 
-An eligible ChatGPT workspace administrator can import this GitHub repository from **Workspace
-settings → Plugins → Add → Import marketplace**. The marketplace is at the repository root, so
-leave the Path field empty. GitHub-backed marketplaces sync daily after import.
+**Build**
+- `agent-toolkit` — reviewed skills for building and running AI agents
+- `software-delivery` — curated skills for shipping and operating software
+- `spec-driven-development` — reviewed skills for OpenSpec-style spec-driven workflows
 
-The plugin copies under `plugins/external-*/skills/` are generated from `external/` by
+**Design**
+- `frontend-product-design` — curated skills for frontend and product design
+- `visual-content` — reviewed skills for video and visual content creation
+
+**Grow**
+- `career-productivity` — curated skills for career growth and everyday productivity
+- `health-wellness` — reviewed skills for general health and wellness education (not medical care)
+
+### ChatGPT and Codex
+
+An eligible ChatGPT workspace administrator can import this GitHub repository
+(`https://github.com/firstsun-dev/skills`) from **Workspace settings → Plugins → Add → Import
+marketplace**. The marketplace is at the repository root, so leave the Path field empty.
+GitHub-backed marketplaces sync daily after import. This reads
+[`.agents/plugins/marketplace.json`](./.agents/plugins/marketplace.json).
+
+### Claude Code
+
+Claude Code discovers the same catalog from
+[`.claude-plugin/marketplace.json`](./.claude-plugin/marketplace.json):
+
+```
+/plugin marketplace add firstsun-dev/skills
+/plugin install agent-toolkit@firstsun-external
+```
+
+Both clients install identical copied skill contents — each plugin under `plugins/<plugin-id>/`
+carries a `.codex-plugin/plugin.json` and a `.claude-plugin/plugin.json` side by side, generated
+from the same skill files.
+
+`plugins/`, `.agents/plugins/marketplace.json`, and `.claude-plugin/marketplace.json` are
+generated artifacts produced from `external/` and `marketplace/external/catalog.json` by
 `scripts/sync-external-marketplace.mjs`; do not edit them directly. The weekly external update
 workflow refreshes both the canonical mirrors and these portable plugin packages.
 

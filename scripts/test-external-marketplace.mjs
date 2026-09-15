@@ -336,4 +336,47 @@ withFixture((root) => {
   assert.equal(allNames.size, 86, `expected 86 unique skill names, found ${allNames.size}`);
 }
 
+// --- Documentation contract: README.md and SKILLS_LIST.md describe the
+// current one-catalog-two-clients reality, not the deleted personal
+// marketplace / legacy plugin bundles ---
+{
+  const repoRoot = resolve(import.meta.dirname, '..');
+  const catalog = loadCatalog(repoRoot);
+  const readme = readFileSync(join(repoRoot, 'README.md'), 'utf8');
+  const skillsList = readFileSync(join(repoRoot, 'SKILLS_LIST.md'), 'utf8');
+
+  const obsoleteNames = ['tianyao-skills', 'most-used-skills', 'external-career-health'];
+  for (const doc of [
+    { name: 'README.md', text: readme },
+    { name: 'SKILLS_LIST.md', text: skillsList },
+  ]) {
+    for (const obsolete of obsoleteNames) {
+      assert.equal(
+        doc.text.includes(obsolete),
+        false,
+        `${doc.name} must not mention obsolete name: ${obsolete}`,
+      );
+    }
+  }
+
+  const manifestPaths = ['.agents/plugins/marketplace.json', '.claude-plugin/marketplace.json'];
+  for (const manifestPath of manifestPaths) {
+    assert.ok(
+      readme.includes(manifestPath) || skillsList.includes(manifestPath),
+      `documentation must reference manifest path: ${manifestPath}`,
+    );
+  }
+
+  for (const plugin of catalog.plugins) {
+    assert.ok(
+      readme.includes(plugin.id) || skillsList.includes(plugin.id),
+      `documentation must mention plugin id: ${plugin.id}`,
+    );
+    assert.ok(
+      skillsList.includes(String(plugin.expectedSkillCount)),
+      `SKILLS_LIST.md must mention the verified skill count for ${plugin.id}: ${plugin.expectedSkillCount}`,
+    );
+  }
+}
+
 console.log('external marketplace tests: PASS');
