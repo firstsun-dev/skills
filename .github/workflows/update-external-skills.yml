@@ -105,6 +105,9 @@ jobs:
       - name: Refresh portable external marketplace plugins
         run: node scripts/sync-external-marketplace.mjs
 
+      - name: Verify external marketplace parity
+        run: node scripts/sync-external-marketplace.mjs --check
+
       - name: Force-restore upstream source/sourceType/skillPath from the pre-run snapshot
         run: |
           set -e
@@ -171,8 +174,10 @@ jobs:
           # artifacts that aren't covered by .gitignore).
           add-paths: |
             .agents/plugins/marketplace.json
+            .claude-plugin/marketplace.json
+            marketplace/external/catalog.json
             external/**
-            plugins/external-*/**
+            plugins/**
             skills-lock.json
           commit-message: "chore(external): weekly sync of external skills from upstream"
           branch: automated/update-external-skills

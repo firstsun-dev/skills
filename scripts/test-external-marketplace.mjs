@@ -252,6 +252,16 @@ withFixture((root) => {
   }
 });
 
+// --- checkOutputs detects drift when a tracked top-level output file is tampered with ---
+withFixture((root) => {
+  writeCatalog(root);
+  const outputs = buildOutputs(root, loadCatalog(root));
+  writeOutputs(root, outputs);
+  assert.deepEqual(checkOutputs(root, outputs), []);
+  writeFileSync(join(root, '.claude-plugin/marketplace.json'), '{}\n');
+  assert.deepEqual(checkOutputs(root, outputs), ['changed: .claude-plugin/marketplace.json']);
+});
+
 // --- writeOutputs preserves the executable bit on copied skill scripts ---
 withFixture((root) => {
   writeCatalog(root);

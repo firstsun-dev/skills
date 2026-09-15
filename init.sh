@@ -8,6 +8,11 @@ test -f SKILLS_LIST.md && echo "OK: SKILLS_LIST.md present" || { echo "FAIL: SKI
 test -f skills-lock.json && echo "OK: skills-lock.json present" || { echo "FAIL: skills-lock.json missing"; exit 1; }
 test -f custom/basic/skill-manager/SKILL.md && echo "OK: skill-manager SOP present" || { echo "FAIL: skill-manager/SKILL.md missing"; exit 1; }
 
+echo "=== external marketplace parity ==="
+node scripts/test-external-marketplace.mjs
+node scripts/sync-external-marketplace.mjs --check
+echo "OK: external marketplace outputs match the canonical catalog"
+
 echo "=== Every skill directory has a SKILL.md (one level deep, respecting nesting) ==="
 missing=0
 for dir in custom/*/*/ external/*/*/; do
