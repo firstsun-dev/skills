@@ -158,8 +158,8 @@
         "feat-006",
         "feat-014"
       ],
-      "status": "not-started",
-      "evidence": "Design approved in chat and specified in docs/superpowers/specs/2026-09-15-cross-platform-external-marketplace-design.md. Taxonomy revision approved: Build, Design, and Grow contain seven task-oriented plugins covering all 86 external skills. Implementation plan written at docs/superpowers/plans/2026-09-15-cross-platform-external-marketplace.md; execution pending."
+      "status": "done",
+      "evidence": "Cross-platform external marketplace shipped: one canonical catalog (marketplace/external/catalog.json) generates matching Codex (.agents/plugins/marketplace.json) and Claude Code (.claude-plugin/marketplace.json) manifests plus 7 portable dual-manifest plugin bundles under plugins/ — agent-toolkit, career-productivity, frontend-product-design, health-wellness, software-delivery, spec-driven-development, visual-content — covering all 86 assigned external skills (verified: `find plugins -mindepth 1 -maxdepth 1 -type d` = 7, `find plugins -mindepth 4 -maxdepth 4 -type f -name SKILL.md` = 86, `find plugins -type l` = 0, no symlinks). `node scripts/test-external-marketplace.mjs` passes (external marketplace tests: PASS). `node scripts/sync-external-marketplace.mjs --check` passes clean (no parity drift). `./init.sh` passes end-to-end including the new external-marketplace-parity gate. Implementation commits on this branch: d4cd7da (feat: define canonical external catalog), c08a399 (feat: generate dual-platform external bundles), 4dc90a6 (fix: preserve executable bit on copied skill scripts), 3790929 (ci: enforce cross-platform parity), b4ffcad (docs: present Build Design Grow catalog). `git status --short` and `git diff -- skills-lock.json` are both empty — no provenance drift, no stray files."
     }
   ]
 }
