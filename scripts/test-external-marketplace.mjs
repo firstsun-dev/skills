@@ -372,9 +372,20 @@ withFixture((root) => {
       readme.includes(plugin.id) || skillsList.includes(plugin.id),
       `documentation must mention plugin id: ${plugin.id}`,
     );
+    // Scope the count check to the line(s) describing this specific plugin —
+    // a bare whole-file substring search for e.g. "5" would match unrelated
+    // digits anywhere in the 800+ line doc (a date, another plugin's count,
+    // etc.) and could never fail even if this plugin's documented count drifted.
+    const pluginLines = skillsList
+      .split('\n')
+      .filter((line) => line.includes(plugin.id) || line.includes(plugin.displayName));
     assert.ok(
-      skillsList.includes(String(plugin.expectedSkillCount)),
-      `SKILLS_LIST.md must mention the verified skill count for ${plugin.id}: ${plugin.expectedSkillCount}`,
+      pluginLines.length > 0,
+      `SKILLS_LIST.md must have a line describing plugin ${plugin.id} to check its skill count against`,
+    );
+    assert.ok(
+      pluginLines.some((line) => line.includes(String(plugin.expectedSkillCount))),
+      `SKILLS_LIST.md must mention the verified skill count for ${plugin.id} on the line describing it: ${plugin.expectedSkillCount}`,
     );
   }
 }
