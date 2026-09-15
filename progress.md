@@ -3,15 +3,20 @@
 ## Current State
 
 **Last Updated:** 2026-09-15
-**Active Feature:** feat-015 done; feat-005 next up
+**Active Feature:** feat-016 design review; implementation not started
 
 Completed work is archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
 
 ## What's In Progress
 
-- [ ] feat-005: Remaining external/ validation failures — not started this session
+- [ ] feat-016: Cross-platform Firstsun External marketplace — design specification awaiting user review
 
 ## Since Last Update
+
+feat-016 design approved in chat and written to
+`docs/superpowers/specs/2026-09-15-cross-platform-external-marketplace-design.md`. The design uses
+one canonical catalog to generate equivalent Codex and Claude marketplace manifests plus portable
+dual-manifest plugin bundles. No marketplace implementation has started.
 
 feat-015 completed 2026-09-15: installed OpenSpec CLI v1.13.0 and initialized this repository
 with the English core schema plus Codex and Claude Code integrations. The tracked configuration
@@ -23,15 +28,9 @@ feat-014's evidence in `feature_list.json`. Completed history is in [archive/202
 
 ## What's Next
 
-1. Fix name/directory mismatches: `external/develop/windmill-rust-backend` (name field says "rust-backend"), `external/think/decision-management` (name field says "running-decision-processes")
-2. Fix invalid name format: `external/video-design/ckm-banner-design` (name field is "ckm:banner-design" — colon not allowed)
-3. Split or trim oversized SKILL.md bodies (>500 lines): `imagegen-frontend-mobile` (1465 lines),
-   `imagegen-frontend-web` (987 lines), `brandkit` (798 lines), `mental-health-psychoeducation` (561 lines)
-4. Rewrite imperative-voice descriptions to third-person: `fitness-coach`, `habit-tracker`,
-   `workout-program-designer` (also fix verbatim description-in-body repeat), `remotion-best-practices`
-   (missing "when to use")
-5. Convert backtick-style references to markdown links: `healthkit`, `personal-productivity`
-6. Fix `firecrawl-search` "See also" links pointing to non-existent sibling skills
+1. Ask the user to review and approve the feat-016 design specification.
+2. After approval, create the implementation plan through the required writing-plans workflow.
+3. Keep feat-005 unchanged as known upstream validation debt.
 
 ## Blockers / Risks
 

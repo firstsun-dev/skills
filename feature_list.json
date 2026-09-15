@@ -149,6 +149,17 @@
       ],
       "status": "done",
       "evidence": "Installed @fission-ai/openspec v1.13.0 globally. Ran openspec init . with English artifacts, the core profile, and Codex/Claude Code integrations. Added openspec/config.yaml, empty specs/archive structure, and six Claude Code OPSX commands; excluded the pre-existing ignored .claude/worktrees/ worktree."
+    },
+    {
+      "id": "feat-016",
+      "name": "Unify Firstsun External marketplace across platforms",
+      "description": "Generate equivalent ChatGPT/Codex and Claude Code Firstsun External marketplaces from one canonical catalog, with portable dual-manifest plugin bundles and parity validation.",
+      "dependencies": [
+        "feat-006",
+        "feat-014"
+      ],
+      "status": "not-started",
+      "evidence": "Design approved in chat and specified in docs/superpowers/specs/2026-09-15-cross-platform-external-marketplace-design.md; implementation plan pending user review."
     }
   ]
 }
