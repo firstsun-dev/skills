@@ -1,0 +1,18 @@
+{
+  "name": "career-productivity",
+  "version": "1.0.0",
+  "description": "Curated third-party skills for career growth and everyday productivity.",
+  "author": {
+    "name": "Firstsun Dev"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Career & Productivity",
+    "shortDescription": "Curated third-party skills for career growth and everyday productivity.",
+    "longDescription": "A collection of curated third-party skills for career development, job search, and lifestyle productivity tasks.",
+    "developerName": "Firstsun Dev",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Use the relevant Career & Productivity skill for this task."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "spec-driven-development",
+  "version": "1.0.0",
+  "description": "Reviewed third-party skills for spec-driven development workflows.",
+  "author": {
+    "name": "Firstsun Dev"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Spec-Driven Development",
+    "shortDescription": "Reviewed third-party skills for spec-driven development workflows.",
+    "longDescription": "A collection of reviewed third-party skills for the OpenSpec workflow: proposing, exploring, implementing, verifying, and archiving spec-driven changes.",
+    "developerName": "Firstsun Dev",
+    "category": "Developer",
+    "capabilities": [],
+    "defaultPrompt": "Use the relevant Spec-Driven Development skill for this task."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "agent-toolkit",
+  "version": "1.0.0",
+  "description": "Reviewed third-party skills for building and running AI agents.",
+  "author": {
+    "name": "Firstsun Dev"
+  }
+}

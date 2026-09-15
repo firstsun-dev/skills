@@ -5,62 +5,58 @@
   },
   "plugins": [
     {
-      "name": "external-agent-workflows",
+      "name": "agent-toolkit",
       "source": {
         "source": "local",
-        "path": "./plugins/external-agent-workflows"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "external-developer-workflows",
-      "source": {
-        "source": "local",
-        "path": "./plugins/external-developer-workflows"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
+        "path": "./plugins/agent-toolkit"
       },
       "category": "Developer"
     },
     {
-      "name": "external-frontend-design",
+      "name": "software-delivery",
       "source": {
         "source": "local",
-        "path": "./plugins/external-frontend-design"
+        "path": "./plugins/software-delivery"
       },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
+      "category": "Developer"
+    },
+    {
+      "name": "spec-driven-development",
+      "source": {
+        "source": "local",
+        "path": "./plugins/spec-driven-development"
+      },
+      "category": "Developer"
+    },
+    {
+      "name": "frontend-product-design",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-product-design"
       },
       "category": "Design"
     },
     {
-      "name": "external-video-design",
+      "name": "visual-content",
       "source": {
         "source": "local",
-        "path": "./plugins/external-video-design"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
+        "path": "./plugins/visual-content"
       },
       "category": "Design"
     },
     {
-      "name": "external-career-health",
+      "name": "career-productivity",
       "source": {
         "source": "local",
-        "path": "./plugins/external-career-health"
+        "path": "./plugins/career-productivity"
       },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
+      "category": "Productivity"
+    },
+    {
+      "name": "health-wellness",
+      "source": {
+        "source": "local",
+        "path": "./plugins/health-wellness"
       },
       "category": "Productivity"
     }
