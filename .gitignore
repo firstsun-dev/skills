@@ -1,4 +1,5 @@
 .agents/skills/
 .claude/skills
 .claude/worktrees
+.worktrees/
 .cache/

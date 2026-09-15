@@ -4,13 +4,46 @@ on:
   workflow_dispatch: {}
   schedule:
     - cron: '0 3 * * 1' # Weekly, Monday 03:00 UTC
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 concurrency:
   group: update-external-skills
   cancel-in-progress: false
 
 jobs:
+  verify-marketplace:
+    # Pure verification of whatever is already committed: runs the generator's own
+    # contract tests, then `sync-external-marketplace.mjs --check` against the
+    # committed output (no --write first, unlike the `update` job below) so a
+    # manually hand-edited generated file (e.g. .claude-plugin/marketplace.json or
+    # something under plugins/) actually fails CI instead of silently drifting
+    # until the next weekly sync overwrites it.
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Run external marketplace contract tests
+        run: node scripts/test-external-marketplace.mjs
+
+      - name: Verify no committed drift in generated marketplace output
+        run: node scripts/sync-external-marketplace.mjs --check
+
   update:
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -105,6 +138,9 @@ jobs:
       - name: Refresh portable external marketplace plugins
         run: node scripts/sync-external-marketplace.mjs
 
+      - name: Verify external marketplace parity
+        run: node scripts/sync-external-marketplace.mjs --check
+
       - name: Force-restore upstream source/sourceType/skillPath from the pre-run snapshot
         run: |
           set -e
@@ -136,7 +172,7 @@ jobs:
           mv /tmp/skills-lock.after.json skills-lock.json
 
       - name: Clean up local agent install artifacts (gitignored, not part of the PR)
-        run: rm -rf .agents .claude/skills
+        run: rm -rf .agents/skills .claude/skills
 
       - name: Verify repo structure (skill-manager flattened design)
         run: ./init.sh
@@ -166,13 +202,15 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.RELEASE_TOKEN }}
-          # Only ever stage these two — regardless of whatever else `npx skills add`
-          # or `setup.sh` may have written to the working tree (e.g. agent install
-          # artifacts that aren't covered by .gitignore).
+          # Only ever stage these six generated/tracked marketplace paths — regardless
+          # of whatever else `npx skills add` or `setup.sh` may have written to the
+          # working tree (e.g. agent install artifacts that aren't covered by .gitignore).
           add-paths: |
             .agents/plugins/marketplace.json
+            .claude-plugin/marketplace.json
+            marketplace/external/catalog.json
             external/**
-            plugins/external-*/**
+            plugins/**
             skills-lock.json
           commit-message: "chore(external): weekly sync of external skills from upstream"
           branch: automated/update-external-skills

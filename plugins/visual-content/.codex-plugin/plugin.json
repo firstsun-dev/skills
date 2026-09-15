@@ -1,0 +1,18 @@
+{
+  "name": "visual-content",
+  "version": "1.0.0",
+  "description": "Reviewed third-party skills for video and visual content creation.",
+  "author": {
+    "name": "Firstsun Dev"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Visual Content",
+    "shortDescription": "Reviewed third-party skills for video and visual content creation.",
+    "longDescription": "A collection of reviewed third-party skills for producing video, imagery, and other visual content assets.",
+    "developerName": "Firstsun Dev",
+    "category": "Design",
+    "capabilities": [],
+    "defaultPrompt": "Use the relevant Visual Content skill for this task."
+  }
+}

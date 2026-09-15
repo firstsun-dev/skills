@@ -1,0 +1,18 @@
+{
+  "name": "software-delivery",
+  "version": "1.0.0",
+  "description": "Curated third-party skills for shipping and operating software.",
+  "author": {
+    "name": "Firstsun Dev"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Software Delivery",
+    "shortDescription": "Curated third-party skills for shipping and operating software.",
+    "longDescription": "A collection of curated third-party skills covering code quality, DevOps, security, internationalization, and backend engineering practices for shipping and operating software.",
+    "developerName": "Firstsun Dev",
+    "category": "Developer",
+    "capabilities": [],
+    "defaultPrompt": "Use the relevant Software Delivery skill for this task."
+  }
+}

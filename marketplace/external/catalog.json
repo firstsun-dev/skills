@@ -1,0 +1,97 @@
+{
+  "name": "firstsun-external",
+  "displayName": "Firstsun External",
+  "promise": "Curated skills for practical AI development.",
+  "plugins": [
+    {
+      "id": "agent-toolkit",
+      "displayName": "Agent Toolkit",
+      "brandCategory": "Build",
+      "platformCategory": "Developer",
+      "version": "1.0.0",
+      "shortDescription": "Reviewed third-party skills for building and running AI agents.",
+      "longDescription": "A collection of reviewed third-party skills covering agent frameworks, prompt patterns, and structured reasoning techniques for building reliable AI agents.",
+      "defaultPrompt": "Use the relevant Agent Toolkit skill for this task.",
+      "expectedSkillCount": 13,
+      "sourceRoots": ["external/ai-agents", "external/basic", "external/think"]
+    },
+    {
+      "id": "software-delivery",
+      "displayName": "Software Delivery",
+      "brandCategory": "Build",
+      "platformCategory": "Developer",
+      "version": "1.0.0",
+      "shortDescription": "Curated third-party skills for shipping and operating software.",
+      "longDescription": "A collection of curated third-party skills covering code quality, DevOps, security, internationalization, and backend engineering practices for shipping and operating software.",
+      "defaultPrompt": "Use the relevant Software Delivery skill for this task.",
+      "expectedSkillCount": 16,
+      "sourceRoots": [
+        "external/develop/code-quality",
+        "external/develop/devops",
+        "external/develop/security",
+        "external/develop/internationalization-i18n",
+        "external/develop/windmill-rust-backend"
+      ]
+    },
+    {
+      "id": "spec-driven-development",
+      "displayName": "Spec-Driven Development",
+      "brandCategory": "Build",
+      "platformCategory": "Developer",
+      "version": "1.0.0",
+      "shortDescription": "Reviewed third-party skills for spec-driven development workflows.",
+      "longDescription": "A collection of reviewed third-party skills for the OpenSpec workflow: proposing, exploring, implementing, verifying, and archiving spec-driven changes.",
+      "defaultPrompt": "Use the relevant Spec-Driven Development skill for this task.",
+      "expectedSkillCount": 16,
+      "sourceRoots": ["external/develop/openspec"]
+    },
+    {
+      "id": "frontend-product-design",
+      "displayName": "Frontend & Product Design",
+      "brandCategory": "Design",
+      "platformCategory": "Design",
+      "version": "1.0.0",
+      "shortDescription": "Curated third-party skills for frontend and product design.",
+      "longDescription": "A collection of curated third-party skills for frontend engineering, UI systems, visual taste, and product design craft.",
+      "defaultPrompt": "Use the relevant Frontend & Product Design skill for this task.",
+      "expectedSkillCount": 19,
+      "sourceRoots": ["external/develop/frontend"]
+    },
+    {
+      "id": "visual-content",
+      "displayName": "Visual Content",
+      "brandCategory": "Design",
+      "platformCategory": "Design",
+      "version": "1.0.0",
+      "shortDescription": "Reviewed third-party skills for video and visual content creation.",
+      "longDescription": "A collection of reviewed third-party skills for producing video, imagery, and other visual content assets.",
+      "defaultPrompt": "Use the relevant Visual Content skill for this task.",
+      "expectedSkillCount": 10,
+      "sourceRoots": ["external/video-design"]
+    },
+    {
+      "id": "career-productivity",
+      "displayName": "Career & Productivity",
+      "brandCategory": "Grow",
+      "platformCategory": "Productivity",
+      "version": "1.0.0",
+      "shortDescription": "Curated third-party skills for career growth and everyday productivity.",
+      "longDescription": "A collection of curated third-party skills for career development, job search, and lifestyle productivity tasks.",
+      "defaultPrompt": "Use the relevant Career & Productivity skill for this task.",
+      "expectedSkillCount": 5,
+      "sourceRoots": ["external/career", "external/lifestyle"]
+    },
+    {
+      "id": "health-wellness",
+      "displayName": "Health & Wellness",
+      "brandCategory": "Grow",
+      "platformCategory": "Productivity",
+      "version": "1.0.0",
+      "shortDescription": "Reviewed third-party skills for general health and wellness education. Not medical care.",
+      "longDescription": "A collection of reviewed third-party skills covering fitness, nutrition, and wellness education. This plugin provides general information only, is not medical care, and does not replace professional diagnosis or treatment.",
+      "defaultPrompt": "Use the relevant Health & Wellness skill for this task. This is general information, not medical care.",
+      "expectedSkillCount": 7,
+      "sourceRoots": ["external/health"]
+    }
+  ]
+}

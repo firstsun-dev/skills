@@ -1,19 +1,72 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "tianyao-skills",
-  "description": "Personal marketplace for tianyao's Firstsun Skill Arsenal plugins.",
+  "name": "firstsun-external",
+  "description": "Curated skills for practical AI development.",
   "owner": {
-    "name": "tianyao"
+    "name": "Firstsun Dev"
   },
   "plugins": [
     {
-      "name": "most-used-skills",
-      "description": "Bundle of tianyao's most-used Claude Code skills, ranked by usage across all project session history.",
+      "name": "agent-toolkit",
+      "description": "Reviewed third-party skills for building and running AI agents.",
       "author": {
-        "name": "tianyao"
+        "name": "Firstsun Dev"
+      },
+      "category": "developer",
+      "source": "./plugins/agent-toolkit"
+    },
+    {
+      "name": "software-delivery",
+      "description": "Curated third-party skills for shipping and operating software.",
+      "author": {
+        "name": "Firstsun Dev"
+      },
+      "category": "developer",
+      "source": "./plugins/software-delivery"
+    },
+    {
+      "name": "spec-driven-development",
+      "description": "Reviewed third-party skills for spec-driven development workflows.",
+      "author": {
+        "name": "Firstsun Dev"
+      },
+      "category": "developer",
+      "source": "./plugins/spec-driven-development"
+    },
+    {
+      "name": "frontend-product-design",
+      "description": "Curated third-party skills for frontend and product design.",
+      "author": {
+        "name": "Firstsun Dev"
+      },
+      "category": "design",
+      "source": "./plugins/frontend-product-design"
+    },
+    {
+      "name": "visual-content",
+      "description": "Reviewed third-party skills for video and visual content creation.",
+      "author": {
+        "name": "Firstsun Dev"
+      },
+      "category": "design",
+      "source": "./plugins/visual-content"
+    },
+    {
+      "name": "career-productivity",
+      "description": "Curated third-party skills for career growth and everyday productivity.",
+      "author": {
+        "name": "Firstsun Dev"
       },
       "category": "productivity",
-      "source": "./plugin-most-used"
+      "source": "./plugins/career-productivity"
+    },
+    {
+      "name": "health-wellness",
+      "description": "Reviewed third-party skills for general health and wellness education. Not medical care.",
+      "author": {
+        "name": "Firstsun Dev"
+      },
+      "category": "productivity",
+      "source": "./plugins/health-wellness"
     }
   ]
 }

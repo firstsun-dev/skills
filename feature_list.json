@@ -149,6 +149,17 @@
       ],
       "status": "done",
       "evidence": "Installed @fission-ai/openspec v1.13.0 globally. Ran openspec init . with English artifacts, the core profile, and Codex/Claude Code integrations. Added openspec/config.yaml, empty specs/archive structure, and six Claude Code OPSX commands; excluded the pre-existing ignored .claude/worktrees/ worktree."
+    },
+    {
+      "id": "feat-016",
+      "name": "Unify Firstsun External marketplace across platforms",
+      "description": "Generate equivalent ChatGPT/Codex and Claude Code Firstsun External marketplaces from one canonical catalog, with portable dual-manifest plugin bundles and parity validation.",
+      "dependencies": [
+        "feat-006",
+        "feat-014"
+      ],
+      "status": "done",
+      "evidence": "Cross-platform external marketplace shipped: one canonical catalog (marketplace/external/catalog.json) generates matching Codex (.agents/plugins/marketplace.json) and Claude Code (.claude-plugin/marketplace.json) manifests plus 7 portable dual-manifest plugin bundles under plugins/ — agent-toolkit, career-productivity, frontend-product-design, health-wellness, software-delivery, spec-driven-development, visual-content — covering all 86 assigned external skills (verified: `find plugins -mindepth 1 -maxdepth 1 -type d` = 7, `find plugins -mindepth 4 -maxdepth 4 -type f -name SKILL.md` = 86, `find plugins -type l` = 0, no symlinks). `node scripts/test-external-marketplace.mjs` passes (external marketplace tests: PASS). `node scripts/sync-external-marketplace.mjs --check` passes clean (no parity drift). `./init.sh` passes end-to-end including the new external-marketplace-parity gate. Implementation commits on this branch: d4cd7da (feat: define canonical external catalog), c08a399 (feat: generate dual-platform external bundles), 4dc90a6 (fix: preserve executable bit on copied skill scripts), 3790929 (ci: enforce cross-platform parity), b4ffcad (docs: present Build Design Grow catalog), f278c87 (chore: record cross-platform catalog completion), c9d43b7 (fix: resolve final-review findings). Final whole-branch review (2 rounds) caught and fixed a Critical cross-task composition bug (the CI workflow's `rm -rf .agents .claude/skills` cleanup step deleted the tracked `.agents/plugins/marketplace.json`, which the new init.sh parity gate then hard-failed on every weekly run) and an Important gap (CI had no push/PR-triggered path to catch committed drift — the only check ran right after the generator's own `--write`, a tautology); both fixed in c9d43b7 and re-reviewed clean. `git status --short` and `git diff -- skills-lock.json` are both empty — no provenance drift, no stray files."
     }
   ]
 }

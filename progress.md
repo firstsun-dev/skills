@@ -3,15 +3,20 @@
 ## Current State
 
 **Last Updated:** 2026-09-15
-**Active Feature:** feat-015 done; feat-005 next up
+**Active Feature:** none — feat-016 complete; repo idle, ready for next feature
 
 Completed work is archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
 
 ## What's In Progress
 
-- [ ] feat-005: Remaining external/ validation failures — not started this session
+_None._
 
 ## Since Last Update
+
+feat-016 completed 2026-09-15: shipped the cross-platform external marketplace (canonical
+catalog → generated Codex + Claude Code manifests, 7 dual-manifest plugin bundles, 86 skills
+assigned, parity check in `init.sh`/CI). Full evidence and command output in feat-016's entry in
+`feature_list.json`.
 
 feat-015 completed 2026-09-15: installed OpenSpec CLI v1.13.0 and initialized this repository
 with the English core schema plus Codex and Claude Code integrations. The tracked configuration
@@ -23,15 +28,8 @@ feat-014's evidence in `feature_list.json`. Completed history is in [archive/202
 
 ## What's Next
 
-1. Fix name/directory mismatches: `external/develop/windmill-rust-backend` (name field says "rust-backend"), `external/think/decision-management` (name field says "running-decision-processes")
-2. Fix invalid name format: `external/video-design/ckm-banner-design` (name field is "ckm:banner-design" — colon not allowed)
-3. Split or trim oversized SKILL.md bodies (>500 lines): `imagegen-frontend-mobile` (1465 lines),
-   `imagegen-frontend-web` (987 lines), `brandkit` (798 lines), `mental-health-psychoeducation` (561 lines)
-4. Rewrite imperative-voice descriptions to third-person: `fitness-coach`, `habit-tracker`,
-   `workout-program-designer` (also fix verbatim description-in-body repeat), `remotion-best-practices`
-   (missing "when to use")
-5. Convert backtick-style references to markdown links: `healthkit`, `personal-productivity`
-6. Fix `firecrawl-search` "See also" links pointing to non-existent sibling skills
+1. Pick the next unfinished feature from `feature_list.json`.
+2. Keep feat-005 unchanged as known upstream validation debt.
 
 ## Blockers / Risks
 
@@ -42,5 +40,5 @@ bodies, which need a real content split (progressive disclosure into references/
 
 ## Notes for Next Session
 
-Start with `./init.sh`, then work through feat-005's "What's Next" list above — each item maps to a specific
-skill directory. Fix, then re-run `/validate-skills` on just that skill before moving to the next.
+Start with `./init.sh`, then read `feature_list.json` to pick the next unfinished feature. Keep the
+external-upstream exceptions documented under feat-005 unchanged.
