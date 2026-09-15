@@ -139,6 +139,16 @@
       ],
       "status": "done",
       "evidence": "Added all 16 official fission-ai/openspec skills under external/develop/openspec/ and added SKILLS_LIST.md entries. skills-lock.json retains source=fission-ai/openspec and sourceType=github. 13 skills pass quick validation; draft-openspec-docs, verify-openspec-docs, and write-openspec-docs retain upstream argument-hint frontmatter, which the current validator rejects. Kept intact under the established external-upstream policy; ./init.sh passes."
+    },
+    {
+      "id": "feat-015",
+      "name": "Initialize OpenSpec for Skill Arsenal",
+      "description": "Install the official OpenSpec CLI and initialize the Skill Arsenal with the core spec-driven schema and Codex/Claude Code project integration.",
+      "dependencies": [
+        "feat-014"
+      ],
+      "status": "done",
+      "evidence": "Installed @fission-ai/openspec v1.13.0 globally. Ran openspec init . with English artifacts, the core profile, and Codex/Claude Code integrations. Added openspec/config.yaml, empty specs/archive structure, and six Claude Code OPSX commands; excluded the pre-existing ignored .claude/worktrees/ worktree."
     }
   ]
 }
