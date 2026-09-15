@@ -159,7 +159,7 @@
         "feat-014"
       ],
       "status": "not-started",
-      "evidence": "Design approved in chat and specified in docs/superpowers/specs/2026-09-15-cross-platform-external-marketplace-design.md. Taxonomy revision approved: Build, Design, and Grow contain seven task-oriented plugins covering all 86 external skills. Implementation plan pending final user review."
+      "evidence": "Design approved in chat and specified in docs/superpowers/specs/2026-09-15-cross-platform-external-marketplace-design.md. Taxonomy revision approved: Build, Design, and Grow contain seven task-oriented plugins covering all 86 external skills. Implementation plan written at docs/superpowers/plans/2026-09-15-cross-platform-external-marketplace.md; execution pending."
     }
   ]
 }

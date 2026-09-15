@@ -3,13 +3,13 @@
 ## Current State
 
 **Last Updated:** 2026-09-15
-**Active Feature:** feat-016 design review; implementation not started
+**Active Feature:** feat-016 implementation planned; execution not started
 
 Completed work is archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
 
 ## What's In Progress
 
-- [ ] feat-016: Cross-platform Firstsun External marketplace — design specification awaiting user review
+- [ ] feat-016: Cross-platform Firstsun External marketplace — implementation plan ready
 
 ## Since Last Update
 
@@ -19,6 +19,9 @@ one canonical catalog to generate equivalent Codex and Claude marketplace manife
 dual-manifest plugin bundles. The approved taxonomy groups seven installable plugins under Build,
 Design, and Grow and assigns all 86 current external skills exactly once. No marketplace
 implementation has started.
+
+Implementation tasks are documented in
+`docs/superpowers/plans/2026-09-15-cross-platform-external-marketplace.md`; execution has not started.
 
 feat-015 completed 2026-09-15: installed OpenSpec CLI v1.13.0 and initialized this repository
 with the English core schema plus Codex and Claude Code integrations. The tracked configuration
@@ -30,9 +33,8 @@ feat-014's evidence in `feature_list.json`. Completed history is in [archive/202
 
 ## What's Next
 
-1. Ask the user to review and approve the feat-016 design specification.
-2. After approval, create the implementation plan through the required writing-plans workflow.
-3. Keep feat-005 unchanged as known upstream validation debt.
+1. Execute `docs/superpowers/plans/2026-09-15-cross-platform-external-marketplace.md` task by task.
+2. Keep feat-005 unchanged as known upstream validation debt.
 
 ## Blockers / Risks
 
@@ -43,5 +45,5 @@ bodies, which need a real content split (progressive disclosure into references/
 
 ## Notes for Next Session
 
-Start with `./init.sh`, then work through feat-005's "What's Next" list above — each item maps to a specific
-skill directory. Fix, then re-run `/validate-skills` on just that skill before moving to the next.
+Start with `./init.sh`, read the feat-016 spec and implementation plan, then execute Task 1. Keep the
+external-upstream exceptions documented under feat-005 unchanged.
