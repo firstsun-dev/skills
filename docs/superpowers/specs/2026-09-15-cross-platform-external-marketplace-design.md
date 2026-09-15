@@ -55,19 +55,37 @@ Generated marketplace manifests and copied skill packages must not be edited dir
 
 The catalog uses source directories rather than enumerating every skill. Recursive discovery includes every directory containing `SKILL.md`, so newly synchronized skills enter their assigned bundle automatically. Duplicate skill names across source roots are fatal because installation would otherwise be ambiguous.
 
-## Bundle Model
+## Marketplace Taxonomy
 
-The initial cross-platform catalog retains five practical bundles:
+The marketplace uses three brand-level categories for discovery and seven task-level plugins for installation. Categories communicate the journey from building to designing to personal growth; plugins remain small enough that users can install only the capabilities relevant to their work.
 
-| Plugin ID | Display name | Purpose |
-| --- | --- | --- |
-| `agent-workflows` | Agent Workflows | Agent orchestration, research, documentation, and reasoning |
-| `developer-workflows` | Developer Workflows | Code quality, DevOps, security, infrastructure, i18n, and specification workflows |
-| `frontend-design` | Frontend Design | Frontend construction, design systems, responsive UI, and interaction |
-| `visual-production` | Visual Production | Video, Remotion, branding, banners, and data visualization |
-| `career-wellness` | Career & Wellness | Career preparation, productivity, fitness, nutrition, sleep, and psychoeducation |
+### Build
 
-The `external-` prefix is removed from plugin IDs because the marketplace name already communicates provenance. Existing OpenSpec skills under `external/develop/openspec/` join `developer-workflows`; a sixth specification bundle is unnecessary until its independent usage justifies another installation decision.
+| Plugin ID | Display name | Purpose | Initial skills |
+| --- | --- | --- | ---: |
+| `agent-toolkit` | Agent Toolkit | Skill creation and validation, research, documentation, brainstorming, subagents, reasoning, and decisions | 13 |
+| `software-delivery` | Software Delivery | Code quality, testing, DevOps, cloud platforms, infrastructure, Git, security, i18n, and Rust | 16 |
+| `spec-driven-development` | Spec-Driven Development | The complete OpenSpec proposal, specification, implementation, verification, archive, and documentation workflow | 16 |
+
+### Design
+
+| Plugin ID | Display name | Purpose | Initial skills |
+| --- | --- | --- | ---: |
+| `frontend-product-design` | Frontend & Product Design | React, Tailwind, UI/UX, design systems, mobile interfaces, interaction, and Three.js | 19 |
+| `visual-content` | Visual Content | AI video, Remotion, brand systems, banners, image generation, and data visualization | 10 |
+
+### Grow
+
+| Plugin ID | Display name | Purpose | Initial skills |
+| --- | --- | --- | ---: |
+| `career-productivity` | Career & Productivity | Resumes, interviews, discovery conversations, personal productivity, and habit tracking | 5 |
+| `health-wellness` | Health & Wellness | Nutrition, fitness, sleep, HealthKit, and mental-health psychoeducation | 7 |
+
+The initial catalog contains 86 external skills. Counts are validation expectations derived from the current `SKILLS_LIST.md`, not permanent caps; generated documentation must update them when canonical sources change.
+
+The `external-` prefix is removed from plugin IDs because the marketplace name already communicates provenance. OpenSpec receives a dedicated plugin because its 16 skills form one coherent lifecycle and would otherwise make Software Delivery too broad. Career and health are separate installation decisions because neither audience should need to install the other domain.
+
+Where a platform exposes only a single category field rather than hierarchical navigation, the plugin manifest uses the closest supported platform category while the Firstsun category remains part of its description and catalog metadata. Platform constraints must not change bundle membership.
 
 ## Generated Package Layout
 
@@ -124,7 +142,7 @@ The generator exits non-zero without claiming success when it encounters:
 Verification covers:
 
 1. Parse the catalog and every generated manifest with a strict JSON parser.
-2. Confirm both marketplace manifests expose the same ordered plugin IDs.
+2. Confirm both marketplace manifests expose the same ordered set of seven plugin IDs and their Firstsun category assignments.
 3. Confirm each plugin has both manifests and one shared `skills/` directory.
 4. Confirm copied skill directories exactly match their canonical external sources.
 5. Run `/validate-skills` against affected canonical skills according to the repository's external-upstream exception policy.
@@ -140,8 +158,8 @@ Personal/local plugins must appear in a separate section so users do not mistake
 
 ## Rollout
 
-1. Introduce the canonical catalog and parity validation without changing bundle membership except for adding the omitted OpenSpec source root.
-2. Generate dual manifests for all five bundles.
+1. Introduce the canonical catalog and parity validation while mapping all 86 external skills into the approved seven-plugin taxonomy.
+2. Generate dual manifests for all seven bundles.
 3. Replace both root marketplace manifests with generated `firstsun-external` outputs.
 4. Update documentation and the weekly synchronization workflow.
 5. Run full repository verification and inspect the generated diff.
@@ -151,9 +169,10 @@ Renaming existing plugin IDs creates new marketplace entries rather than silentl
 
 ## Success Criteria
 
-- ChatGPT/Codex and Claude Code list the same five Firstsun External plugins.
+- ChatGPT/Codex and Claude Code list the same seven Firstsun External plugins under the Build, Design, and Grow taxonomy where the client supports category presentation.
 - Every corresponding plugin contains the same skill names and files.
-- OpenSpec skills are present in Developer Workflows.
+- All 86 current external skills are assigned exactly once.
+- All 16 OpenSpec skills are present in Spec-Driven Development.
 - A change to the canonical catalog or `external/` can refresh both platforms with one command.
 - CI catches any marketplace or bundle drift.
 - Public descriptions consistently communicate Firstsun curation and third-party authorship.

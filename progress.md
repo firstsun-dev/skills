@@ -16,7 +16,9 @@ Completed work is archived in [archive/](./archive/), one file per calendar mont
 feat-016 design approved in chat and written to
 `docs/superpowers/specs/2026-09-15-cross-platform-external-marketplace-design.md`. The design uses
 one canonical catalog to generate equivalent Codex and Claude marketplace manifests plus portable
-dual-manifest plugin bundles. No marketplace implementation has started.
+dual-manifest plugin bundles. The approved taxonomy groups seven installable plugins under Build,
+Design, and Grow and assigns all 86 current external skills exactly once. No marketplace
+implementation has started.
 
 feat-015 completed 2026-09-15: installed OpenSpec CLI v1.13.0 and initialized this repository
 with the English core schema plus Codex and Claude Code integrations. The tracked configuration
