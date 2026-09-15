@@ -1,4 +1,5 @@
 import {
+  chmodSync,
   existsSync,
   lstatSync,
   mkdirSync,
@@ -8,6 +9,15 @@ import {
   writeFileSync,
 } from 'node:fs';
 import { basename, dirname, join, relative, sep } from 'node:path';
+
+// Copied skill files (scripts with the executable bit set, in particular)
+// must keep their original permissions in the generated plugin packages —
+// otherwise a plugin's own helper scripts stop being directly executable
+// after generation. buildOutputs records each copied Buffer's source mode
+// here; writeOutputs re-applies it after writing. This is an internal
+// side-channel between the two functions in this module and doesn't change
+// the public Map<string, string | Buffer> contract of buildOutputs.
+const copiedFileModes = new WeakMap();
 
 const ALLOWED_BRAND_CATEGORIES = ['Build', 'Design', 'Grow'];
 const REQUIRED_STRING_FIELDS = [
@@ -273,7 +283,9 @@ export function buildOutputs(repoRoot, catalog) {
       for (const absoluteFile of collectRegularFiles(skill.absolutePath)) {
         const relativeWithinSkill = toPosixPath(relative(skill.absolutePath, absoluteFile));
         const outputPath = `plugins/${plugin.id}/skills/${skill.name}/${relativeWithinSkill}`;
-        outputs.set(outputPath, readFileSync(absoluteFile));
+        const content = readFileSync(absoluteFile);
+        copiedFileModes.set(content, lstatSync(absoluteFile).mode & 0o777);
+        outputs.set(outputPath, content);
       }
     }
   }
@@ -334,6 +346,8 @@ export function writeOutputs(repoRoot, outputs) {
     const absolutePath = join(repoRoot, relativePath);
     mkdirSync(dirname(absolutePath), { recursive: true });
     writeFileSync(absolutePath, content);
+    const mode = copiedFileModes.get(content);
+    if (mode !== undefined) chmodSync(absolutePath, mode);
   }
 }
 

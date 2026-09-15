@@ -1,5 +1,15 @@
 import assert from 'node:assert/strict';
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
+import {
+  chmodSync,
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  statSync,
+  symlinkSync,
+  writeFileSync,
+} from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import {
@@ -240,6 +250,21 @@ withFixture((root) => {
   } finally {
     rmSync(notARepo, { recursive: true, force: true });
   }
+});
+
+// --- writeOutputs preserves the executable bit on copied skill scripts ---
+withFixture((root) => {
+  writeCatalog(root);
+  const scriptPath = join(root, 'external/basic/alpha/run.sh');
+  writeFileSync(scriptPath, '#!/bin/sh\necho hi\n');
+  chmodSync(scriptPath, 0o755);
+
+  const outputs = buildOutputs(root, loadCatalog(root));
+  writeOutputs(root, outputs);
+
+  const copiedPath = join(root, 'plugins/agent-toolkit/skills/alpha/run.sh');
+  const mode = statSync(copiedPath).mode & 0o777;
+  assert.equal(mode, 0o755, `expected copied script to keep mode 0o755, got 0o${mode.toString(8)}`);
 });
 
 // --- writeOutputs refuses to delete an unrecognized plugins/ directory ---
