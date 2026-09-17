@@ -1,0 +1,64 @@
+{
+  "name": "firstsun-external",
+  "interface": {
+    "displayName": "Firstsun External"
+  },
+  "plugins": [
+    {
+      "name": "agent-toolkit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-toolkit"
+      },
+      "category": "Developer"
+    },
+    {
+      "name": "software-delivery",
+      "source": {
+        "source": "local",
+        "path": "./plugins/software-delivery"
+      },
+      "category": "Developer"
+    },
+    {
+      "name": "spec-driven-development",
+      "source": {
+        "source": "local",
+        "path": "./plugins/spec-driven-development"
+      },
+      "category": "Developer"
+    },
+    {
+      "name": "frontend-product-design",
+      "source": {
+        "source": "local",
+        "path": "./plugins/frontend-product-design"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "visual-content",
+      "source": {
+        "source": "local",
+        "path": "./plugins/visual-content"
+      },
+      "category": "Design"
+    },
+    {
+      "name": "career-productivity",
+      "source": {
+        "source": "local",
+        "path": "./plugins/career-productivity"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "health-wellness",
+      "source": {
+        "source": "local",
+        "path": "./plugins/health-wellness"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

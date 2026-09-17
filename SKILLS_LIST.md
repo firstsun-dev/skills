@@ -98,6 +98,26 @@
 | :--- | :--- | :--- |
 | **i18n** | 使用 react-i18next 進行多國語言翻譯與管理的指南。 | [SKILL.md](./external/develop/internationalization-i18n/SKILL.md) |
 
+### OpenSpec 規格驅動開發 (OpenSpec)
+| 技能名稱 | 中文說明 | 檔案連結 |
+| :--- | :--- | :--- |
+| **openspec-new-change** | 以實驗性的 artifact 流程建立新功能、修正或修改的 OpenSpec change。 | [SKILL.md](./external/develop/openspec/openspec-new-change/SKILL.md) |
+| **openspec-propose** | 一次產生提案、設計、規格與任務，快速建立可實作的 OpenSpec change。 | [SKILL.md](./external/develop/openspec/openspec-propose/SKILL.md) |
+| **openspec-continue-change** | 建立下一個 artifact，循序推進既有的 OpenSpec change。 | [SKILL.md](./external/develop/openspec/openspec-continue-change/SKILL.md) |
+| **openspec-update-change** | 修訂既有 change 的規劃 artifacts 並保持一致性；不修改程式碼。 | [SKILL.md](./external/develop/openspec/openspec-update-change/SKILL.md) |
+| **openspec-ff-change** | 快速產生開始實作所需的全部 OpenSpec artifacts。 | [SKILL.md](./external/develop/openspec/openspec-ff-change/SKILL.md) |
+| **openspec-apply-change** | 依 OpenSpec change 的任務清單開始或持續進行實作。 | [SKILL.md](./external/develop/openspec/openspec-apply-change/SKILL.md) |
+| **openspec-verify-change** | 在封存前確認實作與規格、設計及任務 artifacts 相符。 | [SKILL.md](./external/develop/openspec/openspec-verify-change/SKILL.md) |
+| **openspec-sync-specs** | 將 change 的 delta specs 智慧合併至主要規格，而不封存 change。 | [SKILL.md](./external/develop/openspec/openspec-sync-specs/SKILL.md) |
+| **openspec-archive-change** | 在實驗流程中封存已完成的單一 change。 | [SKILL.md](./external/develop/openspec/openspec-archive-change/SKILL.md) |
+| **openspec-bulk-archive-change** | 批次封存多個完成的 changes，並處理規格衝突。 | [SKILL.md](./external/develop/openspec/openspec-bulk-archive-change/SKILL.md) |
+| **openspec-explore** | 在 change 前或進行中探索想法、問題與需求的唯讀思考模式。 | [SKILL.md](./external/develop/openspec/openspec-explore/SKILL.md) |
+| **openspec-onboard** | 透過真實 codebase 工作引導完成第一個 OpenSpec 流程循環。 | [SKILL.md](./external/develop/openspec/openspec-onboard/SKILL.md) |
+| **draft-openspec-docs** | 與使用者逐段規劃及撰寫 OpenSpec 文件頁面。 | [SKILL.md](./external/develop/openspec/draft-openspec-docs/SKILL.md) |
+| **write-openspec-docs** | 依 OpenSpec 文件風格撰寫或修訂使用者文件。 | [SKILL.md](./external/develop/openspec/write-openspec-docs/SKILL.md) |
+| **verify-openspec-docs** | 以全新上下文重新執行指令及比對原始碼，事實查核 OpenSpec 文件。 | [SKILL.md](./external/develop/openspec/verify-openspec-docs/SKILL.md) |
+| **release-openspec** | 執行 OpenSpec 專案本身的可恢復發版流程與 GitHub release 檢查。 | [SKILL.md](./external/develop/openspec/release-openspec/SKILL.md) |
+
 ### 🛡️ 安全 (Security)
 | 技能名稱 | 中文說明 | 檔案連結 |
 | :--- | :--- | :--- |
@@ -176,13 +196,33 @@
 
 ## 🔌 Plugins
 
-透過 `.claude-plugin/` 打包成可用 `/plugin install` 安裝的 Claude Code plugin，內容以 symlink 指回 `custom/`／`external/` 中的原始技能，僅限本機使用。
+第三方 `external/` 技能以單一 `firstsun-external` marketplace 對外發佈，同時支援 ChatGPT/Codex 與 Claude Code 兩種客戶端。每個 plugin 目錄（`plugins/<plugin-id>/`）都同時提供 `.codex-plugin/plugin.json` 與 `.claude-plugin/plugin.json` 兩份内容相同的清單，由 `scripts/sync-external-marketplace.mjs` 從 `marketplace/external/catalog.json` 與 `external/` 自動產生，請勿手動編輯。技能數量以 `catalog.json` 的 `expectedSkillCount` 為準，並由 `scripts/test-external-marketplace.mjs` 驗證。
 
 | Marketplace / Plugin | 說明 | 內含技能 | 檔案連結 |
 | :--- | :--- | :--- | :--- |
-| **tianyao-skills** (marketplace) | 個人 marketplace，登記 `/plugin marketplace add ~/skills`。 | — | [marketplace.json](./.claude-plugin/marketplace.json) |
-| **most-used-skills** | 依全專案 session 使用頻率統計出的最常用技能包（`firstsun-pm`、`validate-skills`、`firstsun-harness`、`skill-manager`、`find-skills`、`skill-creator`、`frontend-design`、`cloudflare`、`tailored-resume-generator`），另加新建的 `permission-cleanup`（尚無使用紀錄，非依頻率入選）。 | 10 個 | [plugin.json](./plugin-most-used/.claude-plugin/plugin.json) |
+| **firstsun-external** (marketplace) | 供 ChatGPT/Codex 與 Claude Code 共用匯入的第三方 skills marketplace。 | 86 個 | [.agents/plugins/marketplace.json](./.agents/plugins/marketplace.json) ・ [.claude-plugin/marketplace.json](./.claude-plugin/marketplace.json) |
+
+### 🛠️ Build
+
+| Plugin | 說明 | 內含技能 | 檔案連結 |
+| :--- | :--- | :--- | :--- |
+| **agent-toolkit** | Agent 框架、提示技巧與結構化推理等第三方技能。 | 13 個 | [plugin.json](./plugins/agent-toolkit/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/agent-toolkit/.claude-plugin/plugin.json)） |
+| **software-delivery** | 程式品質、DevOps、安全、i18n 與後端工程等第三方技能。 | 16 個 | [plugin.json](./plugins/software-delivery/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/software-delivery/.claude-plugin/plugin.json)） |
+| **spec-driven-development** | OpenSpec 規格驅動工作流相關第三方技能。 | 16 個 | [plugin.json](./plugins/spec-driven-development/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/spec-driven-development/.claude-plugin/plugin.json)） |
+
+### 🎨 Design
+
+| Plugin | 說明 | 內含技能 | 檔案連結 |
+| :--- | :--- | :--- | :--- |
+| **frontend-product-design** | 前端工程、UI 系統、視覺美感與產品設計等第三方技能。 | 19 個 | [plugin.json](./plugins/frontend-product-design/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/frontend-product-design/.claude-plugin/plugin.json)） |
+| **visual-content** | 影片、圖像等視覺內容製作第三方技能。 | 10 個 | [plugin.json](./plugins/visual-content/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/visual-content/.claude-plugin/plugin.json)） |
+
+### 🌱 Grow
+
+| Plugin | 說明 | 內含技能 | 檔案連結 |
+| :--- | :--- | :--- | :--- |
+| **career-productivity** | 職涯發展、求職與生活生產力等第三方技能。 | 5 個 | [plugin.json](./plugins/career-productivity/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/career-productivity/.claude-plugin/plugin.json)） |
+| **health-wellness** | 健身、營養與健康教育等第三方技能；非醫療照護。 | 7 個 | [plugin.json](./plugins/health-wellness/.codex-plugin/plugin.json)（同目錄下另有 [.claude-plugin/plugin.json](./plugins/health-wellness/.claude-plugin/plugin.json)） |
 
 ---
 *最後更新日期: 2026-07-17*
-

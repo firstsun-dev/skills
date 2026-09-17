@@ -1,0 +1,18 @@
+{
+  "name": "frontend-product-design",
+  "version": "1.0.0",
+  "description": "Curated third-party skills for frontend and product design.",
+  "author": {
+    "name": "Firstsun Dev"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Frontend & Product Design",
+    "shortDescription": "Curated third-party skills for frontend and product design.",
+    "longDescription": "A collection of curated third-party skills for frontend engineering, UI systems, visual taste, and product design craft.",
+    "developerName": "Firstsun Dev",
+    "category": "Design",
+    "capabilities": [],
+    "defaultPrompt": "Use the relevant Frontend & Product Design skill for this task."
+  }
+}

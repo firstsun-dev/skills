@@ -128,6 +128,38 @@
       ],
       "status": "done",
       "evidence": "Root cause found: setup.sh's per-skill restore heuristic in `register_skills()` string-matches the *new* value `npx skills add <local-dir>` just wrote, but `npx` always resolves to the latest published `skills` package at run time — a version drift silently changed how it serializes a local path (e.g. no './' prefix), and the very next weekly run then clobbered every external skill's source/sourceType to local in one shot (confirmed via git history: PR #4 on 2026-07-28 introduced 65 local entries; every subsequent weekly sync perpetuated it since the drift-check step recomputes its 'expected github' baseline from the same already-corrupted file, so it always found nothing to flag). Fixed skills-lock.json by rebuilding all 65 corrupted entries from live upstream via `npx skills` (verified against last-known-good commit 7a35f06's parent — 0 mismatches). Fixed update-external-skills.yml: added a pre-run snapshot step and a new 'Force-restore upstream source/sourceType/skillPath' step that unconditionally overwrites those three fields from the pre-run snapshot for every skill that was sourceType==github before the run, keyed by exact JSON key — independent of whatever setup.sh/npx produced, so this class of bug can no longer slip through regardless of npx version behavior. Verified the jq merge logic against both a synthetic clean case and the real historical corrupted state. ./init.sh passes."
+    },
+    {
+      "id": "feat-014",
+      "name": "Archive official OpenSpec skills",
+      "description": "Archive the complete official Fission-AI/OpenSpec skill set in external/develop/openspec/, document it, and retain original upstream provenance.",
+      "dependencies": [
+        "feat-004",
+        "feat-013"
+      ],
+      "status": "done",
+      "evidence": "Added all 16 official fission-ai/openspec skills under external/develop/openspec/ and added SKILLS_LIST.md entries. skills-lock.json retains source=fission-ai/openspec and sourceType=github. 13 skills pass quick validation; draft-openspec-docs, verify-openspec-docs, and write-openspec-docs retain upstream argument-hint frontmatter, which the current validator rejects. Kept intact under the established external-upstream policy; ./init.sh passes."
+    },
+    {
+      "id": "feat-015",
+      "name": "Initialize OpenSpec for Skill Arsenal",
+      "description": "Install the official OpenSpec CLI and initialize the Skill Arsenal with the core spec-driven schema and Codex/Claude Code project integration.",
+      "dependencies": [
+        "feat-014"
+      ],
+      "status": "done",
+      "evidence": "Installed @fission-ai/openspec v1.13.0 globally. Ran openspec init . with English artifacts, the core profile, and Codex/Claude Code integrations. Added openspec/config.yaml, empty specs/archive structure, and six Claude Code OPSX commands; excluded the pre-existing ignored .claude/worktrees/ worktree."
+    },
+    {
+      "id": "feat-016",
+      "name": "Unify Firstsun External marketplace across platforms",
+      "description": "Generate equivalent ChatGPT/Codex and Claude Code Firstsun External marketplaces from one canonical catalog, with portable dual-manifest plugin bundles and parity validation.",
+      "dependencies": [
+        "feat-006",
+        "feat-014"
+      ],
+      "status": "done",
+      "evidence": "Cross-platform external marketplace shipped: one canonical catalog (marketplace/external/catalog.json) generates matching Codex (.agents/plugins/marketplace.json) and Claude Code (.claude-plugin/marketplace.json) manifests plus 7 portable dual-manifest plugin bundles under plugins/ — agent-toolkit, career-productivity, frontend-product-design, health-wellness, software-delivery, spec-driven-development, visual-content — covering all 86 assigned external skills (verified: `find plugins -mindepth 1 -maxdepth 1 -type d` = 7, `find plugins -mindepth 4 -maxdepth 4 -type f -name SKILL.md` = 86, `find plugins -type l` = 0, no symlinks). `node scripts/test-external-marketplace.mjs` passes (external marketplace tests: PASS). `node scripts/sync-external-marketplace.mjs --check` passes clean (no parity drift). `./init.sh` passes end-to-end including the new external-marketplace-parity gate. Implementation commits on this branch: d4cd7da (feat: define canonical external catalog), c08a399 (feat: generate dual-platform external bundles), 4dc90a6 (fix: preserve executable bit on copied skill scripts), 3790929 (ci: enforce cross-platform parity), b4ffcad (docs: present Build Design Grow catalog), f278c87 (chore: record cross-platform catalog completion), c9d43b7 (fix: resolve final-review findings). Final whole-branch review (2 rounds) caught and fixed a Critical cross-task composition bug (the CI workflow's `rm -rf .agents .claude/skills` cleanup step deleted the tracked `.agents/plugins/marketplace.json`, which the new init.sh parity gate then hard-failed on every weekly run) and an Important gap (CI had no push/PR-triggered path to catch committed drift — the only check ran right after the generator's own `--write`, a tautology); both fixed in c9d43b7 and re-reviewed clean. `git status --short` and `git diff -- skills-lock.json` are both empty — no provenance drift, no stray files."
     }
   ]
 }
