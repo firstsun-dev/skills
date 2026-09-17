@@ -1,10 +1,11 @@
 # CSS Transition Recipes
 
-12 CSS transition patterns. Each includes CSS, HTML hooks, JS orchestration where needed, and a `prefers-reduced-motion` guard. All read from a shared `:root` custom properties block.
+14 CSS transition patterns. Each includes CSS, HTML hooks, and JS orchestration where needed. All read from a shared `:root` custom properties block.
 
 ## Contents
 
 - [Custom properties](#custom-properties)
+- [Container morph](#container-morph)
 - [Card resize](#card-resize)
 - [Panel reveal](#panel-reveal)
 - [Notification badge](#notification-badge)
@@ -14,6 +15,7 @@
 - [Text state swap](#text-state-swap)
 - [Page side-by-side slides](#page-side-by-side-slides)
 - [Number pop-in](#number-pop-in)
+- [Odometer digit roll](#odometer-digit-roll)
 - [Avatar group hover](#avatar-group-hover)
 - [Success celebration](#success-celebration)
 - [Error state shake](#error-state-shake)
@@ -26,9 +28,22 @@ Add this `:root` block once to your global stylesheet; every recipe reads these 
 
 ```css
 :root {
+  /* Container morph */
+  --morph-open-dur: 580ms;
+  --morph-close-dur: 300ms;
+  --morph-open-ease: linear(0, 0.45, 0.78, 1, 1.17, 1.21, 1.18, 1.12, 1.05, 1.02, 1);
+  --morph-close-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --morph-content-dur: 140ms;
+  --morph-content-blur: 3px;
+
   /* Card resize */
   --resize-dur: 300ms;
   --resize-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Odometer digit roll */
+  --odo-dur: 260ms;
+  --odo-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --odo-dir: 1; /* 1 = value increased, -1 = decreased */
 
   /* Number pop-in */
   --digit-dur: 500ms;
@@ -43,8 +58,8 @@ Add this `:root` block once to your global stylesheet; every recipe reads these 
   --badge-slide-dur: 260ms;
   --badge-pop-dur: 500ms;
   --badge-blur: 2px;
-  --badge-offset-x: -8.2px;
-  --badge-offset-y: 12.4px;
+  --badge-offset-x: -8px;
+  --badge-offset-y: 12px;
   --badge-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Text state swap */
@@ -122,6 +137,89 @@ Add this `:root` block once to your global stylesheet; every recipe reads these 
 
 ---
 
+## Container morph
+
+The trigger *becomes* the surface. A button, chip, or pill grows in place into the search field, form, menu, or confirmation it summons, keeping one continuous background and border-radius throughout. No new element appears, so there is nothing for the eye to re-find.
+
+Use this over Menu dropdown or Modal dialog whenever the trigger and the surface can share a shape. Use Card resize instead when the container already exists and only its dimensions change.
+
+Three things happen at once, and the order matters:
+
+| Phase | What | Timing |
+|---|---|---|
+| 1 | Old content fades and blurs out | `0` to `--morph-content-dur` |
+| 2 | Container tweens to the new box | full `--morph-open-dur` |
+| 3 | New content fades and blurs in | starts at `--morph-content-dur` |
+
+Measure the target box before animating: a plain `width: auto` has nothing to interpolate towards. Where `interpolate-size: allow-keywords` is supported you can transition to `auto` and drop the measure step, so check support for your targets before choosing.
+
+```html
+<div class="t-morph" data-open="false">
+  <div class="t-morph-face" data-face="closed"><button>Notify me</button></div>
+  <div class="t-morph-face" data-face="open">
+    <input placeholder="Email" /><button>Notify me</button>
+  </div>
+</div>
+```
+
+```css
+.t-morph {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  transition: width var(--morph-close-dur) var(--morph-close-ease),
+              height var(--morph-close-dur) var(--morph-close-ease);
+  will-change: width, height;
+}
+.t-morph[data-open="true"] {
+  transition-duration: var(--morph-open-dur);
+  transition-timing-function: var(--morph-open-ease);
+}
+
+/* Faces stack, so the container never sees both in flow. */
+.t-morph-face {
+  transition: opacity var(--morph-content-dur) ease,
+              filter var(--morph-content-dur) ease;
+}
+.t-morph-face[data-face="open"] { position: absolute; inset: 0; }
+
+.t-morph[data-open="false"] [data-face="open"],
+.t-morph[data-open="true"] [data-face="closed"] {
+  opacity: 0;
+  filter: blur(var(--morph-content-blur));
+  pointer-events: none;
+}
+
+/* Incoming content waits for the box to be most of the way there. */
+.t-morph[data-open="true"] [data-face="open"],
+.t-morph[data-open="false"] [data-face="closed"] {
+  transition-delay: var(--morph-content-dur);
+}
+```
+
+**JS, measure then toggle:**
+
+```js
+function morph(el, open) {
+  const face = el.querySelector(`[data-face="${open ? "open" : "closed"}"]`);
+  // Measure the target face off-flow, at its natural size.
+  const prev = face.style.cssText;
+  Object.assign(face.style, { position: "absolute", visibility: "hidden", width: "max-content" });
+  const { width, height } = face.getBoundingClientRect();
+  face.style.cssText = prev;
+
+  el.style.width = `${width}px`;
+  el.style.height = `${height}px`;
+  el.dataset.open = String(open);
+}
+```
+
+**Measured reference.** Tracking a real implementation frame by frame at 60fps: the open reached **121% of its travel** at 284ms (a container **9.8% wider** than its resting width), then settled over a further 300ms. The close reached a ~2% undershoot in 185ms and was visually at rest by 300ms. Expansion was symmetric about the trigger's centre, not anchored to an edge.
+
+`--morph-open-ease` is that overshoot transcribed as a `linear()` curve, so `--morph-open-dur` covers the whole settle even though the morph reads as finished around 300ms. The equivalent spring is `{ stiffness: 155, damping: 11, mass: 1 }` (damping ratio 0.44); the close fits `{ stiffness: 620, damping: 36 }`, near enough to critically damped that the bezier above is indistinguishable. Prefer the spring form when the morph must survive interruption. `spring-animations.md` § Asymmetric spring character covers why only the open bounces.
+
+---
+
 ## Card resize
 
 Tween a container's width or height when its layout state changes (compact/expanded card, collapsing panel, list row toggling detail). CSS only, no JS.
@@ -136,10 +234,6 @@ Tween a container's width or height when its layout state changes (compact/expan
               height var(--resize-dur) var(--resize-ease);
   will-change: width, height;
   overflow: hidden;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-resize { transition: none; }
 }
 ```
 
@@ -173,10 +267,6 @@ See also: `component-patterns.md` § Drawers and panels for percentage-based dra
 }
 .t-panel[data-open="false"] {
   transition-duration: var(--panel-close-dur);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-panel { transition: none; }
 }
 ```
 
@@ -222,10 +312,6 @@ Slide a small badge onto a trigger (button, icon) and pop the dot; the trigger s
   transform: scale(1);
   transition-delay: calc(var(--badge-slide-dur) * 0.5);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .t-badge, .t-badge-dot { transition: none; animation: none; }
-}
 ```
 
 ---
@@ -261,10 +347,6 @@ See also: `contextual-animations.md` § Contextual icon swaps for the Motion/Ani
   opacity: 1;
   transform: scale(1);
   filter: blur(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-icon { transition: none; }
 }
 ```
 
@@ -305,10 +387,6 @@ See also: `component-patterns.md` § Popovers and dropdowns for Radix UI transfo
 .t-dropdown[data-origin="bottom-left"]  { transform-origin: bottom left; }
 .t-dropdown[data-origin="bottom-center"]{ transform-origin: bottom center; }
 .t-dropdown[data-origin="bottom-right"] { transform-origin: bottom right; }
-
-@media (prefers-reduced-motion: reduce) {
-  .t-dropdown { transition: none; }
-}
 ```
 
 **JS, close with cleanup:**
@@ -351,10 +429,6 @@ See also: `component-patterns.md` § Modals and dialogs for `@starting-style` en
   transform: scale(var(--modal-scale));
   transition-duration: var(--modal-close-dur);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .t-modal { transition: none; }
-}
 ```
 
 **JS, close with cleanup:**
@@ -394,10 +468,6 @@ Swap text in place with a blurred vertical transition ("Processing..." → "Done
   opacity: 0;
   transform: translateY(var(--text-swap-y));
   filter: blur(var(--text-swap-blur));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-text-swap { transition: none; }
 }
 ```
 
@@ -463,10 +533,6 @@ See also: `component-patterns.md` § Step form navigation for the Motion/Animate
   transform: translateX(calc(-1 * var(--page-dist)));
   filter: blur(var(--page-blur));
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .t-page-slide > * { transition: none; }
-}
 ```
 
 **JS, switch page:**
@@ -514,10 +580,6 @@ Re-enter digits with directional blur on number update (counters, prices, balanc
 }
 .t-digit[data-stagger="1"] { animation-delay: var(--digit-stagger); }
 .t-digit[data-stagger="2"] { animation-delay: calc(var(--digit-stagger) * 2); }
-
-@media (prefers-reduced-motion: reduce) {
-  .t-digit { animation: none; }
-}
 ```
 
 **JS, replay on update:**
@@ -536,6 +598,64 @@ function updateDigits(container, newValue) {
   container.classList.add("is-animating");
 }
 ```
+
+---
+
+## Odometer digit roll
+
+Roll each changed digit vertically, in the direction the value moved: up for an increase, down for a decrease. Use this over Number pop-in when the number is being *driven* by the user (steppers, sliders, scrubbers, quantity controls), where direction is the feedback. Keep pop-in for values that arrive on their own, where there is no direction to convey.
+
+Two rules keep it readable. Only re-render the digits that actually changed, or a 199 to 200 tick rolls all three and reads as noise. And set `font-variant-numeric: tabular-nums`, or the row re-flows on every tick and the roll turns into a jitter.
+
+```html
+<span class="t-odo" style="--odo-dir: 1">
+  <span class="t-odo-slot"><span class="t-odo-digit">4</span></span>
+  <span class="t-odo-slot"><span class="t-odo-digit" data-rolling>1</span></span>
+</span>
+```
+
+```css
+.t-odo {
+  display: inline-flex;
+  font-variant-numeric: tabular-nums;
+}
+.t-odo-slot {
+  display: inline-block;
+  overflow: hidden;      /* the window the digit rolls through */
+  height: 1em;
+  line-height: 1em;
+}
+
+@keyframes odo-roll {
+  from {
+    transform: translateY(calc(var(--odo-dir) * 1em));
+    opacity: 0;
+  }
+}
+
+.t-odo-digit[data-rolling] {
+  display: block;
+  animation: odo-roll var(--odo-dur) var(--odo-ease) both;
+}
+```
+
+**JS, roll only what changed:**
+
+```js
+function setOdometer(el, next, prev) {
+  el.style.setProperty("--odo-dir", next > prev ? 1 : -1);
+  const a = String(prev).padStart(String(next).length, " ");
+  const b = String(next);
+  el.innerHTML = [...b]
+    .map((d, i) => {
+      const rolling = d !== a[i] ? " data-rolling" : "";
+      return `<span class="t-odo-slot"><span class="t-odo-digit"${rolling}>${d}</span></span>`;
+    })
+    .join("");
+}
+```
+
+The outgoing digit is dropped rather than animated out. At 260ms with the slot clipping, the eye reads the incoming digit as having pushed the old one away; animating both doubles the work for no visible gain.
 
 ---
 
@@ -558,10 +678,6 @@ Distance-falloff lift on a horizontal stack. Hovered item lifts and scales; neig
 }
 .t-avatar {
   transition: transform var(--avatar-dur) var(--avatar-ease-in);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-avatar { transition: none; }
 }
 ```
 
@@ -645,11 +761,6 @@ Multi-layered success: fade, rotation, blur reduction, Y-bob with overshoot, opt
 .t-success[data-state="in"] .t-success-path {
   stroke-dashoffset: 0;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .t-success { animation: none; opacity: 1; transform: none; filter: none; }
-  .t-success-path { transition: none; stroke-dashoffset: 0; }
-}
 ```
 
 **JS, set path length and replay:**
@@ -711,11 +822,6 @@ Per-segment shake with auto-reverting error border. Three classes: `.is-error` o
 .t-error-wrap.is-error .t-error-msg {
   opacity: 1;
   transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .t-error-input { animation: none; }
-  .t-error-msg { transition: none; }
 }
 ```
 

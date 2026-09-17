@@ -11,18 +11,21 @@
 - [Lists and stagger](#lists-and-stagger)
 - [Hover effects](#hover-effects)
 - [Step form navigation](#step-form-navigation)
+- [Layout morphs and auto height (Motion)](#layout-morphs-and-auto-height-motion)
 - [3D transforms](#3d-transforms)
 
 ## Buttons
 
-Add `transform: scale(0.97)` on `:active` for instant press feedback.
+Add `transform: scale(0.97)` on `:active` for instant press feedback. Press is 0ms; release may ease. `touch-action: manipulation` on the control drops the double-tap-zoom delay. Do not put it on `html`, a map, or a pinch-zoom lightbox.
 
 ```css
 .button {
+  touch-action: manipulation;
   transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .button:active {
   transform: scale(0.97);
+  transition-duration: 0s;
 }
 ```
 
@@ -133,7 +136,7 @@ Use `@starting-style` for entry animations without JavaScript:
 }
 ```
 
-Fall back to the `data-mounted` attribute pattern when `@starting-style` browser support is insufficient.
+`@starting-style` has been Baseline since August 2024, so the `data-mounted` attribute pattern is a fallback for browsers older than that, not the default. Ship the CSS above and add the attribute path only when the support matrix actually includes those browsers.
 
 ## Toasts
 
@@ -219,7 +222,7 @@ When removing items, use `AnimatePresence mode="popLayout"` so the exiting eleme
 
 ## Hover effects
 
-Gate hover animations behind a media query to avoid false positives on touch.
+Gate hover animations behind a media query to avoid false positives on touch. Tailwind `hover:` is not gated unless the project set `hoverOnlyWhenSupported` or a custom variant.
 
 ```css
 @media (hover: hover) and (pointer: fine) {
@@ -239,11 +242,11 @@ Fix hover flicker: apply hover on the parent, animate the child. `translateY` on
   transform: translateY(-20%);
 }
 .box-inner {
-  transition: transform 200ms ease;
+  transition: transform 150ms ease;
 }
 ```
 
-For scale-based hover, use `scale(1.01)` to `scale(1.02)`; `scale(1.05)` is visibly inflated. Hover transitions should be 100-150ms; 300ms feels laggy because the user's eye is already on the element.
+For scale-based hover, use `scale(1.01)` to `scale(1.02)`; `scale(1.05)` is visibly inflated. Transform hovers run 100-150ms, faster than the 200ms colour/opacity hover above: the user's eye is already on the element, so movement past 150ms reads as lag.
 
 ```css
 @media (hover: hover) and (pointer: fine) {
@@ -284,6 +287,38 @@ const variants = {
     transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
   />
 </AnimatePresence>
+```
+
+## Layout morphs and auto height (Motion)
+
+The `layout` and `layoutId` props cover what CSS can't animate, and each carries a gotcha that presents as a visual bug:
+
+- **`layout`** animates any layout change, including CSS-unanimatable properties like `flex-direction`. Change the element's *actual styles* (className or inline), not the `animate` prop; Motion measures before and after and interpolates. Add `layout` to neighbouring elements too, or they jump while the animating one glides.
+- **`layoutId`** morphs one element into another across mount/unmount: tab indicators, card-to-detail expansions, a button becoming a popover. You can't steer *how* a shared-layout morph moves; to add motion on top, animate the **parent** and let the children follow.
+- **Border radius distorts during layout animation** because the morph is transform-based scaling. Motion corrects the radius only when it's an inline pixel value: always `style={{ borderRadius: 12 }}`, never a className or `rem` radius, on anything with `layout`/`layoutId`.
+- **No `key`, no exit.** An `AnimatePresence` child without a `key` never unmounts, so the exit animation silently never fires (and `AnimatePresence` must wrap the conditional, not sit inside it). When an exit does nothing, check the key first.
+- **Exiting elements have stale props.** An `AnimatePresence` child that is animating out has already left the tree, so it can't see new state. Pass `custom` to both `AnimatePresence` and the `motion` element (as in the step-form pattern above), or direction-aware exits always leave the same way.
+
+**Auto height:** Motion can't animate `auto` to `auto`. Measure the content and animate to the pixel value:
+
+```jsx
+import useMeasure from "react-use-measure";
+
+const [ref, bounds] = useMeasure();
+
+<motion.div animate={{ height: bounds.height ? bounds.height : null }}>
+  <div ref={ref} className="inner">{content}</div>  {/* padding lives here */}
+</motion.div>
+```
+
+The `ref` and the animated height must be on *different* elements; on the same one, the element freezes at its animated height and stops reacting to content changes. Put the padding on the inner element so the measurement includes it, and fall back to `null` (meaning `auto`) while `bounds.height` is `0` on first render to avoid a layout shift. `useMeasure` wraps `ResizeObserver`; hand-rolling it is a few lines if the dependency isn't wanted.
+
+When the same surface swaps content at different sizes, make the crossfade duration proportional to how much the height changed, so small changes don't over-animate:
+
+```js
+const MIN = 0.15, MAX = 0.27;
+const delta = Math.abs(bounds.height - previousHeightRef.current);
+const duration = Math.min(Math.max(delta / 500, MIN), MAX);
 ```
 
 ## 3D transforms
