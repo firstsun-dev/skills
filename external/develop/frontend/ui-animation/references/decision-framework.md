@@ -20,6 +20,10 @@ Answer these four questions in order before writing animation code. SKILL.md car
 | Occasional | Modals, drawers, toasts | Standard animation |
 | Rare / first-time | Onboarding, feedback forms, celebrations | Can add delight |
 
+**Novelty budget.** Keep most of a surface familiar: about 90% expected motion (or none) and 10% novel treatment. Do not stack high-novelty beats in consecutive sections; put quiet structure between them.
+
+**One-shot only.** First-run staggers, intro morphs, and login flourishes must not replay on every visit. Gate them with a cookie, local flag, or rewrite so a reload is instant.
+
 ## 2. What is the purpose?
 
 Answer "why does this animate?" before writing code.
@@ -65,7 +69,7 @@ Sweep these seam classes. The skill is done sweeping when each has either yielde
 | Feedback gap | A pressable control with no press state | `onClick` / `onPress` on elements with no `:active`, `active:`, or transition |
 | Teleporting state | Content that swaps, appears, or vanishes with no bridge | `{isOpen &&`, `{show`, `display: none` toggles, accordions and collapses with no height or opacity transition |
 | Missing spatial story | A surface with no connection to what opened it | Popovers, menus, and panels with no `transform-origin` at the trigger; dismissable surfaces that exit by a different path than they entered |
-| Group entrance | An occasionally-viewed grid or list that pops in whole | `.map(` renders on first-load surfaces, where a 30-80ms stagger would help |
+| Group entrance | An occasionally-viewed grid or list that pops in whole | `.map(` renders on first-load surfaces, where a 30-50ms stagger would help |
 | Gesture seam | Draggable or swipeable elements that snap with no physics | Drag and pointer handlers with no spring, no velocity-based dismissal, no rubber-banding at boundaries |
 | Flat delight moment | Rare, high-emotion states rendered without any motion | First-run, empty, success, and completion components |
 
