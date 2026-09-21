@@ -5,8 +5,9 @@
 - [2. What is the purpose?](#2-what-is-the-purpose)
 - [3. What easing should it use?](#3-what-easing-should-it-use)
 - [4. How fast should it be?](#4-how-fast-should-it-be)
+- [Finding opportunities: where motion is missing](#finding-opportunities-where-motion-is-missing)
 
-Answer these four questions in order before writing animation code.
+Answer these four questions in order before writing animation code. SKILL.md carries the duration table, the named curves, and the pattern-to-recipe map; this file is the reasoning that picks between them.
 
 ## 1. Should this animate at all?
 
@@ -19,7 +20,9 @@ Answer these four questions in order before writing animation code.
 | Occasional | Modals, drawers, toasts | Standard animation |
 | Rare / first-time | Onboarding, feedback forms, celebrations | Can add delight |
 
-Never animate keyboard-initiated actions; they repeat hundreds of times daily and animation makes them feel slow and disconnected.
+**Novelty budget.** Keep most of a surface familiar: about 90% expected motion (or none) and 10% novel treatment. Do not stack high-novelty beats in consecutive sections; put quiet structure between them.
+
+**One-shot only.** First-run staggers, intro morphs, and login flourishes must not replay on every visit. Gate them with a cookie, local flag, or rewrite so a reload is instant.
 
 ## 2. What is the purpose?
 
@@ -32,97 +35,44 @@ Answer "why does this animate?" before writing code.
 | **Continuity** | Preserves context across state changes | Page transitions, layout shifts |
 | **Delight** | Adds personality (use sparingly) | Stagger reveals, spring overshoot |
 
-If the purpose is just "it looks cool" and users see it often, don't animate.
-
 ## 3. What easing should it use?
 
-Follow this decision tree:
+Two cases the named curves in SKILL.md do not cover:
 
-- **Entering the viewport?** → enter curve: `cubic-bezier(0.22, 1, 0.36, 1)`
-- **Exiting the viewport?** → same curve, shorter duration
-- **Moving/sliding on screen?** → move curve: `cubic-bezier(0.25, 1, 0.5, 1)`
-- **Simple hover (color/opacity)?** → `200ms ease`
-- **Needs physics feel?** → spring
-- **Direct manipulation (drag)?** → no easing, follow the pointer
+- **Needs physics feel?** → spring ([spring-animations.md](spring-animations.md))
 - **Constant motion (marquee, spinner)?** → `linear`
 
-Avoid `ease-in` for UI; it starts slow and feels sluggish. Built-in `ease-out`/`ease` have gentle acceleration that reads soft rather than decisive. Custom curves like `cubic-bezier(0.22, 1, 0.36, 1)` accelerate steeply (the element covers most of its distance in the first third), so the same 200ms feels significantly faster.
-
-**Easing resources:** [easing.dev](https://easing.dev/) and [easings.co](https://easings.co/) for stronger custom variants.
-
-### Extended easing reference
-
-| Name | Curve | Character |
-|---|---|---|
-| ease-out-quad | `cubic-bezier(0.25, 0.46, 0.45, 0.94)` | Gentle deceleration |
-| ease-out-cubic | `cubic-bezier(0.22, 0.61, 0.36, 1)` | Standard deceleration |
-| ease-out-quart | `cubic-bezier(0.165, 0.84, 0.44, 1)` | Strong deceleration |
-| ease-out-quint | `cubic-bezier(0.23, 1, 0.32, 1)` | Very strong deceleration |
-| ease-out-expo | `cubic-bezier(0.19, 1, 0.22, 1)` | Explosive start, soft land |
-| ease-out-circ | `cubic-bezier(0.075, 0.82, 0.165, 1)` | Circular deceleration |
-| ease-in-out-quad | `cubic-bezier(0.455, 0.03, 0.515, 0.955)` | Gentle symmetric |
-| ease-in-out-cubic | `cubic-bezier(0.645, 0.045, 0.355, 1)` | Standard symmetric |
-| ease-in-out-quart | `cubic-bezier(0.77, 0, 0.175, 1)` | Strong symmetric |
-
-Use weaker curves (quad, cubic) for small or frequent elements; stronger curves (quint, expo) for large or rare transitions.
+Match curve strength to size and frequency: weaker curves (quad, cubic) for small or frequent elements, stronger curves (quint, expo) for large or rare transitions. Full named catalogue at [easing.dev](https://easing.dev/), stronger custom variants at [easings.co](https://easings.co/).
 
 ### Asymmetric vs symmetric curves
 
-Symmetric ease-in-out starts slow: a noticeable lag between the user's action and the element beginning to move. For interactive elements (drawers, panels, menus), use asymmetric curves, steep at the start and settling slowly, to preserve responsiveness while the slow deceleration adds quality.
+Symmetric ease-in-out starts slow: a noticeable lag between the user's action and the element beginning to move. For interactive elements (drawers, panels, menus), use asymmetric curves, steep at the start and settling slowly, to preserve responsiveness while the slow deceleration adds quality. A steep curve covers most of its distance in the first third, so the same 200ms reads as significantly faster.
 
 Duration and easing are inseparable: a steep curve affords a longer duration because the movement is front-loaded. Vaul's drawer uses 500ms with `cubic-bezier(0.32, 0.72, 0, 1)` but doesn't feel slow, covering most of its distance in the first 200ms.
 
 ## 4. How fast should it be?
 
-Pick duration from the easing defaults table in SKILL.md. Keep routine UI under 300ms; scale with distance: a full-screen menu can exceed 300ms, a 6px tooltip shift under 150ms.
+Duration changes perceived performance independently of actual speed:
 
-### Perceived performance
+- A fast-spinning spinner makes loading feel faster (same elapsed time, different perception)
+- `ease-out` at 200ms _feels_ faster than `ease-in` at 200ms: the user sees immediate movement
+- Instant tooltips after the first opens (skip delay and animation) make the whole toolbar feel faster
 
-Animation speed changes perceived performance:
+## Finding opportunities: where motion is missing
 
-- Fast-spinning spinner makes loading feel faster (same time, different perception)
-- `ease-out` at 200ms _feels_ faster than `ease-in` at 200ms: user sees immediate movement
-- Instant tooltips after the first opens (skip delay and animation) make the toolbar feel faster
+Questions 1 and 2 above judge a candidate someone already proposed. This section is the sweep that produces candidates in the first place: given an interface, where would motion genuinely help? Run every hit back through questions 1 and 2, and expect to reject most of them. A short list of high-conviction opportunities beats a long wishlist, and an opportunity finder that suggests motion everywhere produces exactly the sluggish, over-animated interfaces the rest of this skill exists to prevent.
 
-### Asymmetric timing
+Sweep these seam classes. The skill is done sweeping when each has either yielded candidates with `file:line` evidence or been explicitly cleared.
 
-Enter can be slightly slower than exit. Hold-to-delete: 2s linear on press, 200ms ease-out on release.
+| Seam | What it looks like | Where to grep |
+|---|---|---|
+| Feedback gap | A pressable control with no press state | `onClick` / `onPress` on elements with no `:active`, `active:`, or transition |
+| Teleporting state | Content that swaps, appears, or vanishes with no bridge | `{isOpen &&`, `{show`, `display: none` toggles, accordions and collapses with no height or opacity transition |
+| Missing spatial story | A surface with no connection to what opened it | Popovers, menus, and panels with no `transform-origin` at the trigger; dismissable surfaces that exit by a different path than they entered |
+| Group entrance | An occasionally-viewed grid or list that pops in whole | `.map(` renders on first-load surfaces, where a 30-50ms stagger would help |
+| Gesture seam | Draggable or swipeable elements that snap with no physics | Drag and pointer handlers with no spring, no velocity-based dismissal, no rubber-banding at boundaries |
+| Flat delight moment | Rare, high-emotion states rendered without any motion | First-run, empty, success, and completion components |
 
-```css
-/* Release: fast */
-.overlay {
-  transition: clip-path 200ms ease-out;
-}
+The last row is where the delight budget lives, and it is the only tier where bounce, generous stagger, or a longer beat are welcome.
 
-/* Press: slow and deliberate */
-.button:active .overlay {
-  transition: clip-path 2s linear;
-}
-```
-
-### Instant enter, animated exit (productivity tools)
-
-Canonical statement: SKILL.md core rule on asymmetric timing. For high-frequency ephemeral UI, invert the standard rule: enter instantly (0ms), exit with a brief fade (100-150ms).
-
-```css
-/* Hover highlight: instant appear, soft dismiss */
-.highlight {
-  transition: opacity 0.15s ease-out;
-  opacity: 0;
-}
-.item:hover .highlight {
-  transition-duration: 0s;
-  opacity: 1;
-}
-```
-
-This applies when:
-- Interaction happens tens to hundreds of times per day
-- User initiates the action (hover, click, keyboard)
-- Element is ephemeral (highlight, popover, tooltip after first open)
-
-It does not apply to:
-- Rare interactions (modals, onboarding): use standard asymmetric timing
-- Content needing orientation (drawers with nav): enter animation provides spatial context
-
-Once the element should animate, match the UI pattern to a recipe via the "Transition decision rules" table in SKILL.md.
+**Report both halves.** A discovery pass caps at five to seven suggestions ordered by leverage, and it must also list two to five places deliberately *not* suggested, each naming the question that killed it ("command palette open/close: keyboard-initiated, 100+/day, never animate"). The rejected list is what separates a discovery pass from an animation wishlist. Where the interface is already close to right, saying so is the correct result, not a failure.

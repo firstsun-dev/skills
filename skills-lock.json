@@ -27,7 +27,7 @@
     "brainstorming": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "b58d55b64742ecd37923985ec7bdfbe678ffbcb9895562abd28c0a32dcacd7fb",
+      "computedHash": "b95dc657c5dd79caf7340ee6dead6faf2ce2d1cc613352a027fa8993966b41b7",
       "skillPath": "skills/brainstorming/SKILL.md"
     },
     "brandkit": {
@@ -98,8 +98,8 @@
     "draft-openspec-docs": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": ".agents/skills/draft-openspec-docs/SKILL.md",
-      "computedHash": "513e4c906c9dc72b1f1163bd65ef1aadb95c57f66d020c47e174f9df9ebeb102"
+      "computedHash": "513e4c906c9dc72b1f1163bd65ef1aadb95c57f66d020c47e174f9df9ebeb102",
+      "skillPath": ".agents/skills/draft-openspec-docs/SKILL.md"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
@@ -110,7 +110,7 @@
     "firecrawl-search": {
       "source": "firecrawl/cli",
       "sourceType": "github",
-      "computedHash": "cd13571285ba1f2f1a08f0d3786dac4430f50ace76985817b7c7ddbf276ebaa9",
+      "computedHash": "59a91a09f8d7822be9e48defb9c1c04840205895277327437c771b945bed5ff7",
       "skillPath": "skills/firecrawl-search/SKILL.md"
     },
     "first-principles": {
@@ -192,7 +192,7 @@
     "hyperframes-animation": {
       "source": "heygen-com/hyperframes",
       "sourceType": "github",
-      "computedHash": "4dd03f4780065fc90dd73760cc686c264ef6bf2b82b1e7ebe6d49e55d92fcac1",
+      "computedHash": "f54b2bae3289389055e09d4e5c3d8daf6ac1e7b0f68e1fcede34edcff1c5c752",
       "skillPath": "skills/hyperframes-animation/SKILL.md"
     },
     "image-to-code": {
@@ -258,74 +258,74 @@
     "openspec-apply-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-apply-change/SKILL.md",
-      "computedHash": "657951ff2bf91de7eea99a8300ad046906745e571c00b842c78a5097311ca56a"
+      "computedHash": "aa6fabc8d4ad0745d276c58da0c4f2ee41b85f8c86138fcf9980eb07f064613f",
+      "skillPath": "skills/openspec-apply-change/SKILL.md"
     },
     "openspec-archive-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-archive-change/SKILL.md",
-      "computedHash": "ae48ad632d04d0880a0ec699559f89f2daae4d717ac2dda3d42ffdeef1203795"
+      "computedHash": "882260b0e157ffa22908a6c865757e02e15e7b0a6c1e851eaf8ad044e5835b54",
+      "skillPath": "skills/openspec-archive-change/SKILL.md"
     },
     "openspec-bulk-archive-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-bulk-archive-change/SKILL.md",
-      "computedHash": "af858fcd8022e7a5d945af6557ad69d6c8a69aeffdcfb3c1f10f3d844ca8db5e"
+      "computedHash": "bb2a0319f28f514397cce588412d6b7cfc78107baaac202e656bdc90bebb9ab5",
+      "skillPath": "skills/openspec-bulk-archive-change/SKILL.md"
     },
     "openspec-continue-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-continue-change/SKILL.md",
-      "computedHash": "756b1204fe592aec5aceab1667b1e93fb6e07ca6df9ccd4bb7815de9e5c9b579"
+      "computedHash": "fcc4bda6e1fa13f64d0a7a7c7132f973f118a6816880a0e09be62a39323fc57d",
+      "skillPath": "skills/openspec-continue-change/SKILL.md"
     },
     "openspec-explore": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-explore/SKILL.md",
-      "computedHash": "ad73050b5f44236f61296786376602e8fec756a072dadcb45d564981698d201d"
+      "computedHash": "dacb45eafccfd4cf527ad267db534320e997294b4c37d3172d0b03c680b680a1",
+      "skillPath": "skills/openspec-explore/SKILL.md"
     },
     "openspec-ff-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-ff-change/SKILL.md",
-      "computedHash": "fe653b09b07fcda6f2b227bf7493055381b7e63b4f8c292aab917558ed0e3b2f"
+      "computedHash": "ccbc52bab31d9666eea1e2aae4e0a76b839bf6b091a334270920b03e0aa93bbf",
+      "skillPath": "skills/openspec-ff-change/SKILL.md"
     },
     "openspec-new-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-new-change/SKILL.md",
-      "computedHash": "c2c2e14c8ea57ee6e8c18aeaec0929656602f9da985c973d251c7b7657a0c353"
+      "computedHash": "dc503cb17cd2c0f9d8a55c4ed53c2ba7bf0a20bd78f826c2faac7e63336565f4",
+      "skillPath": "skills/openspec-new-change/SKILL.md"
     },
     "openspec-onboard": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-onboard/SKILL.md",
-      "computedHash": "e01a8314a444fb8ec0c373d29244ce845a4c0ef8c975c64da8ce1085c89a75f7"
+      "computedHash": "2bb11935a0929aa32eb96cd2e43d1dace2989141ed36dd2fe55bc9dd7458641a",
+      "skillPath": "skills/openspec-onboard/SKILL.md"
     },
     "openspec-propose": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-propose/SKILL.md",
-      "computedHash": "1669f507f90412f61706c2b42640b79bd7d8435172b7c7ebda49679e5ecc5539"
+      "computedHash": "1cf27a2e36f932dee48dd1fcddfdd35c4819277798a2b36c5f0ff0a049980a24",
+      "skillPath": "skills/openspec-propose/SKILL.md"
     },
     "openspec-sync-specs": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-sync-specs/SKILL.md",
-      "computedHash": "b9404fe7d77772336d764340185c0205bc5217373ff90a3c9cd137070f1c4673"
+      "computedHash": "1cbfef08e2cc8b95eca4e1542895a913b70c90947ed702f16e4504a980bfe3e7",
+      "skillPath": "skills/openspec-sync-specs/SKILL.md"
     },
     "openspec-update-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-update-change/SKILL.md",
-      "computedHash": "7cbc00de95a2960198d2b583337c2d3fc239b8ae76c08b649a6c4ddb3b5e51cc"
+      "computedHash": "ccc517379f6f0fbff6c8bce131689c215331051ae6d078a721f63c97ade6bd3a",
+      "skillPath": "skills/openspec-update-change/SKILL.md"
     },
     "openspec-verify-change": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": "skills/openspec-verify-change/SKILL.md",
-      "computedHash": "e5932ec33354350fc885dc3b8f3aa13e7586488b0f76a2fbe52f5604d2ab5607"
+      "computedHash": "00cb8d751ab2a7dbd537a62a6f609da79ea2a825a5e2c235ea74dbb2ac210021",
+      "skillPath": "skills/openspec-verify-change/SKILL.md"
     },
     "oracle-cloud": {
       "source": "dauquangthanh/hanoi-rainbow",
@@ -376,8 +376,8 @@
     "release-openspec": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": ".agents/skills/release-openspec/SKILL.md",
-      "computedHash": "e3768c54337700d2c3cbc1fe18c85c85330c507a41dd964e95ee545989f11459"
+      "computedHash": "e3768c54337700d2c3cbc1fe18c85c85330c507a41dd964e95ee545989f11459",
+      "skillPath": ".agents/skills/release-openspec/SKILL.md"
     },
     "rem-sleep": {
       "source": "stewnight/rem-sleep-skill",
@@ -394,7 +394,7 @@
     "remotion-best-practices": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
-      "computedHash": "06834a41e1813096730e4ed306171a0fd3765ae8db450e6543855f3bedbdd654",
+      "computedHash": "d733df539b855462d037968a8fe6c349072579d9cdfa1151d00cee8d09c1087e",
       "skillPath": "skills/remotion-best-practices/SKILL.md"
     },
     "remotion-render": {
@@ -407,7 +407,7 @@
       "source": "obra/superpowers",
       "sourceType": "github",
       "skillPath": "skills/requesting-code-review/SKILL.md",
-      "computedHash": "004f340ae65811095d6a9bb0a759c87d0a8085c5e705dbb019b011626293d2e9"
+      "computedHash": "2abaeac1de432c76abda0ca7ba618901d2e94f8817b3650f9c523acea2d224f5"
     },
     "rp-diet": {
       "source": "borisghidaglia/science-based-lifter",
@@ -465,7 +465,7 @@
     "subagent-driven-development": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "367cc1d3216d6672b947c8c6583dbd6440ea407beb6da75a97d3a8ee1a23640a",
+      "computedHash": "d5caecf77dad1d6b86be893ce3fdeb0222921c64bb955db8b12a5780eecb4ec6",
       "skillPath": "skills/subagent-driven-development/SKILL.md"
     },
     "tailored-resume-generator": {
@@ -495,7 +495,7 @@
     "ui-animation": {
       "source": "mblode/agent-skills",
       "sourceType": "github",
-      "computedHash": "fb2dc41725fc3575649e6246f5b31d05edf1528d288e008c56f914d5c3b3f577",
+      "computedHash": "60dd77597c11d1241d6c5199cd81daac72d542b5c999d14e3ee20e9cebd335ca",
       "skillPath": "skills/ui-animation/SKILL.md"
     },
     "using-git-worktrees": {
@@ -519,8 +519,8 @@
     "verify-openspec-docs": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": ".agents/skills/verify-openspec-docs/SKILL.md",
-      "computedHash": "27b98112acc464a2717553072c6fb0745dc6f6442808583c476e68dd8fdc3621"
+      "computedHash": "27b98112acc464a2717553072c6fb0745dc6f6442808583c476e68dd8fdc3621",
+      "skillPath": ".agents/skills/verify-openspec-docs/SKILL.md"
     },
     "visual-design-foundations": {
       "source": "wshobson/agents",
@@ -543,14 +543,14 @@
     "write-coding-standards-from-file": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
-      "skillPath": "skills/write-coding-standards-from-file/SKILL.md",
-      "computedHash": "b87eddc73b6f759bafb4956bbe69838a961e0fd927145f612c4694d2cc65e07a"
+      "computedHash": "b87eddc73b6f759bafb4956bbe69838a961e0fd927145f612c4694d2cc65e07a",
+      "skillPath": "skills/write-coding-standards-from-file/SKILL.md"
     },
     "write-openspec-docs": {
       "source": "fission-ai/openspec",
       "sourceType": "github",
-      "skillPath": ".agents/skills/write-openspec-docs/SKILL.md",
-      "computedHash": "857cf2af1379042b248ef2e55148a8d7034b69a72db2b46203ce372bbba3ad96"
+      "computedHash": "857cf2af1379042b248ef2e55148a8d7034b69a72db2b46203ce372bbba3ad96",
+      "skillPath": ".agents/skills/write-openspec-docs/SKILL.md"
     }
   }
 }

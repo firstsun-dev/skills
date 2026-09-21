@@ -14,6 +14,7 @@ HyperFrames supports Three.js through its `three` runtime adapter. The adapter d
 - Listen for the `hf-seek` event and render exactly that time.
 - Load models, textures, and HDRIs before render-critical seeking. Do not fetch them at seek time.
 - Avoid `requestAnimationFrame` or `renderer.setAnimationLoop` as the source of truth for render-critical motion.
+- **Always set `data-duration="<seconds>"` on the root `[data-composition-id]` element.** Unlike CSS/WAAPI/Lottie, the `three` adapter has no duration auto-inference — it only forwards time via `hf-seek`/`__hfThreeTime`, it doesn't inspect your scene for an `AnimationClip`/`AnimationMixer` length. Without `data-duration` (and no GSAP timeline), the render engine has no way to know how long to capture and fails with "Composition has zero duration". `npx hyperframes lint` errors on this (`root_composition_missing_duration_source`).
 
 The adapter sets `window.__hfThreeTime` and dispatches `new CustomEvent("hf-seek", { detail: { time } })` on each seek.
 
@@ -86,6 +87,20 @@ For anything under `three/addons/`, use an importmap so bare specifiers resolve.
 
 Pin the `three` version in both entries to the same value. Mixing versions across the map and bare imports causes silent breakage.
 
+## Heavy Setup (Large Meshes, Shader Compiles)
+
+The runtime already waits for textures/models queued through Three's `DefaultLoadingManager` before publishing render-ready. It has no visibility into CPU-bound work you do yourself after assets load — building a large procedural mesh, compiling shaders, warming a pipeline. That work can leave the canvas blank for seconds after the runtime and player already say "ready".
+
+If your setup does this kind of work, register a promise on `window.__hf.buildReady` (declared-compute hold: runtime waits, player shows its loading state instead of a blank frame):
+
+```js
+window.__hf = window.__hf || {};
+window.__hf.buildReady = window.__hf.buildReady || {};
+window.__hf.buildReady["<your-piece-name>"] = buildScene(); // resolves once the scene is actually drawable
+```
+
+Register it synchronously, in the same script block that starts the build — same timing as `DefaultLoadingManager`, so the runtime's first readiness check already sees it. Only do this for setup an adapter cannot see; render-critical seeking still comes from `hf-seek`, not this hold. The key must be unique within the composition — a second registration under the same key silently replaces the first, dropping its hold.
+
 ## AnimationMixer Pattern
 
 For GLTF or authored clip animation, seek the mixer directly:
@@ -119,11 +134,12 @@ After editing a Three.js composition:
 
 ```bash
 npx hyperframes lint
-npx hyperframes validate
+npx hyperframes check
 ```
 
 ## Credits And References
 
 - HyperFrames adapter source: `packages/core/src/runtime/adapters/three.ts`.
+- Why `data-duration` is required here specifically (no auto-inference for this adapter): `packages/core/src/runtime/init.ts` (`resolveAdapterDurationFloorSeconds`) and the CSS/WAAPI/Lottie adapters' `getInferredDurationSeconds`, which the `three` adapter deliberately does not implement.
 - Three.js `WebGLRenderer` docs: https://threejs.org/docs/pages/WebGLRenderer.html
 - Three.js `AnimationMixer.setTime()` docs: https://threejs.org/docs/pages/AnimationMixer.html

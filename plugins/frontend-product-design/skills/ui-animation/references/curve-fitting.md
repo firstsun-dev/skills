@@ -87,14 +87,7 @@ Two more error inflators to rule out before splitting phases:
 
 ## Asymmetric open/close
 
-Open and close are almost never mirror images: open tends to be slower and springier, close
-faster and flatter.
-
-- Record (or trim) open and close as **separate clips** and run the full pipeline on each;
-  don't fit one curve and reuse it reversed.
-- Report two curves. In code, give the enter and exit transitions different `duration`/easing
-  (and different spring configs) rather than a single shared one.
-- See `references/choreography.md` for expressing asymmetry per target.
+Open and close are almost never mirror images: fit each direction as its own clip and report two curves, never one curve reused reversed. Full treatment (why, and expressing it per target) in `references/choreography.md`.
 
 ## Converting spring params across APIs
 
@@ -107,4 +100,5 @@ The fit fixes `mass = 1`. From `stiffness` (k), `damping` (c), `mass` (m):
   `dampingFraction = c / (2·√(k·m))` (that's `zeta`).
 - **Reanimated**: `withSpring(to, { stiffness, damping, mass })`.
 - **CSS**: no native spring. Use the fitted `bezier.css`, or generate a `linear()` easing by
-  sampling the spring response (more faithful for overshoot). Read `references/code-output.md`.
+  sampling the spring response (more faithful for overshoot). The per-target templates come from
+  the Emit step of SKILL.md's reverse-engineer workflow.
