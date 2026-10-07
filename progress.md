@@ -2,7 +2,7 @@
 
 ## Current State
 
-**Last Updated:** 2026-09-15
+**Last Updated:** 2026-10-07
 **Active Feature:** none — feat-016 complete; repo idle, ready for next feature
 
 Completed work is archived in [archive/](./archive/), one file per calendar month — this file only tracks what's still open.
@@ -12,6 +12,17 @@ Completed work is archived in [archive/](./archive/), one file per calendar mont
 _None._
 
 ## Since Last Update
+
+2026-10-07: Investigated whether `plugins/spec-driven-development` needs any change to support
+ChatGPT distribution. Confirmed it already does, and has since PR #15 (feat-016-unify-marketplace)
+merged to `main`: ChatGPT reads `.agents/plugins/marketplace.json` → the plugin's
+`.codex-plugin/plugin.json` (same file Codex CLI reads), generated from the canonical
+`external/develop/openspec` skills with no copy/fork and no third manifest. Re-verified on a fresh
+fetch of `origin/main` — `node scripts/test-external-marketplace.mjs`, `node
+scripts/sync-external-marketplace.mjs --check`, and `./init.sh` all pass clean, confirming the CI
+parity gate (`verify-marketplace` in `update-external-skills.yml`) is protecting this already. No
+code change was needed; this entry exists so the next session doesn't re-investigate the same
+question.
 
 feat-016 completed 2026-09-15: shipped the cross-platform external marketplace (canonical
 catalog → generated Codex + Claude Code manifests, 7 dual-manifest plugin bundles, 86 skills
