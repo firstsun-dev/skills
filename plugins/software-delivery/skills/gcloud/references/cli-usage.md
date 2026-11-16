@@ -12,6 +12,21 @@ the authoritative
 for platform-specific installation instructions (Linux, macOS, Windows, package
 managers, and container images).
 
+> [!CAUTION]
+> **Explicit User Confirmation Required Before Installing `gcloud` CLI:**
+> Never install the Google Cloud CLI (`gcloud` CLI) or additional `gcloud` CLI
+> components (`gcloud components install` / `gcloud components update`)
+> autonomously.
+>
+> Before executing any installation command or package manager script:
+> 1. Inform the user that the `gcloud` CLI (or required component) is not
+>    installed and summarize the installation method you plan to use.
+> 2. Ask the user for explicit consent: `"I am ready to install the Google Cloud
+>    CLI (gcloud) on your machine. Do you want me to proceed?"`
+> 3. **CRITICAL**: The agent **MUST NOT** execute any `gcloud` installation or
+>    component installation commands during this turn. You must ask the consent
+>    query and **strictly stop** to wait for the user's positive affirmation.
+
 ### Component Management
 
 The `gcloud components` command group manages optional CLI components (such as
@@ -99,7 +114,7 @@ Authenticate the CLI with Google Cloud according to the operational environment:
     For CI/CD and external compute environments (GitHub Actions, AWS, on-prem),
     authenticate using federated tokens without managing service account keys.
     See
-    [Authorizing the gcloud CLI](https://docs.cloud.google.com/sdk/docs/authorizing.md.txt).
+    [Authenticate for the gcloud CLI](https://docs.cloud.google.com/sdk/docs/authenticate.md.txt).
 
 ## Local Configuration Management
 
