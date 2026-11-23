@@ -1,556 +1,563 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "FirstPrinciples": {
-      "source": "danielmiessler/personal_ai_infrastructure",
+      "source": "danielmiessler/LifeOS",
       "sourceType": "github",
-      "computedHash": "434544c675318a41b27d97cad058c6244cc4a4e3e5751099b27c95b366c9983a",
+      "computedHash": "bd16f621984605f1966374c79482d26df2f5b64ead65dda4b968354554e2e3e7",
       "skillPath": "LifeOS/install/skills/FirstPrinciples/SKILL.md"
     },
     "ai-video-generation": {
-      "source": "agentspace-so/runcomfy-agent-skills",
+      "source": "prime-skills/runcomfy-agent-skills",
       "sourceType": "github",
-      "computedHash": "e7a373961e0196280ecf1de3ddbfb10c5a74f3f5305cb2718284e6f06b1c7d65",
+      "computedHash": "d61806210e7e0913cd5e994b60ad8bbc8065a488f2c6f9923ffbe9d8544bd636",
       "skillPath": "ai-video-generation/SKILL.md"
     },
     "banner-design": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "281e4537afb11333ac9947783779aaf314ebfbf2",
       "sourceType": "github",
       "skillPath": ".claude/skills/banner-design/SKILL.md",
-      "computedHash": "1bb85d0bfec06e23578739a476c181b17c4db694c341da4e603e43183a4b42d3"
+      "computedHash": "4b22f6f48afc6fcd72e6f3ae106a4dca11b33b88221efded1f5c62d8f9afb50d"
     },
     "best-practices": {
       "source": "./external/develop/frontend/best-practices",
       "sourceType": "local",
-      "computedHash": "98dafea60ec1a7f5f70f6febcdd4b4fa3fe15723ad9c0b991c0818615bff7ba6"
+      "computedHash": "b9495129f09035860a03eb1c160c0a9b013cb1cb00157644926cadab34c9a54e"
     },
     "brainstorming": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "b95dc657c5dd79caf7340ee6dead6faf2ce2d1cc613352a027fa8993966b41b7",
+      "computedHash": "a7424777b7f81e3eb9b4556d29fe233553736d8255780d3e1feea190fef61fef",
       "skillPath": "skills/brainstorming/SKILL.md"
     },
     "brandkit": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "b63012f3c3d21197e0185d3e9cc7ec40c589fb10e0b5a32a561739de31aa3f20",
+      "computedHash": "c89a5763a53a705a6fb3a3af83796b10d2aa05faf7b8b8fe1db0589c454ba80e",
       "skillPath": "skills/brandkit/SKILL.md"
     },
     "chart-visualization": {
       "source": "antvis/chart-visualization-skills",
       "sourceType": "github",
-      "computedHash": "537be883849c5357f74188b13cff05fbac46a084f74034f7821bd17dac31f7d5",
+      "computedHash": "4f5e88d2df95a79552833f3ea6dfee6ca89305a35e11794303e0d165b32e4c49",
       "skillPath": "skills/chart-visualization/SKILL.md"
     },
     "ckm:banner-design": {
       "source": "./external/video-design/ckm-banner-design",
       "sourceType": "local",
-      "computedHash": "7bbf0f48704f5c40436e3466d7ef9bcbafe35a84eb8c3e9d0ab76408a57bac5c"
+      "computedHash": "60addfe184122a7b950ac3a9911dd9fea84f1e383ba92c8e22b1e6570b68dce7"
     },
     "clean-code": {
-      "source": "sickn33/antigravity-awesome-skills",
+      "source": "sickn33/agentic-awesome-skills",
       "sourceType": "github",
-      "computedHash": "5dc34cc80c81f909fa69923bfdaa90b6579f3b9842e059be9c2378483605a00f",
+      "computedHash": "12447e66c9334fa608ab29b45ea8076770590d1ccbf2ee705c24cdf24496643d",
       "skillPath": "skills/clean-code/SKILL.md"
     },
     "cloudflare": {
       "source": "cloudflare/skills",
       "sourceType": "github",
-      "computedHash": "c9b25ff6c3be26e74162e7df183990f8ee76ad6d1ee37d9ca50b4dd23cb06ad1",
+      "computedHash": "a40c5c77e4b96b0f6603a54e67bf2ff401a872366af48ff8f6ae0e872d4ad324",
       "skillPath": "skills/cloudflare/SKILL.md"
     },
     "critical-thinking-logical-reasoning": {
       "source": "sammcj/agentic-coding",
       "sourceType": "github",
-      "computedHash": "6aaa421d1d8a091d8064e7e67c8008aaebf50fe45d2969d8d1317692dc1e57b7",
+      "computedHash": "0bfde1a05c2f3bebf74e2ccc80232cd668e8eac44a26d650efe9650bcce31dd9",
       "skillPath": "Skills/critical-thinking-logical-reasoning/SKILL.md"
     },
     "design-taste-frontend": {
-      "source": "leonxlnx/taste-skill",
+      "source": "Leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "6d838b246d0e35d0b53f4f23f98ba7a1dd561937e64f7d0c7553b0928e376c3e",
+      "computedHash": "b10eab0a9684cd09cf34c31ef04a3bf530a5f4404422f9c520d42372d670c7fc",
       "skillPath": "skills/taste-skill/SKILL.md"
     },
     "design-taste-frontend-v1": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "d704ab912c4d0ca954ffa858983da755ae4cd5cad9ba22554db5557382f5bd34",
+      "computedHash": "ee02c3e557cee17595d2e896de2e4e4e142dbc7c20fb7628534e352331634a0c",
       "skillPath": "skills/taste-skill-v1/SKILL.md"
     },
     "devops-engineer": {
-      "source": "jeffallan/claude-skills",
+      "source": "Jeffallan/claude-skills",
       "sourceType": "github",
-      "computedHash": "bd17df11a066010e1cf4cb5a593c6d523274b0db66459134436b3be249337ea2",
+      "computedHash": "a2df2992303b024a1f6c3f40bf28b2bd359087d3a43c9956665ebdffd7787cd5",
       "skillPath": "skills/devops-engineer/SKILL.md"
     },
     "discovery-interview": {
-      "source": "parcadei/continuous-claude-v3",
+      "source": "parcadei/Continuous-Claude-v3",
       "sourceType": "github",
-      "computedHash": "6f194cd10649bdcb62823f0ae3c43070dad725af451e9de8cc6a9b1404b98656",
+      "computedHash": "d5fb6fc4d81ed1b84a7c1326b918dd501b3a7ce6db5627f05332d65617b68dd6",
       "skillPath": ".claude/skills/discovery-interview/SKILL.md"
     },
     "documentation-writer": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
-      "computedHash": "ee53d65b163cd7eb953a930c95841cfe398cc2c0bd24c06508bbaa07c432be35",
+      "computedHash": "b2de0a266264b7a994d9bf1b771d3b35ab3780d16ccd658ffceb2936d3df1db6",
       "skillPath": "skills/documentation-writer/SKILL.md"
     },
     "draft-openspec-docs": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
+      "commit": "0c737dc1b543249b38b0f4716816fcf493d894dd",
       "sourceType": "github",
-      "computedHash": "513e4c906c9dc72b1f1163bd65ef1aadb95c57f66d020c47e174f9df9ebeb102",
-      "skillPath": ".agents/skills/draft-openspec-docs/SKILL.md"
+      "skillPath": ".agents/skills/draft-openspec-docs/SKILL.md",
+      "computedHash": "b653b5372174478c4cb9f5c1255637761d144139b15d0cee8e9e0792ebce736a"
     },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
-      "computedHash": "913b9d37d0d54047dd65222bb8c67b2bf04e3cb87dcad1729068d7a8b2c8c396",
+      "computedHash": "7bc223e2aafbdbf6e50ea243ba6ef67fe432bb069ab439fea0390795dac0bf7f",
       "skillPath": "skills/find-skills/SKILL.md"
     },
     "firecrawl-search": {
       "source": "firecrawl/cli",
       "sourceType": "github",
-      "computedHash": "59a91a09f8d7822be9e48defb9c1c04840205895277327437c771b945bed5ff7",
+      "computedHash": "015939b74c9fd43b668940ad8d5fe724b62a7b53100f73169c7e15182fb6ae34",
       "skillPath": "skills/firecrawl-search/SKILL.md"
     },
     "first-principles": {
       "source": "guia-matthieu/clawfu-skills",
+      "commit": "4108f5c010ccaa8b5707fa05ca1d888ae167e548",
       "sourceType": "github",
       "skillPath": "skills/strategy/first-principles/SKILL.md",
-      "computedHash": "2c502541c4fb385194c64a8e45d9d8d5f45b4fd080f0641958ebae19614f06ee"
+      "computedHash": "495f340940acd3282dd947027bfa402d3fa124d80645bd6ad8f4b1b619782901"
     },
     "firstsun-harness": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/firstsun-harness/SKILL.md",
-      "computedHash": "89e13c41bbd51e0e5de1a438c4e7f289f7437e23d0265a2daa99427aa6a48edd"
+      "computedHash": ""
     },
     "firstsun-pm": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/firstsun-pm/SKILL.md",
-      "computedHash": "d80e543cad20b915072490bb2bc41ff3cee84137a5f55419eef86eb76f5ae7f1"
+      "computedHash": ""
     },
     "firstsun-project-init": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/basic/firstsun-project-init/SKILL.md",
-      "computedHash": "6d62376f7c9750ce696ccc34d104adc8ab95613aa61a9fce842b47a58e86da6f"
+      "computedHash": ""
     },
     "fitness-coach": {
       "source": "tatat/agents-playground",
       "sourceType": "github",
-      "computedHash": "29ed91e0e7f56a5625e08712e2d54e2a7304210ad15bc4c615a32dc4ea4b8d8c",
+      "computedHash": "a8c588233c94d2a583ef766ccd14b73acbed88d56797650e9dd5a8fd20d58adb",
       "skillPath": "skills/fitness-coach/SKILL.md"
     },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",
-      "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576",
+      "computedHash": "83485963700bcf11d5bf78118facb301676b69d918fee2e45a95e7f1a2840f6c",
       "skillPath": "skills/frontend-design/SKILL.md"
     },
     "full-output-enforcement": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "26bd29ce4c5e02c7666b2d503609bf466bd32290822e91f0e984147048dbb924",
+      "computedHash": "9f39bf2e92322e91e2446f709b44537aaee222949dd5860c56eccb50d66331b3",
       "skillPath": "skills/output-skill/SKILL.md"
     },
     "gcloud": {
       "source": "google/skills",
       "sourceType": "github",
-      "computedHash": "d51f9a8502005dbf43db2e84db6832a14195196accd22790d03401248a2e85cb",
+      "computedHash": "ad29fb77d1e07f1401bfab1c023d016915d09b2b1fd37c2a9d7c92c6d732e55c",
       "skillPath": "skills/cloud/gcloud/SKILL.md"
     },
     "gh-cli": {
       "source": "./external/develop/devops/gh-cli",
       "sourceType": "local",
-      "computedHash": "cbe644b0c6760ae2a1eaafa39133920d889331327065d92a131675a665273e56"
+      "computedHash": "e1cb67a03c6f763e93b3dd62f4cf8e5b9b99905dd65edb249bf04271ca716284"
     },
     "gpt-taste": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "cc8f0c601d8240a124e1d11634351a2be7b8a72fd807c75e5b6bf7afcd5ddee0",
+      "computedHash": "f0eefce6ce80f76a3645e0ad4cecfd45ef185fed1311e45b1b467d3fedc7bf52",
       "skillPath": "skills/gpt-tasteskill/SKILL.md"
     },
     "habit-tracker": {
       "source": "./external/lifestyle/habit-tracker",
       "sourceType": "local",
-      "computedHash": "79ca691e3031fd1496cb2e03e779d26f69e4718c945a71b8841ff4a2a684f878"
+      "computedHash": "89c875df44da0ab999c750fe14f3f400cfdbb63089ec57839fb6162353879f9d"
     },
     "healthkit": {
       "source": "dpearson2699/swift-ios-skills",
       "sourceType": "github",
-      "computedHash": "e1c858dde1ba454360059c541f5d9f86a053dab0d340faae033c05c10c2be423",
+      "computedHash": "ea7cfb19f6746e79dac3b25d1aa0b88979ff23f307cb7b532b51f965e1a20ed1",
       "skillPath": "skills/healthkit/SKILL.md"
     },
     "high-end-visual-design": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "7db385e4c5370e5a7fca9704a1361b056e4504ea6a03924bb86f33a4f00b5c73",
+      "computedHash": "d5f1d07d14b1e72454e49c4de69adc65022f4eda0126e1902b84a2e0c3fec47b",
       "skillPath": "skills/soft-skill/SKILL.md"
     },
     "hyperframes-animation": {
       "source": "heygen-com/hyperframes",
       "sourceType": "github",
-      "computedHash": "f54b2bae3289389055e09d4e5c3d8daf6ac1e7b0f68e1fcede34edcff1c5c752",
+      "computedHash": "761353064df557ae6e2a98113b744d45b77d49c564798d55cbf7d8ec96cf3591",
       "skillPath": "skills/hyperframes-animation/SKILL.md"
     },
     "image-to-code": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "58517b03b2a01f4c9ba65861559d03df931400871bbc200978c975b24bb92c73",
+      "computedHash": "95eb38f750f046fafe47f4c053f2a075ed07f2ae1925774a6f435c81f503fba8",
       "skillPath": "skills/image-to-code-skill/SKILL.md"
     },
     "imagegen-frontend-mobile": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "9ab7f4f6ce66a3cff02bbf5894e5bd5af50bf5d6ef0adffdc88e8fab772fe44f",
+      "computedHash": "bf3296b937c3fd58c9d1531983bb339ec86d612fe6db7eb5bb48935c838b27d3",
       "skillPath": "skills/imagegen-frontend-mobile/SKILL.md"
     },
     "imagegen-frontend-web": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "65f5ae59fa317567809438310b1c54f78cd133426deb43e4d3d4ca4c8f541628",
+      "computedHash": "5494a06e7bd76130ffad8d1f36d26fe28cdd53f3ba27f2f9f4525e487dc1b1bd",
       "skillPath": "skills/imagegen-frontend-web/SKILL.md"
     },
     "industrial-brutalist-ui": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "8fc355c4aadb7d29c53ca28bc41be3cd6eea765d121e3737c4dc2d0f90a8effa",
+      "computedHash": "5a181aaf5fcacff516dbc4773eca28d8cca472733b2b22687c9bf8d10ea73365",
       "skillPath": "skills/brutalist-skill/SKILL.md"
     },
     "internationalization-i18n": {
       "source": "aj-geddes/useful-ai-prompts",
       "sourceType": "github",
-      "computedHash": "9822ad7f8f07a7c53e83e384b81a0248fd8e30ee86f068ca6590f9e9b167b08e",
+      "computedHash": "d0fa1095ff4fca7c0481f115286df3cff4d7c918f8c23a47110484fc52ffadd0",
       "skillPath": "skills/internationalization-i18n/SKILL.md"
     },
     "interview-prep": {
       "source": "anthropics/knowledge-work-plugins",
       "sourceType": "github",
-      "computedHash": "3cfa3e2c39aea3791851f18ed88d1f2db51f9a59e8373bf898a35f3ed416621a",
+      "computedHash": "f014e4b313ccf72d7585520fcc90651352241401572ef5ff59c61cd6fdec26e7",
       "skillPath": "human-resources/skills/interview-prep/SKILL.md"
     },
     "learning-coach": {
       "source": "sunnypatneedi/claude-starter-kit",
       "sourceType": "github",
-      "computedHash": "80ca0d2792c9d72be0c6585648cc913b2dc018090aed164ab57c6c57cfe55410",
+      "computedHash": "638c1ff53643154b8c6e09b7b969a0b854f33f456933bd025b7431833cdc84af",
       "skillPath": "skills/personal/learning-coach/SKILL.md"
     },
     "mental-health-psychoeducation": {
       "source": "jk-0001/skills",
       "sourceType": "github",
-      "computedHash": "36af3b8583ebdb065194989db0b1bb4696e24deccb950eedfbc44c135840dd26",
+      "computedHash": "f7672e8ae46db0b8ee37a02d972378a25980232ebf3fac6383b83b55ea14b67e",
       "skillPath": "mental-health-psychoeducation/SKILL.md"
     },
     "minimalist-ui": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "08873a3131d3be27bef9bf3304b310b16b44ca6e3561aebe532797be3443f6bd",
+      "computedHash": "6fe7616c22141da6f52a9d7d55521d08c519d7de595f154d1d6358ecb988c9be",
       "skillPath": "skills/minimalist-skill/SKILL.md"
     },
     "nutritional-specialist": {
       "source": "ailabs-393/ai-labs-claude-skills",
       "sourceType": "github",
-      "computedHash": "968b2d5319c2f13e27ae26dfd9e3484f74ed274779be2e3ef6b403a01e8ef3bb",
+      "computedHash": "065d4b8a7d485e5ecc51a68f535b631460e0964f25ef53cd741222eab586c7d1",
       "skillPath": "packages/skills/nutritional-specialist/SKILL.md"
     },
     "openspec-apply-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "aa6fabc8d4ad0745d276c58da0c4f2ee41b85f8c86138fcf9980eb07f064613f",
+      "computedHash": "e3a9c18349e0d5ddc83b8037fc51d210e076b4b332675ad76adc59d7c3ef673b",
       "skillPath": "skills/openspec-apply-change/SKILL.md"
     },
     "openspec-archive-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "882260b0e157ffa22908a6c865757e02e15e7b0a6c1e851eaf8ad044e5835b54",
+      "computedHash": "54ce1d428cec3f9f00b490df12764efe3de20878cdcbf92423cb47458d4fd9d8",
       "skillPath": "skills/openspec-archive-change/SKILL.md"
     },
     "openspec-bulk-archive-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "bb2a0319f28f514397cce588412d6b7cfc78107baaac202e656bdc90bebb9ab5",
+      "computedHash": "995070a52aabf94299b6a96ad06dd9ee3591970a4da888bd4dbd27e9d4a76ac6",
       "skillPath": "skills/openspec-bulk-archive-change/SKILL.md"
     },
     "openspec-continue-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "fcc4bda6e1fa13f64d0a7a7c7132f973f118a6816880a0e09be62a39323fc57d",
+      "computedHash": "e564341b2ce3f94d7ba58942551b6aa46cd1edfcce69516bacd404b64855b0e8",
       "skillPath": "skills/openspec-continue-change/SKILL.md"
     },
     "openspec-explore": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "dacb45eafccfd4cf527ad267db534320e997294b4c37d3172d0b03c680b680a1",
+      "computedHash": "ce015dfa6e3af07e8c698b7aba4b29ae9dc46321c01c6babab8df1b1a8a2bd84",
       "skillPath": "skills/openspec-explore/SKILL.md"
     },
     "openspec-ff-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "ccbc52bab31d9666eea1e2aae4e0a76b839bf6b091a334270920b03e0aa93bbf",
+      "computedHash": "2d920101760b051e0bb0f347f4352c439c8752756b26641c27074d5cb2cb6d70",
       "skillPath": "skills/openspec-ff-change/SKILL.md"
     },
     "openspec-new-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "dc503cb17cd2c0f9d8a55c4ed53c2ba7bf0a20bd78f826c2faac7e63336565f4",
+      "computedHash": "e7f1813ace85bcb9f21afddc53f335216b1398e2ae8e85c15e83be6dc07b5cbf",
       "skillPath": "skills/openspec-new-change/SKILL.md"
     },
     "openspec-onboard": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "2bb11935a0929aa32eb96cd2e43d1dace2989141ed36dd2fe55bc9dd7458641a",
+      "computedHash": "119a1abdcd32a40cad7d74adb21e3f31e1738eaf48faa4b25f72ee6ba0e0a447",
       "skillPath": "skills/openspec-onboard/SKILL.md"
     },
     "openspec-propose": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "1cf27a2e36f932dee48dd1fcddfdd35c4819277798a2b36c5f0ff0a049980a24",
+      "computedHash": "535da268c6d84b0d01e49e617859be1201a7c46813034acf387f891ed20031dc",
       "skillPath": "skills/openspec-propose/SKILL.md"
     },
     "openspec-sync-specs": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "1cbfef08e2cc8b95eca4e1542895a913b70c90947ed702f16e4504a980bfe3e7",
+      "computedHash": "9a6ba52546720d4836755097390325d6ccd26803dd39f62c9170ae2d1f885bb3",
       "skillPath": "skills/openspec-sync-specs/SKILL.md"
     },
     "openspec-update-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "ccc517379f6f0fbff6c8bce131689c215331051ae6d078a721f63c97ade6bd3a",
+      "computedHash": "b85aaf3699e567bf46753b5d480b81cb0325918d690ff689bd14aeadcacf2748",
       "skillPath": "skills/openspec-update-change/SKILL.md"
     },
     "openspec-verify-change": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
       "sourceType": "github",
-      "computedHash": "00cb8d751ab2a7dbd537a62a6f609da79ea2a825a5e2c235ea74dbb2ac210021",
+      "computedHash": "8c9118470ecd59d69c1dac3fd04b0d0c3fd41d5f24ba4c34aad9c259c9a279d1",
       "skillPath": "skills/openspec-verify-change/SKILL.md"
     },
     "oracle-cloud": {
-      "source": "dauquangthanh/hanoi-rainbow",
+      "source": "DauQuangThanh/hanoi-rainbow",
       "sourceType": "github",
-      "computedHash": "a9e2631e3bfc2356fce79147791c644bd8a020eb781b74cd62f813a6bf78a8ae",
+      "computedHash": "ecdd589e6dfb97c344c1149d63633f2a4067d61480230770876002d4e47d8842",
       "skillPath": "skills/oracle-cloud/SKILL.md"
     },
     "owasp-security": {
       "source": "hoodini/ai-agents-skills",
       "sourceType": "github",
-      "computedHash": "96ddeeb1eab361ebb8e18c1770a3baab804526fb94966f644a21ae72cc7841e2",
+      "computedHash": "a6dfb0be74ec70623c6296bda1633da4dd62be6b294200d832420b307f6b2d85",
       "skillPath": "skills/owasp-security/SKILL.md"
     },
     "personal-productivity": {
       "source": "./external/lifestyle/personal-productivity",
       "sourceType": "local",
-      "computedHash": "30ae910d4a554e6711cce6eca324064f9f55f35416eda5b9cf32afc95db75dd4"
+      "computedHash": "b35076982fe08bca20b57378ebcec32e1d31126d092d6ae6dea3ef333dbb4ba0"
     },
     "playwright-best-practices": {
       "source": "currents-dev/playwright-best-practices-skill",
       "sourceType": "github",
-      "computedHash": "7eb144f734450fee649dc1d209114775ddda07cbf45be84fe969d3d4f3971dce",
+      "computedHash": "111e9d3e9d63dea34814120fb6583c0b28ee45371662801d8e8d8bdf4b05dcb0",
       "skillPath": "playwright-best-practices/SKILL.md"
     },
     "plugin-settings": {
       "source": "./external/develop/devops/plugin-settings",
       "sourceType": "local",
-      "computedHash": "7ec97e385b58cdbb331c1c19e20a4c4ca852f4c47676374123120fef8cdd90c6"
+      "computedHash": "ab94c3b4040a5187a94690646a67fca539a7971bcd4b5d7940ae46c82e7157e1"
     },
     "react": {
       "source": "vercel-labs/json-render",
       "sourceType": "github",
-      "computedHash": "7d6d1fc6eb68610aae450ff37281f0898db5fdac6fbbcf301d46ac17b6c3acfc",
+      "computedHash": "dd12accbbb691798bde8ed722603033677cd2dcf5d5479aa01d5750b13daf384",
       "skillPath": "skills/react/SKILL.md"
     },
     "react-best-practices": {
-      "source": "0xbigboss/claude-code",
+      "source": "alleneubank/claude-code",
       "sourceType": "github",
-      "computedHash": "aee15f49f1782b4602ece026533564db85d7c20a1efb1f79b028aa21da3f177a",
+      "computedHash": "1482291edcbadec544869dcddc9ca44175c4d60208b39978fb7458e44ce51b78",
       "skillPath": ".claude/skills/react-best-practices/SKILL.md"
     },
     "redesign-existing-projects": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "b405eee0e0e80fc243f731d9aa368bca307e356db7e6157d27101d369dac6726",
+      "computedHash": "a462c359ad5d5d2d96d18f9c1d2abefdf08318a1ec78f7852660d51ae098be4f",
       "skillPath": "skills/redesign-skill/SKILL.md"
     },
     "release-openspec": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
+      "commit": "0c737dc1b543249b38b0f4716816fcf493d894dd",
       "sourceType": "github",
-      "computedHash": "e3768c54337700d2c3cbc1fe18c85c85330c507a41dd964e95ee545989f11459",
-      "skillPath": ".agents/skills/release-openspec/SKILL.md"
+      "skillPath": ".agents/skills/release-openspec/SKILL.md",
+      "computedHash": "38c9c17d5e1ab097cbf461ea192b2f6a6dfcc4d131b44eaabbaf97c15c8ac5c0"
     },
     "rem-sleep": {
       "source": "stewnight/rem-sleep-skill",
       "sourceType": "github",
-      "computedHash": "c48104572deb339a1d90cedf38d37848095d4e55edce519a2a54d0745656a759",
+      "computedHash": "40fd4afcdc06536ae2d1d6403c6e53ef4e85392b8aa606b05dcfeb7632499568",
       "skillPath": "SKILL.md"
     },
     "remotion": {
       "source": "google-labs-code/stitch-skills",
       "sourceType": "github",
-      "computedHash": "05fdf6dec07727614f6394d564d5f271f9c46f422ec8135997d15ddcdd214dce",
+      "computedHash": "394d5cfcb175f4db20c7e2a45ee8580f72c5c81d1c409a0b0a73fb33956e0921",
       "skillPath": "plugins/stitch-build/skills/remotion/SKILL.md"
     },
     "remotion-best-practices": {
       "source": "remotion-dev/skills",
       "sourceType": "github",
-      "computedHash": "d733df539b855462d037968a8fe6c349072579d9cdfa1151d00cee8d09c1087e",
+      "computedHash": "ba92ffa92cef11ae3e2ab1daf3a0acb9b76340d7aff40d2174509f8da5862154",
       "skillPath": "skills/remotion-best-practices/SKILL.md"
     },
     "remotion-render": {
-      "source": "skills-shell/skills",
+      "source": "inference-sh/skills",
       "sourceType": "github",
-      "computedHash": "5ad33a6307b48a8e756be722ea26e39467cd1713f87fc5a8eff5480ac873eeaf",
+      "computedHash": "5a2181165986b1cb5cf65f40592f69aae4fea3ac9ff9c7454e42ad6bea55bc01",
       "skillPath": "tools/video/remotion-render/SKILL.md"
     },
     "requesting-code-review": {
       "source": "obra/superpowers",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7",
       "sourceType": "github",
       "skillPath": "skills/requesting-code-review/SKILL.md",
-      "computedHash": "2abaeac1de432c76abda0ca7ba618901d2e94f8817b3650f9c523acea2d224f5"
+      "computedHash": "32bcc25e8c3315d0150f646ee0067c9d4bfbc7719c34012db9c202e17cce8a14"
     },
     "rp-diet": {
       "source": "borisghidaglia/science-based-lifter",
       "sourceType": "github",
-      "computedHash": "ce9305e80c1ea5430eacb0a622069794ec5a6000d92ad42f1b1efb36e225dd17",
+      "computedHash": "4d8ef0553748e33256c857e07da0097147faec286bb88781d64788e15ca73c99",
       "skillPath": "skills/rp-diet/SKILL.md"
     },
     "running-decision-processes": {
       "source": "./external/think/decision-management",
       "sourceType": "local",
-      "computedHash": "51f3470b01755c970bd2661a4aff8414262f10e5f84a235316c6c0b23e66f13c"
+      "computedHash": "2fb717554b3ab9b63f6d9b0f761825854933f94e89932cb95f008e45a1b4a07e"
     },
     "rust-backend": {
       "source": "windmill-labs/windmill",
       "sourceType": "github",
-      "computedHash": "21b0db25d8f764f1dc63a39e18f19e21c8fb68a0acd56ea80d30b70df226b859",
+      "computedHash": "6031d1151841d06addd9f900249a5f2c9f4a12a96da466ab2412aa34b3cc8687",
       "skillPath": ".agents/skills/rust-backend/SKILL.md"
     },
     "secret-scanning": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
-      "computedHash": "cc7de79bee80775578227a370637d0a83aa0f2cbec28374058899859261d2081",
+      "computedHash": "8dde2bc195cf4d55a960d49bab4b75ac6e8d207825bd0d5c0e5c754655c46169",
       "skillPath": "skills/secret-scanning/SKILL.md"
     },
     "security-scan": {
-      "source": "affaan-m/everything-claude-code",
+      "source": "affaan-m/ECC",
       "sourceType": "github",
-      "computedHash": "5e79fba8b1645970faff3db070f1edf72de3a52011ba3a25bb8be5a61b0cd7ec",
+      "computedHash": "2df14b25fe855cba1f75df9e1174ef061f32b00b954c89dac5bc1bd589b7d9d4",
       "skillPath": "skills/security-scan/SKILL.md"
     },
     "skill-creator": {
       "source": "anthropics/skills",
       "sourceType": "github",
-      "computedHash": "5ea13a6d9f0d4bb694405d79acd00cadec0d21bb138c4dd10fcf3c500cb835c2",
+      "computedHash": "2d7f889e6ae93c6c27d699856942c336b5b8644537496987d5571043d059b1dc",
       "skillPath": "skills/skill-creator/SKILL.md"
     },
     "sleek-design-mobile-apps": {
       "source": "sleekdotdesign/agent-skills",
       "sourceType": "github",
-      "computedHash": "1e7a933ac86d075fb82d28067bb5f6c148b480028f726a1906f4ecb9d55717a5",
+      "computedHash": "3c2bc238934411756d091b3726ca01386b9e3c49ad70854cf496ea70a73f39a3",
       "skillPath": "skills/design-mobile-apps/SKILL.md"
     },
     "stitch-design-taste": {
       "source": "leonxlnx/taste-skill",
       "sourceType": "github",
-      "computedHash": "13322f38406cd3abf16ba45e35bdc9b18002d0153a79b4612b97aefc65d5a335",
+      "computedHash": "b0fed0044377622a841738e7742bc99d5afbae288e9e0c0021707cc401bb63b1",
       "skillPath": "skills/stitch-skill/SKILL.md"
     },
     "subagent-creator": {
       "source": "tech-leads-club/agent-skills",
       "sourceType": "github",
-      "computedHash": "bef6b5a9f23b3186af259c1041c2561e9af15fa94810009d72d775bb217aa3ca",
+      "computedHash": "413874c84af2f2ace4805ec867bebccf1189943de37b3825cadbd06db9cea7e7",
       "skillPath": "packages/skills-catalog/skills/(creation)/subagent-creator/SKILL.md"
     },
     "subagent-driven-development": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "d5caecf77dad1d6b86be893ce3fdeb0222921c64bb955db8b12a5780eecb4ec6",
+      "computedHash": "da0ad5e635b6ff70c2b6dbf25e51ae6ca1cad6beebfc61a791195675468c492e",
       "skillPath": "skills/subagent-driven-development/SKILL.md"
     },
     "tailored-resume-generator": {
-      "source": "composiohq/awesome-claude-skills",
+      "source": "ComposioHQ/awesome-claude-skills",
       "sourceType": "github",
-      "computedHash": "37ad72564c908b09bcccc8a34087bef06b12b4c38dc68d76cddba5afc588bd92",
+      "computedHash": "b1cd2d92827158d5759cdf31eed7e87314de1c6fec247c20a5c312f712e0f284",
       "skillPath": "tailored-resume-generator/SKILL.md"
     },
     "tailwind-css-patterns": {
       "source": "giuseppe-trisciuoglio/developer-kit",
       "sourceType": "github",
-      "computedHash": "6092620c3af955a46ea2b94ca8a40197ac8392e6bbdc8c7515659328b186c770",
+      "computedHash": "9f84955f461d236a7ec7adf52934ce8389406f2d28e63b7e25bd2d134d5e50d2",
       "skillPath": "plugins/developer-kit-typescript/skills/tailwind-css-patterns/SKILL.md"
     },
     "terraform-engineer": {
-      "source": "jeffallan/claude-skills",
+      "source": "Jeffallan/claude-skills",
       "sourceType": "github",
-      "computedHash": "6b6c6907d75aae6e02262d6641725a94d615bff72d5cdeacd56de17791bddcf8",
+      "computedHash": "1ff5ffaa34a24770fc2f4a21c78d002730790c94a7253cadc90bddc3db13b40b",
       "skillPath": "skills/terraform-engineer/SKILL.md"
     },
     "threejs-animation": {
-      "source": "cloudai-x/threejs-skills",
+      "source": "CloudAI-X/threejs-skills",
       "sourceType": "github",
-      "computedHash": "8c50b1493812bd88f3ed0637c0c3c5d846afdb322157b67b2ffba4ce8e552835",
+      "computedHash": "2686d953e17a59121254760b34b3af59c861a29fac28cd5f40f9b054e916ccfb",
       "skillPath": "skills/threejs-animation/SKILL.md"
     },
     "ui-animation": {
       "source": "mblode/agent-skills",
       "sourceType": "github",
-      "computedHash": "60dd77597c11d1241d6c5199cd81daac72d542b5c999d14e3ee20e9cebd335ca",
+      "computedHash": "27cdc9c2d83d4535bd7236e5923ce02872b4359ce6fd92123afe138bfcbcd847",
       "skillPath": "skills/ui-animation/SKILL.md"
     },
     "using-git-worktrees": {
       "source": "obra/superpowers",
       "sourceType": "github",
-      "computedHash": "48c8a1040e378e0cb7208107294e3afa9067b9370c3f33b49a443eb6b7528b0d",
+      "computedHash": "b69324cb5e5ba5b846fc2ae2811616008dc6f19858245100e472713190d4c9e4",
       "skillPath": "skills/using-git-worktrees/SKILL.md"
     },
     "validate-skills": {
       "source": "callstackincubator/agent-skills",
       "sourceType": "github",
-      "computedHash": "330cb59114b97e7b4727ff838b637682fff8820f752a950de3e7bd703608b56f",
+      "computedHash": "03bd8e408fc80843bab3292a6298573274615fca7ef39a2cd1dcd061fa5ea91f",
       "skillPath": ".claude/skills/validate-skills/SKILL.md"
     },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
-      "computedHash": "451c3cb0e335a2a9a6a1beaa54c22decbdb942f4104ae3d7b6d1979114986d79",
+      "computedHash": "7991ed4fbecdac23f47c1a40c243e00a212a9e7f3604db93959b3ae11dffe299",
       "skillPath": "skills/react-best-practices/SKILL.md"
     },
     "verify-openspec-docs": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
+      "commit": "0c737dc1b543249b38b0f4716816fcf493d894dd",
       "sourceType": "github",
-      "computedHash": "27b98112acc464a2717553072c6fb0745dc6f6442808583c476e68dd8fdc3621",
-      "skillPath": ".agents/skills/verify-openspec-docs/SKILL.md"
+      "skillPath": ".agents/skills/verify-openspec-docs/SKILL.md",
+      "computedHash": "10ba2ee1f075e5729d7eecfc3510a05f2da437bfa715ef5811a3b7921eb10920"
     },
     "visual-design-foundations": {
       "source": "wshobson/agents",
       "sourceType": "github",
-      "computedHash": "9f0f44bd206036f17f69cf78f3f3b5f9c0e0118672574ffd35c4c34c3d574d16",
+      "computedHash": "ca2bebbf7c248e5e32356bc074bc899285243c5a169782f4e163346b758fa1c9",
       "skillPath": "plugins/ui-design/skills/visual-design-foundations/SKILL.md"
     },
     "workers-best-practices": {
       "source": "firstsun-dev/skills",
       "sourceType": "github",
       "skillPath": "custom/develop/workers-best-practices/SKILL.md",
-      "computedHash": "da9766f42ab9f5c7ada15a6737371c34c2777efb095c81beabff81ca56ed0dc1"
+      "computedHash": ""
     },
     "workout-program-designer": {
-      "source": "onewave-ai/claude-skills",
+      "source": "OneWave-AI/claude-skills",
       "sourceType": "github",
-      "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc",
+      "computedHash": "6b09e63086de6b9fd73a733c28806c68649b7f57f4e530ae107f6f04e699fe0a",
       "skillPath": "workout-program-designer/SKILL.md"
     },
     "write-coding-standards-from-file": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
-      "computedHash": "b87eddc73b6f759bafb4956bbe69838a961e0fd927145f612c4694d2cc65e07a",
+      "computedHash": "c8066205124f7ae504d3df5ba23b38fca73770b14d9bb334e0388641fd4cab02",
       "skillPath": "skills/write-coding-standards-from-file/SKILL.md"
     },
     "write-openspec-docs": {
-      "source": "fission-ai/openspec",
+      "source": "Fission-AI/OpenSpec",
+      "commit": "0c737dc1b543249b38b0f4716816fcf493d894dd",
       "sourceType": "github",
-      "computedHash": "857cf2af1379042b248ef2e55148a8d7034b69a72db2b46203ce372bbba3ad96",
-      "skillPath": ".agents/skills/write-openspec-docs/SKILL.md"
+      "skillPath": ".agents/skills/write-openspec-docs/SKILL.md",
+      "computedHash": "6d6cd1cd452ee8a9fd5cee6ae99d2b7ac2ca233da16459e7110e38b78b2c3ca6"
     }
   }
 }
