@@ -1,133 +1,121 @@
 ---
 name: firstsun-harness
 description: >-
-  Build, audit, and improve harnesses that make AI coding agents reliable: AGENTS.md/CLAUDE.md
-  instruction files, feature/state tracking, verification gates, scope boundaries, session
-  lifecycle, memory persistence, context budgets, tool-permission safety, and multi-agent
-  coordination. Use this whenever a coding agent is unreliable across sessions — forgets context,
-  drifts out of scope, claims "done" before tests pass, or starts each session inconsistently —
-  or when creating or assessing AGENTS.md, CLAUDE.md, feature_list.json, init.sh, progress.md, or
-  or session state files. Reach for it even if the user never says the word "harness."
+  Engineering guardrails for coding agents: concise AGENTS.md/CLAUDE.md instructions,
+  reproducible verification and evidence-based Definition of Done, issue/branch/worktree
+  scope isolation, production safety boundaries, and durable knowledge in the right place.
+  Use when setting up or auditing a repository for agents, when an agent drifts out of scope,
+  claims "done" without proof, or resumes work inconsistently, and when migrating a repo off
+  legacy harness state files (feature_list.json, progress.md, session-handoff.md). Reach for
+  it even if the user never says "harness."
 license: MIT
 metadata:
   origin: firstsun-dev/skills
+  version: "2.0.0"
 ---
 
-> Forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) on 2026-07-04 and now maintained independently in this repo. It no longer tracks upstream changes.
+> Originally forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) (2026-07-04); maintained independently.
 
 # firstsun-harness
 
-Use this skill to make a repository easier for coding agents to start, stay in scope, verify work, and resume across sessions. Keep the harness small enough that agents actually follow it.
+Guardrails, not a state manager. The repository already has places for tasks, progress, and history;
+the harness points agents at them and makes verification and safety explicit.
 
-Not for model selection, prompt tuning in isolation, chat UI design, or general app architecture.
+Not for task or board management (`firstsun-pm`), project bootstrap (`firstsun-project-init`),
+prompt tuning, or app architecture.
 
-## Core Model
+## One source of truth per concern
 
-Every useful coding-agent harness has five subsystems:
+| Concern | Canonical source |
+|---|---|
+| Tasks and backlog | GitHub Issues |
+| Priority and workflow status | GitHub Projects |
+| Implementation progress and handoff | Branch, commits, Draft PR |
+| Agent instructions | `AGENTS.md` / `CLAUDE.md` |
+| Architecture and durable knowledge | Repository docs / ADRs |
+| Complex changes and specifications | OpenSpec |
+| Verification evidence | Local test results, CI, PR |
+| History | Git log and merged PRs |
+| Operational safety | Repository guardrails and executable checks |
 
-| Subsystem | Minimal artifact | Purpose |
-|---|---|---|
-| Instructions | `AGENTS.md` or `CLAUDE.md` | Startup path, working rules, definition of done |
-| State | `feature_list.json`, `progress.md`, `archive/YYYY-MM.md` | Current feature, status, evidence, next step; finished work archived monthly |
-| Verification | `init.sh` or documented commands | Tests/checks the agent must run before claiming done |
-| Scope | Feature dependencies and done criteria | Prevents overreach and half-finished work |
-| Lifecycle | end-of-session routine; "where I stopped" in commits/PR, durable findings in the architecture doc | Makes the next session restartable without a shared scratch file that conflicts across worktrees |
+Never add a tracking file, database, or sync step that copies one of these into another.
+If a repository uses a different tool for a concern, keep it; the rule is one source, not this list.
 
-## First Move
+## Minimal baseline
 
-1. Inspect what already exists: instruction files, feature/state files, verification commands, docs, package manifests.
-2. Ask only for missing context that cannot be inferred safely: target agent, desired file name, tolerance for structure, and whether overwriting is allowed.
-3. Prefer a minimal harness first. Add memory, tool safety, multi-agent, or benchmark details only when the user's problem calls for them.
+1. A short instruction entrypoint ([template](templates/agents.md)). If both `AGENTS.md` and
+   `CLAUDE.md` are needed, make one a symlink to (or `@import` of) the other.
+2. The project's existing build and verification commands. Add a wrapper script only when no
+   standard command already covers them.
+3. The safety constraints that actually apply to this project.
+4. Existing documentation, linked on demand.
 
-## Common Tasks
+Do not create empty placeholder documents.
 
-### Create a harness
+## Set up or tighten a repository
 
-Use the bundled script when working on a local repository (paths are relative to this skill's directory — in this repo, `custom/basic/firstsun-harness/`):
+1. Read the instruction files, manifests, CI workflows, and test entrypoints that already exist.
+2. Reuse their commands and conventions. Ask only what cannot be inferred safely.
+3. Write or trim the entrypoint. Keep routing and invariants; move manuals to docs.
+4. Run the verification commands you documented. Documented but never executed is `NOT RUN`.
+5. Audit (below).
+
+Do not overwrite an instruction file the project has edited; propose the change as a diff.
+
+## Working protocol (what the instructions should lead an agent to do)
+
+**Start.** Read the entrypoint, then only what the task needs. From an issue: read the issue, its
+linked PRs, and any OpenSpec change it names. Resuming: read the Draft PR description, its commits,
+its checks, and review comments before editing. No full-repository or history scan by default; cap
+list and MCP results (`--limit`, field selection, line ranges).
+
+**Isolate.** One task, one branch, one worktree when sessions run concurrently. Before editing, check
+open PRs and worktrees for overlap on the same files. No unrelated refactoring; unrelated findings
+become issues. Several tasks may be in flight at once; nothing requires a global "active feature".
+
+**Verify.** Report each check as one of:
+
+| Result | Meaning |
+|---|---|
+| `PASS` | Ran and succeeded |
+| `FAIL` | Ran and failed, or a required prerequisite is missing |
+| `SKIP` | Deliberately not applicable, with the reason |
+| `NOT RUN` | Should or could apply, but was not executed, with the reason |
+
+Only `PASS` is evidence. A narrow tier passing does not imply a broader one. Never call a failure
+pre-existing without reproducing it on the base branch and saying so. Details:
+[verification and safety](references/verification-and-safety.md).
+
+**Hand off.** Push the branch and keep the Draft PR description current: what changed, verification
+results, what remains, risks. Unfinished actionable work goes to an issue. Durable decisions and traps
+go to docs or an ADR. No end-of-session state file.
+
+**Done** means: behavior implemented, required checks `PASS` (others disclosed), evidence in the PR,
+remaining work tracked, and no safety boundary crossed.
+
+Small self-contained changes need a branch and a PR, not an invented issue.
+
+## Safety boundaries
+
+Production resources, credentials, databases, and infrastructure state need explicit rules in the
+entrypoint: what is read-only, what needs approval, which preflight a destructive operation requires,
+and how to roll back. Existing approval boundaries are never loosened by a harness change. Prefer an
+executable guard over prose. See [verification and safety](references/verification-and-safety.md).
+
+## Audit
 
 ```bash
-node scripts/create-harness.mjs --target /path/to/project
+node scripts/audit-harness.mjs --target /path/to/project   # --json for machine output
 ```
 
-Options:
+Paths are relative to this skill's directory. It statically checks the instruction entrypoint,
+documented verification commands, safety constraints, and leftover legacy state coupling, and reports
+startup context size. It does not run the project's tests and gives no score. A clean audit shows the
+structure is in place, not that agents behave better; for that, replay the scenarios in
+[evals](evals/evals.json) and compare real sessions.
 
-- `--agent-file CLAUDE.md` for Claude-oriented projects.
-- `--package-manager npm|pnpm|yarn|bun` when detection is wrong.
-- `--commands "cmd one,cmd two"` for custom verification.
-- `--force` only after confirming overwrites are acceptable.
+## Migrate from the legacy harness
 
-Then explain what was created and how the user should replace placeholder feature entries.
-
-### Upgrade an existing harness
-
-A harness scaffolded by an earlier version of this skill does not receive later
-template improvements on its own, and an audit only reports the symptom once the
-harness has already degraded. Bring it up to the current templates with:
-
-```bash
-node scripts/create-harness.mjs --target /path/to/project --upgrade
-```
-
-It creates whatever artifacts are missing, patches an existing `init.sh` with the
-state-hygiene gate if it predates it, and leaves every file the project has edited
-(`progress.md`, `feature_list.json`, the agent instruction file) untouched. It is
-idempotent, and rejects `--force`, which would overwrite exactly those files.
-
-Re-run the audit afterwards to confirm the gate registers.
-
-### Audit an existing harness
-
-Run:
-
-```bash
-node scripts/validate-harness.mjs --target /path/to/project
-```
-
-Report the five subsystem scores, the lowest-scoring area, and the first 2-3 changes that would improve reliability. Distinguish the two hygiene checks: "State files stay archived and concise" fails once a state file has already grown, while "State hygiene is enforced by the verification entrypoint" fails whenever nothing runs the size rule at startup — the second predicts the first, so fix it even while the files still look fine. Treat the lowest score as a candidate bottleneck; confirm with failures, logs, or task outcomes before claiming causality.
-
-### Produce a report
-
-Use when the user wants a shareable assessment:
-
-```bash
-node scripts/render-assessment-html.mjs --target /path/to/project
-node scripts/run-benchmark.mjs --target /path/to/project --html /path/to/report.html
-```
-
-Be clear that this is a structural benchmark. The benchmark first runs a self-check — it scaffolds a throwaway harness and validates it, proving the bundled scripts work end-to-end — then scores the target and eval coverage. Real effectiveness still needs before/after agent sessions on representative tasks.
-
-## When to Read References
-
-Load only the reference needed for the user's problem:
-
-- Memory across sessions: [Memory Persistence](references/memory-persistence-pattern.md)
-- Reusable workflows as skills: [Skill Runtime](references/skill-runtime-pattern.md)
-- Permissions, tools, concurrency: [Tool Registry & Safety](references/tool-registry-pattern.md)
-- Context budget and progressive disclosure: [Context Engineering](references/context-engineering-pattern.md)
-- Delegation and parallel agents: [Multi-Agent Coordination](references/multi-agent-pattern.md)
-- Hooks, startup, long-running work: [Lifecycle & Bootstrap](references/lifecycle-bootstrap-pattern.md)
-- Non-obvious failure modes: [Gotchas](references/gotchas.md)
-
-## Design Rules
-
-- Keep the root instruction file short: routing and invariants, not a full manual.
-- Put project facts in project docs, not in the skill.
-- Make verification commands explicit and runnable.
-- Require evidence before marking a feature done.
-- Use one active feature unless the harness has explicit multi-agent ownership boundaries.
-- Prefer append/update state files over relying on chat history.
-- Never hide destructive behavior in scripts; overwrites require explicit user approval.
-- A rule that no gate enforces will rot. When you add one to an instruction file, add the check that fails on it.
-
-## Deliverable Checklist
-
-For a usable minimal harness, leave the target project with:
-
-- [ ] `AGENTS.md` or `CLAUDE.md`
-- [ ] `feature_list.json`
-- [ ] `progress.md` (open work only, finished items archived)
-- [ ] `archive/YYYY-MM.md` for the current month
-- [ ] `init.sh`
-- [ ] Documented verification evidence or next action
-
-If you cannot create files, provide exact file contents and commands instead.
+If the audit reports legacy state files or references, follow
+[migration](references/migration.md). Classify and reconcile their contents **before** removing
+anything, and never recreate them afterwards.

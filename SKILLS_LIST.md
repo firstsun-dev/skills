@@ -7,8 +7,8 @@
 | :--- | :--- | :--- |
 | **skill-manager** | 管理 `custom/` 與 `external/` 領域的維護指南，並支持匯出為 Gemini Gem 指令集。 | [SKILL.md](./custom/basic/skill-manager/SKILL.md) |
 | **permission-cleanup** | 稽核並清理 Claude Code 權限規則（`.claude/settings.json` / `settings.local.json` 的 `permissions.allow`）：找出規則字串中洩漏的憑證、綁定已過期 job ID/PID/日期的一次性規則、以及已被更廣泛萬用字元涵蓋的多餘規則。 | [SKILL.md](./custom/basic/permission-cleanup/SKILL.md) |
-| **firstsun-project-init** | Firstsun Dev 專案初始化流程：挑選並安裝相關技能、透過 firstsun-harness 建立 agent harness、建立或對齊 GitHub repo metadata/README，並套用 `Workshop → Supporting → Flagship` governance；新專案預設為 Workshop，不因初始化自動加入 org profile、pins 或 case study。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
-| **firstsun-pm** | firstsun-dev 組織的專案管理技能：跨 repo 統一 issue 建立規範，依 repo 路由至對應 Project Board（多數 repo → #6，heaven-monorepo/heaven-www → #9（copyProjectV2 複製自 #6，欄位與六個內建 workflow 皆一致））、強制命名慣例，並協助設定 Estimate/Priority 欄位。也涵蓋 issue → PR 的出貨流程：lint/build/test 過關才 commit、PR 內容自動帶 `Closes #<issue>`（跨 repo 用 `Closes org/repo#<issue>`）讓 GitHub 自動連結並在合併時關閉 issue，並同步更新 board 狀態。 | [SKILL.md](./custom/basic/firstsun-pm/SKILL.md) |
+| **firstsun-project-init** | Firstsun Dev 專案初始化流程：挑選並安裝相關技能、透過 firstsun-harness 建立最小 agent 指示與驗證、建立或對齊 GitHub repo metadata/README，並套用 `Workshop → Supporting → Flagship` governance；新專案預設為 Workshop，不因初始化自動加入 org profile、pins 或 case study。 | [SKILL.md](./custom/basic/firstsun-project-init/SKILL.md) |
+| **firstsun-pm** | firstsun-dev 組織的工程任務生命週期技能（Issues 為任務真源、Projects 管優先序與狀態、完成與關閉規則、避免為小改動硬開 issue）：跨 repo 統一 issue 建立規範，依 repo 路由至對應 Project Board（多數 repo → #6，heaven-monorepo/heaven-www → #9（copyProjectV2 複製自 #6，欄位與六個內建 workflow 皆一致））、強制命名慣例，並協助設定 Estimate/Priority 欄位。也涵蓋 issue → PR 的出貨流程：lint/build/test 過關才 commit、PR 內容自動帶 `Closes #<issue>`（跨 repo 用 `Closes org/repo#<issue>`）讓 GitHub 自動連結並在合併時關閉 issue，並同步更新 board 狀態。 | [SKILL.md](./custom/basic/firstsun-pm/SKILL.md) |
 | **skill-creator** | 創建有效技能的指南，包含工作流與工具整合. | [SKILL.md](./external/basic/skill-creator/SKILL.md) |
 | **validate-skills** | 驗證技能是否符合 agentskills.io 規範與最佳實踐。 | [SKILL.md](./external/basic/validate-skills/SKILL.md) |
 | **find-skills** | 幫助使用者發現並安裝適合的 AI 技能。 | [SKILL.md](./external/basic/find-skills/SKILL.md) |
@@ -17,7 +17,7 @@
 | **firecrawl-search** | 具備完整網頁內容提取功能的網路搜尋工具。 | [SKILL.md](./external/basic/firecrawl-search/SKILL.md) |
 | **book-distiller** | 萬用書籍萃取系統：將 PDF、EPUB、TXT 轉化為 AI 技能或 Gem 指令。 | [SKILL.md](./custom/basic/book-distiller/SKILL.md) |
 | **full-output-enforcement** | 強制完整代碼生成，禁用佔位符模式，並乾淨處理 Token 限制拆分。 | [SKILL.md](./external/basic/full-output-enforcement/SKILL.md) |
-| **firstsun-harness** | 建立、稽核與改善 AI 編碼代理的 Harness：CLAUDE.md 指令檔、狀態追蹤、驗證關卡、作業階段交接與多代理協作。 | [SKILL.md](./custom/basic/firstsun-harness/SKILL.md) |
+| **firstsun-harness** | AI 編碼代理的輕量工程護欄：精簡指示檔、可重現驗證（PASS/FAIL/SKIP/NOT RUN）、範圍隔離、正式環境安全邊界，以及舊版狀態檔遷移與靜態稽核。 | [SKILL.md](./custom/basic/firstsun-harness/SKILL.md) |
 
 ## 🤖 AI Agent 開發 (AI Agent Development)
 | 技能名稱 | 中文說明 | 檔案連結 |
