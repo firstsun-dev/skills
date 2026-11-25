@@ -49,7 +49,6 @@ Do not load `archive/` by default.
 It does not validate skill contents. Also:
 
 - Changed skills: run `/validate-skills` on them.
-- `custom/basic/firstsun-harness/scripts/` changed: `node --test custom/basic/firstsun-harness/scripts/audit-harness.test.mjs`.
 - Quote `description` frontmatter that contains ` #` or `: `; confirm the parsed text is complete.
 - `SKILLS_LIST.md` links resolve.
 

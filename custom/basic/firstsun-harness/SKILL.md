@@ -1,17 +1,15 @@
 ---
 name: firstsun-harness
 description: >-
-  Engineering guardrails for coding agents: concise AGENTS.md/CLAUDE.md instructions,
-  reproducible verification and evidence-based Definition of Done, issue/branch/worktree
-  scope isolation, production safety boundaries, and durable knowledge in the right place.
-  Use when setting up or auditing a repository for agents, when an agent drifts out of scope,
-  claims "done" without proof, or resumes work inconsistently, and when migrating a repo off
-  legacy harness state files (feature_list.json, progress.md, session-handoff.md). Reach for
-  it even if the user never says "harness."
+  On-demand guardrails for a repository used by coding agents. Use when asked to initialize, audit,
+  or improve a repository's agent setup (AGENTS.md/CLAUDE.md, verification commands, scope and
+  worktree rules, production safety boundaries), to fix recurring agent failures such as scope drift
+  or unproven "done" claims, or to migrate off legacy harness state files (feature_list.json,
+  progress.md, session-handoff.md). Not for routine coding tasks in a repository that is already set up.
 license: MIT
 metadata:
   origin: firstsun-dev/skills
-  version: "2.0.0"
+  version: "3.0.0"
 ---
 
 > Originally forked from [walkinglabs/learn-harness-engineering](https://github.com/walkinglabs/learn-harness-engineering) (2026-07-04); maintained independently.
@@ -19,9 +17,10 @@ metadata:
 # firstsun-harness
 
 Guardrails, not a state manager. The repository already has places for tasks, progress, and history;
-the harness points agents at them and makes verification and safety explicit.
+the harness points agents at them and makes verification and safety explicit. Invoke it to set up,
+audit, or improve a repository. Day-to-day work follows the repository's own instructions.
 
-Not for task or board management (`firstsun-pm`), project bootstrap (`firstsun-project-init`),
+Not for task or board management or deciding when a change needs OpenSpec (`firstsun-pm`), project bootstrap (`firstsun-project-init`),
 prompt tuning, or app architecture.
 
 ## One source of truth per concern
@@ -33,12 +32,14 @@ prompt tuning, or app architecture.
 | Implementation progress and handoff | Branch, commits, Draft PR |
 | Agent instructions | `AGENTS.md` / `CLAUDE.md` |
 | Architecture and durable knowledge | Repository docs / ADRs |
-| Complex changes and specifications | OpenSpec |
+| Complex change proposal, requirements, design, checklist | OpenSpec change and specs |
 | Verification evidence | Local test results, CI, PR |
 | History | Git log and merged PRs |
 | Operational safety | Repository guardrails and executable checks |
 
-Never add a tracking file, database, or sync step that copies one of these into another.
+Never add a tracking file, database, or sync step that copies one of these into another: an issue
+links an OpenSpec change instead of repeating its tasks, and an ADR is written only when the knowledge
+outlives the change's design.
 If a repository uses a different tool for a concern, keep it; the rule is one source, not this list.
 
 ## Minimal baseline
@@ -104,18 +105,21 @@ executable guard over prose. See [verification and safety](references/verificati
 
 ## Audit
 
-```bash
-node scripts/audit-harness.mjs --target /path/to/project   # --json for machine output
-```
+Read the entrypoint, CI workflows, and verification scripts, then report each line as `PASS`, `FAIL`,
+`SKIP`, or `NOT RUN` with evidence. No score.
 
-Paths are relative to this skill's directory. It statically checks the instruction entrypoint,
-documented verification commands, safety constraints, and leftover legacy state coupling, and reports
-startup context size. It does not run the project's tests and gives no score. A clean audit shows the
-structure is in place, not that agents behave better; for that, replay the scenarios in
-[evals](evals/evals.json) and compare real sessions.
+- An instruction entrypoint exists, is concise, and is not duplicated across files.
+- Documented verification commands exist; run them, or mark them `NOT RUN`.
+- CI calls the same commands, and a selected check cannot silently not run.
+- Production, credential, and data boundaries match what the repository can actually damage.
+- No instruction or gate depends on a state file; no startup step reads history or catalogs by default.
+
+Prefer fixing a gap with an instruction line or a CI check in the repository over new tooling here.
+A passing audit shows structure, not better agent behavior; for that, replay
+[evals](evals/evals.json) in real sessions.
 
 ## Migrate from the legacy harness
 
-If the audit reports legacy state files or references, follow
+If the audit finds legacy state files or references, follow
 [migration](references/migration.md). Classify and reconcile their contents **before** removing
 anything, and never recreate them afterwards.
