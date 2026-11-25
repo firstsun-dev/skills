@@ -58,8 +58,9 @@ When a user asks to add a new task or "job":
 4.  **Add to Project**: Immediately add the new issue to the repo's matching board:
     - `gh project item-add <6|9> --owner firstsun-dev --url <ISSUE_URL>`.
 5.  **Set Fields**: Ask the user or propose **Estimate (Hours)** and **Priority (P0/P1/P2)**. Update using:
-    - `gh project item-edit <6|9> --id <ITEM_ID> --field-id <ESTIMATE_FIELD_ID> --number <HOURS>`
-    - `gh project item-edit <6|9> --id <ITEM_ID> --field-id <PRIORITY_FIELD_ID> --single-select-option-id <OPTION_ID>`
+    - `item-edit` takes the project's node ID, not its number: `PROJECT_ID=$(gh project view <6|9> --owner firstsun-dev --format json --jq .id)`
+    - `gh project item-edit --project-id $PROJECT_ID --id <ITEM_ID> --field-id <ESTIMATE_FIELD_ID> --number <HOURS>`
+    - `gh project item-edit --project-id $PROJECT_ID --id <ITEM_ID> --field-id <PRIORITY_FIELD_ID> --single-select-option-id <OPTION_ID>`
 
 ## 🛠️ Field Reference (Project #6 — infra-config, blog, innovation-apps, watermark-s3-uploader, git-files-sync)
 - **Status Field ID**: `PVTSSF_lADOEDVJmM4BVcvzzhQ4e0Y`
@@ -90,7 +91,7 @@ When a user asks to implement/ship/close out an issue (not just create one), dri
     - Cross-repo issue (PR repo ≠ issue repo, e.g. PR in `heaven-monorepo` closing an issue filed in `heaven-www`): use the fully qualified form `Closes firstsun-dev/<issue-repo>#<issue-number>`.
     - Command: `gh pr create --repo firstsun-dev/<repo> --title "<same-style-as-issue-title>" --body "Closes #<issue-number>\n\n<description>"`.
     - Auto-close only fires if the PR merges into the repo's default branch — flag it to the user if the PR targets a non-default base.
-5.  **Update the board**: Move the linked project item to "In Review" (or the repo's equivalent status) via `gh project item-edit --id <ITEM_ID> --field-id <STATUS_FIELD_ID> --single-select-option-id <OPTION_ID>`. Look up the option ID with `gh project field-list <6|9> --owner firstsun-dev` if not already known — don't guess it.
+5.  **Update the board**: Move the linked project item to "In Review" (or the repo's equivalent status) via `gh project item-edit --project-id <PROJECT_ID> --id <ITEM_ID> --field-id <STATUS_FIELD_ID> --single-select-option-id <OPTION_ID>`. Look up the option ID with `gh project field-list <6|9> --owner firstsun-dev` if not already known — don't guess it.
 
 ## ✅ Progress, Completion and Closure
 
