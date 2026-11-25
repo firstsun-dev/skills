@@ -1,6 +1,6 @@
 ---
 name: firstsun-pm
-description: Engineering task lifecycle for the firstsun-dev organization - GitHub Issues, Project Board routing (#6, or #9 for Heaven repos), priority, status, issue-to-PR linking, completion and closure. Use this whenever the user says "add a task", "create a ticket", "new job", "manage projects", wants to update estimates, priority or status, ship or close an issue, or record unfinished work.
+description: 'Engineering task lifecycle for the firstsun-dev organization - GitHub Issues, Project Board routing (#6, or #9 for Heaven repos), priority, status, issue-to-PR linking, completion and closure. Use this whenever the user says "add a task", "create a ticket", "new job", "manage projects", wants to update estimates, priority or status, ship or close an issue, or record unfinished work.'
 ---
 
 # Firstsun-Dev Project Manager Skill
