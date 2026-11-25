@@ -23,6 +23,7 @@ Check open branches that edit the state files; they will conflict with the remov
 |---|---|
 | Completed work | Git history; the one-time archive |
 | Already in an issue or PR | Nothing, or a comment adding missing facts |
+| Complex requirements without a spec | OpenSpec change, only if it meets the `firstsun-pm` criteria |
 | Untracked actionable work | Reconcile with open issues, then create few, grouped issues |
 | Pending operator action | Issue, with owner action and any deadline |
 | Temporary operational restriction | Instruction entrypoint, with lift condition and issue link |
@@ -50,4 +51,4 @@ security details that were only ever private.
 - Every classified entry has a destination (record the mapping in the PR description).
 - The repository's verification passes; compare the stage list before and after, so that only
   state-file stages disappeared.
-- `node scripts/audit-harness.mjs --target <repo>` reports no `FAIL`.
+- The search in step 1 finds no remaining active reference (historical records may keep theirs).

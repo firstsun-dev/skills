@@ -11,11 +11,8 @@ Owns the lifecycle of engineering and content tasks in the `firstsun-dev` organi
 
 - **Issue**: what needs doing and whether it is still open.
 - **Project board**: priority and workflow status.
-- **Branch, commits, Draft PR**: implementation progress and handoff.
-- **OpenSpec change** (only when one exists): specification and implementation acceptance criteria.
-- **Git history and merged PRs**: what was done.
-
-Do not mirror these into repository tracking files.
+- Progress, handoff, evidence and history live in branches, Draft PRs, CI and Git. Do not mirror any of
+  these into repository tracking files.
 
 ## When to create an issue
 
@@ -27,9 +24,24 @@ Never put secret values in an issue.
 
 ## OpenSpec
 
-Use it for architecture changes, infrastructure migrations, cross-service contracts, high-risk
-production changes, and complex multi-phase work, not routine fixes or maintenance. The issue links
-the change and tracks delivery; the checklist stays in `tasks.md`. Do not copy it into the issue.
+Not required for every task or repository.
+
+| Use OpenSpec | Issue and PR are enough |
+|---|---|
+| Architecture changes | Small bug fixes |
+| Cross-service contracts | Documentation updates |
+| Authentication or authorization redesign | Dependency updates |
+| Infrastructure migrations | Minor UI changes |
+| Database schema or topology changes | Straightforward feature additions |
+| Significant CI/CD refactoring | Routine maintenance |
+| Breaking changes | |
+| Complex work spanning multiple sessions | |
+
+A row on the left wins when both seem to apply. Use the upstream workflow and skills as installed; run
+`openspec --help` (or `npx @fission-ai/openspec --help`) before relying on a command, and add no custom
+schema or plugin without a concrete need. The issue links the change and tracks delivery; requirements,
+design and checklist stay in the change. Do not copy them into the issue. Archive a change after it is
+delivered and verified.
 
 ## 🎯 Central Project Hubs
 - **Organization**: `firstsun-dev`

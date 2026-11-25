@@ -71,8 +71,8 @@ Reuse what the repository already has. Do not generate feature lists, progress o
 placeholder documents, or an `init.sh` when a standard command already verifies the project.
 
 Task tracking belongs to GitHub Issues and the project board; use `firstsun-pm` when the project has
-work to track. Do not create issues just to complete initialization. Add OpenSpec only if the project
-already uses it or has a change that warrants a formal specification.
+work to track. Do not create issues just to complete initialization. Initialize OpenSpec (upstream
+`openspec init`) only when a planned change meets the criteria in `firstsun-pm`.
 
 ## Step 3 — Create or reconcile the GitHub repository
 

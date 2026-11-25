@@ -17,7 +17,7 @@
 | **firecrawl-search** | 具備完整網頁內容提取功能的網路搜尋工具。 | [SKILL.md](./external/basic/firecrawl-search/SKILL.md) |
 | **book-distiller** | 萬用書籍萃取系統：將 PDF、EPUB、TXT 轉化為 AI 技能或 Gem 指令。 | [SKILL.md](./custom/basic/book-distiller/SKILL.md) |
 | **full-output-enforcement** | 強制完整代碼生成，禁用佔位符模式，並乾淨處理 Token 限制拆分。 | [SKILL.md](./external/basic/full-output-enforcement/SKILL.md) |
-| **firstsun-harness** | AI 編碼代理的輕量工程護欄：精簡指示檔、可重現驗證（PASS/FAIL/SKIP/NOT RUN）、範圍隔離、正式環境安全邊界，以及舊版狀態檔遷移與靜態稽核。 | [SKILL.md](./custom/basic/firstsun-harness/SKILL.md) |
+| **firstsun-harness** | 按需使用的工程護欄：初始化／稽核／改善 repo 的精簡指示檔、可重現驗證（PASS/FAIL/SKIP/NOT RUN）、範圍隔離、正式環境安全邊界，以及舊版狀態檔遷移。 | [SKILL.md](./custom/basic/firstsun-harness/SKILL.md) |
 
 ## 🤖 AI Agent 開發 (AI Agent Development)
 | 技能名稱 | 中文說明 | 檔案連結 |
