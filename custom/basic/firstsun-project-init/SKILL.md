@@ -1,6 +1,6 @@
 ---
 name: firstsun-project-init
-description: "Bootstraps a firstsun-dev project end-to-end: selects relevant skills, scaffolds the agent harness, creates or reconciles the GitHub repository, applies repository metadata and README standards, and classifies the project under Firstsun Dev governance. New projects default to Workshop and are not automatically promoted into the organization profile, pinned repositories, or case studies."
+description: "Bootstraps a firstsun-dev project end-to-end: selects relevant skills, establishes minimal agent instructions and verification, creates or reconciles the GitHub repository, applies repository metadata and README standards, and classifies the project under Firstsun Dev governance. New projects default to Workshop and are not automatically promoted into the organization profile, pinned repositories, or case studies."
 origin: firstsun-dev/skills
 ---
 
@@ -8,7 +8,7 @@ origin: firstsun-dev/skills
 
 Bootstrap the project, not the publicity.
 
-This skill prepares a new or existing `firstsun-dev` project so it is technically ready to work on and consistent with Firstsun Dev's repository standards. It installs the right skills, scaffolds the agent harness, creates or reconciles the GitHub repository, establishes public-facing metadata and README expectations, and records the project's current brand tier.
+This skill prepares a new or existing `firstsun-dev` project so it is technically ready to work on and consistent with Firstsun Dev's repository standards. It installs the right skills, establishes minimal agent instructions and verification, creates or reconciles the GitHub repository, establishes public-facing metadata and README expectations, and records the project's current brand tier.
 
 A newly created repository does **not** automatically deserve organization-profile placement, a pinned slot, or a case study. New projects default to **Workshop**. Promotion is earned later through observable engineering evidence.
 
@@ -58,27 +58,21 @@ npx skills add firstsun-dev/skills/<domain>/<skill-name>
 
 Do not hand-copy skill directories into the project.
 
-## Step 2 — Scaffold the agent harness
+## Step 2 — Establish instructions and verification
 
-Invoke `firstsun-harness` for the target project.
+Apply `firstsun-harness`. The baseline is small:
 
-Let that skill decide which reliability artifacts are appropriate, such as `CLAUDE.md`, `AGENTS.md`, `feature_list.json`, `progress.md`, `init.sh`, and `session-handoff.md`.
+- one concise agent instruction entrypoint (`AGENTS.md` or `CLAUDE.md`)
+- the project's existing build and verification commands, reusing org reusable CI where it fits
+- safety constraints that actually apply
+- links to existing documentation
 
-The harness is an engineering baseline, not a branding artifact. Keep it proportional to project complexity.
+Reuse what the repository already has. Do not generate feature lists, progress or handoff files, empty
+placeholder documents, or an `init.sh` when a standard command already verifies the project.
 
-## Optional — GitHub Issues and project-board integration
-
-Use GitHub Issues when the project benefits from durable, cross-session work tracking. The harness and Issues should reinforce one another rather than become independent sources of truth.
-
-Useful patterns include:
-
-- derive or reconcile local feature state from open Issues
-- use the Issue body as the implementation scope boundary
-- post meaningful session handoffs to the related Issue
-- include Issue state in Definition of Done
-- use labels and assignees to reduce multi-agent collisions
-
-Before adding work to the shared organization project, read the current board conventions instead of relying on stale field IDs or copied assumptions.
+Task tracking belongs to GitHub Issues and the project board; use `firstsun-pm` when the project has
+work to track. Do not create issues just to complete initialization. Add OpenSpec only if the project
+already uses it or has a change that warrants a formal specification.
 
 ## Step 3 — Create or reconcile the GitHub repository
 
@@ -228,7 +222,7 @@ Private repositories are not portfolio objects by themselves. When a private sys
 ## Definition of done
 
 - [ ] Relevant skills selected from `firstsun-dev/skills` and installed through the supported skill workflow
-- [ ] Agent harness created or reconciled through `firstsun-harness`
+- [ ] Agent instructions and verification established through `firstsun-harness`; documented commands ran or are reported `NOT RUN`
 - [ ] Repository exists under `firstsun-dev` or the existing repository was reconciled
 - [ ] Repository visibility is intentional
 - [ ] Description expresses project value rather than branding or self-evaluation

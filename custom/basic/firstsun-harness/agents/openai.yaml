@@ -1,7 +1,7 @@
 interface:
   display_name: "firstsun-harness"
-  short_description: "Scaffold and audit coding-agent harnesses"
-  default_prompt: "Use $firstsun-harness to create, validate, and benchmark a production-ready coding-agent harness for this repository."
+  short_description: "Engineering guardrails for coding agents"
+  default_prompt: "Use $firstsun-harness to audit this repository's agent instructions, verification, scope, and safety guardrails."
 
 policy:
   allow_implicit_invocation: true
